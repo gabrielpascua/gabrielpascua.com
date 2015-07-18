@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html ng-app="resume">
+    <head>
+    	<title>Gabriel Pascua</title>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/angular-resource.min.js"></script>
+        <script type="text/javascript" src="js/resume.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/resume.min.css" />
+    </head>
+    <body>
+    
+        <div ng-controller="WorkListController as work" class="print">
+            
+            <h1>{{ work.jobs.bio.name }}</h1>            
+            
+            <p>&nbsp;</p>
+            
+            <div ng-repeat="job in work.jobs.history" class="work">
+                
+                <h5>{{ job.position }} at {{ job.company.name }}</h5>
+                <p>
+                 {{ job.company.address }} <br /> {{ job.company.city }}, 
+                    {{ job.company.state }} {{ job.company.zip }} {{ job.company.country }} <br />
+                </p>
+            </div>
+                
+        </div>
+        
+    </body>
+</html>
