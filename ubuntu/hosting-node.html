@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Hosting Your Node Application on Apache</title>
+        <link rel="stylesheet" type="text/css" href="../css/resume.min.css" />
+        <link rel="stylesheet" type="text/css" href="main.css" />
+    </head>
+
+    <body>
+
+        <div class="print">
+    
+        <p><a href="index.html">Back</a></p>
+        <h1>Hosting Your Node Application on Apache</h1>
+        
+        <p>
+                I was baffled why my browser picks up my local host name but the
+                content is blank.  Our node application is configured to have
+                2 sites on 1 localhost:3000.  It wasn't until I console.log the 
+                incoming host name when I found out that the HTTP request
+                comes in as "localhost" instead of what I set at /etc/hosts.   
+                I have to figure out how to preserve the host name when the 
+                node server fires up.
+        </p>
+
+        <ol>
+            <li>$ sudo -i</li>
+            <li>
+                Enable Apache modules required to run your app:<br />
+                $ a2enmod proxy proxy_http headers
+            </li>
+            <li>$ service apache2 restart</li>
+            <li>Create an /etc/hosts entry</li>
+            <li>
+                Create a vhost entry with this configuration:<br />
+                > &lt;VirtualHost *:80&gt;<br />
+                >         ServerName [HOST NAME]<br />
+                >         ServerAlias [HOST NAME]<br />
+                >         DocumentRoot [LOCAL PATH]<br />
+                >         ProxyRequests off
+                <br />
+                <br />
+                >         &lt;Proxy *&gt;<br />
+                >                 Order deny,allow<br />
+                >                 Allow from all<br />
+                >                 Require all granted<br />
+                >         &lt;/Proxy&gt;
+                <br />
+                <br />
+                >         &lt;Location /&gt;<br />
+                >                 ProxyPass http://localhost:3000/<br />
+                >                 ProxyPassReverse http://localhost:3000/<br />
+                >         &lt;/Location&gt;
+                <br />
+                <br />
+                >         RequestHeader set Host "[HOST NAME]"<br />
+                >         ProxyPreserveHost On
+                > &lt;/VirtualHost&gt;
+            </li>
+            <li>Enable (a2ensite) your site if you haven't done so</li>
+            <li>$ service apache2 restart</li>
+            <li>
+                Troubleshooting:
+                <ul>
+                    <li>
+                        When running nodemon, you get Error: watch ENOSPC: <br />
+                        $ echo fs.inotify.max_user_watches=524298 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+                    </li>
+                    <li>
+                        FATAL ERROR- JS Allocation failed - process out of memory:<br />
+                        $ node --max-old-space-size=2048 [NODEJS FILE].js
+                    </li>
+                </ul>
+        </ol>
+        
+        <h3>References:</h3>
+        <ul>
+            <li>http://ingenioustechie.com/fatal-error-watch-enospc.html</li>
+            <li>http://kosalads.blogspot.com/2013/05/waitingfatal-error-watch-enospc.html</li>
+            <li>http://www.codexpedia.com/javascript/increasing-the-memory-limit-in-node-js/</li>
+        </ul>
+
+        </div>
+    
+    </body>
+
+</html>

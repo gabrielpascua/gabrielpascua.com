@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>LAMP Stack</title>
+        <link rel="stylesheet" type="text/css" href="../css/resume.min.css" />
+        <link rel="stylesheet" type="text/css" href="main.css" />
+    </head>
+
+    <body>
+
+        <div class="print">
+    
+            <p><a href="index.html">Back</a></p>
+            <h1>LAMP Stack</h1>
+
+            <p>
+                We have MAMP Pro at work and if you have used it, you know how easy it is
+                to set up local development environments.  XAMP is a no-go since
+                it doesn't have a feature to support different PHP versions out of the box.
+                The safe choice for me if I had to install different PHP versions was to use
+                what is native to the OS.  LAMP it is.
+            </p>
+            
+            <ol>
+                <li>$ sudo apt-get update</li>
+                <li>$ sudo apt-get install lamp-server^</li>
+                <li>
+                    Enable localhost:<br />
+                    $ sudo gedit /etc/apache2/conf-available/fqdn.conf<br />
+                    > ServerName localhost <br />
+                    $ sudo a2enconf fqdn
+                </li>
+                <li>
+                    Change the localhost's folder location:
+                    <ol>
+                        <li>$ sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/local.conf<br />
+                        <li>$ sudo gedit /etc/apache2/sites-available/local.conf</li>
+                        <li>Change the folder location path to where you want it to be</li>
+                        <li>$ sudo a2dissite 000-default && sudo a2ensite local</li>
+                        <li>$ service apache2 restart</li>
+                    </ol>
+                </li>
+            </ol>
+            
+            <h3>References:</h3>
+            <ul>
+                <li>https://help.ubuntu.com/community/ApacheMySQLPHP</li>
+            </ul>
+
+        </div>
+    
+    </body>
+
+</html>

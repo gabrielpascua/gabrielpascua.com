@@ -1,0 +1,40 @@
+body > div{
+    max-width: 80rem;
+    font-size: 1.5rem;
+}
+
+.print h1{
+    margin-bottom: 2rem;
+    color: #212121;
+}
+
+.print p{
+    margin-bottom: 2rem;
+    line-height: 2rem;
+}
+
+ol, ul{
+    margin-left: 2rem;
+    margin-top: 3rem;
+}
+
+li{
+    list-style: inherit;
+    margin-bottom: .5rem;
+}
+
+li > ol, li > ul{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 4rem;}
+
+a{
+    color: #4755B7;
+    text-decoration: none;
+}
+
+h3{
+    margin-top: 4rem;
+    position: relative;
+    top: 2rem;
+}

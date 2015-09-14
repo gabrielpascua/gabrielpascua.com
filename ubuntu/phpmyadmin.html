@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Installing PhpMyAdmin</title>
+        <link rel="stylesheet" type="text/css" href="../css/resume.min.css" />
+        <link rel="stylesheet" type="text/css" href="main.css" />
+    </head>
+
+    <body>
+
+        <div class="print">
+    
+            <p><a href="index.html">Back</a></p>
+            <h1>Installing PhpMyAdmin</h1>
+            
+            <p>
+                    Since I already have a running MySQL, all I needed to do was pick out a client.  I 
+                    was really hoping that Sequel Pro would be available for Ubuntu.  I was looking
+                    at wikipedia for SQL clients that have support for at least MySQL and Postgres and 
+                    have fairly recent updates.  SQuirreL SQL met my requirements but I don't like
+                    the GUI - it looks dated and unorthodox.
+            </p>
+
+            <ol>
+                <li>$ sudo -i</li>
+                <li>$ apt-get phpmyadmin</li>
+                <li>$ gedit /etc/apache2/apache2.conf</li>
+                <li>
+                        Add this at the very last line then save your changes:<br />
+                        > Include /etc/phpmyadmin/apache.conf
+                </li>
+                <li>
+                        Enable the  php dependencies 
+                        <ol>
+                            <li>$ gedit /opt/phpfarm/inst/php-[MAJOR-MINOR-PATCH]]/lib/php.ini</li>
+                            <li>
+                                    Enable these extensions:<br />
+                                    > extension="/usr/lib/php5/20121212/mysqli.so"<br />
+                                    > extension="/usr/lib/php5/20121212/mcrypt.so"
+                            </li>
+                        </ol>
+                </li>
+                <li>$ service apache2 restart</li>
+            </ol>
+            
+            <h3>References:</h3>
+            <ul>
+                <li>https://help.ubuntu.com/community/ApacheMySQLPHP</li>
+                <li>https://en.wikipedia.org/wiki/Comparison_of_database_tools</li>
+            </ul>
+
+        </div>
+    
+    </body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Increasing Grub's Font Size</title>
+        <link rel="stylesheet" type="text/css" href="../css/resume.min.css" />
+        <link rel="stylesheet" type="text/css" href="main.css" />
+    </head>
+
+    <body>
+
+        <div class="print">
+    
+            <p><a href="index.html">Back</a></p>
+            <h1>Increasing Grub's Font Size</h1>
+
+            <p>
+                    Related to my 4K display, this one was annoying even if I just had to press the arrow and enter keys
+                    to select an OS.  Some recommend that you change the ttyl resolution but that sounds too involved
+                    for something minor.  I am way behind my schedule so I chose to sacrifice this.
+            </p>
+            
+            <ol>
+                <li>
+                    $ sudo grub-mkfont --output=/boot/grub/grubfont.pf2 --size=36 /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf
+                </li>
+                <li>
+                    $ sudo gedit /etc/default/grub
+                </li>
+                <li>
+                    Copy and paste this line:<br />
+                    > GRUB_FONT=/boot/grub/grubfont.pf2
+                </li>
+                <li>$ sudo update-grub</li>
+                <li>Restart</li>
+            </ol>
+            
+            <h3>References:</h3>
+            <ul>
+                <li>http://b.wardje.eu/2014/08/increase-font-in-grub-for-high-dpi.html</li>
+                <li>http://askubuntu.com/questions/11846/changing-the-default-grub-font</li>
+                <li>http://forums.fedoraforum.org/showthread.php?t=276691</li>
+            </ul>
+        </div>
+    </body>
+
+</html>

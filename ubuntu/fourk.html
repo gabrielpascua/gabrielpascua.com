@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Lowering the 4K Login Screen Resolution Down to 1920x1080</title>
+        <link rel="stylesheet" type="text/css" href="../css/resume.min.css" />
+        <link rel="stylesheet" type="text/css" href="main.css" />
+    </head>
+
+    <body>
+
+        <div class="print">
+    
+            <p><a href="index.html">Back</a></p>
+            <h1>Lowering the 4K Login Screen Resolution Down to 1920x1080</h1>
+            
+            <p>
+                    My computer's graphics card is a dedicated 
+                    4GB AMD Radeon R7 M270 and the native resolution is 3840x2160 (16:9).
+                    The first problem I ran into was the Ubuntu screen
+                    splitting into 4 when booting up.  I had to switch the xorg drivers to the proprietary
+                    fglrx video driver to get around this. 
+            </p>
+
+            <p>
+                    The next problem was when I started changing desktop background image, my
+                    screen would keep flickering on certain images. It doesn't seem to like images with a lot of blue
+                    in it.  I had to lower the resolution to 1920x1080 (16:9) to stop it.  All is good until I restarted.
+                    The login screen resolution did not pick up my logged-in resolution.
+            </p>
+
+            <p>
+                    I was messing with the idea that I just needed to change the login background to a solid
+                    black color but none of the articles I read online worked.  I even upgraded to Ubuntu 15.04
+                    to see if the problem exists and sure enough it did.  I could have kept 15.04 but the lightdm
+                    script doesn't work because of how the boot script execution changed.  It sucks but I had to downgrade to 14.04.  The other
+                    variation of the solution below requires executing an .sh file but it wasn't consistently
+                    sticking on reboot so I just added it directly.
+            </p>
+
+            <ol>
+                <li>
+                    $ xrandr -q <br />
+                    Mind the connected display from the console output
+                </li>
+                <li>
+                    $ sudo gedit /etc/lightdm/lightdm.conf
+                </li>
+                <li>
+                    Set these configuration options:<br />
+                    > [SeatDefaults] <br />
+                    > display-setup-script=xrandr --output eDP1 --primary --mode 1920x1080
+                    <br />
+                    <br />
+                    Where: <br />
+                    eDP1 is the connected display<br />
+                    1920x1080 is the working resolution
+                </li>
+                <li>Restart</li>
+            </ol>
+            
+            <h3>References:</h3>
+            <ul>
+                <li>http://askubuntu.com/questions/73804/wrong-login-screen-resolution</li>
+            </ul>
+
+        </div>
+    
+</body>
+
+</html>

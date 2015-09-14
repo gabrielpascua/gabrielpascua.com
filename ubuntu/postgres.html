@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Installing Postgres</title>
+        <link rel="stylesheet" type="text/css" href="../css/resume.min.css" />
+        <link rel="stylesheet" type="text/css" href="main.css" />
+    </head>
+
+    <body>
+
+        <div class="print">
+    
+            <p><a href="index.html">Back</a></p>
+            <h1>Installing Postgres</h1>
+            
+            <p>
+                I thought apt-get install postgresql was enough.  What I didn't know was that the command installs the 
+                Postgres 9.3 version.  I can't use that because our application uses the jsonb data type and it wasn't until
+                9.4 when it was introduced.
+            </p>
+
+            <ol>
+                <li><a href="http://www.enterprisedb.com/products-services-training/pgdownload">Download</a> the 9.4 Linux x86-x64 installer.</li>
+                <li>$ cd ~/Downloads</li>
+                <li>$ chmod 740 [DOWNLOADED RUN FILE].run</li>
+                <li>$ sudo ./[DOWNLOADED RUN FILE].run</li>
+                <li>Go through the installation</li>
+            </ol>
+            
+            <h3>References:</h3>
+            <ul>
+                <li>http://www.postgresql.org/download/linux/ubuntu/</li>
+            </ul>
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Installing Node 4.0.0</title>
+        <link rel="stylesheet" type="text/css" href="../css/resume.min.css" />
+        <link rel="stylesheet" type="text/css" href="main.css" />
+    </head>
+
+    <body>
+
+        <div class="print">
+    
+            <p><a href="index.html">Back</a></p>
+            <h1>Installing Node 4.0.0</h1>
+            
+            <p>
+                    A stable Node 4.0.0 was just released 3 days ago.  This made me happy.  If you know
+                    the history between nodejs and iojs then you will be excited about the future of node
+                    too.  I'm too lazy to go over node's installation notes and I'm already familiar with nvm
+                    so I'll just use that.  It might come handy too since node 4 is still new.  Let the chips
+                    fall where they may if something goes wrong. After everything I've been through, I 
+                    think I can google my way out of a node prolem.
+            </p>
+
+            <ol>
+                <li>$ sudo -i</li>
+                <li>
+                    Remove any node installation in your system:<br />
+                    $ dpkg --get-selections | grep node<br />
+                    $ apt-get remove --purge node
+                </li>
+                <li>$ apt-get install nodejs</li>
+                <li>$ apt get install npm</li>
+                <li>
+                    Install nvm globally to manage node versions:<br />
+                    $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | NVM_DIR=/usr/local/nvm bash
+                </li>
+                <li>
+                    Locate the node version you want to install:<br />
+                    $ nvm ls-remote
+                </li>
+                <li>
+                    Install it:<br />
+                    $ nvm install [NODE VERSION]
+                </li>
+                <li>
+                    Set a default node version:<br />
+                    $ nvm alias default [NODE VERSION]
+                </li>
+                <li>
+                    Add this to your .bashrc file to pick up the system node then restart bash:<br />
+                    > export NVM_DIR="/usr/local/nvm"
+                    > [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+                </li>
+                <li>
+                    Verify your node version:<br />
+                    $ node --version
+                </li>
+            </ol>
+            
+            <h3>References</h3>
+            <ul>
+                <li>http://www.hostingadvice.com/how-to/install-nodejs-ubuntu-14-04/</li>
+                <li>https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server</li>
+                <li>https://github.com/creationix/nvm</li>
+            </ul>
+
+        </div>
+    
+    </body>
+
+</html>

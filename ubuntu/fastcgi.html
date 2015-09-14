@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>PHP on FastCgi using PhpFarm</title>
+        <link rel="stylesheet" type="text/css" href="../css/resume.min.css" />
+        <link rel="stylesheet" type="text/css" href="main.css" />
+    </head>
+
+    <body>
+
+        <div class="print">
+    
+            <p><a href="index.html">Back</a></p>
+            <h1>PHP on FastCgi using PhpFarm</h1>
+
+            <p>
+                I was questioning myself if I wanted to go through this after reading several how-to articles.
+                Removing the Ubuntu partition and just use WAMP sounds very attractive.  
+                I still gave it a shot  but I almost gave up after 2 days of failure.  Third time's (or day) a charm.
+            </p>
+            
+            <ol>
+                <li>$ sudo -i</li>
+                <li>
+                    Disable the php5 module:<br />
+                    <ol>
+                        <li>$ a2dismod php5</li>
+                        <li>$ service apache2 restart</li>
+                    </ol>
+                </li>
+                <li>$ apt-get install build-essential git apache2-mpm-worker libapache2-mod-fastcgi php5-fpm</li>
+                <li>$ apt-get build-dep php5</li>
+                <li>$ git clone https://github.com/cweiske/phpfarm.git /opt/phpfarm</li>
+                <li>
+                    <a href="http://museum.php.net/php5/" target="_blank">Download the .bz2 php version</a> 
+                    you need and save it in /opt/phpfarm/src/bzips
+                </li>
+                <li>
+                    Enable pdo_mysql and other php modules by creating a compile options file<br />
+                    <ol>
+                        <li>$ cd /opt/phpfarm/src</li>
+                        <li>$ touch custom-options-[PHPMAJOR-MINOR-REVISION].sh</li>
+                        <li>$ gedit custom-options-[PHPMAJOR-MINOR-REVISION].sh</li>
+                        <li>
+                            Copy, paste and save:<br />
+                            > configoptions="--disable-debug \ <br />
+                            > --enable-short-tags \<br />
+                            > --with-pear \<br />
+                            > --enable-bcmath \<br />
+                            > --enable-calendar \<br />
+                            > --enable-exif \<br />
+                            > --enable-ftp \<br />
+                            > --enable-mbstring \<br />
+                            > --enable-pcntl \<br />
+                            > --enable-soap \<br />
+                            > --enable-sockets \<br />
+                            > --enable-wddx \<br />
+                            > --enable-zip \<br />
+                            > --with-zlib \<br />
+                            > --with-gettext \<br />
+                            > --enable-pdo \<br />
+                            > --with-pdo-mysql \<br />
+                            > --enable-cgi \<br />
+                            > --enable-json \<br />
+                            > --with-curl \<br />
+                            > --with-openssl \<br />
+                            > --enable-openssl \<br />
+                            > --with-mysql \<br />
+                            > --enable-mysql \<br />
+                            > --with-config-file-path=/opt/phpfarm/inst/php-[PHPMAJOR-MINOR-REVISION]/lib/ \<br />
+                            > "<br />
+                        </li>
+                        <li>$ ./compile.sh [PHPMAJOR-MINOR-REVISION]</li>
+                    </ol>
+                </li>
+                <li>$ a2enmod actions fastcgi alias</li>
+                <li>$ service apache2 restart</li>
+                <li>$ cd /var/www/cgi-bin</li>
+                <li>$ touch php-cgi-[PHPMAJOR-MINOR-REVISION]</li>
+                <li>$ gedit php-cgi-[PHPMAJOR-MINOR-REVISION]</li>
+                <li>
+                    Copy, paste and save<br />
+                    > #!/bin/sh<br />
+                    > PHP_FCGI_CHILDREN=3<br />
+                    > export PHP_FCGI_CHILDREN<br />
+                    > PHP_FCGI_MAX_REQUESTS=50000<br />
+                    > export PHP_FCGI_MAX_REQUESTS<br />
+                    > exec /opt/phpfarm/inst/bin/php-cgi-[PHPMAJOR-MINOR-REVISION]
+                </li>
+                <li>
+                    Change the permissions:<br />
+                    <ol>
+                        <li>$ chmod 744 php-cgi-[PHPMAJOR-MINOR-REVISION]</li>
+                        <li>$ chown www-data php-cgi-[PHPMAJOR-MINOR-REVISION]</li>
+                        <li>$ chgrp www-data php-cgi-[PHPMAJOR-MINOR-REVISION]</li>
+                    </ol>
+                </li>
+                <li>$ gedit /etc/apache2/apache.conf</li>
+                <li>
+                    Add these lines before the Include directives:<br />
+                    > #php-cgi setup <br />
+                    > #used for multiple php versions <br />
+                    > FastCgiServer /var/www/cgi-bin/php-cgi-[PHPMAJOR-MINOR-REVISION]<br />
+                    > ScriptAlias /cgi-bin-php/ /var/www/cgi-bin/<br />
+                </li>
+                <li>
+                    Edit your VirtualHost entries to use fastcgi<br />
+                    > &lt;VirtualHost&gt;<br />
+                    >  ... <br />
+                    >  &lt;Directory /&gt;<br />
+                    >    ...<br />
+                    >    Options FollowSymLinks<br />
+                    >    AllowOverride All<br />
+                    >    AddHandler php-cgi .php<br />
+                    >    Action php-cgi /cgi-bin-php/php-cgi-[PHPMAJOR-MINOR-REVISION]<br />
+                    >    Require all granted<br />
+                    >  &lt;/Directory&gt;<br />
+                    > &lt;/VirtualHost&gt;<br />
+                </li>
+                <li>$ service apache2 restart</li>
+                <li>Repeat Steps 7 down to add additional php versions </li>
+            </ol>
+            
+            <h3>References:</h3>
+            <ul>
+                <li>http://museum.php.net/php5/</li>
+                <li>http://thejibe.com/blog/14/02/phpfarm</li>
+                <li>http://serverfault.com/questions/652429/how-do-i-install-another-version-of-php</li>
+                <li>https://gist.github.com/jbinfo/d297fcfdb151e25a299c</li>
+                <li>http://stackoverflow.com/questions/26028229/issue-activating-a-php-extension-using-php-farm</li>
+            </ul>
+
+        </div>
+    
+</body>
+
+</html>
