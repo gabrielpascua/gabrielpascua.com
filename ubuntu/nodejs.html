@@ -58,6 +58,18 @@
                     Verify your node version:<br />
                     $ node --version
                 </li>
+                <li>
+                    Troubleshooting:
+                    <ul>
+                        <li>
+                            Some depencies refer to your /usr/bin/node version<br />
+                            $ rm -r /usr/bin/node <br />
+                            $ ln -s /usr/local/nvm/versions/node/[NODE VERSION]/bin/node /usr/bin/node<br />
+                            $ rm -r /usr/bin/npm<br />
+                            $ ln -s /usr/local/nvm/versions/node/[NODE VERSION]/bin/npm npm
+                        </li>
+                    </ul>
+                </li>
             </ol>
             
             <h3>References</h3>
