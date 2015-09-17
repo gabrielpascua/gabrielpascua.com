@@ -62,11 +62,11 @@
                     Troubleshooting:
                     <ul>
                         <li>
-                            Some depencies refer to your /usr/bin/node version<br />
-                            $ rm -r /usr/bin/node <br />
-                            $ ln -s /usr/local/nvm/versions/node/[NODE VERSION]/bin/node /usr/bin/node<br />
+                            Some dependencies refer to your /usr/bin/node version<br />
+                            $ rm -r /etc/alternatives/node <br />
+                            $ ln -s /usr/local/nvm/versions/node/[NODE VERSION]/bin/node /etc/alternatives/node<br />
                             $ rm -r /usr/bin/npm<br />
-                            $ ln -s /usr/local/nvm/versions/node/[NODE VERSION]/bin/npm npm
+                            $ ln -s /usr/local/nvm/versions/node/[NODE VERSION]/bin/npm /usr/bin/npm
                             <br />
                             <br />
                             Original node: /usr/bin/nodejs
