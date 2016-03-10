@@ -1,8 +1,9 @@
 {
     "bio":{
-        "name":"Gabriel Pascua",
-        "email":"brakes2k3@gmail.com",
-        "phone":"2124844347"
+        "first_name": "Gabriel",
+        "last_name" : "Pascua",
+        "email":"",
+        "phone":""
     },
     "history":[
         {
@@ -15,17 +16,13 @@
                 "country":"USA"
             },
             "position":"Web Developer",
-            "description":"Wenner Media is the parent company of Rolling Stone, Us Weekly, and Men's Journal magazines. I am employed under the IT Department for development work on internal sites that run on Microsoft web stack. Recent restructuring of the Digital Department gave me a chance to work on the public facing websites that are written in PHP using the Symfony MVC Framework.",
+            "description":"Wenner Media is the parent company of Rolling Stone, Us Weekly, and Men's Journal magazines.",
             "start_date":{
                 "month":11,
                 "day":14,
                 "year":2011
             },
-            "end_date":{
-                "month":null,
-                "day":null,
-                "year":null
-            },
+            "end_date": null,
             "server_side":[
                 "C#",
                 "LINQ",
@@ -95,7 +92,7 @@
                 "country":"USA"
             },
             "position":"Sr. Programmer / Analyst 1",
-            "description":"The World Trade Center Monitoring Center is Mt. Sinai Hospital's initiative to offer free medical service to the first responders of the 9/11 attacks. My development work consists of creation of forms used to collect patient demographics and creation of a web portal to connect disparate systems.",
+            "description":"The World Trade Center Monitoring Center is Mt. Sinai Hospital's treatment and monitoring program for the first responders of the 9/11 attacks.",
             "start_date":{
                 "month":3,
                 "day":8,
@@ -152,7 +149,7 @@
                 "country":"USA"
             },
             "position":"Web Developer",
-            "description":"International Quality & Productivity Center (IQPC) profits by creating conferences and events all over the world. I was part of the first development team that established the online presence of the company by integrating Ektron CMS into the corporate website as well as the credit card processing during registration thru Chase's Paymentech system.",
+            "description":"International Quality & Productivity Center (IQPC) is a global conference organizer.",
             "start_date":{
                 "month":10,
                 "day":1,
@@ -204,7 +201,7 @@
                 "country":"USA"
             },
             "position":"Web Designer",
-            "description":"Phone People is a start-up that sells 1-800 numbers all over the United States. I partnered with another web designer and 8 .NET programmers in India to create the corporate and account management sites",
+            "description":"Phone People is a start-up company selling 1-800 numbers to businesses in the U.S..",
             "start_date":{
                 "month":6,
                 "day":19,
@@ -245,7 +242,7 @@
         },
         {
             "company":{
-                "name":"Wiseguy Technologies",
+                "name":"PPMC / Wiseguy Technologies",
                 "address":"9275 Skypark Court",
                 "city":"San Diego",
                 "state":"CA",
@@ -253,7 +250,7 @@
                 "country":"USA"
             },
             "position":"Classic ASP Developer",
-            "description":"Developed websites using classic ASP and ASP.NET 1.1 Visual Basic. Involved in front-end design and conceptualization plus back-end implementation for every web project. The job also entails bug fixes and updates for companies who utilize our proprietary e-commerce shopping cart.",
+            "description":"PPMC manages medical claims from several primary providers with a dedicated IT department called Wiseguy Techonologies.",
             "start_date":{
                 "month":6,
                 "day":2,
@@ -297,7 +294,7 @@
         },
         {
             "company":{
-                "name":"Information Technology and Customer Care Inc.",
+                "name":"Information Technology and Customer Care Inc. (ITTCI)",
                 "address":"PhilAm Homes",
                 "city":"Quezon City",
                 "state":"Metro Manila",
@@ -305,7 +302,7 @@
                 "country":"Philippines"
             },
             "position":"ASP Programmer",
-            "description":"ASP Programmer for an outsourced company in the Philippines with the main office based in Utah. The job description consists of web design, rewriting Dreamweaver generated ASP code, writing technical requirements for prospective clients, and migrating an MS Access data store to a robust SQL Server 2000 database. The database administration tasks involved creating stored procedures, views, and indexes for better performance.",
+            "description":"ITTCI is a Philippine outsourcing company with Customer Support and Web Development services for clients in Canada and Utah.",
             "start_date":{
                 "month":11,
                 "day":null,
@@ -360,7 +357,7 @@
                 "country":"Philippines"
             },
             "position":"Windows Programmer",
-            "description":"Windows Programmer for the Business Development and Marketing Department in a company that specializes in GSM and CDMA technologies. Developed windows applications that can send text messages using a GSM modem. Also wrote static and dynamic HTML pages for the corporate web portals and projected clients.",
+            "description":"DFNN is a Philippine company specializing in SMS technology.",
             "start_date":{
                 "month":10,
                 "day":null,

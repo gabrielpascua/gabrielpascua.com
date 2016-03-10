@@ -1,31 +1,68 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <html ng-app="resume">
-    <head>
-        <title>Gabriel Pascua</title>
-        <script type="text/javascript" src="js/angular.min.js"></script>
-        <script type="text/javascript" src="js/angular-resource.min.js"></script>
-        <script type="text/javascript" src="js/resume.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/resume.min.css" />
-    </head>
-    <body>
-    
-        <div ng-controller="WorkListController as work" class="print">
-            
-            <h1>{{ work.jobs.bio.name }}</h1>            
-            
-            <p>&nbsp;</p>
-            
-            <div ng-repeat="job in work.jobs.history" class="work">
-                
-                <h5>{{ job.position }} at {{ job.company.name }}</h5>
-                <p>
-                 {{ job.company.address }} <br /> {{ job.company.city }}, 
-                    {{ job.company.state }} {{ job.company.zip }} {{ job.company.country }} <br />
-                </p>
-            </div>
-                
+    <meta charset="utf-8">
+    <title>Gabriel Pascua</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-resource.min.js"></script>
+    <script type="text/javascript" src="js/resume.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/skeleton-combined.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+<body>
+
+<div class="container" ng-controller="WorkListController as work">
+
+    <div class="row">
+        <div class="twelve columns">
+            <h1 class="heading">
+                <span>{{ work.jobs.bio.first_name }}</span>
+                <span>{{ work.jobs.bio.last_name }}</span>
+            </h1>
         </div>
-        
-    </body>
+    </div>
+
+
+    <p>&nbsp;</p>
+
+    
+    <div ng-repeat="job in work.jobs.history" class="row job">
+        <div class="three columns">
+
+            <span class="work-date start">
+                {{ work.months[job.start_date.month-1] }}
+                {{ job.start_date.year }}
+            </span> <!-- .work-date.start -->
+
+            <span ng-if="job.end_date == null" class="work-date end">
+                Present
+            </span> <!-- .work-date.end -->
+
+            <span ng-if="job.end_date != null" class="work-date end">
+                {{ work.months[job.end_date.month] }}
+                {{ job.start_date.year }}
+            </span> <!-- .work-date.end -->
+
+        </div>
+        <div class="one column"></div>
+        <div class="eight columns">
+            <h5>{{ job.position }} at <span class="normal">{{ job.company.name }}</span></h5>
+            <p>
+                <span class="location">
+                    {{ job.company.state }} {{ job.company.zip }}, {{ job.company.country }}
+                </span>
+                <br />
+                <span class="description">
+                    {{job.description}}
+                </span>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
 </html>

@@ -1,0 +1,71 @@
+.container{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.heading{
+    font-family: sans-serif;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: normal;
+}
+
+    .heading span:first-child{
+        font-size: 5rem;
+        font-weight: bold;
+    }
+
+    .heading span:last-child{
+        font-size: 4.5rem;
+        letter-spacing: 2px;
+    }
+
+.work-date.end:before{
+    content: ' to ';
+}
+
+
+@media (min-width: 550px) {
+
+    .work-date{
+        display: block;
+        line-height:1.5;
+        text-align: right;
+    }
+    
+    .work-date:first-child{
+        margin-top: 3rem;
+    }
+
+    .work-date.end:before{
+        content: normal;
+    }
+}
+
+
+@media (min-width: 550px) {
+
+    .container{
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    .row.job{
+        margin-bottom: 6rem;
+    }
+
+}
+
+
+@media (min-width: 550px) {
+
+    .heading{
+        letter-spacing: normal;
+        margin-bottom: 20px;
+    }
+
+        .heading span:last-child{
+            font-size: 5rem;
+        }
+
+}
