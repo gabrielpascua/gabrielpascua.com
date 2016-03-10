@@ -1,7 +1,7 @@
 {
     "bio":{
-        "first_name": "Gabriel",
-        "last_name" : "Pascua",
+        "first_name": "Johnnie",
+        "last_name" : "Mitchell",
         "email":"",
         "phone":""
     },
@@ -23,63 +23,53 @@
                 "year":2011
             },
             "end_date": null,
-            "server_side":[
-                "C#",
-                "LINQ",
-                "PHP",
-                "node.js",
-                "TSQL",
+            "microsoft":[
+                "C# ASP.NET",
+                "MVC and Razor",
+                "WCF Services",
+                "SOAP Services",
+                "Web Forms",
+                "ADO.NET",
+                "IIS",
+                "Visual Studio"
+            ],
+            "javascript":[
+                "nodejs",
+                "koajs",
+                "grunt",
+                "gulp",
+                "CoffeeScript",
+                "Ember",
+                "Angular",
+                "twig",
+                "handlebars",
+                "Express"
+            ],
+            "php":[
+                "Symfony 1.* & 2.*",
+                "Apache",
+                "Eclipse",
+                "MAMP"
+            ],
+            "databases":[
+                "Postgres",
+                "Redis",
+                "MongoDB",
                 "MySQL",
-                "Doctrine"
+                "MS SQL Server"
             ],
             "client_side":[
-                "html",
-                "javascript",
-                "coffeescript",
-                "jquery",
-                "css",
-                "sass",
-                "xml"
-            ],
-            "web_framework":[
-                "ASP.NET MVC",
-                "Symfony 1 & 2",
-                "ember.js",
-                "Angular.js",
-                "express 3 & 4",
-                "koa",
-                "gulp.js"
-            ],
-            "template_engine":[
-                ".NET Razor",
-                ".NET WebForms",
-                "Twig",
-                "Handlebars",
-                "ejs"
-            ],
-            "css_framework":[
+                "html / html5",
+                "javascript and jquery",
+                "css / css3, sass and LESS",
                 "Zurb Foundation",
                 "HTML5 Boilerplate",
                 "Twitter Bootstrap",
-                "960 Grid System",
-                "Google Web Starter Kit"
-            ],
-            "database":[
-                "SQL Server",
-                "MySQL",
-                "XML",
-                "JSON",
-                "MongoDB"
+                "Mobile-first Responsive Design"
             ],
             "version_control":[
-                "Git",
+                "Git on bash, Tower, SourceTree",
                 "Team Foundation"
-            ],
-            "ide":[
-                "Visual Studio",
-                "Eclipse",
-                "Coda",
-                "XCode"
             ]
         },
         {
@@ -103,40 +93,28 @@
                 "day":4,
                 "year":2011
             },
-            "server_side":[
-                "C#",
+            "microsoft":[
+                "C# ASP.NET",
                 "VB.NET",
+                "ADO.NET",
+                "WCF Web Services",
                 "Classic ASP",
                 "VBScript",
-                "TSQL",
-                "PLSQL"
+                "IIS",
+                "Visual Studio"
             ],
             "client_side":[
                 "html",
-                "javascript",
-                "jquery",
-                "css",
-                "xml"
+                "javascript and jquery",
+                "css"
             ],
-            "web_framework":[
-                
-            ],
-            "template_engine":[
-                
-            ],
-            "css_framework":[
-                
-            ],
-            "database":[
-                "SQL Server",
+            "databases":[
+                "MS SQL Server",
                 "Oracle",
                 "MS Access"
             ],
             "version_control":[
-                "Subversion"
-            ],
-            "ide":[
-                "Visual Studio"
+                "Subversion on Tortoise SVN"
             ]
         },
         {
@@ -160,35 +138,26 @@
                 "day":3,
                 "year":2010
             },
-            "server_side":[
-                "C#",
-                "TSQL"
+            "microsoft":[
+                "C# ASP.NET",
+                "XML Reader",
+                "SOAP Services",
+                "IIS",
+                "Visual Studio",
+                "COM Development",
+                "Ektron CMS"
+            ],
+            "databases":[
+                "MS SQL Server"
             ],
             "client_side":[
-                "html",
-                "xml",
                 "xslt",
-                "javascript",
-                "jquery",
+                "html",
+                "javascript and jQuery",
                 "css"
             ],
-            "web_framework":[
-                "Ektron"
-            ],
-            "template_engine":[
-                
-            ],
-            "css_framework":[
-                
-            ],
-            "database":[
-                "SQL Server"
-            ],
             "version_control":[
-                "Subversion"
-            ],
-            "ide":[
-                "Visual Studio"
+                "Subversion on Tortoise SVN"
             ]
         },
         {
@@ -212,8 +181,10 @@
                 "day":15,
                 "year":2007
             },
-            "server_side":[
-                "Classic ASP"
+            "microsoft":[
+                "Classic ASP",
+                "IIS",
+                "Macromedia Dreamweaver"
             ],
             "client_side":[
                 "html",
@@ -221,24 +192,8 @@
                 "css",
                 "actionscript"
             ],
-            "web_framework":[
-                
-            ],
-            "template_engine":[
-                
-            ],
-            "css_framework":[
-                
-            ],
-            "database":[
-                
-            ],
-            "version_control":[
-                
-            ],
-            "ide":[
-                "Macromedia Dreamweaver"
-            ]
+            "databases":null,
+            "version_control":null
         },
         {
             "company":{
@@ -261,36 +216,24 @@
                 "day":14,
                 "year":2006
             },
-            "server_side":[
+            "microsoft":[
                 "Classic ASP",
                 "VB.NET",
-                "TSQL"
+                "TSQL",
+                "IIS",
+                "Visual Interdev",
+                "Macromedia Dreamweaver"
             ],
             "client_side":[
                 "html",
                 "javascript",
-                "css",
-                "xml"
+                "css"
             ],
-            "web_framework":[
-                ""
-            ],
-            "template_engine":[
-                ""
-            ],
-            "css_framework":[
-                ""
-            ],
-            "database":[
-                "SQL Server",
+            "databases":[
+                "MS SQL Server",
                 "MS Access"
             ],
-            "version_control":[
-                ""
-            ],
-            "ide":[
-                "Macromedia Dreamweaver"
-            ]
+            "version_control":null
         },
         {
             "company":{
@@ -313,39 +256,27 @@
                 "day":null,
                 "year":2005
             },
-            "server_side":[
+            "microsoft":[
                 "Classic ASP",
-                "TSQL",
-                "PHP",
-                "MySQL"
+                "IIS",
+                "Microsoft Frontpage",
+                "Visual Interdev"
             ],
             "client_side":[
                 "html",
                 "javascript",
-                "css",
-                "xml"
+                "css"
             ],
-            "web_framework":[
-                ""
+            "php":[
+                "Apache",
+                "Macromedia Dreamweaver"
             ],
-            "template_engine":[
-                ""
-            ],
-            "css_framework":[
-                ""
-            ],
-            "database":[
-                "SQL Server",
+            "databases":[
+                "MS SQL Server",
                 "MS Access",
                 "MySQL"
             ],
-            "version_control":[
-                ""
-            ],
-            "ide":[
-                "Macromedia Dreamweaver",
-                "Visual Interdev"
-            ]
+            "version_control":null
         },
         {
             "company":{
@@ -368,37 +299,24 @@
                 "day":null,
                 "year":2004
             },
-            "server_side":[
+            "microsoft":[
                 "VB 6.0",
-                "TSQL",
                 "Classic ASP",
-                "Java"
+                "MS Frontpage",
+                "Macromedia Dreamweaver",
+                "XML",
+                "COM Development"
             ],
             "client_side":[
                 "html",
-                "css",
-                "xml"
+                "javascript",
+                "css"
             ],
-            "web_framework":[
-                ""
-            ],
-            "template_engine":[
-                ""
-            ],
-            "css_framework":[
-                ""
-            ],
-            "database":[
-                "SQL Server",
+            "databases":[
+                "MS SQL Server",
                 "MS Access"
             ],
-            "version_control":[
-                ""
-            ],
-            "ide":[
-                "MS Frontpage",
-                "Macromedia Dreamweaver"
-            ]
+            "version_control":null
         }
     ]
 }

@@ -556,9 +556,9 @@ html {
     font-size: 62.5%; }
 body {
     font-size: 1.4em; /* currently ems cause chrome bug misinterpreting rems on body element */
-    line-height: 2;
+    line-height: 1.5;
     font-weight: 400;
-    font-family: serif;
+    font-family: sans-serif;
     color: #222; }
 
 

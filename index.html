@@ -28,7 +28,12 @@
 
     <p>&nbsp;</p>
 
-    
+    <!--
+        Ideas:
+
+        Create Tech Filters
+    -->
+
     <div ng-repeat="job in work.jobs.history" class="row job">
         <div class="three columns">
 
@@ -49,16 +54,51 @@
         </div>
         <div class="one column"></div>
         <div class="eight columns">
-            <h5>{{ job.position }} at <span class="normal">{{ job.company.name }}</span></h5>
+            <h3>{{ job.position }} at <span class="normal">{{ job.company.name }}</span></h3>
             <p>
-                <span class="location">
-                    {{ job.company.state }} {{ job.company.zip }}, {{ job.company.country }}
+                <span ng-if="job.company.country == 'USA'" class="location">
+                    {{ job.company.city }} {{ job.company.state}}, {{ job.company.zip }}
                 </span>
+                <span ng-if="job.company.country != 'USA'" class="location">
+                    {{ job.company.state}}, {{ job.company.country }}
+                </span>
+
                 <br />
                 <span class="description">
                     {{job.description}}
                 </span>
             </p>
+
+            <h6 ng-if="job.microsoft != null">Microsoft Development</h6>
+            <p ng-if="job.microsoft != null">
+                {{job.microsoft.join(', ')}}
+            </p>
+
+            <h6 ng-if="job.javascript != null">Javascript Development</h6>
+            <p ng-if="job.javascript != null">
+                {{job.javascript.join(', ')}}
+            </p>
+
+            <h6 ng-if="job.php != null">PHP Development</h6>
+            <p ng-if="job.php != null">
+                {{job.php.join(', ')}}
+            </p>
+
+            <h6 ng-if="job.databases != null">Database</h6>
+            <p ng-if="job.databases != null">
+                {{job.databases.join(', ')}}
+            </p>
+
+            <h6 ng-if="job.client_side != null">Front End Experience</h6>
+            <p ng-if="job.client_side != null">
+                {{job.client_side.join(', ')}}
+            </p>
+
+            <h6 ng-if="job.version_control != null">Version Control</h6>
+            <p ng-if="job.version_control != null">
+                {{job.version_control.join(', ')}}
+            </p>
+
         </div>
     </div>
 
