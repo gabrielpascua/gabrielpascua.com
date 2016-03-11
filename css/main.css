@@ -23,6 +23,10 @@
     content: ' to ';
 }
 
+.row.job{
+    border-top: 1px solid #000;
+    padding-top: 30px;
+}
 
 @media (min-width: 550px) {
 
@@ -51,6 +55,18 @@
 
     .row.job{
         margin-bottom: 6rem;
+        border-top: none;
+        padding-top: 0;
+    }
+
+    .one-third.column {
+        width: 15.6666666667%;
+        max-width: 90px;
+    }
+
+    .two-thirds.column {
+        width: 80.3333333333%;
+        max-width: 930px;
     }
 
 }
@@ -67,4 +83,20 @@
             font-size: 5rem;
         }
 
+}
+
+
+@media (min-width: 750px) {
+    .box{
+        float: left;
+        width: 45%;
+    }
+
+    .box:nth-child(2n+0) {
+        margin-left: 10%;
+    }
+
+    .box:nth-child(2n+1) {
+        clear:both;
+    }
 }

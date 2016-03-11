@@ -17,7 +17,7 @@
 	ctl.controller('WorkListController', ['$http', 'Work', function($http, Work){
 		
 		this.jobs = Work.query();
-        this.months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        this.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 		
 	}]);
 	

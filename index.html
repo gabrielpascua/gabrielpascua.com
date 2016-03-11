@@ -35,11 +35,11 @@
     -->
 
     <div ng-repeat="job in work.jobs.history" class="row job">
-        <div class="three columns">
+        <div class="one-third column">
 
             <span class="work-date start">
-                {{ work.months[job.start_date.month-1] }}
-                {{ job.start_date.year }}
+                {{work.months[job.start_date.month-1].substr(0,3)}}
+                {{job.start_date.year}}
             </span> <!-- .work-date.start -->
 
             <span ng-if="job.end_date == null" class="work-date end">
@@ -47,57 +47,67 @@
             </span> <!-- .work-date.end -->
 
             <span ng-if="job.end_date != null" class="work-date end">
-                {{ work.months[job.end_date.month] }}
+                {{ work.months[job.end_date.month-1].substr(0,3) }}
                 {{ job.start_date.year }}
             </span> <!-- .work-date.end -->
 
         </div>
-        <div class="one column"></div>
-        <div class="eight columns">
+        <div class="two-thirds column">
             <h3>{{ job.position }} at <span class="normal">{{ job.company.name }}</span></h3>
             <p>
+                <span class="description">
+                    {{job.description}}
+                </span>
+                <br />
                 <span ng-if="job.company.country == 'USA'" class="location">
                     {{ job.company.city }} {{ job.company.state}}, {{ job.company.zip }}
                 </span>
                 <span ng-if="job.company.country != 'USA'" class="location">
                     {{ job.company.state}}, {{ job.company.country }}
                 </span>
-
-                <br />
-                <span class="description">
-                    {{job.description}}
-                </span>
             </p>
 
-            <h6 ng-if="job.microsoft != null">Microsoft Development</h6>
-            <p ng-if="job.microsoft != null">
-                {{job.microsoft.join(', ')}}
-            </p>
+            <div class="box" ng-if="job.microsoft != null">
+                <h6>Microsoft Development</h6>
+                <p>
+                    {{job.microsoft.join(', ')}}
+                </p>
+            </div>
 
-            <h6 ng-if="job.javascript != null">Javascript Development</h6>
-            <p ng-if="job.javascript != null">
-                {{job.javascript.join(', ')}}
-            </p>
+            <div class="box" ng-if="job.javascript != null">
+                <h6>Javascript Development</h6>
+                <p>
+                    {{job.javascript.join(', ')}}
+                </p>
+            </div>
 
-            <h6 ng-if="job.php != null">PHP Development</h6>
-            <p ng-if="job.php != null">
-                {{job.php.join(', ')}}
-            </p>
+            <div class="box" ng-if="job.php != null">
+                <h6>PHP Development</h6>
+                <p>
+                    {{job.php.join(', ')}}
+                </p>
+            </div>
 
-            <h6 ng-if="job.databases != null">Database</h6>
-            <p ng-if="job.databases != null">
-                {{job.databases.join(', ')}}
-            </p>
+            <div class="box" ng-if="job.databases != null">
+                <h6>Database</h6>
+                <p>
+                    {{job.databases.join(', ')}}
+                </p>
+            </div>
 
-            <h6 ng-if="job.client_side != null">Front End Experience</h6>
-            <p ng-if="job.client_side != null">
-                {{job.client_side.join(', ')}}
-            </p>
+            <div class="box" ng-if="job.client_side != null">
+                <h6>Front End Experience</h6>
+                <p>
+                    {{job.client_side.join(', ')}}
+                </p>
+            </div>
 
-            <h6 ng-if="job.version_control != null">Version Control</h6>
-            <p ng-if="job.version_control != null">
-                {{job.version_control.join(', ')}}
-            </p>
+            <div class="box" ng-if="job.version_control != null">
+                <h6>Version Control</h6>
+                <p>
+                    {{job.version_control.join(', ')}}
+                </p>
+            </div>
 
         </div>
     </div>
