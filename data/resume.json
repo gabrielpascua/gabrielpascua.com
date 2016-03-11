@@ -36,6 +36,8 @@
             "javascript":[
                 "nodejs",
                 "koajs",
+                "Mocha Test Framework",
+                "Should.js",
                 "grunt",
                 "gulp",
                 "CoffeeScript",
