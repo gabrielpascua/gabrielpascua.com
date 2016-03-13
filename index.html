@@ -15,9 +15,23 @@
     <script type="text/javascript">
         function setTheme(){
             var themes = ['default', 'kobe-htm'];
-            var random = Math.floor(Math.random() * themes.length) + 1;
-            document.body.className = themes[random-1] || '';
+            var theme, random;
+
+            var qsTemplate = window.location.search.substr(1).split('&')
+                    .filter(function(part){
+                        return part.indexOf('template=') >= 0;
+                    });
+
+            if(qsTemplate.length > 0){
+                theme = qsTemplate[0].split('=')[1];
+            }else{
+                random = Math.floor(Math.random() * themes.length) + 1;
+                theme = themes[random-1];
+            }
+
+            document.body.className = theme || '';
         }
+        
         window.onload = setTheme;
     </script>
 </head>
