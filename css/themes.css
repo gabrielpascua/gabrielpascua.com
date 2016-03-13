@@ -1,0 +1,64 @@
+body.kobe-htm{
+    color: #27262b;
+    border-top: 15px solid #27262b;
+    background-color: #d7d7d7;
+}
+
+body.kobe-htm .row.job{
+    border-top: 1px solid #959595;
+    padding-top: 5px;
+    margin-bottom: 3rem;
+}
+
+body.kobe-htm .row.job > .one-third.column{
+    background-color: #286dbb;
+    padding-left: 5px;
+    margin-bottom: 10px;
+}
+
+body.kobe-htm .work-date{
+    color: #d7d7d7;
+}
+
+body.kobe-htm h6{
+    color: #28681a;
+}
+
+body.kobe-htm .location{
+    color: #944864;
+}
+
+
+@media (min-width: 550px) {
+
+
+    body.kobe-htm .container > .row:first-child{
+        border-bottom: 1px dashed #27262b;
+    }
+
+    body.kobe-htm .row.job{
+        border-top: none;
+        margin-bottom: 6rem;
+    }
+
+    body.kobe-htm .work-date{
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+
+    body.kobe-htm .work-date.end{
+        padding-bottom: 25px;
+    }
+
+    body.kobe-htm .row.job > .one-third.column{
+        background: none;
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+
+    body.kobe-htm .work-date{
+        background-color: #286dbb;
+        padding-right: 5px;
+    }
+
+}

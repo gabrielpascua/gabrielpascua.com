@@ -1,8 +1,9 @@
 {
     "bio":{
-        "name":"Gabriel Pascua",
-        "email":"brakes2k3@gmail.com",
-        "phone":"2124844347"
+        "first_name": "Gabriel",
+        "last_name" : "Pascua",
+        "email":"",
+        "phone":""
     },
     "history":[
         {
@@ -15,74 +16,62 @@
                 "country":"USA"
             },
             "position":"Web Developer",
-            "description":"Wenner Media is the parent company of Rolling Stone, Us Weekly, and Men's Journal magazines. I am employed under the IT Department for development work on internal sites that run on Microsoft web stack. Recent restructuring of the Digital Department gave me a chance to work on the public facing websites that are written in PHP using the Symfony MVC Framework.",
+            "description":"Wenner Media is the parent company of Rolling Stone, Us Weekly, and Men's Journal magazines.",
             "start_date":{
                 "month":11,
                 "day":14,
                 "year":2011
             },
-            "end_date":{
-                "month":null,
-                "day":null,
-                "year":null
-            },
-            "server_side":[
-                "C#",
-                "LINQ",
-                "PHP",
-                "node.js",
-                "TSQL",
+            "end_date": null,
+            "microsoft":[
+                "C# ASP.NET",
+                "MVC and Razor",
+                "WCF Services",
+                "SOAP Services",
+                "Web Forms",
+                "ADO.NET",
+                "IIS",
+                "Visual Studio"
+            ],
+            "javascript":[
+                "nodejs",
+                "koajs",
+                "Mocha Test Framework",
+                "Should.js",
+                "grunt",
+                "gulp",
+                "CoffeeScript",
+                "Ember",
+                "Angular",
+                "twig",
+                "handlebars",
+                "Express"
+            ],
+            "php":[
+                "Symfony 1.* & 2.*",
+                "Apache",
+                "Eclipse",
+                "MAMP"
+            ],
+            "databases":[
+                "Postgres",
+                "Redis",
+                "MongoDB",
                 "MySQL",
-                "Doctrine"
+                "MS SQL Server"
             ],
             "client_side":[
-                "html",
-                "javascript",
-                "coffeescript",
-                "jquery",
-                "css",
-                "sass",
-                "xml"
-            ],
-            "web_framework":[
-                "ASP.NET MVC",
-                "Symfony 1 & 2",
-                "ember.js",
-                "Angular.js",
-                "express 3 & 4",
-                "koa",
-                "gulp.js"
-            ],
-            "template_engine":[
-                ".NET Razor",
-                ".NET WebForms",
-                "Twig",
-                "Handlebars",
-                "ejs"
-            ],
-            "css_framework":[
+                "html / html5",
+                "javascript and jquery",
+                "css / css3, sass and LESS",
                 "Zurb Foundation",
                 "HTML5 Boilerplate",
                 "Twitter Bootstrap",
-                "960 Grid System",
-                "Google Web Starter Kit"
-            ],
-            "database":[
-                "SQL Server",
-                "MySQL",
-                "XML",
-                "JSON",
-                "MongoDB"
+                "Mobile-first Responsive Design"
             ],
             "version_control":[
-                "Git",
+                "Git on bash, Tower, SourceTree",
                 "Team Foundation"
-            ],
-            "ide":[
-                "Visual Studio",
-                "Eclipse",
-                "Coda",
-                "XCode"
             ]
         },
         {
@@ -95,7 +84,7 @@
                 "country":"USA"
             },
             "position":"Sr. Programmer / Analyst 1",
-            "description":"The World Trade Center Monitoring Center is Mt. Sinai Hospital's initiative to offer free medical service to the first responders of the 9/11 attacks. My development work consists of creation of forms used to collect patient demographics and creation of a web portal to connect disparate systems.",
+            "description":"The World Trade Center Monitoring Center is Mt. Sinai Hospital's treatment and monitoring program for the first responders of the 9/11 attacks.",
             "start_date":{
                 "month":3,
                 "day":8,
@@ -106,40 +95,28 @@
                 "day":4,
                 "year":2011
             },
-            "server_side":[
-                "C#",
+            "microsoft":[
+                "C# ASP.NET",
                 "VB.NET",
+                "ADO.NET",
+                "WCF Web Services",
                 "Classic ASP",
                 "VBScript",
-                "TSQL",
-                "PLSQL"
+                "IIS",
+                "Visual Studio"
             ],
             "client_side":[
                 "html",
-                "javascript",
-                "jquery",
-                "css",
-                "xml"
+                "javascript and jquery",
+                "css"
             ],
-            "web_framework":[
-                
-            ],
-            "template_engine":[
-                
-            ],
-            "css_framework":[
-                
-            ],
-            "database":[
-                "SQL Server",
+            "databases":[
+                "MS SQL Server",
                 "Oracle",
                 "MS Access"
             ],
             "version_control":[
-                "Subversion"
-            ],
-            "ide":[
-                "Visual Studio"
+                "Subversion on Tortoise SVN"
             ]
         },
         {
@@ -152,7 +129,7 @@
                 "country":"USA"
             },
             "position":"Web Developer",
-            "description":"International Quality & Productivity Center (IQPC) profits by creating conferences and events all over the world. I was part of the first development team that established the online presence of the company by integrating Ektron CMS into the corporate website as well as the credit card processing during registration thru Chase's Paymentech system.",
+            "description":"International Quality & Productivity Center (IQPC) is a global conference organizer.",
             "start_date":{
                 "month":10,
                 "day":1,
@@ -163,35 +140,26 @@
                 "day":3,
                 "year":2010
             },
-            "server_side":[
-                "C#",
-                "TSQL"
+            "microsoft":[
+                "C# ASP.NET",
+                "XML Reader",
+                "SOAP Services",
+                "IIS",
+                "Visual Studio",
+                "COM Development",
+                "Ektron CMS"
+            ],
+            "databases":[
+                "MS SQL Server"
             ],
             "client_side":[
-                "html",
-                "xml",
                 "xslt",
-                "javascript",
-                "jquery",
+                "html",
+                "javascript and jQuery",
                 "css"
             ],
-            "web_framework":[
-                "Ektron"
-            ],
-            "template_engine":[
-                
-            ],
-            "css_framework":[
-                
-            ],
-            "database":[
-                "SQL Server"
-            ],
             "version_control":[
-                "Subversion"
-            ],
-            "ide":[
-                "Visual Studio"
+                "Subversion on Tortoise SVN"
             ]
         },
         {
@@ -204,7 +172,7 @@
                 "country":"USA"
             },
             "position":"Web Designer",
-            "description":"Phone People is a start-up that sells 1-800 numbers all over the United States. I partnered with another web designer and 8 .NET programmers in India to create the corporate and account management sites",
+            "description":"Phone People is a start-up company selling 1-800 numbers to businesses in the U.S..",
             "start_date":{
                 "month":6,
                 "day":19,
@@ -215,8 +183,10 @@
                 "day":15,
                 "year":2007
             },
-            "server_side":[
-                "Classic ASP"
+            "microsoft":[
+                "Classic ASP",
+                "IIS",
+                "Macromedia Dreamweaver"
             ],
             "client_side":[
                 "html",
@@ -224,28 +194,12 @@
                 "css",
                 "actionscript"
             ],
-            "web_framework":[
-                
-            ],
-            "template_engine":[
-                
-            ],
-            "css_framework":[
-                
-            ],
-            "database":[
-                
-            ],
-            "version_control":[
-                
-            ],
-            "ide":[
-                "Macromedia Dreamweaver"
-            ]
+            "databases":null,
+            "version_control":null
         },
         {
             "company":{
-                "name":"Wiseguy Technologies",
+                "name":"PPMC / Wiseguy Technologies",
                 "address":"9275 Skypark Court",
                 "city":"San Diego",
                 "state":"CA",
@@ -253,7 +207,7 @@
                 "country":"USA"
             },
             "position":"Classic ASP Developer",
-            "description":"Developed websites using classic ASP and ASP.NET 1.1 Visual Basic. Involved in front-end design and conceptualization plus back-end implementation for every web project. The job also entails bug fixes and updates for companies who utilize our proprietary e-commerce shopping cart.",
+            "description":"PPMC manages medical claims from several primary providers with a dedicated IT department called Wiseguy Techonologies.",
             "start_date":{
                 "month":6,
                 "day":2,
@@ -264,40 +218,28 @@
                 "day":14,
                 "year":2006
             },
-            "server_side":[
+            "microsoft":[
                 "Classic ASP",
                 "VB.NET",
-                "TSQL"
+                "TSQL",
+                "IIS",
+                "Visual Interdev",
+                "Macromedia Dreamweaver"
             ],
             "client_side":[
                 "html",
                 "javascript",
-                "css",
-                "xml"
+                "css"
             ],
-            "web_framework":[
-                ""
-            ],
-            "template_engine":[
-                ""
-            ],
-            "css_framework":[
-                ""
-            ],
-            "database":[
-                "SQL Server",
+            "databases":[
+                "MS SQL Server",
                 "MS Access"
             ],
-            "version_control":[
-                ""
-            ],
-            "ide":[
-                "Macromedia Dreamweaver"
-            ]
+            "version_control":null
         },
         {
             "company":{
-                "name":"Information Technology and Customer Care Inc.",
+                "name":"Information Technology and Customer Care Inc. (ITTCI)",
                 "address":"PhilAm Homes",
                 "city":"Quezon City",
                 "state":"Metro Manila",
@@ -305,7 +247,7 @@
                 "country":"Philippines"
             },
             "position":"ASP Programmer",
-            "description":"ASP Programmer for an outsourced company in the Philippines with the main office based in Utah. The job description consists of web design, rewriting Dreamweaver generated ASP code, writing technical requirements for prospective clients, and migrating an MS Access data store to a robust SQL Server 2000 database. The database administration tasks involved creating stored procedures, views, and indexes for better performance.",
+            "description":"ITTCI is a Philippine outsourcing company with Customer Support and Web Development services for clients in Canada and Utah.",
             "start_date":{
                 "month":11,
                 "day":null,
@@ -316,39 +258,27 @@
                 "day":null,
                 "year":2005
             },
-            "server_side":[
+            "microsoft":[
                 "Classic ASP",
-                "TSQL",
-                "PHP",
-                "MySQL"
+                "IIS",
+                "Microsoft Frontpage",
+                "Visual Interdev"
             ],
             "client_side":[
                 "html",
                 "javascript",
-                "css",
-                "xml"
+                "css"
             ],
-            "web_framework":[
-                ""
+            "php":[
+                "Apache",
+                "Macromedia Dreamweaver"
             ],
-            "template_engine":[
-                ""
-            ],
-            "css_framework":[
-                ""
-            ],
-            "database":[
-                "SQL Server",
+            "databases":[
+                "MS SQL Server",
                 "MS Access",
                 "MySQL"
             ],
-            "version_control":[
-                ""
-            ],
-            "ide":[
-                "Macromedia Dreamweaver",
-                "Visual Interdev"
-            ]
+            "version_control":null
         },
         {
             "company":{
@@ -360,7 +290,7 @@
                 "country":"Philippines"
             },
             "position":"Windows Programmer",
-            "description":"Windows Programmer for the Business Development and Marketing Department in a company that specializes in GSM and CDMA technologies. Developed windows applications that can send text messages using a GSM modem. Also wrote static and dynamic HTML pages for the corporate web portals and projected clients.",
+            "description":"DFNN is a Philippine company specializing in SMS technology.",
             "start_date":{
                 "month":10,
                 "day":null,
@@ -371,37 +301,24 @@
                 "day":null,
                 "year":2004
             },
-            "server_side":[
+            "microsoft":[
                 "VB 6.0",
-                "TSQL",
                 "Classic ASP",
-                "Java"
+                "MS Frontpage",
+                "Macromedia Dreamweaver",
+                "XML",
+                "COM Development"
             ],
             "client_side":[
                 "html",
-                "css",
-                "xml"
+                "javascript",
+                "css"
             ],
-            "web_framework":[
-                ""
-            ],
-            "template_engine":[
-                ""
-            ],
-            "css_framework":[
-                ""
-            ],
-            "database":[
-                "SQL Server",
+            "databases":[
+                "MS SQL Server",
                 "MS Access"
             ],
-            "version_control":[
-                ""
-            ],
-            "ide":[
-                "MS Frontpage",
-                "Macromedia Dreamweaver"
-            ]
+            "version_control":null
         }
     ]
 }
