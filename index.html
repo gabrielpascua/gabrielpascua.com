@@ -12,8 +12,16 @@
     <link rel="stylesheet" type="text/css" href="css/skeleton-combined.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <link rel="stylesheet" type="text/css" href="css/themes.css" />
+    <script type="text/javascript">
+        function setTheme(){
+            var themes = ['default', 'kobe-htm'];
+            var random = Math.floor(Math.random() * themes.length) + 1;
+            document.body.className = themes[random-1] || '';
+        }
+        window.onload = setTheme;
+    </script>
 </head>
-<body class="kobe-htm">
+<body>
 
 <div class="container" ng-controller="WorkListController as work">
 
