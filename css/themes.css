@@ -1,3 +1,4 @@
+/* Kobe HTM */
 body.kobe-htm{
     color: #27262b;
     border-top: 15px solid #27262b;
@@ -28,10 +29,7 @@ body.kobe-htm .location{
     color: #944864;
 }
 
-
 @media (min-width: 550px) {
-
-
     body.kobe-htm .container > .row:first-child{
         border-bottom: 1px dashed #27262b;
     }
@@ -60,5 +58,114 @@ body.kobe-htm .location{
         background-color: #286dbb;
         padding-right: 5px;
     }
+}
 
+
+/* Manhattan */
+body.manhattan{
+  font-family: Times, serif;
+  color: #4c4c4c;
+  background-color: #f7fbfb;
+}
+
+body.manhattan .row.job{
+  border-top: none;
+  margin-bottom: 50px;
+}
+
+body.manhattan .one-third.column{
+  border-top: 1px dotted #333;
+}
+
+body.manhattan .one-third.column span{
+  position: relative;
+  top: -10px;
+  background-color: #f7fbfb;
+}
+
+body.manhattan b,
+body.manhattan strong,
+body.manhattan .heading span:first-child{
+  font-weight: normal;
+}
+
+body.manhattan h1{
+  text-align: center;
+  line-height: 1.5;
+}
+
+body.manhattan h1 span:first-child,
+body.manhattan h1 span:last-child{
+  color: #111;
+  letter-spacing: 8px;
+}
+
+body.manhattan .work-date.end{
+  padding-right: 10px;
+}
+
+body.manhattan .work-date.end:before {
+  content: ' to ';
+}
+
+body.manhattan .box h6{
+  color: #111;
+}
+
+body.manhattan h3,
+body.manhattan h4,
+body.manhattan h5,
+body.manhattan h6{
+  letter-spacing: normal;
+}
+
+@media (min-width: 550px){
+  body.manhattan .one-third.column{
+    max-width: none;
+    width: 100%;
+    margin-left: 4%;
+  }
+
+  body.manhattan .work-date {
+    display: initial;
+    text-align: initial;
+  }
+
+  body.manhattan .box{
+    clear: both;
+  }
+
+  body.manhattan .box h6{
+    float: left;
+    width: 160px;
+  }
+
+  body.manhattan .box p{
+    float: left;
+    position: relative;
+    margin-left: 180px;
+    margin-top: -25px;
+    width: 80%;
+  }
+}
+
+@media (min-width: 750px) {
+  body.manhattan h1 span:first-child,
+  body.manhattan h1 span:last-child{
+    letter-spacing: 5px;
+    margin-left: 2rem;
+  }
+
+  body.manhattan .box{
+    width: 100%;
+    margin-left: 10%;
+  }
+
+  .box:nth-child(2n+0) {
+    margin-left: inherit;
+  }
+
+  body.manhattan .row.job{
+    margin-bottom: 100px;
+  }
 }
