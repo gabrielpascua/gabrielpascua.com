@@ -169,3 +169,145 @@ body.manhattan h6{
     margin-bottom: 100px;
   }
 }
+
+
+/* Highlighter */
+body.sharpie{
+  font-family: 'Georgia', 'Arial', sans-serif;
+}
+
+body.sharpie .row.job{
+  border-top: none;
+  margin-bottom: 50px;
+}
+
+body.sharpie .one-third.column span{
+  position: relative;
+  top: -10px;
+}
+
+body.sharpie .two-thirds.column .box{
+  margin-bottom: 5px;
+}
+
+body.sharpie .two-thirds.column .box:first-of-type{
+  margin-top: 20px;
+}
+
+body.sharpie .two-thirds.column p{
+  margin-bottom: 20px;
+  display: inline;
+}
+
+body.sharpie .two-thirds.column p span:last-of-type{
+  background-color: orange;
+  position: relative;
+  top: 20px;
+  padding: 2px 0;
+}
+
+body.sharpie b,
+body.sharpie strong,
+body.sharpie .heading span:first-child{
+  font-weight: normal;
+}
+
+body.sharpie h1{
+  text-align: center;
+  line-height: 1.5;
+}
+
+body.sharpie h1 span:first-child,
+body.sharpie h1 span:last-child{
+  color: #111;
+  letter-spacing: 8px;
+}
+
+body.sharpie h1 span:first-child{
+  color: #FF229C;
+}
+
+body.sharpie .work-date.end{
+  padding-right: 10px;
+}
+
+body.sharpie .work-date.end:before {
+  content: ' to ';
+}
+
+body.sharpie .box h6{
+  width: 160px;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #000;
+  background-color: #C9FF0B;
+  display: inline;
+}
+
+body.sharpie h3,
+body.sharpie h4,
+body.sharpie h5,
+body.sharpie h6{
+  letter-spacing: normal;
+}
+
+@media (min-width: 550px){
+  body.sharpie .one-third.column{
+    max-width: none;
+    width: 100%;
+    margin-left: 4%;
+  }
+
+  body.sharpie .work-date {
+    display: initial;
+    text-align: initial;
+  }
+
+  body.sharpie .box{
+    clear: both;
+  }
+
+  body.sharpie .box h6{
+    float: left;
+    width: 160px;
+  }
+
+  body.sharpie .box p{
+    float: left;
+    position: relative;
+    margin-left: 180px;
+    margin-top: -25px;
+    width: 80%;
+  }
+
+  body.sharpie .two-thirds.column p span:last-of-type{
+    display: inline-block;
+    width: 160px;
+    top: 14px;
+  }
+}
+
+@media (min-width: 750px) {
+  body.sharpie h1 span:first-child,
+  body.sharpie h1 span:last-child{
+    letter-spacing: 5px;
+    margin-left: 2rem;
+  }
+
+  body.sharpie .box{
+    width: 100%;
+    margin-left: 10%;
+  }
+
+  .box:nth-child(2n+0) {
+    margin-left: inherit;
+  }
+
+  body.sharpie .row.job{
+    margin-bottom: 100px;
+  }
+
+  body.sharpie .two-thirds.column p span:last-of-type{
+    margin-left: 10%;
+  }
+}
