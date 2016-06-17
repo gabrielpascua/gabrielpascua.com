@@ -1,0 +1,324 @@
+{
+    "bio":{
+        "first_name": "Gabriel",
+        "last_name" : "Pascua",
+        "email":"",
+        "phone":""
+    },
+    "history":[
+        {
+            "company":{
+                "name":"Wenner Media",
+                "address":"1290 Avenue of the Americas",
+                "city":"New York",
+                "state":"NY",
+                "zip":"10104",
+                "country":"USA"
+            },
+            "position":"Web Developer",
+            "description":"Wenner Media is the parent company of Rolling Stone, Us Weekly, and Men's Journal magazines.",
+            "start_date":{
+                "month":11,
+                "day":14,
+                "year":2011
+            },
+            "end_date": null,
+            "microsoft":[
+                "C# ASP.NET",
+                "MVC and Razor",
+                "WCF Services",
+                "SOAP Services",
+                "Web Forms",
+                "ADO.NET",
+                "IIS",
+                "Visual Studio"
+            ],
+            "javascript":[
+                "nodejs",
+                "koajs",
+                "Mocha Test Framework",
+                "Should.js",
+                "grunt",
+                "gulp",
+                "CoffeeScript",
+                "Ember",
+                "Angular",
+                "twig",
+                "handlebars",
+                "Express"
+            ],
+            "php":[
+                "Symfony 1.* & 2.*",
+                "Apache",
+                "Eclipse",
+                "MAMP"
+            ],
+            "databases":[
+                "Postgres",
+                "Redis",
+                "MongoDB",
+                "MySQL",
+                "MS SQL Server"
+            ],
+            "client_side":[
+                "html / html5",
+                "javascript and jquery",
+                "css / css3, sass and LESS",
+                "Zurb Foundation",
+                "HTML5 Boilerplate",
+                "Twitter Bootstrap",
+                "Mobile-first Responsive Design"
+            ],
+            "version_control":[
+                "Git on bash, Tower, SourceTree",
+                "Team Foundation"
+            ]
+        },
+        {
+            "company":{
+                "name":"Mt. Sinai School of Medicine",
+                "address":"17 East 102nd Street, 2nd Floor, West Tower",
+                "city":"New York",
+                "state":"NY",
+                "zip":"10029",
+                "country":"USA"
+            },
+            "position":"Sr. Programmer / Analyst 1",
+            "description":"The World Trade Center Monitoring Center is Mt. Sinai Hospital's treatment and monitoring program for the first responders of the 9/11 attacks.",
+            "start_date":{
+                "month":3,
+                "day":8,
+                "year":2010
+            },
+            "end_date":{
+                "month":11,
+                "day":4,
+                "year":2011
+            },
+            "microsoft":[
+                "C# ASP.NET",
+                "VB.NET",
+                "ADO.NET",
+                "WCF Web Services",
+                "Classic ASP",
+                "VBScript",
+                "IIS",
+                "Visual Studio"
+            ],
+            "client_side":[
+                "html",
+                "javascript and jquery",
+                "css"
+            ],
+            "databases":[
+                "MS SQL Server",
+                "Oracle",
+                "MS Access"
+            ],
+            "version_control":[
+                "Subversion on Tortoise SVN"
+            ]
+        },
+        {
+            "company":{
+                "name":"International Quality & Productivity Center",
+                "address":"535 Fifth Avenue",
+                "city":"New York",
+                "state":"NY",
+                "zip":"10017",
+                "country":"USA"
+            },
+            "position":"Web Developer",
+            "description":"International Quality & Productivity Center (IQPC) is a global conference organizer.",
+            "start_date":{
+                "month":10,
+                "day":1,
+                "year":2007
+            },
+            "end_date":{
+                "month":3,
+                "day":3,
+                "year":2010
+            },
+            "microsoft":[
+                "C# ASP.NET",
+                "XML Reader",
+                "SOAP Services",
+                "IIS",
+                "Visual Studio",
+                "COM Development",
+                "Ektron CMS"
+            ],
+            "databases":[
+                "MS SQL Server"
+            ],
+            "client_side":[
+                "xslt",
+                "html",
+                "javascript and jQuery",
+                "css"
+            ],
+            "version_control":[
+                "Subversion on Tortoise SVN"
+            ]
+        },
+        {
+            "company":{
+                "name":"Phone People",
+                "address":"5675 Ruffin Road",
+                "city":"San Diego",
+                "state":"CA",
+                "zip":"92123",
+                "country":"USA"
+            },
+            "position":"Web Designer",
+            "description":"Phone People is a start-up company selling 1-800 numbers to businesses in the U.S..",
+            "start_date":{
+                "month":6,
+                "day":19,
+                "year":2006
+            },
+            "end_date":{
+                "month":8,
+                "day":15,
+                "year":2007
+            },
+            "microsoft":[
+                "Classic ASP",
+                "IIS",
+                "Macromedia Dreamweaver"
+            ],
+            "client_side":[
+                "html",
+                "javascript",
+                "css",
+                "actionscript"
+            ],
+            "databases":null,
+            "version_control":null
+        },
+        {
+            "company":{
+                "name":"PPMC / Wiseguy Technologies",
+                "address":"9275 Skypark Court",
+                "city":"San Diego",
+                "state":"CA",
+                "zip":"92123",
+                "country":"USA"
+            },
+            "position":"Classic ASP Developer",
+            "description":"PPMC manages medical claims from several primary providers with a dedicated IT department called Wiseguy Techonologies.",
+            "start_date":{
+                "month":6,
+                "day":2,
+                "year":2005
+            },
+            "end_date":{
+                "month":4,
+                "day":14,
+                "year":2006
+            },
+            "microsoft":[
+                "Classic ASP",
+                "VB.NET",
+                "TSQL",
+                "IIS",
+                "Visual Interdev",
+                "Macromedia Dreamweaver"
+            ],
+            "client_side":[
+                "html",
+                "javascript",
+                "css"
+            ],
+            "databases":[
+                "MS SQL Server",
+                "MS Access"
+            ],
+            "version_control":null
+        },
+        {
+            "company":{
+                "name":"Information Technology and Customer Care Inc. (ITTCI)",
+                "address":"PhilAm Homes",
+                "city":"Quezon City",
+                "state":"Metro Manila",
+                "zip":"",
+                "country":"Philippines"
+            },
+            "position":"ASP Programmer",
+            "description":"ITTCI is a Philippine outsourcing company with Customer Support and Web Development services for clients in Canada and Utah.",
+            "start_date":{
+                "month":11,
+                "day":null,
+                "year":2004
+            },
+            "end_date":{
+                "month":4,
+                "day":null,
+                "year":2005
+            },
+            "microsoft":[
+                "Classic ASP",
+                "IIS",
+                "Microsoft Frontpage",
+                "Visual Interdev"
+            ],
+            "client_side":[
+                "html",
+                "javascript",
+                "css"
+            ],
+            "php":[
+                "Apache",
+                "Macromedia Dreamweaver"
+            ],
+            "databases":[
+                "MS SQL Server",
+                "MS Access",
+                "MySQL"
+            ],
+            "version_control":null
+        },
+        {
+            "company":{
+                "name":"DFNN Group of Companies",
+                "address":"Fort Bonifacio Global City",
+                "city":"Taguig",
+                "state":"Metro Manila",
+                "zip":"",
+                "country":"Philippines"
+            },
+            "position":"Windows Programmer",
+            "description":"DFNN is a Philippine company specializing in SMS technology.",
+            "start_date":{
+                "month":10,
+                "day":null,
+                "year":2003
+            },
+            "end_date":{
+                "month":7,
+                "day":null,
+                "year":2004
+            },
+            "microsoft":[
+                "VB 6.0",
+                "Classic ASP",
+                "MS Frontpage",
+                "Macromedia Dreamweaver",
+                "XML",
+                "COM Development"
+            ],
+            "client_side":[
+                "html",
+                "javascript",
+                "css"
+            ],
+            "databases":[
+                "MS SQL Server",
+                "MS Access"
+            ],
+            "version_control":null
+        }
+    ]
+}

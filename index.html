@@ -1,5 +1,143 @@
 ---
-layout: default
+layout: null
 ---
 
-<h1>Hello, world!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<html ng-app="resume">
+<meta charset="utf-8">
+<title>Gabriel Pascua</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="/js/resume/angular.min.js"></script>
+<script type="text/javascript" src="/js/resume/angular-resource.min.js"></script>
+<script type="text/javascript" src="/js/resume/resume.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/resume.css" />
+<script type="text/javascript">
+    function setTheme(){
+        var themes = ['default', 'kobe-htm','manhattan', 'sharpie'];
+        var theme, random;
+
+        var qsTemplate = window.location.search.substr(1).split('&')
+                .filter(function(part){
+                    return part.indexOf('template=') >= 0;
+                });
+
+        if(qsTemplate.length > 0){
+            theme = qsTemplate[0].split('=')[1];
+        }else{
+            random = Math.floor(Math.random() * themes.length) + 1;
+            theme = themes[random-1];
+        }
+
+        document.body.className = theme || '';
+    }
+
+    window.onload = setTheme;
+</script>
+</head>
+<body>
+
+<div class="container" ng-controller="WorkListController as work">
+
+    <div class="row">
+        <div class="twelve columns">
+            <h1 class="heading">
+                <span>//work.jobs.bio.first_name//</span>
+                <span>//work.jobs.bio.last_name//</span>
+            </h1>
+        </div>
+    </div>
+
+
+    <p>&nbsp;</p>
+
+    <!--
+        Ideas:
+
+        Create Tech Filters
+    -->
+
+    <div ng-repeat="job in work.jobs.history" class="row job">
+        <div class="one-third column">
+
+            <span class="work-date start">
+                //work.months[job.start_date.month-1].substr(0,3)//
+                //job.start_date.year//
+            </span> <!-- .work-date.start -->
+
+            <span ng-if="job.end_date == null" class="work-date end">
+                Present
+            </span> <!-- .work-date.end -->
+
+            <span ng-if="job.end_date != null" class="work-date end">
+                // work.months[job.end_date.month-1].substr(0,3) //
+                // job.start_date.year //
+            </span> <!-- .work-date.end -->
+
+        </div>
+        <div class="two-thirds column">
+            <h3><b>// job.position //</b> at <span>// job.company.name //</span></h3>
+            <p>
+                <span class="description">
+                    //job.description//
+                </span>
+                <br />
+                <span ng-if="job.company.country == 'USA'" class="location">
+                    // job.company.city // // job.company.state//, // job.company.zip //
+                </span>
+                <span ng-if="job.company.country != 'USA'" class="location">
+                    // job.company.state//, // job.company.country //
+                </span>
+            </p>
+
+            <div class="box" ng-if="job.microsoft != null">
+                <h6>Microsoft Development</h6>
+                <p>
+                    //job.microsoft.join(', ')//
+                </p>
+            </div>
+
+            <div class="box" ng-if="job.javascript != null">
+                <h6>Javascript Development</h6>
+                <p>
+                    //job.javascript.join(', ')//
+                </p>
+            </div>
+
+            <div class="box" ng-if="job.php != null">
+                <h6>PHP Development</h6>
+                <p>
+                    //job.php.join(', ')//
+                </p>
+            </div>
+
+            <div class="box" ng-if="job.databases != null">
+                <h6>Database</h6>
+                <p>
+                    //job.databases.join(', ')//
+                </p>
+            </div>
+
+            <div class="box" ng-if="job.client_side != null">
+                <h6>Front End Experience</h6>
+                <p>
+                    //job.client_side.join(', ')//
+                </p>
+            </div>
+
+            <div class="box" ng-if="job.version_control != null">
+                <h6>Version Control</h6>
+                <p>
+                    //job.version_control.join(', ')//
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
