@@ -1,0 +1,23 @@
+<picture> element
+
+<img src="clock-demo-thumb-200.png" 
+      alt="Clock" 
+      srcset="clock-demo-thumb-200.png 200w, clock-demo-thumb-400.png 400w"
+      sizes="(min-width: 600px) 200px, 50vw">
+      
+      
+* What is the math for srcset
+* How does it play with sizes
+* How to use with calc
+
+
+
+@font-face {
+		font-family: 'Gotham Narrow SSm 4r';
+		src: url('@{fonts-base-url}/gotham-narrow/09DB13B4A0FC2EB75.eot');
+		src: local('?'),
+				 url('@{fonts-base-url}/gotham-narrow/09DB13B4A0FC2EB75.eot?#hco') format('embedded-opentype'),
+				 url(data:application/x-font-woff;base64;...;
+		font-weight: normal;
+		font-style: normal;
+}

@@ -1,0 +1,2 @@
+/* Disable minification at App_Start/BundleConfig.cs */
+BundleTable.EnableOptimizations = false;

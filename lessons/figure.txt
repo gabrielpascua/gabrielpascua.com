@@ -1,0 +1,9 @@
+April 11, 2016
+
+The <figure> element
+
+The <figure> HTML5 tag is used to enclose flow content elements.  It is a sectioning root element which means it can have it's own hierarchy without affecting its parent tag.  Popular flow content elements are <audio>, <img>, <video>, <pre> tags. Popular sectioning root elements are <body>, <fieldset>, and <section>.  By definition you can use a <figure> tag to house a flow content element that is part of the main flow but can be referenced outside the markup such as an appendix or as an external page. It can contain several flow content elements but it can only have 1 <figcaption>
+
+
+<figcaption>
+<figcaption> is for <figure> and <caption> is for <table>.  This is an optional element of the <figure> tag.  If omitted, then the <figure> just doesn't have a caption.  It can contain flow content elements.
