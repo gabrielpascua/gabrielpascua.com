@@ -6,11 +6,10 @@ date:   2016-06-18 17:00
 ---
 
 
-<div class="text-center">
+<div>
 
     <h1>About the Site</h1>
 
-    <br />
     <br />
     <br />
 
