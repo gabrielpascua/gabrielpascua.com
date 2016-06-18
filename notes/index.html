@@ -4,6 +4,7 @@ layout: post
 <h1>Notes</h1>
 <div class="toc">
 {% for post in site.posts limit:20 %}
+    {% if post.categories contains 'blog' %}
     <div class="row">
         <div class="col-xs-12 col-sm-6 title">
             <a href="{{ post.url }}">
@@ -15,5 +16,6 @@ layout: post
             <span class="date">{{ post.date | date: "%Y.%m.%d" }}</span>
         </div>
     </div>
+    {% endif %}
 {% endfor %}
 </div>
