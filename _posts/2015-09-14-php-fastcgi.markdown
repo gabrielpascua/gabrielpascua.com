@@ -3,7 +3,7 @@ layout: post
 title:  "PHP on FastCgi using PhpFarm"
 excerpt: "PHP on FastCgi using PhpFarm"
 date:   2015-09-14 12:00
-categories: blog
+categories: notes
 ---
 
 How to run different PHP versions on one machine.

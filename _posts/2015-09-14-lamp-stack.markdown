@@ -3,7 +3,7 @@ layout: post
 title:  "Setting the LAMP Stack"
 excerpt: "Setting the LAMP Stack"
 date:   2015-09-14 11:00
-categories: blog
+categories: notes
 ---
 
 MAMP Pro makes it easy to set up local development environments. XAMP is a no-go because it doesn't have a feature to support different PHP versions out of the box. The safe choice for me if I had to install different PHP versions was to use what is native to the OS.

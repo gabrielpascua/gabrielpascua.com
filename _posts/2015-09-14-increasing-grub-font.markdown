@@ -3,7 +3,7 @@ layout: post
 title:  "Increasing Grub's Font Size"
 excerpt: "Increasing Grub's Font Size"
 date:   2015-09-14 10:00
-categories: blog
+categories: notes
 ---
 
 The recommended solution was to change the ttyl resolution but this is the quick and dirty fix.
