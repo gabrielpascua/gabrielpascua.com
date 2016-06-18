@@ -14,32 +14,11 @@ layout: null
 <script type="text/javascript" src="/js/resume/angular-resource.min.js"></script>
 <script type="text/javascript" src="/js/resume/resume.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/resume.css" />
-<script type="text/javascript">
-    function setTheme(){
-        var themes = ['default', 'kobe-htm','manhattan', 'sharpie'];
-        var theme, random;
-
-        var qsTemplate = window.location.search.substr(1).split('&')
-                .filter(function(part){
-                    return part.indexOf('template=') >= 0;
-                });
-
-        if(qsTemplate.length > 0){
-            theme = qsTemplate[0].split('=')[1];
-        }else{
-            random = Math.floor(Math.random() * themes.length) + 1;
-            theme = themes[random-1];
-        }
-
-        document.body.className = theme || '';
-    }
-
-    window.onload = setTheme;
-</script>
 </head>
-<body>
 
-<div class="container" ng-controller="WorkListController as work">
+<body ng-controller="WorkListController as work" class="//work.theme//">
+
+<div class="container">
 
     <div class="row">
         <div class="twelve columns">
