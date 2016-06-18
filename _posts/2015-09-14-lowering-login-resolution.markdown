@@ -2,7 +2,7 @@
 layout: post
 title:  "Lowering the 4K Login Screen Resolution Down to 1920x1080"
 excerpt: "Lowering the 4K Login Screen Resolution Down to 1920x1080"
-date:   2015-09-14
+date:   2015-09-14 00:00
 categories: blog
 ---
 
