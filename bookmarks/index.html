@@ -1,0 +1,260 @@
+---
+layout: null
+---
+
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/css/bookmarks.css" />
+    <title>Bookmarks</title>
+</head>
+
+<body>
+
+<div class="web-search">
+
+    <form method="get" action="https://www.google.com/search" id="google">
+        <input type="text" placeholder="Google Search" name="q" />
+        <input type="hidden" value="utf-8" name="ie" />
+        <input type="hidden" value="utf-8" name="oe" />
+        <button type="submit">Search</button>
+    </form>
+
+    <form method="get" action="http://www.amazon.com/s/" id="amazon">
+        <input type="text" placeholder="Amazon Search" name="field-keywords" />
+        <button type="submit">Search</button>
+    </form>
+
+    <form method="get" action="https://www.youtube.com/results" id="youtube">
+        <input type="text" placeholder="Youtube Search" name="search_query" />
+        <button type="submit">Search</button>
+    </form>
+
+</div>
+
+<div class="bookmark-search">
+    <input type="text" placeholder="Search Bookmarks" />
+    <div class="bookmark-results">
+    </div>
+</div>
+
+<div class="bookmark-container">
+
+    <!-- Cross-Site Request Forgery -->
+    <div class="bookmark-row" id="csrf">
+        <h3>
+            <a class="collapse" href="#">Cross-Site Request Forgery</a>
+            <a href="#csrf">Cross-Site Request Forgery</a>
+        </h3>
+        <ul>
+            <li><a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29_Prevention_Cheat_Sheet" xtarget="_blank">Cross-Site Request Forgery (CSRF) Prevention Cheat Sheet - OWASP</a></li>
+            <li><a href="http://blog.codinghorror.com/cross-site-request-forgeries-and-you/" xtarget="_blank">Cross-Site Request Forgeries and You</a></li>
+            <li><a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29_Prevention_Cheat_Sheet#General_Recommendation:_Synchronizer_Token_Pattern" xtarget="_blank">Cross-Site Request Forgery (CSRF) Prevention Cheat Sheet - OWASP</a></li>
+            <li><a href="https://blog.whitehatsec.com/tag/synchronizer-token/" xtarget="_blank">synchronizer token | WhiteHat Security Blog</a></li>
+            <li><a href="https://www.owasp.org/index.php/CSRF_Prevention_Cheat_Sheet">Cross-Site Request Forgery Prevention Cheat Sheet</a></li>
+        </ul>
+    </div>
+
+    <!-- Developer Tools -->
+    <div class="bookmark-row" id="tools">
+        <h3>
+            <a class="collapse" href="#">Developer Tools</a>
+            <a href="#tools">Developer Tools</a>
+        </h3>
+        <ul>
+            <li><a href="http://www.fprintf.net/vimCheatSheet.html" xtarget="_blank">Vim Commands Cheat Sheet</a></li>
+            <li><a href="http://twig.sensiolabs.org/documentation" xtarget="_blank">Twig Documentation</a></li>
+            <li><a href="https://picasaweb.google.com/111720272673430553933" xtarget="_blank">Gabriel's Gallery</a></li>
+            <li><a href="https://gist.github.com/gabrielpascua" xtarget="_blank">Gabriel's Gist</a></li>
+            <li><a href="http://knpuniversity.com/screencast/tag/symfony" xtarget="_blank">Learn Symfony 3</a></li>
+            <li><a href="http://symfony.com/doc/2.3/book/templating.html" xtarget="_blank">Creating and Using Symfony Templates</a></li>
+            <li><a href="http://wiki.eclipse.org/Debugging_using_XDebug" xtarget="_blank">Eclipse Debugging using XDebug</a></li>
+            <li><a href="http://www.timeanddate.com/date/duration.html" xtarget="_blank">Calculate Duration Between Two Dates</a></li>
+            <li><a href="http://regex101.com/" xtarget="_blank">Regular Expressions 101</a></li>
+            <li><a href="http://jsfiddle.net/" xtarget="_blank">JSFiddle</a></li>
+            <li><a href="http://www.fakenamegenerator.com/" xtarget="_blank">Fake Name Generator</a></li>
+            <li><a href="http://placehold.it/350x150" xtarget="_blank">Image Generator - Grey</a></li>
+            <li><a href="http://lorempixel.com/400/200/" xtarget="_blank">Image Generator - Colored</a></li>
+            <li><a href="http://www.javascriptkit.com/script/script2/charcount.shtml" xtarget="_blank">Character Counter</a></li>
+            <li><a href="https://developers.facebook.com/tools/debug" xtarget="_blank">Facebook Debugger</a></li>
+            <li><a href="http://lipsum.com/feed/html" xtarget="_blank">Lorem Ipsum Generator</a></li>
+            <li><a href="http://lesstester.com/" xtarget="_blank">LESS Tester</a></li>
+            <li><a href="http://thenounproject.com/" xtarget="_blank">The NounProject</a></li>
+            <li><a href="http://realfavicongenerator.net/" xtarget="_blank">Favicon Generator</a></li>
+            <li><a href="http://pxtoem.com/" xtarget="_blank">PXtoEM.com</a></li>
+            <li><a href="http://caniuse.com/" xtarget="_blank">Can I Use</a></li>
+            <li><a href="http://codebeautify.org/wordcounter" xtarget="_blank">Word Counter</a></li>
+            <li><a href="https://gist.github.com/dergachev/4627207" xtarget="_blank">OS X Screencast to GIF</a></li>
+            <li><a href="https://css-tricks.com/centering-css-complete-guide/" xtarget="_blank">Centering in CSS</a></li>
+            <li><a href="https://curlbuilder.com/" xtarget="_blank">curl Builder</a></li>
+            <li><a href="http://www.es6fiddle.net/" xtarget="_blank">ES6 Fiddle</a></li>
+            <li><a href="https://www.mockaroo.com/" xtarget="_blank">Data Generator</a></li>
+            <li><a href="http://jsonlint.com/" xtarget="_blank">JSON Formatter &amp; Validator</a></li>
+            <li><a href="https://cards-dev.twitter.com/validator" xtarget="_blank">Twitter Card Validator</a></li>
+            <li><a href="http://www.color-blindness.com/color-name-hue/" xtarget="_blank">Color Name</a></li>
+            <li><a href="http://usejsdoc.org/" xtarget="_blank">JSDoc</a></li>
+            <li><a href="http://design.google.com/resizer/" xtarget="_blank">Resizer</a></li>
+            <li><a href="http://www.goodemailcopy.com/" xtarget="_blank">Good Copy</a></li>
+            <li><a href="http://www.gabrielpascua.com/" xtarget="_blank">Gabriel Pascu</a></li>
+            <li><a href="http://www.whatsmybrowser.org/" xtarget="_blank">What's My Browser</a> </li>
+            <li><a href="http://stylelint.io/" xtarget="_blank">Style Lint</a></li>
+            <li><a href="http://uimovement.com" xtarget="_blank">UI Movement</a></li>
+            <li><a href="http://pro.jsonlint.com/" xtarget="_blank">JSON Lint</a></li>
+            <li><a href="http://www.listentoyoutube.com/" xtarget="_blank">Youtube Audio Grabber</a></li>
+        </ul>
+    </div>
+
+    <!-- Docker References -->
+    <div class="bookmark-row" id="docker">
+        <h3>
+            <a class="collapse" href="#">Docker References</a>
+            <a href="#docker">Docker References</a>
+        </h3>
+        <ul>
+            <li><a href="https://www.smashingmagazine.com/2016/04/stop-installing-your-webdev-environment-locally-with-docker/" xtarget="_blank">Why You Should Stop Installing Your WebDev Environment Locally – Smashing Magazine</a></li>
+            <li><a href="http://jdlm.info/articles/2016/03/06/lessons-building-node-app-docker.html?r=0" xtarget="_blank">Lessons from Building a Node App in Docker</a></li>
+            <li><a href="https://docs.docker.com/engine/installation/linux/ubuntulinux/" xtarget="_blank">Installation on Ubuntu</a></li>
+            <li><a href="https://medium.com/dev-tricks/apache-and-php-on-docker-44faef716150#.5cwjtmdfe" xtarget="_blank">Apache and PHP on Docker — Dev Tricks — Medium</a></li>
+            <li><a href="https://hub.docker.com/" xtarget="_blank">https://hub.docker.com/</a></li>
+            <li><a href="https://nodejs.org/en/docs/guides/nodejs-docker-webapp/" xtarget="_blank">Dockerizing a Node.js web app | Node.js</a></li>
+            <li><a href="https://docs.docker.com/engine/examples/nodejs_web_app/" xtarget="_blank">Dockerizing a Node.js web app</a></li>
+            <li><a href="http://www.dwmkerr.com/learn-docker-by-building-a-microservice/" xtarget="_blank">Learn Docker by building a Microservice</a></li>
+        </ul>
+    </div>
+
+    <!-- HTML Forms -->
+    <div class="bookmark-row" id="forms">
+        <h3>
+            <a class="collapse" href="#">HTML Forms</a>
+            <a href="#forms">HTML Forms</a>
+        </h3>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/How_to_structure_an_HTML_form" xtarget="_blank">Forms</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/My_first_HTML_form" xtarget="_blank">My first HTML form - Web developer guide | MDN</a></li>
+            <li><a href="http://symfony.com/doc/current/book/forms.html" xtarget="_blank">Forms (The Symfony Book)</a></li>
+            <li><a href="http://schier.co/blog/2013/11/14/method-chaining-in-javascript.html" xtarget="_blank">Method Chaining in JavaScript | Gregory Schier</a></li>
+            <li><a href="http://localhost/formbuilder/" xtarget="_blank">Insert title here</a></li>
+            <li><a href="https://mozilla.github.io/nunjucks/templating.html#import" xtarget="_blank">Nunjucks</a></li>
+            <li><a href="http://paularmstrong.github.io/swig/docs/tags/#macro" xtarget="_blank">Swig » Documentation » Tags</a></li>
+            <li><a href="https://stormpath.com/blog/the-pain-of-password-reset/" xtarget="_blank">The Pain of Password Reset in Express - Stormpath User Identity API</a></li>
+            <li><a href="http://sahatyalkabov.com/how-to-implement-password-reset-in-nodejs/" xtarget="_blank">How To Implement Password Reset In Node.js</a></li>
+            <li><a href="https://www.npmjs.com/package/express-form" xtarget="_blank">Express Forms</a></li>
+            <li><a href="https://github.com/caolan/forms" xtarget="_blank">npm caolan forms</a></li>
+            <li><a href="https://laravel.com/docs/4.2/html" xtarget="_blank">Laravel Forms</a></li>
+            <li><a href="https://docs.djangoproject.com/en/1.8/topics/forms/" xtarget="_blank">Django Forms</a></li>
+            <li><a href="http://guides.rubyonrails.org/form_helpers.html" xtarget="_blank">Rails Forms</a></li>
+            <li><a href="http://symfony.com/doc/current/book/forms.html#form-validation" xtarget="_blank">Symfony Forms</a></li>
+            <li><a href="http://book.cakephp.org/2.0/en/models/data-validation.html" xtarget="_blank">CakePHP Forms</a></li>
+        </ul>
+    </div>
+
+    <!-- Open Web Interface -->
+    <div class="bookmark-row" id="owin">
+        <h3>
+            <a class="collapse" href="#">Open Web Interface</a>
+            <a href="#owin">Open Web Interface</a>
+        </h3>
+        <ul>
+            <li><a href="http://benfoster.io/blog/aspnet-identity-stripped-bare-mvc-part-1" xtarget="_blank">ASP.NET Identity Stripped Bare - MVC Part 1 - Ben Foster</a></li>
+            <li><a href="http://msdn.microsoft.com/en-us/magazine/dn745860.aspx" xtarget="_blank">Cutting Edge - External Authentication with ASP.NET Identity</a></li>
+            <li><a href="http://www.asp.net/mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on" xtarget="_blank">Code! MVC 5 App with Facebook, Twitter, LinkedIn and Google OAuth2 Sign-on (C#) | The ASP.NET Site</a></li>
+            <li><a href="http://world.episerver.com/documentation/Items/Developers-Guide/EPiServer-CMS/75/Security/aspnet-identity-owin-authentication/" xtarget="_blank">AspNet Identity OWIN authentication</a></li>
+            <li><a href="http://blogs.msdn.com/b/webdev/archive/2013/10/16/customizing-profile-information-in-asp-net-identity-in-vs-2013-templates.aspx" xtarget="_blank">Customizing profile information in ASP.NET Identity in VS 2013 templates - .NET Web Development and Tools Blog - Site Home - MSDN Blogs</a></li>
+            <li><a href="http://blogs.msdn.com/b/webdev/archive/2013/07/03/understanding-owin-forms-authentication-in-mvc-5.aspx" xtarget="_blank">Understanding OWIN Forms authentication in MVC 5 - .NET Web Development and Tools Blog - Site Home - MSDN Blogs</a></li>
+            <li><a href="https://github.com/kriasoft/AspNet.Identity/tree/master/src/KriaSoft.AspNet.Identity.Database/Tables" xtarget="_blank">SQL: Tables SQL Server</a></li>
+            <li><a href="http://www.asp.net/identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider" xtarget="_blank">SQL: Tables MySQL</a></li>
+            <li><a href="http://rippedbody.jp/2011/10/08/leangains-intermittent-fasting-guide-how-to-do-it-by-yourself/" xtarget="_blank">Intermittent Fasting &amp; Leangains Guide | RippedBody.jp</a></li>
+            <li><a href="http://www.asp.net/identity/overview/extensibility" xtarget="_blank">Extensibility | The ASP.NET Site</a></li>
+            <li><a href="http://bitoftech.net/2014/08/11/asp-net-web-api-2-external-logins-social-logins-facebook-google-angularjs-app/" xtarget="_blank">custom fb/goog/twitter</a></li>
+        </ul>
+    </div>
+
+    <!-- Reading List -->
+    <div class="bookmark-row" id="unread">
+        <h3>
+            <a class="collapse" href="#">Reading List</a>
+            <a href="#unread">Reading List</a>
+        </h3>
+        <ul>
+            <li><a href="http://www.gabrielpascua.com/ubuntu/" xtarget="_blank">Ubuntu 14.10 Gudie</a></li>
+            <li><a href="https://www.youtube.com/watch?v=hdSrT4yjS1g" xtarget="_blank">REST+JSON API Design - Best Practices for Developers - YouTube</a></li>
+            <li><a href="https://www.youtube.com/watch?v=mZ8_QgJ5mbs" xtarget="_blank">Beautiful REST &amp; JSON APIs - YouTube</a></li>
+            <li><a href="http://airows.com/lifestyle/7-ted-talks-that-will-make-you-a-better-dude" xtarget="_blank">7 TED Talks That Will Make You A Better Human Being - Airows</a></li>
+            <li><a href="http://www.nytimes.com/1995/07/23/realestate/your-home-a-co-op-buyer-s-checklist.html" xtarget="_blank">YOUR HOME - A Co-op Buyer's Checklist - NYTimes.com</a></li>
+            <li><a href="http://www.katzmatz.net/lawyer/Your-Coop-Purchase...-What-To-Expect-_cp7804.htm" xtarget="_blank">Your Coop Purchase... What To Expect NYC NY Lawyer Law Firm</a></li>
+            <li><a href="https://www.us.hsbc.com/1/PA_1_083Q9FJ08A002FBP5S00000000/content/usshared/Personal%20Services/Home%20Loans/Mortgage/FYI/Shared/Coop%20Guide.pdf" xtarget="_blank">Coop Guide.pdf</a></li>
+            <li><a href="https://www.draw.io/" xtarget="_blank">draw.io</a></li>
+            <li><a href="http://www.adobe.com/devnet/archive/html5/articles/javascript-design-patterns-pt1-singleton-composite-facade.html" xtarget="_blank">singleton</a></li>
+            <li><a href="https://github.com/buildfirst/buildfirst" xtarget="_blank">js-build1</a></li>
+            <li><a href="https://github.com/jlevy/the-art-of-command-line" xtarget="_blank">bash</a></li>
+            <li><a href="http://uimovement.com/" xtarget="_blank">UI Movement</a></li>
+            <li><a href="http://blog.getify.com/promises-part-1" xtarget="_blank">Promises</a></li>
+            <li><a href="https://www.smashingmagazine.com/2016/04/stop-installing-your-webdev-environment-locally-with-docker/" xtarget="_blank">Docker</a></li>
+            <li><a href="http://www.infoq.com/articles/surviving-asynchronous-programming-in-javascript" xtarget="_blank">How to Survive Asynchronous Programming in JavaScript</a></li>
+            <li><a href="http://wiki.commonjs.org/wiki/Promises" xtarget="_blank">Promises - CommonJS Spec Wiki</a></li>
+            <li><a href="http://www.infoq.com/articles/stratifiedjs" xtarget="_blank">No Callbacks Required: StratifiedJS Returns Sequential Programming to Javascript</a></li>
+            <li><a href="http://yuiblog.com/blog/2007/06/12/module-pattern/" xtarget="_blank">1. Module Pattern</a></li>
+            <li><a href="http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html" xtarget="_blank">2. Module Pattern</a></li>
+            <li><a href="http://toddmotto.com/mastering-the-module-pattern/" xtarget="_blank">3. Module Pattern</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain" xtarget="_blank">Inheritance and the prototype chain</a></li>
+            <li><a href="http://evanhahn.com/understanding-express/" xtarget="_blank">Understanding Express.js</a></li>
+            <li><a href="http://dannorth.net/introducing-bdd/" xtarget="_blank">Introducing BDD | Dan North &amp; Associates</a></li>
+            <li><a href="http://ericleads.com/2013/02/fluent-javascript-three-different-kinds-of-prototypal-oo/" xtarget="_blank">Fluent JavaScript – Three Different Kinds of Prototypal OO « Eric Elliott – JavaScript Architect (A JavaScript Blog)</a></li>
+            <li><a href="http://www.theverge.com/2014/6/27/5849272/material-world-how-google-discovered-what-software-is-made-of" xtarget="_blank">Material world: how Google discovered what software is made of | The Verge</a></li>
+            <li><a href="http://read.humanjavascript.com/ch02-the-big-decision.html" xtarget="_blank">Client or server? Go big or go home. | Human JavaScript</a></li>
+            <li><a href="http://read.humanjavascript.com/" xtarget="_blank">Human JavaScript</a></li>
+            <li><a href="https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub" xtarget="_blank">Angular Best Practice for App Structure (Public)</a></li>
+            <li><a href="https://google-styleguide.googlecode.com/svn/trunk/angularjs-google-style.html" xtarget="_blank">Google's AngularJS Style Guide</a></li>
+            <li><a href="http://www.newyorker.com/magazine/2008/09/29/regrets-only-2?currentPage=all" xtarget="_blank">The New Yorker &gt; Regrets Only</a></li>
+            <li><a href="http://www.newyorker.com/magazine/2013/01/07/a-pickpockets-tale" xtarget="_blank">The New Yorker &gt; A Pickpocket’s Tale</a></li>
+            <li><a href="http://www.newyorker.com/magazine/2011/02/14/the-apostate-3?currentPage=all" xtarget="_blank">The New Yorker &gt; The Apostate</a></li>
+            <li><a href="http://www.newyorker.com/magazine/2013/02/04/life-at-the-top" xtarget="_blank">The New Yorker &gt; Life at the Top</a></li>
+            <li><a href="http://www.newyorker.com/business/currency/being-a-times-square-elmo#slide_ss_0=1" xtarget="_blank">The New Yorker &gt; Being a Times Square Elmo</a></li>
+            <li><a href="http://www.newyorker.com/currency-tag/an-s-o-s-in-a-saks-bag" xtarget="_blank">The New Yorker &gt; An S.O.S. in a Saks Bag</a></li>
+            <li><a href="http://www.newyorker.com/magazine/2008/08/11/the-chameleon-2?currentPage=all" xtarget="_blank">The New Yorker &gt; The Chameleon</a></li>
+            <li><a href="http://eloquentjavascript.net/" xtarget="_blank">Eloquent JavaScript</a></li>
+            <li><a href="http://sebastien-gabriel.com/designers-guide-to-dpi/home" xtarget="_blank">Designer's guide to DPI</a></li>
+            <li><a href="http://www.mysliderule.com/blog/intro-to-philosophy-online-courses/" xtarget="_blank">Introduction to Philosophy</a></li>
+            <li><a href="http://www.html5rocks.com/en/tutorials/es6/promises/" xtarget="_blank">JavaScript Promises: There and back again - HTML5 Rocks</a></li>
+            <li><a href="http://dailyjs.com/2014/02/20/promises-in-detail/" xtarget="_blank">DailyJS: JavaScript Promises ... In Wicked Detail</a></li>
+            <li><a href="http://iquantny.tumblr.com/post/96700509489/how-memorizing-19-05-can-help-you-outsmart-the-mta" xtarget="_blank">1905</a></li>
+            <li><a href="http://www.nomachetejuggling.com/2014/02/05/top-10-career-changing-programming-books/" xtarget="_blank">Top 10 Career-Changing Programming Books</a></li>
+            <li><a href="http://en.wikipedia.org/wiki/Directory_traversal_attack" xtarget="_blank">Directory Traversas</a></li>
+            <li><a href="http://12factor.net/" xtarget="_blank">The Twelve-Factor App</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" xtarget="_blank">Using CSS flexible boxes</a></li>
+            <li><a href="http://www.rexegg.com/regex-best-trick.html" xtarget="_blank">The Greatest Regex Trick Ever</a></li>
+            <li><a href="http://www.adobe.com/devnet/archive/html5/articles/javascript-design-patterns-pt1-singleton-composite-facade.html" xtarget="_blank">JavaScript Design Patterns</a></li>
+            <li><a href="https://changelog.com/essential-reading-list-for-getting-started-with-service-workers/" xtarget="_blank">Essential Reading List for Getting Started With Service Workers</a></li>
+            <li><a href="http://mo.github.io/2015/10/19/chrome-devtools.html" xtarget="_blank">Chrome Devtools Tips & Tricks</a></li>
+            <li><a href="https://bar.foo/index.html" xtarget="_blank">Google Bring questions. Build answers.</a></li>
+        </ul>
+    </div>
+
+    <!-- RSS Feeds -->
+    <div class="bookmark-row" id="rss">
+        <h3>
+            <a class="collapse" href="#">RSS Feeds</a>
+            <a href="#rss">RSS Feeds</a>
+        </h3>
+        <ul>
+            <li><a href="http://www.disobey.com/detergent/2002/extendingrss2/" xtarget="_blank">Extending RSS 2.0 With Namespaces</a></li>
+            <li><a href="http://cyber.law.harvard.edu/rss/rss.html" xtarget="_blank">RSS 2.0 Specification (RSS 2.0 at Harvard Law)</a></li>
+            <li><a href="http://news.nationalgeographic.com/index.rss" xtarget="_blank">National Geographic News RSS</a></li>
+            <li><a href="http://www.thefreedictionary.com/_/rss-directory.htm" xtarget="_blank">Directory of RSS Feeds</a></li>
+            <li><a href="http://www.rssboard.org/media-rss" xtarget="_blank">Media RSS Specification</a></li>
+        </ul>
+    </div>
+
+</div><!-- .container -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/js/jquery-1.12.4/jquery-1.12.4.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/bootstrap-sass-3.3.6/bootstrap.min.js"></script>
+<script src="/js/bookmarks.js"></script>
+</body>
+
+</html>

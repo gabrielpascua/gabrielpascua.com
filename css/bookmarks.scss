@@ -1,0 +1,240 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+body{
+  background-color: rgba(0,0,0,0);
+  color: #222;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+}
+
+h1{
+  display: none;
+}
+
+h3{
+  text-transform: capitalize;
+  background-color: rgba(0,0,0,.05);
+  margin: 0;
+  padding: 0;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+li{
+  border-top: 1px solid rgba(0,0,0,.2);
+}
+
+a{
+  text-decoration: none;
+  color: darkcyan;
+  display: block;
+  padding: 15px;
+}
+
+a:hover{
+  background-color: lemonchiffon;
+}
+
+.openall{
+  color: salmon;
+}
+
+.bookmark-row{
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.2);
+}
+
+.bookmark-row p{
+  margin: 0;
+  padding: 0;
+}
+
+.bookmark-row.inactive a{
+  color: rgba(0,0,0,.4);
+}
+
+input[type="text"]{
+  font-size: 14px;
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
+  outline: 0;
+}
+
+/* web search*/
+.web-search form{
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.web-search{
+  text-align: center;
+  background-color: mediumseagreen;
+  padding: 30px 10px;
+}
+
+.web-search input{
+  width: 70%;
+}
+
+.web-search button{
+  background-color: darkslategrey;
+  border: 1px solid #18ab29;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  padding: 5px 30px 6px 15px;
+  text-decoration: none;
+  position: relative;
+  left: -6px;
+  top: -1px;
+  width: 25%;
+}
+
+/* bookmarks search */
+.bookmark-search{
+  background-color: dimgray;
+  padding: 15px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.bookmark-search input{
+  width: 90%;
+  max-width: 640px;
+  background-color: rgba(0,0,0,.15);
+  color: #fff;
+  padding: 10px;
+}
+
+.bookmark-results {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+}
+
+.bookmark-results ul{
+  height: auto;
+}
+
+.bookmark-results li{
+  border-top: 1px solid rgba(0,0,0,.55);
+}
+
+.bookmark-results a {
+  text-align: left;
+  padding: 10px 15px;
+  color: rgba(255,255,255,.55);
+  background-color: rgba(0,0,0,.65);
+}
+
+.bookmark-results a:hover {
+  color: rgba(255,255,255,.80);
+  background-color: rgba(0,0,0,.75);
+}
+
+
+/* collapsing */
+ul{
+  height: 0;
+  overflow: hidden;
+}
+
+a.collapse{
+  display: none;
+}
+
+#forrent:target ul,
+#forsale:target ul,
+#openhouse:target ul,
+#tosee:target ul,
+#seen:target ul,
+#csrf:target ul,
+#tools:target ul,
+#docker:target ul,
+#forms:target ul,
+#jobs:target ul,
+#livetv:target ul,
+#banks:target ul,
+#owin:target ul,
+#phnews:target ul,
+#purchase:target ul,
+#unread:target ul,
+#rss:target ul,
+#usnews:target ul,
+#todo:target ul
+{
+  height: auto;
+  overflow: visible;
+}
+
+#forrent:target h3 a,
+#forsale:target h3 a,
+#openhouse:target h3 a,
+#tosee:target h3 a,
+#seen:target h3 a,
+#csrf:target h3 a,
+#tools:target h3 a,
+#docker:target h3 a,
+#forms:target h3 a,
+#jobs:target h3 a,
+#livetv:target h3 a,
+#banks:target h3 a,
+#owin:target h3 a,
+#phnews:target h3 a,
+#purchase:target h3 a,
+#unread:target h3 a,
+#rss:target h3 a,
+#usnews:target h3 a,
+#todo:target h3 a
+{
+  display: none;
+}
+
+#forrent:target h3 a.collapse,
+#forsale:target h3 a.collapse,
+#openhouse:target h3 a.collapse,
+#tosee:target h3 a.collapse,
+#seen:target h3 a.collapse,
+#csrf:target h3 a.collapse,
+#tools:target h3 a.collapse,
+#docker:target h3 a.collapse,
+#forms:target h3 a.collapse,
+#jobs:target h3 a.collapse,
+#livetv:target h3 a.collapse,
+#banks:target h3 a.collapse,
+#owin:target h3 a.collapse,
+#phnews:target h3 a.collapse,
+#purchase:target h3 a.collapse,
+#unread:target h3 a.collapse,
+#rss:target h3 a.collapse,
+#usnews:target h3 a.collapse,
+#todo:target h3 a.collapse
+{
+  display: block;
+}
+
+
+/* flexbox */
+.bookmark-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bookmark-row{
+  margin: 1em;
+  flex-basis: 240px;
+  align-self: flex-start;
+}
