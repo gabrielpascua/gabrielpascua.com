@@ -1,0 +1,61 @@
+body{
+  line-height: 2;
+  font-size: 16px;
+
+  .content{
+    padding-top: 90px;
+    padding-bottom: 30px;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+}
+
+.navbar-default .navbar-brand {
+  font-weight: bold;
+  font-size: 30px;
+  padding: 0 30px;
+  line-height: 50px;
+  background-color: red;
+  color: #fff;
+
+  &:hover{
+    color: #fff;
+    background-color: darkorange;
+  }
+}
+
+aside{
+  margin-top: 60px;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    float: right;
+  }
+}
+
+ul{
+  list-style: inside;
+}
+
+p{
+  margin-bottom: 30px;
+}
+
+article{
+  header{
+    margin-bottom: 30px;
+
+    h1{
+      line-height: 1.25;
+    }
+
+    p{
+      color: rgba(0,0,0,.4);
+    }
+  }
+
+  a{
+    color: darkcyan;
+  }
+}
