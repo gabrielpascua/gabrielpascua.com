@@ -1,0 +1,18 @@
+---
+layout: post
+---
+<div class="toc">
+{% for post in site.posts limit:20 %}
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 title">
+            <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">
+                {{ post.title }}
+            </a>
+        </div>
+        <div class="col-xs-12 col-sm-4 divider"></div>
+        <div class="col-xs-12 col-sm-2 date">
+            <span class="date">{{ post.date | date: "%Y.%m.%d" }}</span>
+        </div>
+    </div>
+{% endfor %}
+</div>
