@@ -31,7 +31,8 @@ date:   2016-06-18 17:00
     <p>
     <b>Dependencies</b><br />
     <a href="http://getbootstrap.com/" target="_blank">bootstrap v3.3.6</a><br />
-    <a href="https://angularjs.org/" target="_blank">angular 1.2.19</a>
+    <a href="https://angularjs.org/" target="_blank">angular 1.2.19</a><br />
+    <a href="https://jquery.com/" target="_blank">jquery-1.12.4</a>
     </p>
 
 </div>
