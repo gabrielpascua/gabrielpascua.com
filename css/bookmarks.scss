@@ -1,157 +1,130 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
-
-body{
-  background-color: rgba(0,0,0,0);
-  color: #222;
-  font-family: sans-serif;
-  padding: 0;
-  margin: 0;
-  font-size: 12px;
-}
-
-h1{
-  display: none;
-}
-
-h3{
-  text-transform: capitalize;
-  background-color: rgba(0,0,0,.05);
-  margin: 0;
-  padding: 0;
-}
-
-ul{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-bottom: 1px solid rgba(0,0,0,.2);
-}
-
-li{
-  border-top: 1px solid rgba(0,0,0,.2);
-}
-
-a{
-  text-decoration: none;
-  color: darkcyan;
-  display: block;
-  padding: 15px;
-}
-
-a:hover{
-  background-color: lemonchiffon;
-}
-
-.openall{
-  color: salmon;
-}
-
 .bookmark-row{
   background-color: #fff;
   border: 1px solid rgba(0,0,0,.2);
+  font-size: 12px;
+
+  ul{
+    list-style: none;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+  }
+
+  li{
+    border-top: 1px solid rgba(0,0,0,.2);
+    line-height: 1.5;
+  }
+
+  a{
+    display: block;
+    padding: 15px;
+    color: #111;
+
+    &:hover{
+      text-decoration: none;
+      color: darkcyan;
+      background-color: rgba(0,0,0,.05);
+    }
+  }
+
+  h3{
+    font-size: 14px;
+  }
+
+  p{
+    margin: 0;
+    padding: 0;
+  }
+
+  .openall{
+    color: rgba(0,0,0,.4);
+  }
+
+  &.inactive a{
+    color: rgba(0,0,0,.4);
+  }
 }
 
-.bookmark-row p{
-  margin: 0;
-  padding: 0;
-}
+.web-search {
 
-.bookmark-row.inactive a{
-  color: rgba(0,0,0,.4);
-}
-
-input[type="text"]{
-  font-size: 14px;
-  padding: 5px;
-  border: none;
-  border-radius: 2px;
-  outline: 0;
-}
-
-/* web search*/
-.web-search form{
-  max-width: 480px;
-  margin: 0 auto;
-}
-
-.web-search{
   text-align: center;
-  background-color: mediumseagreen;
+  background-color: rgba(0,0,0,0.07);
   padding: 30px 10px;
+  margin-top: 50px;
+
+  form{
+    max-width: 480px;
+    margin: 5px auto;
+  }
+
+  input[type="text"]{
+    height: auto;
+    outline: none;
+  }
+
 }
 
-.web-search input{
-  width: 70%;
-}
-
-.web-search button{
-  background-color: darkslategrey;
-  border: 1px solid #18ab29;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  padding: 5px 30px 6px 15px;
-  text-decoration: none;
-  position: relative;
-  left: -6px;
-  top: -1px;
-  width: 25%;
-}
-
-/* bookmarks search */
 .bookmark-search{
   background-color: dimgray;
   padding: 15px;
   margin-bottom: 30px;
   text-align: center;
-}
 
-.bookmark-search input{
-  width: 90%;
-  max-width: 640px;
-  background-color: rgba(0,0,0,.15);
-  color: #fff;
-  padding: 10px;
+  input{
+    width: 90%;
+    max-width: 640px;
+    background-color: rgba(0,0,0,.15);
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    padding-left: 10px;
+    outline: none;
+  }
 }
 
 .bookmark-results {
   position: absolute;
   display: none;
   background-color: #fff;
-}
+  font-size: 12px;
 
-.bookmark-results ul{
-  height: auto;
-}
+  ul{
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    list-style: none;
+  }
 
-.bookmark-results li{
-  border-top: 1px solid rgba(0,0,0,.55);
-}
+  li{
+    border-top: 1px solid rgba(0,0,0,.55);
+  }
 
-.bookmark-results a {
-  text-align: left;
-  padding: 10px 15px;
-  color: rgba(255,255,255,.55);
-  background-color: rgba(0,0,0,.65);
-}
+  a {
+    text-align: left;
+    padding: 10px 15px;
+    color: rgba(255,255,255,.55);
+    background-color: rgba(0,0,0,.65);
+    display: block;
+    line-height: 1.5;
 
-.bookmark-results a:hover {
-  color: rgba(255,255,255,.80);
-  background-color: rgba(0,0,0,.75);
+    &:hover {
+      color: rgba(255,255,255,.80);
+      background-color: rgba(0,0,0,.75);
+      text-decoration: none;
+    }
+  }
 }
 
 
 /* collapsing */
-ul{
+.bookmark-row ul{
   height: 0;
   overflow: hidden;
 }
 
-a.collapse{
+.bookmark-row a.collapse{
   display: none;
 }
 
@@ -235,6 +208,6 @@ a.collapse{
 
 .bookmark-row{
   margin: 1em;
-  flex-basis: 240px;
+  flex-basis: 310px;
   align-self: flex-start;
 }

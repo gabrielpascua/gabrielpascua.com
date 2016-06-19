@@ -8,29 +8,39 @@ layout: null
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/js/bootstrap-sass-3.3.6/bootstrap.min.js" | prepend: site.baseurl }}">
     <link rel="stylesheet" type="text/css" href="/css/bookmarks.css" />
     <title>Bookmarks</title>
 </head>
 
 <body>
 
+{% include topnav.html %}
+
 <div class="web-search">
 
-    <form method="get" action="https://www.google.com/search" id="google">
-        <input type="text" placeholder="Google Search" name="q" />
-        <input type="hidden" value="utf-8" name="ie" />
-        <input type="hidden" value="utf-8" name="oe" />
-        <button type="submit">Search</button>
+    <form method="get" action="https://www.google.com/search" id="google" class="input-group">
+        <input type="text" placeholder="Google Search" name="q" class="form-control" />
+        <span class="input-group-btn">
+            <input type="hidden" value="utf-8" name="ie" />
+            <input type="hidden" value="utf-8" name="oe" />
+            <button type="submit" class="btn btn-default">Search</button>
+        </span>
     </form>
 
-    <form method="get" action="http://www.amazon.com/s/" id="amazon">
-        <input type="text" placeholder="Amazon Search" name="field-keywords" />
-        <button type="submit">Search</button>
+    <form method="get" action="http://www.amazon.com/s/" id="amazon" class="input-group">
+        <input type="text" placeholder="Amazon Search" name="field-keywords" class="form-control" />
+        <span class="input-group-btn">
+            <button type="submit" class="btn btn-default">Search</button>
+        </span>
     </form>
 
-    <form method="get" action="https://www.youtube.com/results" id="youtube">
-        <input type="text" placeholder="Youtube Search" name="search_query" />
-        <button type="submit">Search</button>
+    <form method="get" action="https://www.youtube.com/results" id="youtube" class="input-group">
+        <input type="text" placeholder="Youtube Search" name="search_query" class="form-control" />
+        <span class="input-group-btn">
+            <button type="submit" class="btn btn-default">Search</button>
+        </span>
     </form>
 
 </div>
@@ -245,6 +255,24 @@ layout: null
             <li><a href="http://news.nationalgeographic.com/index.rss" xtarget="_blank">National Geographic News RSS</a></li>
             <li><a href="http://www.thefreedictionary.com/_/rss-directory.htm" xtarget="_blank">Directory of RSS Feeds</a></li>
             <li><a href="http://www.rssboard.org/media-rss" xtarget="_blank">Media RSS Specification</a></li>
+        </ul>
+    </div>
+
+    <!-- US News -->
+    <div class="bookmark-row" id="usnews">
+        <h3>
+            <a class="collapse" href="#">US News</a>
+            <a href="#usnews">US News</a>
+        </h3>
+        <ul>
+            <li><a href="http://digg.com/" xtarget="_blank">Digg</a></li>
+            <li><a href="http://pinboard.in/popular" xtarget="_blank">Pinboard</a></li>
+            <li><a href="http://news.google.com/news" xtarget="_blank">Google News</a></li>
+            <li><a href="http://www.engadget.com/" xtarget="_blank">Engadget</a></li>
+            <li><a href="http://www.cnet.com/" xtarget="_blank">CNET</a></li>
+            <li><a href="http://coolmaterial.com/" xtarget="_blank">Cool Material</a></li>
+            <li><a href="http://theawesomer.com/" xtarget="_blank">The Awesomer</a></li>
+            <li><a href="https://www.dealsplus.com/" xtarget="_blank">Deals Plus</a></li>
         </ul>
     </div>
 
