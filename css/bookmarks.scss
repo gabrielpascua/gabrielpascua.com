@@ -146,7 +146,8 @@
 #unread:target ul,
 #rss:target ul,
 #usnews:target ul,
-#todo:target ul
+#todo:target ul,
+#utility-sites ul
 {
   height: auto;
   overflow: visible;
@@ -170,7 +171,8 @@
 #unread:target h3 a,
 #rss:target h3 a,
 #usnews:target h3 a,
-#todo:target h3 a
+#todo:target h3 a,
+#utility-sites h3 a
 {
   display: none;
 }
@@ -193,7 +195,8 @@
 #unread:target h3 a.collapse,
 #rss:target h3 a.collapse,
 #usnews:target h3 a.collapse,
-#todo:target h3 a.collapse
+#todo:target h3 a.collapse,
+#utility-sites h3 a.collapse
 {
   display: block;
 }
