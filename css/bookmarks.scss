@@ -147,7 +147,7 @@
 #rss:target ul,
 #usnews:target ul,
 #todo:target ul,
-#utility-sites ul
+#utility-sites:target ul
 {
   height: auto;
   overflow: visible;
@@ -196,7 +196,7 @@
 #rss:target h3 a.collapse,
 #usnews:target h3 a.collapse,
 #todo:target h3 a.collapse,
-#utility-sites h3 a.collapse
+#utility-sites:target h3 a.collapse
 {
   display: block;
 }
