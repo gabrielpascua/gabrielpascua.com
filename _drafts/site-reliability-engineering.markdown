@@ -4,7 +4,8 @@ title:  "Site Reliability Engineering"
 excerpt: "Site Reliability Engineering: How Google Runs Production Systems"
 date:   2016-05-14 10:00
 categories: books
-image_url: /img/site-reliability-engineering-360x472.jpg
+book_image: /img/site-reliability-engineering-360x472.jpg
+book_url: https://www.amazon.com/Site-Reliability-Engineering-Production-Systems/dp/149192912X/
 ---
 
 Preface
