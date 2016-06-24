@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "GitFlow"
+excerpt: "GitFlow"
+date:   2016-06-25 10:00
+categories: notes
+tags: git
+---
+
+
+**GitFlow** is a branching guideline developed by Vincent Driessen.
+
+<img src="/img/gitflow.gif" />
