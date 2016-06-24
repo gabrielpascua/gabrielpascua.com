@@ -31,13 +31,17 @@
 footer {
     text-align: center;
 
+    hr{
+        border-top-color: #999;
+    }
+
     a{
         text-decoration: none;
         display: inline-block;
         max-width: 110px;
         width: 30%;
         text-align: center;
-        color: rgba(0,0,0,.3);
+        color: rgba(0,0,0,.5);
 
         &:hover{
             color: #111;

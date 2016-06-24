@@ -29,6 +29,11 @@ body.kobe-htm .location{
     color: #944864;
 }
 
+body.kobe-htm footer hr{
+  border-top-style: dashed;
+  border-top-color: #222;
+}
+
 @media (min-width: 550px) {
     body.kobe-htm .container > .row:first-child{
         border-bottom: 1px dashed #27262b;
@@ -117,6 +122,11 @@ body.manhattan h4,
 body.manhattan h5,
 body.manhattan h6{
   letter-spacing: normal;
+}
+
+body.manhattan footer hr{
+  border-top-style: dotted;
+  border-top-color: #333;
 }
 
 @media (min-width: 550px){
@@ -249,6 +259,17 @@ body.sharpie h4,
 body.sharpie h5,
 body.sharpie h6{
   letter-spacing: normal;
+}
+
+body.sharpie footer {
+  a{
+    color: #FF229C;
+  }
+  
+  hr{
+    border-top-color: #444;
+    border-top-width: 2px;
+  }
 }
 
 @media (min-width: 550px){
