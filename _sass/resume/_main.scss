@@ -28,6 +28,23 @@
     padding-top: 30px;
 }
 
+footer {
+    text-align: center;
+
+    a{
+        text-decoration: none;
+        display: inline-block;
+        max-width: 110px;
+        width: 30%;
+        text-align: center;
+        color: rgba(0,0,0,.3);
+
+        &:hover{
+            color: #111;
+        }
+    }
+}
+
 @media (min-width: 550px) {
 
     .work-date{
