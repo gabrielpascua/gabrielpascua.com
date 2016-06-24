@@ -4,6 +4,7 @@ title:  "Hosting Your Node Application on Apache"
 excerpt: "Hosting Your Node Application on Apache"
 date:   2015-09-14 15:00
 categories: notes
+tags: linux, ubuntu 14.04
 ---
 
 I have a couple of applications running on localhost:3000 that I have configured from the /etc/hosts file.  This preserves the host name when the node server fires up.

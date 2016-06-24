@@ -4,6 +4,7 @@ title:  "Lowering the 4K Login Screen Resolution Down to 1920x1080"
 excerpt: "Lowering the 4K Login Screen Resolution Down to 1920x1080"
 date:   2015-09-14 00:00
 categories: notes
+tags: linux, ubuntu 14.04
 ---
 
 My laptop's graphics card is a dedicated 4GB AMD Radeon R7 M270.  The native resolution is 3840x2160 (16:9). On a 15-inch monitor, everything on the Ubuntu login is tiny.  I needed to adjust the settings to a supported legible resolution.

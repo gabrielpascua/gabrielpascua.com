@@ -4,6 +4,7 @@ title:  "PHP on FastCgi using PhpFarm"
 excerpt: "PHP on FastCgi using PhpFarm"
 date:   2015-09-14 12:00
 categories: notes
+tags: linux, ubuntu 14.04
 ---
 
 How to run different PHP versions on one machine.
