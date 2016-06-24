@@ -9,3 +9,4 @@ TODO:
 email link on home page
 sidebar on bookmarks
 books page
+portfolio
