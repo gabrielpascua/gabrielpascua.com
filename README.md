@@ -6,7 +6,9 @@ Dependencies
 - bootstrap v3.3.6
 
 TODO:
-email link on home page
-sidebar on bookmarks
-books page
-portfolio
+email link on home page  
+sidebar on bookmarks  
+books page  
+portfolio  
+d3 on tags page  
+reactjs on bookmarks  
