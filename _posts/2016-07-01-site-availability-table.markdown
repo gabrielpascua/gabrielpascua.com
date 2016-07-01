@@ -9,7 +9,7 @@ tags: ops
 **Availability Table**  
  Assuming no planned downtime, the table indicates how much downtime is permitted to reach a given availability level.
  
-<table>
+<table class="table table-bordered table-striped">
 <tbody>
 <tr>
 <td><p>&nbsp;</p></td>
