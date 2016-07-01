@@ -10,13 +10,6 @@ tags: ops
  Assuming no planned downtime, the table indicates how much downtime is permitted to reach a given availability level.
  
 <table>
-<caption><span class="label">Table A-1. </span>Availability table</caption>
-<thead>
-<tr>
-<th><strong>Availability level</strong></th>
-<th colspan="6"><strong>Allowed unavailability window</strong></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><p>&nbsp;</p></td>
