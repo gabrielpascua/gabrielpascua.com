@@ -21,7 +21,7 @@ The destructuring assignment syntax is a JavaScript expression that makes it pos
   //for loops
   const arr1 = ['a', 'b'];
   for (const [index, element] of arr1.entries()) {
-      console.log(index, element);
+      console.log(index, element);  // 0, 'a'
   }
   
   Objects:
