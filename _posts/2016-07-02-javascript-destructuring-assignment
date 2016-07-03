@@ -13,7 +13,6 @@ It is part of the ES6 standard specification.
 
 <pre>
   Arrays:
-  
   //assignment
   const arrayData = ['a', 'b'];
   const [x, y] = arrayData;
