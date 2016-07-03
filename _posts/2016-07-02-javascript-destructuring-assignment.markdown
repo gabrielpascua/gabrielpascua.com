@@ -38,7 +38,9 @@ The destructuring assignment syntax is a JavaScript expression that makes it pos
   }
   
 </pre>
+  
 
+  
 ** References **  
 [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)  
 [https://ponyfoo.com/articles/es6-destructuring-in-depth](https://ponyfoo.com/articles/es6-destructuring-in-depth)  
