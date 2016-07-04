@@ -33,6 +33,7 @@ tags: javascript react
 </td><td>onDrop
 </td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table>
 
+<p>&nbsp;</p>
 <p><b>Keyboard Events</b></p>
 <table class="table table-bordered">
 <tbody><tr class="noclass"><td>onKeyDown
@@ -40,6 +41,7 @@ tags: javascript react
 </td><td>onKeyPress
 </td></tr></tbody></table>
 
+<p>&nbsp;</p>
 <p><b>Focus And Form Events</b></p>
 <table class="table table-bordered">
 <tbody><tr class="noclass"><td>onFocus
@@ -49,6 +51,7 @@ tags: javascript react
 </td><td>onSubmit
 </td></tr></tbody></table>
 
+<p>&nbsp;</p>
 <p><b>Other Events</b></p>
 <table class="table table-bordered">
 <tbody><tr class="noclass"><td>onScroll
