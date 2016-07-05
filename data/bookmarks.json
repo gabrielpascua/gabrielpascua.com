@@ -1,0 +1,652 @@
+[
+  {
+    "links": [
+      {
+        "name": "Cross-Site Request Forgery (CSRF) Prevention Cheat Sheet - OWASP",
+        "url": "https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29_Prevention_Cheat_Sheet"
+      },
+      {
+        "name": "Cross-Site Request Forgeries and You",
+        "url": "http://blog.codinghorror.com/cross-site-request-forgeries-and-you/"
+      },
+      {
+        "name": "Cross-Site Request Forgery (CSRF) Prevention Cheat Sheet - OWASP",
+        "url": "https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29_Prevention_Cheat_Sheet#General_Recommendation:_Synchronizer_Token_Pattern"
+      },
+      {
+        "name": "synchronizer token | WhiteHat Security Blog",
+        "url": "https://blog.whitehatsec.com/tag/synchronizer-token/"
+      },
+      {
+        "name": "Cross-Site Request Forgery Prevention Cheat Sheet",
+        "url": "https://www.owasp.org/index.php/CSRF_Prevention_Cheat_Sheet"
+      }
+    ],
+    "name": "Cross-Site Request Forgery",
+    "id": "csrf"
+  },
+  {
+    "links": [
+      {
+        "name": "Vim Commands Cheat Sheet",
+        "url": "http://www.fprintf.net/vimCheatSheet.html"
+      },
+      {
+        "name": "Twig Documentation",
+        "url": "http://twig.sensiolabs.org/documentation"
+      },
+      {
+        "name": "Gabriel's Gallery",
+        "url": "https://picasaweb.google.com/111720272673430553933"
+      },
+      {
+        "name": "Gabriel's Gist",
+        "url": "https://gist.github.com/gabrielpascua"
+      },
+      {
+        "name": "Learn Symfony 3",
+        "url": "http://knpuniversity.com/screencast/tag/symfony"
+      },
+      {
+        "name": "Creating and Using Symfony Templates",
+        "url": "http://symfony.com/doc/2.3/book/templating.html"
+      },
+      {
+        "name": "Eclipse Debugging using XDebug",
+        "url": "http://wiki.eclipse.org/Debugging_using_XDebug"
+      },
+      {
+        "name": "Calculate Duration Between Two Dates",
+        "url": "http://www.timeanddate.com/date/duration.html"
+      },
+      {
+        "name": "Regular Expressions 101",
+        "url": "http://regex101.com/"
+      },
+      {
+        "name": "JSFiddle",
+        "url": "http://jsfiddle.net/"
+      },
+      {
+        "name": "Fake Name Generator",
+        "url": "http://www.fakenamegenerator.com/"
+      },
+      {
+        "name": "Image Generator - Grey",
+        "url": "http://placehold.it/350x150"
+      },
+      {
+        "name": "Image Generator - Colored",
+        "url": "http://lorempixel.com/400/200/"
+      },
+      {
+        "name": "Character Counter",
+        "url": "http://www.javascriptkit.com/script/script2/charcount.shtml"
+      },
+      {
+        "name": "Facebook Debugger",
+        "url": "https://developers.facebook.com/tools/debug"
+      },
+      {
+        "name": "Lorem Ipsum Generator",
+        "url": "http://lipsum.com/feed/html"
+      },
+      {
+        "name": "LESS Tester",
+        "url": "http://lesstester.com/"
+      },
+      {
+        "name": "The NounProject",
+        "url": "http://thenounproject.com/"
+      },
+      {
+        "name": "Favicon Generator",
+        "url": "http://realfavicongenerator.net/"
+      },
+      {
+        "name": "PXtoEM.com",
+        "url": "http://pxtoem.com/"
+      },
+      {
+        "name": "Can I Use",
+        "url": "http://caniuse.com/"
+      },
+      {
+        "name": "Word Counter",
+        "url": "http://codebeautify.org/wordcounter"
+      },
+      {
+        "name": "OS X Screencast to GIF",
+        "url": "https://gist.github.com/dergachev/4627207"
+      },
+      {
+        "name": "Centering in CSS",
+        "url": "https://css-tricks.com/centering-css-complete-guide/"
+      },
+      {
+        "name": "curl Builder",
+        "url": "https://curlbuilder.com/"
+      },
+      {
+        "name": "ES6 Fiddle",
+        "url": "http://www.es6fiddle.net/"
+      },
+      {
+        "name": "Data Generator",
+        "url": "https://www.mockaroo.com/"
+      },
+      {
+        "name": "JSON Formatter & Validator",
+        "url": "http://jsonlint.com/"
+      },
+      {
+        "name": "Twitter Card Validator",
+        "url": "https://cards-dev.twitter.com/validator"
+      },
+      {
+        "name": "Color Name",
+        "url": "http://www.color-blindness.com/color-name-hue/"
+      },
+      {
+        "name": "JSDoc",
+        "url": "http://usejsdoc.org/"
+      },
+      {
+        "name": "Resizer",
+        "url": "http://design.google.com/resizer/"
+      },
+      {
+        "name": "Good Copy",
+        "url": "http://www.goodemailcopy.com/"
+      },
+      {
+        "name": "Gabriel Pascu",
+        "url": "http://www.gabrielpascua.com/"
+      },
+      {
+        "name": "What's My Browser",
+        "url": "http://www.whatsmybrowser.org/"
+      },
+      {
+        "name": "Style Lint",
+        "url": "http://stylelint.io/"
+      },
+      {
+        "name": "UI Movement",
+        "url": "http://uimovement.com/"
+      },
+      {
+        "name": "JSON Lint",
+        "url": "http://pro.jsonlint.com/"
+      },
+      {
+        "name": "Youtube Audio Grabber",
+        "url": "http://www.listentoyoutube.com/"
+      }
+    ],
+    "name": "Developer Tools",
+    "id": "tools"
+  },
+  {
+    "links": [
+      {
+        "name": "Why You Should Stop Installing Your WebDev Environment Locally – Smashing Magazine",
+        "url": "https://www.smashingmagazine.com/2016/04/stop-installing-your-webdev-environment-locally-with-docker/"
+      },
+      {
+        "name": "Lessons from Building a Node App in Docker",
+        "url": "http://jdlm.info/articles/2016/03/06/lessons-building-node-app-docker.html?r=0"
+      },
+      {
+        "name": "Installation on Ubuntu",
+        "url": "https://docs.docker.com/engine/installation/linux/ubuntulinux/"
+      },
+      {
+        "name": "Apache and PHP on Docker — Dev Tricks — Medium",
+        "url": "https://medium.com/dev-tricks/apache-and-php-on-docker-44faef716150#.5cwjtmdfe"
+      },
+      {
+        "name": "https://hub.docker.com/",
+        "url": "https://hub.docker.com/"
+      },
+      {
+        "name": "Dockerizing a Node.js web app | Node.js",
+        "url": "https://nodejs.org/en/docs/guides/nodejs-docker-webapp/"
+      },
+      {
+        "name": "Dockerizing a Node.js web app",
+        "url": "https://docs.docker.com/engine/examples/nodejs_web_app/"
+      },
+      {
+        "name": "Learn Docker by building a Microservice",
+        "url": "http://www.dwmkerr.com/learn-docker-by-building-a-microservice/"
+      }
+    ],
+    "name": "Docker References",
+    "id": "docker"
+  },
+  {
+    "links": [
+      {
+        "name": "Forms",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/How_to_structure_an_HTML_form"
+      },
+      {
+        "name": "My first HTML form - Web developer guide | MDN",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/My_first_HTML_form"
+      },
+      {
+        "name": "Forms (The Symfony Book)",
+        "url": "http://symfony.com/doc/current/book/forms.html"
+      },
+      {
+        "name": "Method Chaining in JavaScript | Gregory Schier",
+        "url": "http://schier.co/blog/2013/11/14/method-chaining-in-javascript.html"
+      },
+      {
+        "name": "Insert title here",
+        "url": "http://localhost/formbuilder/"
+      },
+      {
+        "name": "Nunjucks",
+        "url": "https://mozilla.github.io/nunjucks/templating.html#import"
+      },
+      {
+        "name": "Swig » Documentation » Tags",
+        "url": "http://paularmstrong.github.io/swig/docs/tags/#macro"
+      },
+      {
+        "name": "The Pain of Password Reset in Express - Stormpath User Identity API",
+        "url": "https://stormpath.com/blog/the-pain-of-password-reset/"
+      },
+      {
+        "name": "How To Implement Password Reset In Node.js",
+        "url": "http://sahatyalkabov.com/how-to-implement-password-reset-in-nodejs/"
+      },
+      {
+        "name": "Express Forms",
+        "url": "https://www.npmjs.com/package/express-form"
+      },
+      {
+        "name": "npm caolan forms",
+        "url": "https://github.com/caolan/forms"
+      },
+      {
+        "name": "Laravel Forms",
+        "url": "https://laravel.com/docs/4.2/html"
+      },
+      {
+        "name": "Django Forms",
+        "url": "https://docs.djangoproject.com/en/1.8/topics/forms/"
+      },
+      {
+        "name": "Rails Forms",
+        "url": "http://guides.rubyonrails.org/form_helpers.html"
+      },
+      {
+        "name": "Symfony Forms",
+        "url": "http://symfony.com/doc/current/book/forms.html#form-validation"
+      },
+      {
+        "name": "CakePHP Forms",
+        "url": "http://book.cakephp.org/2.0/en/models/data-validation.html"
+      }
+    ],
+    "name": "HTML Forms",
+    "id": "forms"
+  },
+  {
+    "links": [
+      {
+        "name": "ASP.NET Identity Stripped Bare - MVC Part 1 - Ben Foster",
+        "url": "http://benfoster.io/blog/aspnet-identity-stripped-bare-mvc-part-1"
+      },
+      {
+        "name": "Cutting Edge - External Authentication with ASP.NET Identity",
+        "url": "http://msdn.microsoft.com/en-us/magazine/dn745860.aspx"
+      },
+      {
+        "name": "Code! MVC 5 App with Facebook, Twitter, LinkedIn and Google OAuth2 Sign-on (C#) | The ASP.NET Site",
+        "url": "http://www.asp.net/mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on"
+      },
+      {
+        "name": "AspNet Identity OWIN authentication",
+        "url": "http://world.episerver.com/documentation/Items/Developers-Guide/EPiServer-CMS/75/Security/aspnet-identity-owin-authentication/"
+      },
+      {
+        "name": "Customizing profile information in ASP.NET Identity in VS 2013 templates - .NET Web Development and Tools Blog - Site Home - MSDN Blogs",
+        "url": "http://blogs.msdn.com/b/webdev/archive/2013/10/16/customizing-profile-information-in-asp-net-identity-in-vs-2013-templates.aspx"
+      },
+      {
+        "name": "Understanding OWIN Forms authentication in MVC 5 - .NET Web Development and Tools Blog - Site Home - MSDN Blogs",
+        "url": "http://blogs.msdn.com/b/webdev/archive/2013/07/03/understanding-owin-forms-authentication-in-mvc-5.aspx"
+      },
+      {
+        "name": "SQL: Tables SQL Server",
+        "url": "https://github.com/kriasoft/AspNet.Identity/tree/master/src/KriaSoft.AspNet.Identity.Database/Tables"
+      },
+      {
+        "name": "SQL: Tables MySQL",
+        "url": "http://www.asp.net/identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider"
+      },
+      {
+        "name": "Intermittent Fasting & Leangains Guide | RippedBody.jp",
+        "url": "http://rippedbody.jp/2011/10/08/leangains-intermittent-fasting-guide-how-to-do-it-by-yourself/"
+      },
+      {
+        "name": "Extensibility | The ASP.NET Site",
+        "url": "http://www.asp.net/identity/overview/extensibility"
+      },
+      {
+        "name": "custom fb/goog/twitter",
+        "url": "http://bitoftech.net/2014/08/11/asp-net-web-api-2-external-logins-social-logins-facebook-google-angularjs-app/"
+      }
+    ],
+    "name": "Open Web Interface",
+    "id": "owin"
+  },
+  {
+    "links": [
+      {
+        "name": "Ubuntu 14.10 Gudie",
+        "url": "http://www.gabrielpascua.com/ubuntu/"
+      },
+      {
+        "name": "REST+JSON API Design - Best Practices for Developers - YouTube",
+        "url": "https://www.youtube.com/watch?v=hdSrT4yjS1g"
+      },
+      {
+        "name": "Beautiful REST & JSON APIs - YouTube",
+        "url": "https://www.youtube.com/watch?v=mZ8_QgJ5mbs"
+      },
+      {
+        "name": "7 TED Talks That Will Make You A Better Human Being - Airows",
+        "url": "http://airows.com/lifestyle/7-ted-talks-that-will-make-you-a-better-dude"
+      },
+      {
+        "name": "YOUR HOME - A Co-op Buyer's Checklist - NYTimes.com",
+        "url": "http://www.nytimes.com/1995/07/23/realestate/your-home-a-co-op-buyer-s-checklist.html"
+      },
+      {
+        "name": "Your Coop Purchase... What To Expect NYC NY Lawyer Law Firm",
+        "url": "http://www.katzmatz.net/lawyer/Your-Coop-Purchase...-What-To-Expect-_cp7804.htm"
+      },
+      {
+        "name": "Coop Guide.pdf",
+        "url": "https://www.us.hsbc.com/1/PA_1_083Q9FJ08A002FBP5S00000000/content/usshared/Personal%20Services/Home%20Loans/Mortgage/FYI/Shared/Coop%20Guide.pdf"
+      },
+      {
+        "name": "draw.io",
+        "url": "https://www.draw.io/"
+      },
+      {
+        "name": "singleton",
+        "url": "http://www.adobe.com/devnet/archive/html5/articles/javascript-design-patterns-pt1-singleton-composite-facade.html"
+      },
+      {
+        "name": "js-build1",
+        "url": "https://github.com/buildfirst/buildfirst"
+      },
+      {
+        "name": "bash",
+        "url": "https://github.com/jlevy/the-art-of-command-line"
+      },
+      {
+        "name": "UI Movement",
+        "url": "http://uimovement.com/"
+      },
+      {
+        "name": "Promises",
+        "url": "http://blog.getify.com/promises-part-1"
+      },
+      {
+        "name": "Docker",
+        "url": "https://www.smashingmagazine.com/2016/04/stop-installing-your-webdev-environment-locally-with-docker/"
+      },
+      {
+        "name": "How to Survive Asynchronous Programming in JavaScript",
+        "url": "http://www.infoq.com/articles/surviving-asynchronous-programming-in-javascript"
+      },
+      {
+        "name": "Promises - CommonJS Spec Wiki",
+        "url": "http://wiki.commonjs.org/wiki/Promises"
+      },
+      {
+        "name": "No Callbacks Required: StratifiedJS Returns Sequential Programming to Javascript",
+        "url": "http://www.infoq.com/articles/stratifiedjs"
+      },
+      {
+        "name": "1. Module Pattern",
+        "url": "http://yuiblog.com/blog/2007/06/12/module-pattern/"
+      },
+      {
+        "name": "2. Module Pattern",
+        "url": "http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html"
+      },
+      {
+        "name": "3. Module Pattern",
+        "url": "http://toddmotto.com/mastering-the-module-pattern/"
+      },
+      {
+        "name": "Inheritance and the prototype chain",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain"
+      },
+      {
+        "name": "Understanding Express.js",
+        "url": "http://evanhahn.com/understanding-express/"
+      },
+      {
+        "name": "Introducing BDD | Dan North & Associates",
+        "url": "http://dannorth.net/introducing-bdd/"
+      },
+      {
+        "name": "Fluent JavaScript – Three Different Kinds of Prototypal OO « Eric Elliott – JavaScript Architect (A JavaScript Blog)",
+        "url": "http://ericleads.com/2013/02/fluent-javascript-three-different-kinds-of-prototypal-oo/"
+      },
+      {
+        "name": "Material world: how Google discovered what software is made of | The Verge",
+        "url": "http://www.theverge.com/2014/6/27/5849272/material-world-how-google-discovered-what-software-is-made-of"
+      },
+      {
+        "name": "Client or server? Go big or go home. | Human JavaScript",
+        "url": "http://read.humanjavascript.com/ch02-the-big-decision.html"
+      },
+      {
+        "name": "Human JavaScript",
+        "url": "http://read.humanjavascript.com/"
+      },
+      {
+        "name": "Angular Best Practice for App Structure (Public)",
+        "url": "https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub"
+      },
+      {
+        "name": "Google's AngularJS Style Guide",
+        "url": "https://google-styleguide.googlecode.com/svn/trunk/angularjs-google-style.html"
+      },
+      {
+        "name": "The New Yorker > Regrets Only",
+        "url": "http://www.newyorker.com/magazine/2008/09/29/regrets-only-2?currentPage=all"
+      },
+      {
+        "name": "The New Yorker > A Pickpocket’s Tale",
+        "url": "http://www.newyorker.com/magazine/2013/01/07/a-pickpockets-tale"
+      },
+      {
+        "name": "The New Yorker > The Apostate",
+        "url": "http://www.newyorker.com/magazine/2011/02/14/the-apostate-3?currentPage=all"
+      },
+      {
+        "name": "The New Yorker > Life at the Top",
+        "url": "http://www.newyorker.com/magazine/2013/02/04/life-at-the-top"
+      },
+      {
+        "name": "The New Yorker > Being a Times Square Elmo",
+        "url": "http://www.newyorker.com/business/currency/being-a-times-square-elmo#slide_ss_0=1"
+      },
+      {
+        "name": "The New Yorker > An S.O.S. in a Saks Bag",
+        "url": "http://www.newyorker.com/currency-tag/an-s-o-s-in-a-saks-bag"
+      },
+      {
+        "name": "The New Yorker > The Chameleon",
+        "url": "http://www.newyorker.com/magazine/2008/08/11/the-chameleon-2?currentPage=all"
+      },
+      {
+        "name": "Eloquent JavaScript",
+        "url": "http://eloquentjavascript.net/"
+      },
+      {
+        "name": "Designer's guide to DPI",
+        "url": "http://sebastien-gabriel.com/designers-guide-to-dpi/home"
+      },
+      {
+        "name": "Introduction to Philosophy",
+        "url": "http://www.mysliderule.com/blog/intro-to-philosophy-online-courses/"
+      },
+      {
+        "name": "JavaScript Promises: There and back again - HTML5 Rocks",
+        "url": "http://www.html5rocks.com/en/tutorials/es6/promises/"
+      },
+      {
+        "name": "DailyJS: JavaScript Promises ... In Wicked Detail",
+        "url": "http://dailyjs.com/2014/02/20/promises-in-detail/"
+      },
+      {
+        "name": "1905",
+        "url": "http://iquantny.tumblr.com/post/96700509489/how-memorizing-19-05-can-help-you-outsmart-the-mta"
+      },
+      {
+        "name": "Top 10 Career-Changing Programming Books",
+        "url": "http://www.nomachetejuggling.com/2014/02/05/top-10-career-changing-programming-books/"
+      },
+      {
+        "name": "Directory Traversas",
+        "url": "http://en.wikipedia.org/wiki/Directory_traversal_attack"
+      },
+      {
+        "name": "The Twelve-Factor App",
+        "url": "http://12factor.net/"
+      },
+      {
+        "name": "Using CSS flexible boxes",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes"
+      },
+      {
+        "name": "The Greatest Regex Trick Ever",
+        "url": "http://www.rexegg.com/regex-best-trick.html"
+      },
+      {
+        "name": "JavaScript Design Patterns",
+        "url": "http://www.adobe.com/devnet/archive/html5/articles/javascript-design-patterns-pt1-singleton-composite-facade.html"
+      },
+      {
+        "name": "Essential Reading List for Getting Started With Service Workers",
+        "url": "https://changelog.com/essential-reading-list-for-getting-started-with-service-workers/"
+      },
+      {
+        "name": "Chrome Devtools Tips & Tricks",
+        "url": "http://mo.github.io/2015/10/19/chrome-devtools.html"
+      },
+      {
+        "name": "Google Bring questions. Build answers.",
+        "url": "https://bar.foo/index.html"
+      },
+      {
+        "name": "Park Avenue Gilid",
+        "url": "http://www.parkavenuegilid.com/static/bookmarks.html"
+      }
+    ],
+    "name": "Reading List",
+    "id": "unread"
+  },
+  {
+    "links": [
+      {
+        "name": "Extending RSS 2.0 With Namespaces",
+        "url": "http://www.disobey.com/detergent/2002/extendingrss2/"
+      },
+      {
+        "name": "RSS 2.0 Specification (RSS 2.0 at Harvard Law)",
+        "url": "http://cyber.law.harvard.edu/rss/rss.html"
+      },
+      {
+        "name": "National Geographic News RSS",
+        "url": "http://news.nationalgeographic.com/index.rss"
+      },
+      {
+        "name": "Directory of RSS Feeds",
+        "url": "http://www.thefreedictionary.com/_/rss-directory.htm"
+      },
+      {
+        "name": "Media RSS Specification",
+        "url": "http://www.rssboard.org/media-rss"
+      }
+    ],
+    "name": "RSS Feeds",
+    "id": "rss"
+  },
+  {
+    "links": [
+      {
+        "name": "Digg",
+        "url": "http://digg.com/"
+      },
+      {
+        "name": "Pinboard",
+        "url": "http://pinboard.in/popular"
+      },
+      {
+        "name": "Google News",
+        "url": "http://news.google.com/news"
+      },
+      {
+        "name": "Engadget",
+        "url": "http://www.engadget.com/"
+      },
+      {
+        "name": "CNET",
+        "url": "http://www.cnet.com/"
+      },
+      {
+        "name": "Cool Material",
+        "url": "http://coolmaterial.com/"
+      },
+      {
+        "name": "The Awesomer",
+        "url": "http://theawesomer.com/"
+      },
+      {
+        "name": "Deals Plus",
+        "url": "https://www.dealsplus.com/"
+      }
+    ],
+    "name": "US News",
+    "id": "usnews"
+  },
+  {
+    "links": [
+      {
+        "name": "Yahoo Mail",
+        "url": "https://login.yahoo.com/?.src=ym&.intl=us&.lang=en-US&.done=https%3a//mail.yahoo.com"
+      },
+      {
+        "name": "GMail",
+        "url": "https://accounts.google.com/ServiceLogin?service=mail&passive=true&rm=false&continue=https://mail.google.com/mail/&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1#identifier"
+      },
+      {
+        "name": "Outlook",
+        "url": "https://login.live.com/login.srf?wa=wsignin1.0&ct=1466593241&rver=6.6.6556.0&wp=MBI_SSL&wreply=https:%2F%2Foutlook.live.com%2Fowa%2F&id=292841&CBCXT=out"
+      },
+      {
+        "name": "Dropbox",
+        "url": "https://www.dropbox.com/"
+      },
+      {
+        "name": "Github",
+        "url": "https://github.com/"
+      }
+    ],
+    "name": "Utility Sites",
+    "id": "utility-sites"
+  }
+]

@@ -21,12 +21,13 @@ date:   2016-06-18 17:00
 
 <p>
 <b>Website</b><br />
-<a href="https://jekyllrb.com/" target="_blank">jekyll 3.1.6</a>
+<a href="https://jekyllrb.com/" target="_blank">jekyll 3.1.6</a> for the static blog generation
 </p>
 
 <p>
 <b>Dependencies</b><br />
-<a href="http://getbootstrap.com/" target="_blank">bootstrap v3.3.6</a><br />
-<a href="https://angularjs.org/" target="_blank">angular 1.2.19</a><br />
-<a href="https://jquery.com/" target="_blank">jquery-1.12.4</a>
+<a href="http://getbootstrap.com/" target="_blank">bootstrap v3.3.6</a> for the grid and responsive layout<br />
+<a href="https://angularjs.org/" target="_blank">angular 1.2.19</a> for my resume<br />
+<a href="https://facebook.github.io/react/" target="_blank">react v15.2.0</a> for the bookmarks page<br />
+<a href="https://jquery.com/" target="_blank">jquery-1.12.4</a> for basic DOM manipulation and interaction
 </p>
