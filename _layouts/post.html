@@ -6,7 +6,7 @@ columns: one
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
     <h1>{{ page.title }}</h1>
-    <p>{{ page.date | date: "%B %-d, %Y" }}</p>
+    <p>{{ page.date | date: "%A - %B %-d, %Y %I:%M %p" }}</p>
   </header>
 
   {{ content }}
