@@ -39,9 +39,23 @@ The destructuring assignment syntax is a JavaScript expression that makes it pos
   
 </pre>
   
-<p>&nbsp;</p>
-  
-<b>References</b>  
-[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)  
-[https://ponyfoo.com/articles/es6-destructuring-in-depth](https://ponyfoo.com/articles/es6-destructuring-in-depth)  
-[http://exploringjs.com/es6/ch_destructuring.html](http://exploringjs.com/es6/ch_destructuring.html)  
+<aside>
+  <h4>References:</h4>
+  <ul>
+    <li>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank">
+        https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+      </a>
+    </li>
+    <li>
+      <a href="https://ponyfoo.com/articles/es6-destructuring-in-depth" target="_blank">
+        https://ponyfoo.com/articles/es6-destructuring-in-depth
+      </a>
+    </li>
+    <li>
+      <a href="http://exploringjs.com/es6/ch_destructuring.html" target="_blank">
+        http://exploringjs.com/es6/ch_destructuring.html
+      </a>
+    </li>
+  </ul>
+</aside>
