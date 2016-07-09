@@ -21,6 +21,24 @@ var LinkGroup = React.createClass({
   }
 });
 
+var LinkGroupOpener = React.createClass({
+  getDefaultProps: function(){
+    return { links: [] }
+  },
+  handleClick : function(evt){
+    this.props.links.map(function(link){
+      window.open(link.url);
+    });
+  },
+  render: function(){
+    return(
+      <p>
+        <a href="#" className="openall" onClick={this.handleClick}>Open All Bookmarks</a>
+      </p>
+    );
+  }
+});
+
 var LinkList = React.createClass({
   render: function(){
     var group = this.props.data;
@@ -36,6 +54,7 @@ var LinkList = React.createClass({
         <label htmlFor={group.id + '-radio'}>{group.name}</label>
         <input type="checkbox" id={group.id + '-radio'} name="checkbox-accordion" />        
         <ul>{links}</ul>
+        <LinkGroupOpener links={group.links} />
       </div>
     );
   }
@@ -72,13 +91,6 @@ var BookmarkApp = React.createClass({
   componentDidUpdate: function(){
         //TODO Clean this up
         //How do you break this up???
-        $('.bookmark-row ul').after('<p><a href="#" class="openall">Open All Bookmarks</a></p>');
-        $('.openall').on('click', function (e) {
-          var $links = $(this).parent().siblings('ul').find('a');
-          $links.each(function(index, value){
-            window.open(value.href);
-          });
-        });
         // $('.bookmark-row label').on('click', function(){
         //   var active = $(this).attr('href') !== '#';
         //   if(active){
