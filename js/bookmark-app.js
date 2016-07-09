@@ -22,7 +22,7 @@ var LinkGroup = React.createClass({
 });
 
 var LinkGroupOpener = React.createClass({
-  getDefaultProps: function(){
+  getInitialState: function(){
     return { links: [] }
   },
   handleClick : function(evt){
