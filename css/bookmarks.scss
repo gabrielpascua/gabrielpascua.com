@@ -15,7 +15,7 @@
     border-top: 1px solid rgba(0,0,0,.2);
     line-height: 1.5;
   }
-
+  
   a{
     display: block;
     padding: 15px;
@@ -119,88 +119,33 @@
 
 
 /* collapsing */
-.bookmark-row ul{
-  height: 0;
-  overflow: hidden;
+.bookmark-row { 
+  label{
+    padding: 15px;
+    display: block;
+    cursor: pointer;
+    margin-bottom: 0;
+    
+    &:hover{
+      color: darkcyan;
+      background-color: rgba(0,0,0,.05);
+    }
+  }
+ 
+  ul{
+    height: 0;
+    overflow: hidden;
+  }
+  
+  input[type="checkbox"]{
+    display: none;
+    
+    &:checked + ul{
+      height: auto;
+      overflow: visible;
+    }
+  }
 }
-
-.bookmark-row a.collapse{
-  display: none;
-}
-
-#forrent:target ul,
-#forsale:target ul,
-#openhouse:target ul,
-#tosee:target ul,
-#seen:target ul,
-#csrf:target ul,
-#tools:target ul,
-#docker:target ul,
-#forms:target ul,
-#jobs:target ul,
-#livetv:target ul,
-#banks:target ul,
-#owin:target ul,
-#phnews:target ul,
-#purchase:target ul,
-#unread:target ul,
-#rss:target ul,
-#usnews:target ul,
-#todo:target ul,
-#utility-sites:target ul
-{
-  height: auto;
-  overflow: visible;
-}
-
-#forrent:target h3 a,
-#forsale:target h3 a,
-#openhouse:target h3 a,
-#tosee:target h3 a,
-#seen:target h3 a,
-#csrf:target h3 a,
-#tools:target h3 a,
-#docker:target h3 a,
-#forms:target h3 a,
-#jobs:target h3 a,
-#livetv:target h3 a,
-#banks:target h3 a,
-#owin:target h3 a,
-#phnews:target h3 a,
-#purchase:target h3 a,
-#unread:target h3 a,
-#rss:target h3 a,
-#usnews:target h3 a,
-#todo:target h3 a,
-#utility-sites:target h3 a
-{
-  display: none;
-}
-
-#forrent:target h3 a.collapse,
-#forsale:target h3 a.collapse,
-#openhouse:target h3 a.collapse,
-#tosee:target h3 a.collapse,
-#seen:target h3 a.collapse,
-#csrf:target h3 a.collapse,
-#tools:target h3 a.collapse,
-#docker:target h3 a.collapse,
-#forms:target h3 a.collapse,
-#jobs:target h3 a.collapse,
-#livetv:target h3 a.collapse,
-#banks:target h3 a.collapse,
-#owin:target h3 a.collapse,
-#phnews:target h3 a.collapse,
-#purchase:target h3 a.collapse,
-#unread:target h3 a.collapse,
-#rss:target h3 a.collapse,
-#usnews:target h3 a.collapse,
-#todo:target h3 a.collapse,
-#utility-sites:target h3 a.collapse
-{
-  display: block;
-}
-
 
 /* flexbox */
 .bookmark-container{

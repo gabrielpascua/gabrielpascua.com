@@ -33,10 +33,8 @@ var LinkList = React.createClass({
 
     return(
       <div className="bookmark-row" id={group.id}>
-        <h3>
-          <a href="#" className="collapse">{group.name}</a>
-          <a href={'#' + group.id}>{group.name}</a>
-        </h3>
+        <label htmlFor={group.id + '-radio'}>{group.name}</label>
+        <input type="checkbox" id={group.id + '-radio'} name="checkbox-accordion" />        
         <ul>{links}</ul>
       </div>
     );
@@ -81,15 +79,15 @@ var BookmarkApp = React.createClass({
             window.open(value.href);
           });
         });
-        $('.bookmark-row h3 a').on('click', function(){
-          var active = $(this).attr('href') !== '#';
-          if(active){
-            $('.bookmark-row').addClass('inactive');
-            $(this).closest('.bookmark-row').removeClass('inactive');
-          }else{
-            $('.bookmark-row').removeClass('inactive');
-          }
-        });
+        // $('.bookmark-row label').on('click', function(){
+        //   var active = $(this).attr('href') !== '#';
+        //   if(active){
+        //     $('.bookmark-row').addClass('inactive');
+        //     $(this).closest('.bookmark-row').removeClass('inactive');
+        //   }else{
+        //     $('.bookmark-row').removeClass('inactive');
+        //   }
+        // });
 
         /* autocomplete */
         function AutoCompleteResult(anchorTag){
