@@ -11,9 +11,12 @@ tags: react javascript
 <img src="/img/react-component-lifecycle.svg" />
 </p>
 
+<p>&nbsp;</p>
+
 <p>
 <a href="/data/react-component-lifecycle.xml" class="btn btn-default">
-    <b>Download the draw.io file (Save Link As)</b>
+    <b>Download the draw.io file here</b><br />
+    Right Click >  Save Link As
 </a>
 </p>
 
