@@ -8,10 +8,6 @@ tags: react javascript
 ---
 
 <p>
-<b>Note:</b> Using the ES6 <code>extends</code> syntax makes some events unavailabe.  The same is true for <code>React.createComponent</code>.
-</p>
-
-<p>
 <img src="/img/react-component-lifecycle.svg" />
 </p>
 
