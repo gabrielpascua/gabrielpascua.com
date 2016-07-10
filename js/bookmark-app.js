@@ -9,21 +9,19 @@ function sortAscending(item1,item2){
   }
 }
 
-function AutoCompleteItem(){
-  this.href = '';
-  this.text = '';
-  this.group = '';
-}
+function positionResults(){
+  var domResults = document.querySelector('.bookmark-results');
+  var listItems = domResults.getElementsByTagName('li');
 
-var AutoCompleteResult = React.createClass({
-  render: function(autocompleteItem){
-    if(!autocompleteItem){
-      return (<a href="#">No matching bookmark found.</a>);
-    }else{
-      return (<a href={autocompleteItem.href}><b>{autocompleteItem.group}</b> - {autocompleteItem.text}</a>);
-    }
+  if(listItems.length){
+    var searchBox = document.querySelector('.bookmark-search input[type="text"]');    
+    domResults.style.display = 'block';
+    domResults.style.left = searchBox.offsetLeft + 'px';
+    domResults.style.width = searchBox.offsetWidth + 'px';      
+  }else{
+    domResults.style = null;
   }
-});
+}
 
 /* Parent - Child callback interaction */
 // 1. LinkSearchBox loads default term from LinkSearch state 
@@ -63,12 +61,13 @@ var LinkSearcher = React.createClass({
     return(
       <div className="bookmark-search">
         {/* #1 */}                                           {/* #2 */}
-        <LinkSearchBox term={this.state.searchTerm} onSearch={this.searchForLinksCallback}/>
-        <div className="bookmark-results">
-          <LinkSearchResults filter={this.state.searchTerm} data={this.props.data} />
-        </div>
+        <LinkSearchBox term={this.state.searchTerm} onSearch={this.searchForLinksCallback} />        
+        <LinkSearchResults filter={this.state.searchTerm} data={this.props.data} ref='searchResults' />    
       </div>
     );
+  },
+  componentDidUpdate: function(){
+    positionResults();    
   }
 });
 
@@ -100,17 +99,19 @@ var LinkSearchResults = React.createClass({
   render: function(){
     var results = this.props.filter.length ? this.searchData(this.props.filter) : [];    
     return(
-      <ul>
-      {
-        results.map(function(link, linkIndex){
-          return( 
-            <li key={linkIndex}>
-                <a href={link.href}><b>link.group</b> - {link.text}</a>
-            </li>
-          )
-        })  
-      }
-      </ul>
+      <div className="bookmark-results">
+        <ul>
+        {
+          results.map(function(link, linkIndex){
+            return( 
+              <li key={linkIndex}>
+                  <a href={link.href}><b>link.group</b> - {link.text}</a>
+              </li>
+            )
+          })  
+        }
+        </ul>
+      </div>
     );
   }
 });
@@ -281,7 +282,7 @@ var BookmarkApp = React.createClass({
         //   positionResults(e);
         // });
 
-        // window.onresize = positionResults;
+        window.onresize = positionResults;       
   },
   render: function(){
     return (
