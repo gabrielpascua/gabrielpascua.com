@@ -36,11 +36,17 @@ var LinkSearchBox = React.createClass({
   setSearchTerm: function(event){
     this.props.onSearch(event.target.value);
   },
+  detectPress: function(event){
+    if(event.keyCode == 27){
+      this.props.onSearch('');
+    }
+  },
   render: function(){
     return(
       <input type="text" placeholder="Search Bookmarks"
         value={this.props.term}        
-        onChange={this.setSearchTerm} 
+        onChange={this.setSearchTerm}
+        onKeyDown={this.detectPress} 
       />
     );
   }
@@ -54,6 +60,7 @@ var LinkSearcher = React.createClass({
   },
   ///# 4
   searchForLinksCallback: function(searchboxValue){
+    // console.log('searchboxValue', searchboxValue);
     this.setState({
       searchTerm: searchboxValue
     });
