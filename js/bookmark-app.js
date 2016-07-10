@@ -89,18 +89,22 @@ var LinkSearchResults = React.createClass({
   searchData: function(filter){
     var regex = new RegExp(filter, 'ig');
     var result = [];
-    
-    this.props.data.forEach(function(group){
-      group.links.forEach(function(link){
-        if(regex.test(link.name) || regex.test(link.url)){
+    var maxResults = 5;
+    for(var i=0, maxGroups=this.props.data.length; i<maxGroups; i++){
+      var group = this.props.data[i];
+      for(var j=0, maxLinks=group.links.length; j<maxLinks; j++){
+        var link = group.links[j];
+        var hasMatch = (regex.test(link.name) || regex.test(link.url));
+        var belowLimit = result.length < maxResults; 
+        if(hasMatch && belowLimit){
           result.push({
             group: group.name,
             text: link.name,
             href: link.url
-          });
-        };
-      });
-    });
+          });           
+        }
+      }
+    }
     
     return result;
   },
