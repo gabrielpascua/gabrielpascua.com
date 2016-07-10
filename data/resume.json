@@ -41,10 +41,12 @@
                 "grunt",
                 "gulp",
                 "CoffeeScript",
-                "Ember",
-                "Angular",
+                "Ember 0",
+                "Angular 1",
+                "React 15",
                 "twig",
                 "handlebars",
+                "nunjucks",
                 "Express"
             ],
             "php":[
