@@ -2,8 +2,8 @@
 layout: page
 ---
 <h1>Notes</h1>
-<div class="toc">
-{% for post in site.posts limit:20 %}
+<div class="toc" data-count="{{ paginator.total_pages }}">
+{% for post in site.posts %}
     {% if post.categories contains 'notes' %}
     <div class="row">
         <div class="col-xs-12 col-sm-6 title">
