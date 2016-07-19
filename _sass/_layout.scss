@@ -121,6 +121,30 @@ article{
   }
 }
 
+.jekyll-pagination{
+  margin-top: 60px;
+
+  a{
+    color: darkcyan;
+  }
+
+  span{
+    color: rgba(0,0,0,.4);
+  }
+
+  .pager li{
+    & > a, & > span{
+      border-radius: 0;
+      border: none;
+
+      &:hover{
+        background-color: transparent;
+        color: black;
+      }
+    }
+  }
+}
+
 
 @media (min-width: 480px) {
   .book-cover{

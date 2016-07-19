@@ -2,8 +2,8 @@
 layout: page
 ---
 <h1>Notes</h1>
-<div class="toc" data-count="{{ paginator.total_pages }}">
-{% for post in site.posts %}
+<div class="toc">
+{% for post in paginator.posts %}
     {% if post.categories contains 'notes' %}
     <div class="row">
         <div class="col-xs-12 col-sm-6 title">
@@ -19,3 +19,24 @@ layout: page
     {% endif %}
 {% endfor %}
 </div>
+
+<!-- Pagination links -->
+<nav class="jekyll-pagination">
+  <ul class="pager">
+    <li>
+    {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}">Newer</a>
+    {% else %}
+        <span>Newer</span>
+    {% endif %}
+    </li>        
+    <li><span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span></li>
+    <li>
+    {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}">Older</a>
+    {% else %}
+        <span>Older</span>
+    {% endif %}
+    </li>
+  </ul>
+</nav>
