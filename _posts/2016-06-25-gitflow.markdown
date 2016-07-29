@@ -10,4 +10,4 @@ tags: git
 
 **GitFlow** is a branching guideline developed by Vincent Driessen.
 
-<img src="/img/gitflow.gif" />
+<img src="/img/gitflow.jpg" />
