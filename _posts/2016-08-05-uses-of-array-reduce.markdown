@@ -7,8 +7,7 @@ categories: notes
 tags: javascript
 ---
 
-#### Math Functions
-<br />
+#### Math Functions <br />
 <pre>
 
   var arr = [7,2,3,4];
