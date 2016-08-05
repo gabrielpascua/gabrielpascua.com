@@ -7,7 +7,7 @@ categories: notes
 tags: javascript
 ---
 
-#### Math Functions  
+#### Math Functions
 <br />
 <pre>
 
@@ -19,7 +19,7 @@ tags: javascript
   
 </pre>
 
-#### String Manipulation  
+#### String Manipulation
 <br />
 <pre>
 
@@ -31,7 +31,7 @@ tags: javascript
   
 </pre>
 
-#### Grouping Results  
+#### Grouping Results
 <br />
 <pre>
 
@@ -48,7 +48,7 @@ tags: javascript
   
 </pre>
 
-#### Get Unique Values From a Collection  
+#### Get Unique Values From a Collection
 <br />
 <pre>
 
@@ -63,7 +63,7 @@ tags: javascript
   
 </pre>
 
-#### Get Dupes with Closure  
+#### Get Dupes with Closure
 <br />
 <pre>
 
