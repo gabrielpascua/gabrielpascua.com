@@ -18,7 +18,7 @@ tags: javascript
   //total = 20
   
 </pre>
-
+<p></p>
 #### String Manipulation
 <p></p>
 <pre>
@@ -47,7 +47,7 @@ tags: javascript
   //cities = {"NY":2,"LA":1}
   
 </pre>
-
+<p></p>
 #### Get Unique Values From a Collection
 <p></p>
 <pre>
@@ -62,7 +62,7 @@ tags: javascript
   //uniques = ["NY","LA"]
   
 </pre>
-
+<p></p>
 #### Get Dupes with Closure
 <p></p>
 <pre>
