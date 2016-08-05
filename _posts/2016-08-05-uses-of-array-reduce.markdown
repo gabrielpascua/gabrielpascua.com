@@ -19,6 +19,7 @@ tags: javascript
   
 </pre>
 <p></p>
+
 #### String Manipulation
 <p></p>
 <pre>
@@ -30,6 +31,7 @@ tags: javascript
   //phrase = "Hi hello world"
   
 </pre>
+<p></p>
 
 #### Grouping Results
 <p></p>
@@ -48,6 +50,7 @@ tags: javascript
   
 </pre>
 <p></p>
+
 #### Get Unique Values From a Collection
 <p></p>
 <pre>
@@ -63,6 +66,7 @@ tags: javascript
   
 </pre>
 <p></p>
+
 #### Get Dupes with Closure
 <p></p>
 <pre>
