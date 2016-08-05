@@ -7,7 +7,8 @@ categories: notes
 tags: javascript
 ---
 
-#### Math Functions <br />
+#### Math Functions
+<p></p>
 <pre>
 
   var arr = [7,2,3,4];
@@ -19,7 +20,7 @@ tags: javascript
 </pre>
 
 #### String Manipulation
-<br />
+<p></p>
 <pre>
 
   var words = ["hello", "world"];
@@ -31,7 +32,7 @@ tags: javascript
 </pre>
 
 #### Grouping Results
-<br />
+<p></p>
 <pre>
 
   var cities = [{name: 'NY'}, {name: 'NY'}, {name: 'LA'}]
@@ -48,7 +49,7 @@ tags: javascript
 </pre>
 
 #### Get Unique Values From a Collection
-<br />
+<p></p>
 <pre>
 
   var uniques = [{name: 'NY'}, {name: 'NY'}, {name: 'LA'}]
@@ -63,7 +64,7 @@ tags: javascript
 </pre>
 
 #### Get Dupes with Closure
-<br />
+<p></p>
 <pre>
 
   var dupes = [];
