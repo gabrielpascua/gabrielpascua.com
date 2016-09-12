@@ -7,7 +7,7 @@ categories: notes
 tags: unix
 ---
 
-<p><h3>Keyboard Commands</h3></p>
+<p><h3>Keyboard Commands</h3></p><br />
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
@@ -102,9 +102,8 @@ tags: unix
     </tr>
   </tbody>
 </table>
-
-<p>&nbsp;</p>
-<p><h3>Octal File Permissions</h3></p>
+<br /><br />
+<p><h3>Octal File Permissions</h3></p><br />
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
