@@ -8,6 +8,7 @@ tags: unix
 ---
 
 ### Keyboard Commands
+
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
@@ -103,8 +104,9 @@ tags: unix
   </tbody>
 </table>
 
-<br /><br />
+
 ### Octal File Permissions
+
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
