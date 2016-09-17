@@ -121,6 +121,30 @@ article{
   }
 }
 
+.book {
+  h3 + ul{
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+
+  li{
+    list-style: outside;
+    padding-left: 10px;
+    margin-left: 15px;
+    margin-bottom: 4px;
+
+    ol, ul{
+      margin-top: 10px;
+    }
+  }
+
+  ol{
+    li{
+      list-style-type: decimal;
+    }
+  }
+}
+
 .jekyll-pagination{
   margin-top: 60px;
 
@@ -204,6 +228,19 @@ article{
         flex-basis: 70%;
         margin-left: 5%;
       }
+    }
+  } 
+}
+
+@media (min-width: 1200px) {
+  body .column-two .book{
+    flex-basis: 75%;
+    margin-left: 5%;
+    margin-top:30px;
+
+    &-cover{
+      margin-top: 30px;
+      margin-left: -230px;
     }
   } 
 }
