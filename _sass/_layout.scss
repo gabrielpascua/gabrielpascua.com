@@ -33,6 +33,22 @@ body{
   }
 }
 
+.navbar-default .navbar-nav > li {
+  & > a {
+    color: rgba(0,0,0,.6);
+    font-size: 14px;
+    border-left: 1px solid rgba(255,255,255,.76);
+    font-weight: bold;
+    width: 65px;
+    text-align: center;
+    font-family: monospace;
+  }
+  
+  &:last-child > a{
+    border-right: 1px solid rgba(255,255,255,.76);
+  }
+}
+
 aside{
   margin-top: 60px;
 
