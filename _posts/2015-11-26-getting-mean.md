@@ -5,7 +5,7 @@ excerpt: "Getting MEAN with Mongo, Express, Angular, and Node 1st Edition"
 date:   2015-11-26
 categories: books
 book_url: https://www.manning.com/books/getting-mean-with-mongo-express-angular-and-node
-book_image: /img/getting-mean-360x451.jpg
+book_image: /img/book-getting-mean-360x451.jpg
 tags: javascript, node, mongo
 ---
 

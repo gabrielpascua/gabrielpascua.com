@@ -5,7 +5,7 @@ excerpt: "How Google Runs Production Systems 1st Edition"
 date:   2016-04-16
 categories: books
 book_url: http://shop.oreilly.com/product/0636920041528.do
-book_image: /img/site-reliability-engineering-360x472.jpg
+book_image: /img/book-site-reliability-engineering-360x472.jpg
 tags: ops
 ---
 
