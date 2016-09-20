@@ -65,6 +65,12 @@ body.kobe-htm footer hr{
     }
 }
 
+@media (min-width: 960px) {
+    body.kobe-htm .heading{
+        margin-left: 0;
+    }
+}
+
 
 /* Manhattan */
 body.manhattan{
@@ -178,6 +184,12 @@ body.manhattan footer hr{
   body.manhattan .row.job{
     margin-bottom: 100px;
   }
+}
+
+@media (min-width: 960px) {
+    body.manhattan .heading{
+        margin-left: 0;
+    }
 }
 
 
@@ -331,4 +343,10 @@ body.sharpie footer {
   body.sharpie .two-thirds.column p span:last-of-type{
     margin-left: 10%;
   }
+}
+
+@media (min-width: 960px) {
+    body.sharpie .heading{
+        margin-left: 0;
+    }
 }

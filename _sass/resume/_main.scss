@@ -121,3 +121,16 @@ footer {
         clear:both;
     }
 }
+
+@media (min-width: 960px) {
+    .heading{
+        margin-left: 120px;
+
+        .default & span{
+            letter-spacing: 7px;
+            &:last-child{
+                margin-left: 25px;
+            }
+        }
+    }
+}
