@@ -315,6 +315,7 @@ tags: javascript
     );
     </pre>
 <p></p>
+
 ### Chapter 7. Functional Optimizations
 * Featured Javascript libraries:
     - [Lodash](https://lodash.com/)
@@ -365,6 +366,7 @@ tags: javascript
     findIndex(['a', 'b'], x => x === 'b'); // 1
     </pre>
 <p></p>
+
 ### Chapter 8. Managing Asynchronous Events and Data
 * Challenges of asynchronous code:
     - Creation of temporal (time) dependence between the async response and your code that requires it.  
