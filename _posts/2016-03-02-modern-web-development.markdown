@@ -196,10 +196,15 @@ tags: .net
     [CustomValidation(typeof(CountryInputModel), "Validate")]
     public class CountryInputModel : ViewModelBase { … }
 
-    public static ValidationResult Validate(CountryInputModel data, ValidationContext context)
+    public static ValidationResult Validate(CountryInputModel data,
+        ValidationContext context)
     {
-        if (data.Continent == Continent.Unknown && !data.Name.IsNullOrWhitespace())
+        if (data.Continent == Continent.Unknown && 
+            !data.Name.IsNullOrWhitespace())
+        {
             return new ValidationResult("Must indicate a continent.");
+        }
+
         return ValidationResult.Success;
     }
     </pre>
@@ -256,7 +261,6 @@ tags: .net
     {
         private const String JsonpCallbackName = "callback";
 
-
         public override void ExecuteResult(ControllerContext context)
         {
             if (context == null)
@@ -267,20 +271,23 @@ tags: .net
                 String.Equals(context.HttpContext.Request.HttpMethod, "GET"))
                 throw new InvalidOperationException();
 
-
             var response = context.HttpContext.Response;
             if (!String.IsNullOrEmpty(ContentType))
                 response.ContentType = ContentType;
             else
                 response.ContentType = "application/json";
-            if (ContentEncoding != null)
-    response.ContentEncoding = this.ContentEncoding;
 
+            if (ContentEncoding != null)
+            {
+                response.ContentEncoding = this.ContentEncoding;
+            }
 
             if (Data != null)
             {
                 var serializer = new JavaScriptSerializer();
-                var buffer = String.Format("{0}({1})", JsonpCallbackName, serializer.Serialize(Data));
+                var buffer = String.Format("{0}({1})", 
+                    JsonpCallbackName, 
+                    serializer.Serialize(Data));
                 response.Write(buffer);
             }
         }
