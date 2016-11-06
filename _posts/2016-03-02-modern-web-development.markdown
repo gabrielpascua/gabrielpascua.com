@@ -95,7 +95,7 @@ tags: .net
 ![DDD vs N-Tier](/img/3tier-vs-ddd.svg)
 * The 3-tier architecture introduces a lot of uncertainty on how to structure business logic.  It assumes that an application is running on a single database.  A Layered Architecture on the other hand splits the Business layer into Application and Domain to clear out the gray areas.
     - The Presentation layer funnels the data to the rest of the system. It defines the boundaries of acceptable data.  It consists of input models that group data when a command is posted, and a view model that represents the application’s response.
-    - The Application Layer is the entry point in the back end of the system.  It abstracts business processes from user inputs and performs the necessary data transformation the back end understands.  It has an almost 1:1 mapping of methods to the use-cases of the Presentation Layer.  The difference between Application and Domain logic when we cash checks in a baking system is the former represents the user’s transaction with the teller or an ATM machine and the latter the process of taking money from one account and transferring it to another.
+    - The Application Layer is the entry point in the back end of the system.  It abstracts business processes from user inputs and performs the necessary data transformation the back end understands.  It has an almost 1:1 mapping of methods to the use-cases of the Presentation Layer.  The difference between Application and Domain logic when we cash checks in a banking system is the former represents the user’s transaction with the teller or an ATM machine and the latter the process of taking money from one account and transferring it to another.
     - The Domain Layer is where you implement business rules and processes.  It consists of domain models and domain services. Domain models are different from persistence models although both can match.  Domain models focus on logic and business rules.  Domain service is a class that can perform reusable tasks related to the business logic.  Domain services have free access to the infrastructure layer.
     - The Infrastructure Layer is anything related to concrete technologies - ORM, API’s, Logging, etc.. It is made up of repository classes that know how to read and write data.
 <p></p>
@@ -136,7 +136,7 @@ tags: .net
         }
         </pre>
 * **Controllers**
-    - Delicate part of the design. Just because you’re application is ASP.NET MVC doesn’t mean you’re getting a great layered architecture
+    - Delicate part of the design. Just because you’re application is ASP.NET MVC doesn't mean you’re getting a great layered architecture
     - In a cloud-based architecture, making a controller dependent on state reduces the scalability of an application
     - An ideal way to build controller classes is to put all the orchestration logic into distinct application layer classes keeping your controllers as thin as possible. By doing so you transfer testing to the application layer class, making testing for controllers optional.
     - Use `[NonAction]` attribute to hide a `public` controller action.  A possible use case for this is when your route must be case sensitive
