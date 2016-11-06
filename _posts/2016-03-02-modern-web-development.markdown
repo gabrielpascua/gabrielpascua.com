@@ -43,13 +43,13 @@ tags: .net
         `Presentation/App (P/A) ← → Read/Write DB`  
         `P/A → Write DB ; Read DB → P/A`
     - An example implementation having 2 `DBContext` in Entity Framework for Command and Query
-```
+        <pre>
         
         public class CommandDatabase : DbContext
         {
             …
-            public DbSet<Order> Orders {get; private set}
-            public DbSet<Customer> Customers {get;private set}
+            public DbSet&lt;Order&gt; Orders {get; private set}
+            public DbSet&lt;Customer&gt; Customers {get;private set}
             …
         }
 
@@ -57,12 +57,11 @@ tags: .net
         {
             …
             //IQueryable has no access to methods that save changes
-            public IQueryable<Order> Orders {return _orders;}
-            public IQueryable<Customer> Customers {return _customers;}
+            public IQueryable&lt;Order&gt; Orders {return _orders;}
+            public IQueryable&lt;Customer&gt; Customers {return _customers;}
             …
         }
-        …
-```
+        </pre>
 * Message-based formulation as a form of CQRS relies on having a command processor (typically a bus) class to facilitate communication between your application and its supporting layers.  In this design inputs transformed into commands (as specific types of messages) are pushed to the command processor that diverts it to the correct domain layer.  In an MVC architecture the command processor is the same as your controller action.  
     - Events or notifications is a natural requirement of this design because they tell other handlers that a command has been executed.  The naming convention of event classes should include what just happened, e.g. `PaymentCompleted`, `OrderCreated`, etc..  
     - A typical command processor would have a collection of listeners and message handlers which can either be a saga (long running task) or a handler (one-off execution per message).
@@ -146,13 +145,12 @@ tags: .net
     - `async` controller actions are beneficial for long-running requests.  It prevents locking ASP.NET threads and not to make the method run faster.
         <pre>
 
-        public async Task<ActionResult> Rss()
+        public async Task&lt;ActionResult&gt; Rss()
         {
             …
             var rss = await generateRss();
             return rss;
         }
-
         </pre>
 * **View**
     - Anything prefixed with `@` can process C# or VB expressions
