@@ -91,7 +91,8 @@ tags: .net
 <p></p>
 
 ### Chapter 5. The layered architecture
-![DDD vs N-Tier](/img/3tier-vs-ddd.svg)
+![DDD vs N-Tier](/img/3tier-vs-ddd.svg)  
+
 * The 3-tier architecture introduces a lot of uncertainty on how to structure business logic.  It assumes that an application is running on a single database.  A Layered Architecture on the other hand splits the Business layer into Application and Domain to clear out the gray areas.
     - The Presentation layer funnels the data to the rest of the system. It defines the boundaries of acceptable data.  It consists of input models that group data when a command is posted, and a view model that represents the application’s response.
     - The Application Layer is the entry point in the back end of the system.  It abstracts business processes from user inputs and performs the necessary data transformation the back end understands.  It has an almost 1:1 mapping of methods to the use-cases of the Presentation Layer.  The difference between Application and Domain logic when we cash checks in a banking system is the former represents the user’s transaction with the teller or an ATM machine and the latter the process of taking money from one account and transferring it to another.
