@@ -43,8 +43,8 @@ tags: concepts
     </tr>
     <tr>
         <td><b>Client Libraries</b></td>
+        <td>Write your own</td>
         <td>Usually provided</td>
-        <td>Manually written</td>
     </tr>
     <tr>
         <td><b>Networking Protocol</b></td>
