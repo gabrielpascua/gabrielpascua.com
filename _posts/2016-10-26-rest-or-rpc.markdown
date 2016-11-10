@@ -34,7 +34,7 @@ tags: concepts
     <tr>
         <td><b>Database Operations</b></td>
         <td>CRUD</td>
-        <td>Arbitrary</td>
+        <td>Arbitrary or a series of operations in 1 endpoint</td>
     </tr>
     <tr>
         <td><b>Serialization</b></td>
