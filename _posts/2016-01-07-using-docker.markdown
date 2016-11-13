@@ -5,7 +5,7 @@ excerpt: "Developing and Deploying Software with Containers"
 date:   2016-01-07
 categories: books
 book_url: http://shop.oreilly.com/product/0636920035671.do
-book_image: /img/book-site-reliability-engineering-360x472.jpg
+book_image: /img/book-using-docker-350x459.jpg
 tags: docker
 ---
 
