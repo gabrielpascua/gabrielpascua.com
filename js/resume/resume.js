@@ -2,7 +2,8 @@
 
   //private functions
   function getTheme(){
-    var themes = ['default', 'kobe-htm','manhattan', 'sharpie'];
+    // var themes = ['default', 'kobe-htm','manhattan', 'sharpie'];
+    var themes = ['default', 'manhattan', 'sharpie'];
     var random;
 
     var qsTemplate = window.location.search.substr(1).split('&')

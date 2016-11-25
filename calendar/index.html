@@ -1,0 +1,48 @@
+---
+layout: null
+---
+
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/css/calendar.css" | prepend: site.baseurl }}">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>2017 Calendar</title>
+</head>
+
+<body class="calendar-page">
+
+{% include topnav.html %}
+
+<!-- Calendar : render raw because Vue uses {{ }} -->
+{% raw %}
+
+<h1>2017</h1>
+<div id="calendar" class="calendar">
+    <div class="month" v-for="month in calendar">
+        <b>{{ month.name }}</b>
+        <table class="table-bordered">
+            <tr v-for="week in month.weeks">
+                <td v-for="day in week" v-bind:class="day|isHoliday">
+                    <span>{{day|date}}</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+{% endraw %}
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/js/jquery-1.12.4/jquery-1.12.4.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/bootstrap-sass-3.3.6/bootstrap.min.js"></script>
+<script src="/js/calendar/linkedlist.js"></script>
+<script src="/js/calendar/app.js"></script>
+</body>
+
+</html>
