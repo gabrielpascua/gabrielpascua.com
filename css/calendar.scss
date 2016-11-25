@@ -4,8 +4,12 @@
 .calendar-page{
 
     h1{
-        margin: 100px auto 50px auto;
+        margin: 0 auto 50px auto;
         text-align: center;
+        padding-bottom: 50px;
+        background-color: rgba(0,0,0,.75);
+        padding-top: 100px;
+        color: #fff;
     }
 
     .calendar{
