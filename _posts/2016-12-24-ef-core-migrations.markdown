@@ -31,6 +31,7 @@ tags: concepts
 
 ```
 <p></p>
+
 ### If you haven’t done so, import the libraries
 <p></p>
 ```
@@ -39,6 +40,7 @@ tags: concepts
 
 ```
 <p></p>
+
 ### Run the migration script
 <p></p>
 ```
