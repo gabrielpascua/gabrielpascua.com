@@ -14,7 +14,7 @@ Desktop Resolution : `3840x2160`
 <br />
 
 ### Drive Partition
-Note that the EFI System  is shared between the 2 OS  
+Note that the EFI System  is shared between the 2 OS
 ```
 
   Device      Size    Type
@@ -27,6 +27,7 @@ Note that the EFI System  is shared between the 2 OS
 
 ```
 <br />
+
 ### Ubuntu 16.04
 [Installing Git](https://git-scm.com/download/linux)  
 [Setting up Ruby on Rails](https://gorails.com/setup/ubuntu/16.04)  
