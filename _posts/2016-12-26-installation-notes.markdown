@@ -14,6 +14,7 @@ Desktop Resolution : `3840x2160`
 <br />
 
 ### Drive Partition
+Note that the EFI System  is shared between the 2 OS  
 ```
 
   Device      Size    Type
@@ -32,6 +33,8 @@ Desktop Resolution : `3840x2160`
 [Github Dependencies](https://pages.github.com/versions/)  
 [Generating an SSH Key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)  
 [Removing Ubuntu from Boot](http://www.everydaylinuxuser.com/2016/04/how-to-remove-ubuntu-from-computer-dual.html)  
+[Installing Node via nvm](https://github.com/creationix/nvm#installation)  
+[Installing .NET Core](https://www.microsoft.com/net/core#linuxubuntu)
 <br />
 
 ### Windows 10
