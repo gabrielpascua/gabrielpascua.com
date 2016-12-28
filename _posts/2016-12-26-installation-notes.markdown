@@ -15,6 +15,7 @@ Desktop Resolution : `3840x2160`
 
 ### Drive Partition
 Note that the EFI System  is shared between the 2 OS
+
 ```
 
   Device      Size    Type
