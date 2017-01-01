@@ -27,7 +27,7 @@ layout: null
         <b>{{ month.name }}</b>
         <table class="table-bordered">
             <tr v-for="week in month.weeks">
-                <td v-for="day in week" v-bind:class="day|isHoliday">
+                <td v-for="day in week" v-bind:class="day|inflect">
                     <span>{{day|date}}</span>
                 </td>
             </tr>

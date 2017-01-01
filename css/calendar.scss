@@ -44,6 +44,15 @@
         padding-left: 10px;
         padding-right: 10px;
         text-align: center;
+
+        &.present{
+            border: 2px solid darkcyan;
+        }
+
+        &.past{
+            background-color: rgba(#000, .2);
+            opacity: .5;
+        }
     }
 
     .holiday:after {
