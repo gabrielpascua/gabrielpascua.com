@@ -23,7 +23,7 @@ function CaLLendar(start, end){
     self.next = null;
 
 	if(end && self.utils.isValidDate(end)){
-		var endDate = keepDate(end);
+		var endDate = self.utils.keepDate(end);
 		self.insert((endDate - self.item) / self.utils.oneDay)
 	}
 }
@@ -100,6 +100,15 @@ CaLLendar.prototype.toGrid = function(){
 		};
 	}
 
+	var addDayToWeek = function(month, calendarItem){
+		var len = month.weeks.length;
+		if(month.weeks[len-1].length < days.length){
+			month.weeks[len-1].push(calendarItem);
+		}else{
+			month.weeks.push([calendarItem]);
+		}
+	}
+
 	var month = new Month();
 	while(cal.next !== null){
 		if(month.name != months[cal.item.getMonth()]){
@@ -121,15 +130,12 @@ CaLLendar.prototype.toGrid = function(){
 			}
 		}
 
-		var len = month.weeks.length;
-		if(month.weeks[len-1].length < days.length){
-			month.weeks[len-1].push(cal.item);
-		}else{
-			month.weeks.push([cal.item]);
-		}
+		addDayToWeek(month, cal.item);
 
 		cal = cal.next;
 	}
+
+	addDayToWeek(month, cal.item);
 
 	grids.push(month);
 
