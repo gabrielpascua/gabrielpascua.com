@@ -644,6 +644,14 @@
       {
         "name": "Github",
         "url": "https://github.com/"
+      },
+      {
+        "name": "Google Drive",
+        "url": "http://www.google.com/drive"
+      },
+      {
+        "name": "New York Sports Club",
+        "url": "https://www.newyorksportsclubs.com/"
       }
     ],
     "name": "Utility Sites",
