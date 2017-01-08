@@ -652,6 +652,18 @@
       {
         "name": "New York Sports Club",
         "url": "https://www.newyorksportsclubs.com/"
+      },
+      {
+        "name": "Jekyll Site",
+        "url": "http://localhost:4000/"
+      },
+      {
+        "name": "dotNET Core Site",
+        "url": "http://localhost:5000/"
+      },
+      {
+        "name": "Express App",
+        "url": "http://localhost:3000/"
       }
     ],
     "name": "Utility Sites",
