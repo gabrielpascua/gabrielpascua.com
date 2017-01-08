@@ -37,6 +37,7 @@ Note that the EFI System  is shared between the 2 OS
 [Removing Ubuntu from Boot](http://www.everydaylinuxuser.com/2016/04/how-to-remove-ubuntu-from-computer-dual.html)  
 [Installing Node via nvm](https://github.com/creationix/nvm#installation)  
 [Installing .NET Core](https://www.microsoft.com/net/core#linuxubuntu)
+[Installing Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)
 <br />
 
 ### Windows 10
