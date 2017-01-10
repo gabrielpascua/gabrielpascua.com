@@ -7,7 +7,8 @@ categories: notes
 tags: patterns
 ---
 
-### Principles are ways of thinking.  
+### Principles are ways of thinking.
+
 ### Patterns are common ways to solve problems.
 <br />
 --------------------
