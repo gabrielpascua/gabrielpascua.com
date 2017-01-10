@@ -177,7 +177,7 @@ tags: docker
 <p class="text-center"><br /><img src="/img/elk-on-docker.svg" alt="ELK Setup with Docker Containers" /></p>
 * The linux utility `logrotate` will allow you to manage log files using different generations of archiving logs. For example, logs are moved to the father log, the old father gets compressed and moved to the grandfather, the grandfather becomes the great grandfather and the old great grand father is deleted. 
 * Get the stats on all running containers  
-`docker stats  $(docker inspect -f {{.Name}} $(docker ps -q))`
+{%raw%}`docker stats  $(docker inspect -f {{.Name}} $(docker ps -q))`{%endraw%}
 * Docker Monitoring Tools 
     - [cAdvisor](https://hub.docker.com/r/google/cadvisor/) (per host) 
     - [Heapster](https://github.com/kubernetes/heapster) (cluster) 
@@ -242,7 +242,7 @@ tags: docker
     - System time
 * To create a secure a solution built around containers, one should assume vulnerability and build layered defenses.  Another important strategy is to provide least privilege access to processes to limit an attacker’s capabilities in case of a breach.  “The more checks and boundaries you have in place, the greater the chances of stopping an attack”
 * Segregate containers by host if you have a multitenancy setup to prevent users accessing another container’s data in case of a breakout.  Put containers that process sensitive information in its own host.
-* `docker inspect -f "{{.Image}}" $(docker ps -q)` get the ID’s for all running images, and `docker images --no-trunc | grep $(docker inspect -f "-e {{.Image}}" $(docker ps -q))` for more details.  To get images base `docker inspect -f "{{.Image}}" $(docker ps -q) | xargs -L 1 docker history -q`.
+* {%raw%}`docker inspect -f "{{.Image}}" $(docker ps -q)` get the ID’s for all running images, and `docker images --no-trunc | grep $(docker inspect -f "-e {{.Image}}" $(docker ps -q))` for more details.  To get images base `docker inspect -f "{{.Image}}" $(docker ps -q) | xargs -L 1 docker history -q`{%endraw%}.
 * Use the `LABEL`  keyword in your Dockerfile to add information about your images
 * Be specific in your Dockerfile’s `FROM` instructions by using the image digest.  It will prevent unintended results when images get updated.
 * **Tips on securing container deployments**
