@@ -152,8 +152,10 @@ tags: ops shell
 * Unmounting entails moving the buffer to the device so it can be safely removed mitigating chances of corruption
 * `genisoimage -o FILENAME.iso -R -J ~/DIRECTORY` creates a disc image from a directory
 * Mounting an image
-  ```
 
+
+  ```
+  
     mkdir /mnt/iso_image    # create a mount point
     mount -t iso9660 -o loop FILENAME.iso /mnt/iso_image
   
