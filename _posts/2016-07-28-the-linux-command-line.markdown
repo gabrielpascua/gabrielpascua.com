@@ -151,11 +151,9 @@ tags: ops shell
 #### 15 – Storage Media
 * Unmounting entails moving the buffer to the device so it can be safely removed mitigating chances of corruption
 * `genisoimage -o FILENAME.iso -R -J ~/DIRECTORY` creates a disc image from a directory
-* Mounting an image
-
-
+* Mounting an image  
   ```
-  
+
     mkdir /mnt/iso_image    # create a mount point
     mount -t iso9660 -o loop FILENAME.iso /mnt/iso_image
   
@@ -234,7 +232,7 @@ downloads.tgz -T -` where the trailing slash means the output of the `find` comm
 * There should be no spaces when assigning values to variables in a script file, else it will not get picked up.  This `TITLE = "Test"` will result in the error `TITLE: Command not found` 
 * All variables are treated as string unless you use `declare` with an `-i` option
 * Wrap a variable in curly braces to avoid ambiguity. Assuming `USER` is "foo", `touch ${USER}1.txt` creates a file name `foo1.txt`.
-* A Here Document is a form of redirection to feed a body of text or a code block into an interactive command like `cat`, `ftp`, or `grep`.  The most common use in a shell script is to preserve multiple lines of text, preserving double quotes, single quotes and tabs (if specified).  It uses an arbitrary token to indicate the start and end of the input.
+* A Here Document is a form of redirection to feed a body of text or a code block into an interactive command like `cat`, `ftp`, or `grep`.  The most common use in a shell script is to preserve multiple lines of text, preserving double quotes, single quotes and tabs (if specified).  It uses an arbitrary token to indicate the start and end of the input.  
     ```
 
     #!/bin/bash
@@ -256,7 +254,7 @@ downloads.tgz -T -` where the trailing slash means the output of the `find` comm
 <p></p>
 
 #### 26 – Top-Down Design
-* Shell functions
+* Shell functions  
     ```
     
     function NAME_OF_FUNCTION { 
@@ -275,7 +273,7 @@ downloads.tgz -T -` where the trailing slash means the output of the `find` comm
     NAME_OF_FUNCTION
 
     ```
-* Local function variables are preceded by `local` on declaration
+* Local function variables are preceded by `local` on declaration  
     ```
     
     funct_1 () {
@@ -291,8 +289,7 @@ downloads.tgz -T -` where the trailing slash means the output of the `find` comm
 #### 27 – Flow Control: Branching With if
 * IF Syntax, where `[ EXPRESSION ]` is a shorthand for `test EXPRESSION` command.  Note that the space after the brackets are required. 
     - Short form: `if [ EXPRESSION ]; then COMMANDS; else COMMANDS; fi`
-    - Long form:
-
+    - Long form:  
     ```
     
     if [ EXPRESSION ]; then
@@ -314,7 +311,7 @@ downloads.tgz -T -` where the trailing slash means the output of the `find` comm
     - If you want to check for patterns, use the compound command  
         `if [[ "hello" == hell.* ]]; ...`
     - If you want to use math operators you can use the compound command `(( FOO > 0 ))`, where `FOO` is a variable but without the need to be prefixed with a `$` sign
-* Differences when combining expressions between `test` and compound commands
+* Differences when combining expressions between `test` and compound commands  
     ```
 
     |  operator  | test | compound |
@@ -326,7 +323,7 @@ downloads.tgz -T -` where the trailing slash means the output of the `find` comm
     ```
 
 * If a variable can have a null value, you can wrap it in double quotes within your expression to fallback to an empty string, e.g. `if [[ "$int1" == 1 ]];` 
-* Every command has its exit code. A value of `0` indicates that the command executed and a greater value meant an error occurred.  You can assign your own non-zero value to indicate an error in your function or when your `IF` conditions fail.  You can pick up the exit code value from `$?`.  Use this to your advantage in your shell script to check whether a command ran properly:
+* Every command has its exit code. A value of `0` indicates that the command executed and a greater value meant an error occurred.  You can assign your own non-zero value to indicate an error in your function or when your `IF` conditions fail.  You can pick up the exit code value from `$?`.  Use this to your advantage in your shell script to check whether a command ran properly:  
     ```
     
     #!/bin/bash
