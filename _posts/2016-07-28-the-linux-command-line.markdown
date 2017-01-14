@@ -151,7 +151,7 @@ tags: ops shell
 #### 15 – Storage Media
 * Unmounting entails moving the buffer to the device so it can be safely removed mitigating chances of corruption
 * `genisoimage -o FILENAME.iso -R -J ~/DIRECTORY` creates a disc image from a directory
-* Mounting an image
+* Mounting an image<br />
   ```
 
     mkdir /mnt/iso_image    # create a mount point
