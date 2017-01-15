@@ -18,6 +18,7 @@ markdown: kramdown
 
 # Github Injected Configuration
 # https://help.github.com/articles/configuring-jekyll/
+# https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
 lsi: false
 safe: true
 incremental: false
