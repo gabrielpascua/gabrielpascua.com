@@ -154,7 +154,7 @@ tags: ops shell
 * Mounting an image  
 ```
 
-mkdir /mnt/iso_image    # create a mount point
+mkdir /mnt/iso_image    # creates a mount point
 mount -t iso9660 -o loop FILENAME.iso /mnt/iso_image
 
 ```
