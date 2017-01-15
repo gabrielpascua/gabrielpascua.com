@@ -1,0 +1,19 @@
+{
+  "name": "gabrielpascua.com",
+  "version": "1.0.0",
+  "description": "Portfolio and Exploration Site",
+  "main": "index.js",
+  "scripts": {
+    "start": "bundle exec jekyll serve --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielpascua/gabrielpascua.github.io.git"
+  },
+  "keywords": [
+    "jekyll"
+  ],
+  "author": "Gabriel Pascua",
+  "license": "ISC",
+  "homepage": "http://www.gabrielpascua.com/about"
+}
