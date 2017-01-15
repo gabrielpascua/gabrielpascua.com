@@ -154,14 +154,23 @@ article{
     line-height: 1.5;
   }
 
+  h4{
+    margin-bottom: 15px;
+  }
+
   li{
     list-style: outside;
     padding-left: 10px;
     margin-left: 15px;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
+    line-height: 1.75;
 
     ol, ul{
       margin-top: 10px;
+    }
+
+    li{
+      list-style: circle;
     }
   }
 
