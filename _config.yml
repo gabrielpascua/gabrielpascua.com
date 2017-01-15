@@ -16,6 +16,21 @@ github_username:  gabrielpascua
 # Build settings
 markdown: kramdown
 
-gems: [jekyll-paginate]
+# Github Injected Configuration
+# https://help.github.com/articles/configuring-jekyll/
+lsi: false
+safe: true
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+
+kramdown:
+   input: GFM
+   hard_wrap: false
+   math_engine: mathjax
+gems:
+   - jekyll-paginate
+
 paginate: 11
 paginate_path: "/notes/page/:num/"
