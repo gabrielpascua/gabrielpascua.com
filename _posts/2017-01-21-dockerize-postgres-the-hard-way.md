@@ -1,13 +1,13 @@
 ---
 layout: post
 title:  "Dockerizing Postgres the Hard Way"
-excerpt: "Looking into the details of running a specific Postgres version on Docker"
+excerpt: "Looking into the details of running a specific Postgres version on Docker for local development"
 date:   2017-01-21 06:44
 categories: notes
 tags: ops
 ---
 
-## Part I - Files
+## Part 1 - Files
 At the end of this section, your project folder should have these files:
 
 ```
@@ -72,7 +72,10 @@ Run this to log in to your Postgres database:
 
 ```
 
-  docker run -it --rm --link some_postgres:pghost --net postgres_default postgres_postgres9_6 psql -h pghost -d dbname -U dbuser --password
+  docker run -it --rm --link some_postgres:pghost \
+    --net postgres_default \
+    postgres_postgres9_6 \
+    psql -h pghost -d dbname -U dbuser --password
 
 ```
 <p></p>
@@ -84,3 +87,39 @@ Run this to log in to your Postgres database:
  - `--net postgres_default` is the network name taken from `docker network ls`
  - `postgres_postgres9_6` is the image name
  - `psql -h pghost -d dbname -U dbuser --password` is a standard `psql` command to connect to a database.  `pghost` is the same local alias name from the `--link` argument
+<p></p>
+
+## Part 3 - Data
+<p></p>
+
+#### Backups Using Volumes
+
+This part assumes that you have done some database changes like table creation and data insertion.  Other alternatives to do the same task are using `docker exec IMAGENAME pg_dump ...`, [Data Volume Containers](https://docs.docker.com/engine/tutorials/dockervolumes/#/creating-and-mounting-a-data-volume-container) and running `docker commit` post database operations.  Personally, I find that the simplest approach is to use volume mounting.
+
+```
+
+  # host terminal
+  # creates an interactive session with the postgres container
+  docker run -it --rm --link some_postgres:pghost \
+    --net postgres_default \
+    -v $(pwd)/data:/backups \
+    postgres_postgres9_6 \
+    /bin/bash
+
+  # ---------------------------------
+  # container connection established
+  # ---------------------------------
+
+  # container terminal
+  # postgres commands are executed here
+  # works the same for database restores
+  pg_dump -h pghost -U dbuser --format=p dbname > /backups/backup.txt
+
+```
+
+<p></p>
+
+**Where**
+
+- `-v $(pwd)/data:/backups` mounts the host's `data` folder onto the container's `backups` folder
+- `pg_dump ...` is the native postgres command to backup a database
