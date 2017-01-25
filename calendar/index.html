@@ -21,17 +21,19 @@ layout: null
 
 {% raw %}
 <!-- Calendar : render raw because Vue uses {{ }} -->
-<h1>2017</h1>
-<div id="calendar" class="calendar">
-    <div class="month" v-for="month in calendar">
-        <b>{{ month.name }}</b>
-        <table class="table-bordered">
-            <tr v-for="week in month.weeks">
-                <td v-for="day in week" v-bind:class="day|inflect">
-                    <span>{{day|date}}</span>
-                </td>
-            </tr>
-        </table>
+<div id="calendar">
+    <h1>{{ year }}</h1>
+    <div class="calendar">
+        <div class="month" v-for="month in calendar">
+            <b>{{ month.name }}</b>
+            <table class="table-bordered">
+                <tr v-for="week in month.weeks">
+                    <td v-for="day in week" v-bind:class="day|inflect">
+                        <span>{{day|date}}</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
 {% endraw %}

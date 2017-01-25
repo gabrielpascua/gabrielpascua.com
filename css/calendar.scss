@@ -45,12 +45,8 @@
         padding-right: 10px;
         text-align: center;
 
-        &.present{
-            border: 2px solid darkcyan;
-        }
-
         &.past{
-            background-color: rgba(#000, .2);
+            background-color: rgba(#000, .15);
             opacity: .5;
         }
     }
@@ -58,7 +54,11 @@
     .holiday:after {
         content: '\1F389';
     }
-    .holiday span {
+    .sick:after {
+        content: '\1F637';
+    }    
+    .holiday span,
+    .sick span {
         display: none;
     }
 
