@@ -16,6 +16,7 @@ columns: two
     <h4>{{ page.excerpt }}</h4>
     <p>Published {{ page.date | date: "%B %-d, %Y" }}</p>
   </header>
-
+  <div class="kramdown">
   {{ content }}
+  </div>
 </article>
