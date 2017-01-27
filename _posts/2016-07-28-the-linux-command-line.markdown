@@ -33,6 +33,7 @@ tags: ops shell
     sort file1.txt file2.txt file3.txt > sorted.txt # creates 1 sorted file
     [[ -d DIRECTORY ]] || mkdir DIRECTORY # check a directory, create it if not found 
     basename FILEPATH # to extract the filename from a specified path
+    export USER_DATE=$(date +%Y%m%d_%H%M%S) # easy date variable in .bashrc 
 
 ```
 <p></p>
