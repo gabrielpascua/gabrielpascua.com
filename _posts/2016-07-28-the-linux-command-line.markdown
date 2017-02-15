@@ -11,31 +11,29 @@ tags: ops shell
 
 ### Useful Shell Commands
 <p></p>
-```
-
-    printenv | less # display all the environment variables
-    set | less # same as above but includes shell variables sorted alphabetically
-    > test.txt # create a new file
-    ls -l /bin/usr > ouput.txt 2>&1 # write stdout and stderr to output2.txt
-    ls -l $(which node) # displays information about a command
-    mkdir {2007..2009}-{01..12} # create folders from year 2007 to 2012. 
-    history | grep docker # searches for docker commands in history
-    !3 # displays the 3rd item in bash's command history
-    kill -l # list all supported signals
-    source .bashrc # forces bash to re-read the file
-    . .bashrc # same as above, where . is the same as source
-    find ~ -type f -name "*.JPG" -delete # searches for jpeg files and deletes them
-    ls -l /etc | gzip > foo.txt.gz # compress a folder
-    ssh REMOTE 'tar cf - REMOTE_FOLDER | tar xf - # transfer files from a remote server
-    grep -i '^j' /usr/share/dict/words # search dictionary for words starting with j
-    cat -A foo.txt # output non-printing characters like tabs and spaces
-    cat -ns test.txt > testwithnumbers.txt # add line numbers to a text file
-    sort file1.txt file2.txt file3.txt > sorted.txt # creates 1 sorted file
-    [[ -d DIRECTORY ]] || mkdir DIRECTORY # check a directory, create it if not found 
-    basename FILEPATH # to extract the filename from a specified path
-    export USER_DATE=$(date +%Y%m%d_%H%M%S) # easy date variable in .bashrc 
-
-```
+{% highlight shell linenos %}
+printenv | less # display all the environment variables
+set | less # same as above but includes shell variables sorted alphabetically
+> test.txt # create a new file
+ls -l /bin/usr > ouput.txt 2>&1 # write stdout and stderr to output2.txt
+ls -l $(which node) # displays information about a command
+mkdir {2007..2009}-{01..12} # create folders from year 2007 to 2012. 
+history | grep docker # searches for docker commands in history
+!3 # displays the 3rd item in bash's command history
+kill -l # list all supported signals
+source .bashrc # forces bash to re-read the file
+. .bashrc # same as above, where . is the same as source
+find ~ -type f -name "*.JPG" -delete # searches for jpeg files and deletes them
+ls -l /etc | gzip > foo.txt.gz # compress a folder
+ssh REMOTE 'tar cf - REMOTE_FOLDER | tar xf -' # transfer files from a remote server
+grep -i '^j' /usr/share/dict/words # search dictionary for words starting with j
+cat -A foo.txt # output non-printing characters like tabs and spaces
+cat -ns test.txt > testwithnumbers.txt # add line numbers to a text file
+sort file1.txt file2.txt file3.txt > sorted.txt # creates 1 sorted file
+[[ -d DIRECTORY ]] || mkdir DIRECTORY # check a directory, create it if not found 
+basename FILEPATH # to extract the filename from a specified path
+export USER_DATE=$(date +%Y%m%d_%H%M%S) # easy date variable in .bashrc 
+{% endhighlight %}
 <p></p>
 
 ### Introduction
@@ -152,14 +150,11 @@ tags: ops shell
 #### 15 – Storage Media
 * Unmounting entails moving the buffer to the device so it can be safely removed mitigating chances of corruption
 * `genisoimage -o FILENAME.iso -R -J ~/DIRECTORY` creates a disc image from a directory
-* Mounting an image
-
-```
-
-  mkdir /mnt/iso_image    # creates a mount point
-  mount -t iso9660 -o loop FILENAME.iso /mnt/iso_image
-
-```
+* Mounting an imag
+{% highlight shell linenos %}
+mkdir /mnt/iso_image    # creates a mount point
+mount -t iso9660 -o loop FILENAME.iso /mnt/iso_image
+{% endhighlight %}
 
 <p></p>
 
@@ -236,58 +231,51 @@ downloads.tgz -T -` where the trailing slash means the output of the `find` comm
 * Wrap a variable in curly braces to avoid ambiguity. Assuming `USER` is "foo", `touch ${USER}1.txt` creates a file name `foo1.txt`.
 * A Here Document is a form of redirection to feed a body of text or a code block into an interactive command like `cat`, `ftp`, or `grep`.  The most common use in a shell script is to preserve multiple lines of text, preserving double quotes, single quotes and tabs (if specified).  It uses an arbitrary token to indicate the start and end of the input.  
 
-```
+{% highlight shell linenos %}
+#!/bin/bash
+TITLE="Hello World"
 
-    #!/bin/bash
-    TITLE="Hello World"
-
-    # Use cat <<- HERETOKEN
-    cat << HERETOKEN
-    <HTML>
-            <HEAD>
-                    <TITLE>$TITLE</TITLE>
-            </HEAD>
-            <BODY>
-                    <P>Title: "$TITLE"</P>
-            </BODY>
-    </HTML> 
-    HERETOKEN
-
-```
+# Use cat <<- HERETOKEN
+cat << HERETOKEN
+<HTML>
+        <HEAD>
+                <TITLE>$TITLE</TITLE>
+        </HEAD>
+        <BODY>
+                <P>Title: "$TITLE"</P>
+        </BODY>
+</HTML> 
+HERETOKEN
+{% endhighlight %}
 <p></p>
 
 #### 26 – Top-Down Design
 * Shell functions
+{% highlight shell linenos %}
+function NAME_OF_FUNCTION { 
+    commands #at least 1 command
+    return #optional
+}
 
-```
-    
-    function NAME_OF_FUNCTION { 
-      commands #at least 1 command
-      return #optional
-    }
+#or the preferred method
 
-    #or the preferred method
+NAME_OF_FUNCTION() {
+    commands
+    return
+}
 
-    NAME_OF_FUNCTION() {
-      commands
-      return
-    }
-
-    # execute
-    NAME_OF_FUNCTION
-
-```
+# execute
+NAME_OF_FUNCTION
+{% endhighlight %}
 * Local function variables are preceded by `local` on declaration
 
-```
-    
-    funct_1 () {
-      local foo # variable foo local to funct_1
-      foo=1
-      echo "funct_1: foo = $foo"
-    }
-
-```
+{% highlight shell linenos %}
+funct_1 () {
+    local foo # variable foo local to funct_1
+    foo=1
+    echo "funct_1: foo = $foo"
+}
+{% endhighlight %}
 * Shell functions are great replacement for the limits of aliases
 <p></p>
 
@@ -295,18 +283,15 @@ downloads.tgz -T -` where the trailing slash means the output of the `find` comm
 * IF Syntax, where `[ EXPRESSION ]` is a shorthand for `test EXPRESSION` command.  Note that the space after the brackets are required. 
     - Short form: `if [ EXPRESSION ]; then COMMANDS; else COMMANDS; fi`
     - Long form:
-
-```
-    
-    if [ EXPRESSION ]; then
-        COMMANDS
-    elif [ EXPRESSION ]; then
-        COMMANDS...
-    else
-        COMMANDS
-    fi
-    
-```
+{% highlight shell linenos %}
+if [ EXPRESSION ]; then
+    COMMANDS
+elif [ EXPRESSION ]; then
+    COMMANDS...
+else
+    COMMANDS
+fi
+{% endhighlight %}
 
 * A `test` expression can be:
     - File expression `if [ -e FILE ]; then ...` if file exists
@@ -320,48 +305,42 @@ downloads.tgz -T -` where the trailing slash means the output of the `find` comm
     - If you want to use math operators you can use the compound command `(( FOO > 0 ))`, where `FOO` is a variable but without the need to be prefixed with a `$` sign
 * Differences when combining expressions between `test` and compound commands
 
-```
-
-    |  operator  | test | compound |
-    |------------|------|----------|
-    |     AND    |  -a  |    &&    |
-    |     OR     |  -o  |    ||    |
-    |     NOT    |   !  |    !     |
-
-```
+{% highlight text %}
+|  operator  | test | compound |
+|------------|------|----------|
+|     AND    |  -a  |    &&    |
+|     OR     |  -o  |    ||    |
+|     NOT    |   !  |    !     |
+{% endhighlight %}
 
 * If a variable can have a null value, you can wrap it in double quotes within your expression to fallback to an empty string, e.g. `if [[ "$int1" == 1 ]];` 
 * Every command has its exit code. A value of `0` indicates that the command executed and a greater value meant an error occurred.  You can assign your own non-zero value to indicate an error in your function or when your `IF` conditions fail.  You can pick up the exit code value from `$?`.  Use this to your advantage in your shell script to check whether a command ran properly:
 
-```
-    
-    #!/bin/bash
-    cd ~/Downlooads
-    if [[ $? > 0 ]]; then
-      echo "no such directory"
-    fi
-    
-```
+{% highlight shell linenos %}    
+#!/bin/bash
+cd ~/Downlooads
+if [[ $? > 0 ]]; then
+    echo "no such directory"
+fi
+{% endhighlight %}
 <p></p>
 
 #### 28 – Reading Keyboard Input
 * You can use `read` in your shell file to listen for a keyboard input. If you did not explicitly assign a variable (`int1` in the example below) for the input, the value will be assigned to `$REPLY` by default.
 
-```
+{% highlight shell linenos %}
+#-n suppresses the trailing new line
+    echo -n "Enter an integer "
 
-    #-n suppresses the trailing new line
-        echo -n "Enter an integer "
+# Or read int1 int2 int3 if expecting multiple inputs
+read int1
 
-    # Or read int1 int2 int3 if expecting multiple inputs
-    read int1
+# Or use the -p for prompt option to replace the first 2 lines
+# -i supplies 1 as the default value 
+# read -e -p "Enter an integer " -i 1 int1
 
-    # Or use the -p for prompt option to replace the first 2 lines
-    # -i supplies 1 as the default value 
-    # read -e -p "Enter an integer " -i 1 int1
-
-    echo $int1
-
-```
+echo $int1
+{% endhighlight %}
 * `read` cannot be piped to
 <p></p>
 
@@ -376,21 +355,18 @@ downloads.tgz -T -` where the trailing slash means the output of the `find` comm
 
 #### 31 – Flow Control: Branching With case
 * Case example
+{% highlight shell linenos %}
+cd ~/Downloadss
 
-```
-
-    cd ~/Downloadss
-
-    case $? in
-    0) echo "Directory found."
-        exit
-        ;;
-    *) echo "No such directory."
-        exit 1
-        ;;
-    esac
-
-```
+case $? in
+0) echo "Directory found."
+    exit
+    ;;
+*) echo "No such directory."
+    exit 1
+    ;;
+esac
+{% endhighlight %}
 <p></p>
 
 #### 32 – Positional Parameters
@@ -405,26 +381,20 @@ downloads.tgz -T -` where the trailing slash means the output of the `find` comm
 
 ### 33 – Flow Control: Looping With for
 * Traditional `for` example
-
-```
-
-    # for i in A B C D;
-    # for i in ARRAY_VARIABLE
-    for i in {A..D}; do 
-      echo $i; 
-    done
-
-```
+{% highlight shell linenos %}
+# for i in A B C D;
+# for i in ARRAY_VARIABLE
+for i in {A..D}; do 
+    echo $i; 
+done
+{% endhighlight %}
 
 * `for` in C Language form
-
-```
-
-    for (( i=0; i<5; i=i+1 )); do
-      echo $i
-    done
-
-```
+{% highlight shell linenos %}
+for (( i=0; i<5; i=i+1 )); do
+    echo $i
+done
+{% endhighlight %}
 <p></p>
 
 #### 34 – Strings And Numbers
@@ -445,56 +415,47 @@ downloads.tgz -T -` where the trailing slash means the output of the `find` comm
 
 #### 35 – Arrays
 * Declaring arrays
+{% highlight shell linenos %}
+a[0] = 1
 
-```
+declare -a b    #indexed arrays
+b[0] = 0
 
-    a[0] = 1
+declare -A c    #keyed arrays
+c[key] = value
 
-    declare -a b    #indexed arrays
-    b[0] = 0
+d=(Su Mo Tu We Th Fr Sa)
 
-    declare -A c    #keyed arrays
-    c[key] = value
-
-    d=(Su Mo Tu We Th Fr Sa)
-
-    e=([0]=Jan [1]=Feb [2]=Mar)
-
-```
+e=([0]=Jan [1]=Feb [2]=Mar)
+{% endhighlight %}
 
 * Printing array contents
+{% highlight shell linenos %}
+animals=("a dog" "a cat" "a fish")
 
-```
+# Difference between array[*] and array[@]
 
-    animals=("a dog" "a cat" "a fish")
+# both will print each word on its own line (6 total)
+for i in ${animals[*]}; do echo $i; done
+for i in ${animals[@]}; do echo $i; done
 
-    # Difference between array[*] and array[@]
+# quoted, this prints in a single line
+for i in "${animals[*]}"; do echo $i; done
 
-    # both will print each word on its own line (6 total)
-    for i in ${animals[*]}; do echo $i; done
-    for i in ${animals[@]}; do echo $i; done
-
-    # quoted, this prints in a single line
-    for i in "${animals[*]}"; do echo $i; done
-
-    # quoted, this prints 3 lines reflecting the number of items in an array
-    for i in "${animals[@]}"; do echo $i; done
-
-```
+# quoted, this prints 3 lines reflecting the number of items in an array
+for i in "${animals[@]}"; do echo $i; done
+{% endhighlight %}
 * `echo ${#ARRAY[@]}` to get the length of the array
 * `echo ${#ARRAY[INDEX]}` to get the length of an array item
 * `foo+=(d e f)` appends an item to the array
 * `a_sorted=($(for i in "${a[@]}"; do echo $i; done | sort))` sorts an array into a new one
 * Use `unset ARRAY` to delete an array or `unset 'ARRAY[INDEX]'` to delete an item - quoted to prevent expansion
 * Newer bash versions support associated arrays
-
-```
-
-    declare -A colors
-    colors["red"]="#ff0000"
-    echo ${colors["red"]}
-    
-```
+{% highlight shell linenos %}
+declare -A colors
+colors["red"]="#ff0000"
+echo ${colors["red"]}
+{% endhighlight %}
 <p></p>
 
 #### 36 – Exotica

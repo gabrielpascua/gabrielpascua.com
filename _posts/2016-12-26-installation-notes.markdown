@@ -15,9 +15,7 @@ Desktop Resolution : `3840x2160`
 
 ### Drive Partition
 Note that the EFI System  is shared between the 2 OS
-
-```
-
+{% highlight text %}
   Device      Size    Type
   /dev/sda1   450M    Windows recovery environment
   /dev/sda2   99M     EFI System
@@ -25,8 +23,7 @@ Note that the EFI System  is shared between the 2 OS
   /dev/sda4   125.4G  Microsoft basic data
   /dev/sda5   85.8G   Linux filesystem
   /dev/sda6   11.9G   Linux swap
-
-```
+{% endhighlight %}
 <br />
 
 ### Ubuntu 16.04

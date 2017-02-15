@@ -9,43 +9,37 @@ tags: concepts
 
 ### Add the required dependencies in your project.json file
 <p></p>
-```
-
-  {
-    "dependencies": { 
-        ...
-        "Microsoft.EntityFrameworkCore": "1.1.0",
-        "Microsoft.EntityFrameworkCore.Design": {
-            "version": "1.1.0",
-            "type": "build"
-        }
-        ...
-    },
-    ...
-    "tools": { 
-        ...
-        "Microsoft.EntityFrameworkCore.Tools.DotNet": "1.1.0-preview4-final"
-        ...
-    }
+{% highlight json linenos %}
+{
+  "dependencies": { 
+      ...
+      "Microsoft.EntityFrameworkCore": "1.1.0",
+      "Microsoft.EntityFrameworkCore.Design": {
+          "version": "1.1.0",
+          "type": "build"
+      }
+      ...
+  },
+  ...
+  "tools": { 
+      ...
+      "Microsoft.EntityFrameworkCore.Tools.DotNet": "1.1.0-preview4-final"
+      ...
   }
-
-```
+}
+{% endhighlight %}
 <p></p>
 
 ### If you haven’t done so, import the libraries
 <p></p>
-```
-
+{% highlight shell linenos %}
   dotnet restore
-
-```
+{% endhighlight %}
 <p></p>
 
 ### Run the migration script
 <p></p>
-```
-
+{% highlight shell linenos %}
   dotnet ef migrations add NAME_OF_MIGRATION_CLASS
   dotnet ef database update
-
-```
+{% endhighlight %}

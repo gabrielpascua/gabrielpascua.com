@@ -54,8 +54,7 @@ SOLID are the 5 principles of Object Oriented Design. They are guidelines when b
 * To decouple your high level and low level modules, you have to think about their interaction as a means of abstraction.  This will allow you to write lighter and less dependent classes.
 * Drawbacks are it makes the application hard to understand, you’re forced to write a lot of plumbing code, and you frequently find yourself asking what are the present concrete implementations of the abstractions.
 
-```
-
+{% highlight text %}
   +--------------------+           +---------------------+      +---------------------+
   |                    |           |                     |      |                     |
   |     Library #1     |           |     Library #1      |      |     Library #2      |
@@ -71,8 +70,7 @@ SOLID are the 5 principles of Object Oriented Design. They are guidelines when b
   |  +--------------+  |           |  +---------------+  |      |  +---------------+  |
   |                    |           |                     |      |                     |
   +--------------------+           +---------------------+      +---------------------+
-
-```
+{% endhighlight %}
 <p></p>
 <p></p>
 <p></p>
@@ -82,13 +80,11 @@ General Responsibility Assignment Software Patterns are 9 patterns (or principle
 <p></p>
 
 #### Controller
-```
-
+{% highlight text %}
   +--------------+     +----------------+      +-----------------+
   |   UI Layer   <---->+   Controller   <----->+    App Layer    |
   +--------------+     +----------------+      +-----------------+
-
-```
+{% endhighlight %}
 * Answers the question of which class is responsible for responding to event/input driven systems.
 * In a scenario where a UI layer is involved, the pattern recommends creating a Controller class that can delegate actions from UI to your Application Layer classes.
 * A controller should not do much other than coordination.  If its methods become too bloated, prefer grouping functionalities into smaller controller classes rather than creating a bottleneck.
@@ -96,8 +92,7 @@ General Responsibility Assignment Software Patterns are 9 patterns (or principle
 <p></p>
 
 #### Creator
-```
-
+{% highlight text %}
                 +------------+   +------------+
                 |   Parent   |   |    Child   |
                 +-----+------+   +------+-----+
@@ -108,16 +103,13 @@ General Responsibility Assignment Software Patterns are 9 patterns (or principle
                     +++ <------------ -++
                      |                 |
                      |                 |
-
-
-```
+{% endhighlight %}
 * Answers which class is responsible for creating an instance of another class.
 * The generic guideline for this pattern is the parent class or the more-specific implementation should be responsible for instantiating a sub class.
 <p></p>
 
 #### High Cohesion
-```
-
+{% highlight text %}
   +-------------------+       +--------------------+
   |      Member       |       |     Repository     |
   +-------------------+       +--------------------+
@@ -125,22 +117,19 @@ General Responsibility Assignment Software Patterns are 9 patterns (or principle
   +-------------------+       +--------------------+
   | updateProfile()   +-------> dbUpdate(record)   |
   +-------------------+       +--------------------+
-
-```
+{% endhighlight %}
 * Answers how much functionality a class should be responsible for.
 * This addresses the scenario where a class does so much more than it is supposed to.  Following this pattern, methods not pertaining to the class should be placed in a different and more appropriate class.
 * It aims to keep a class focused, manageable, and easy to understand by making properties and methods tightly related.
 <p></p>
 
 #### Indirection
-```
-
+{% highlight text %}
   +---------------+         +--------------+       +-----------------+
   |  Application  +--------->    Payment   +------->     Bank# 1     |
   |     Layer     <---------+    Wrapper   <-------+       API       |
   +---------------+         +--------------+       +-----------------+
-
-```
+{% endhighlight %}
 * Answers how high level classes can deal with low level class in a way that low level classes can be easily extended or substituted by something else.
 * It’s different from Low Coupling in that you’re trying to establish relationship between classes that are not part of the same domain. 
 * What you’re trying to achieve here is to have an intermediary class that will allow both classes to talk to one another rather than putting plumbing code on the implementing class.
@@ -148,8 +137,7 @@ General Responsibility Assignment Software Patterns are 9 patterns (or principle
 <p></p>
 
 #### Information Expert
-```
-
+{% highlight text %}
   +-------------+      +------------------+
   |   Person    |      |  Student:Person  |
   +-------------+      +------------------+
@@ -157,28 +145,24 @@ General Responsibility Assignment Software Patterns are 9 patterns (or principle
   +-------------+      +------------------+
   | LastName    |      | EnrollmentDate   |
   +-------------|      +------------------+
-
-```
+{% endhighlight %}
 * Answers what properties and functionalities should a class be responsible for. 
 * You should always put the required property or method to the class that has enough information to generate it.
 <p></p>
 
 #### Low Coupling
-```
-
+{% highlight text %}
   +--------+      +--------+      +--------+
   |  Car   +------>  Model +------>  Make  |
   +--------+      +--------+      +--------+
-
-```
+{% endhighlight %}
 * Answers how much a class should depend on another class.
 * This does not deal with creating abstractions, rather it teaches one how to structure class compositions.  
 * A class is considered to be highly coupled if it has a high dependency on other classes.  Take for example a `Car` class. It is highly coupled if it requires `Model` and `Make` classes to instantiate.  You can decouple it by putting `Make` part of `Model`.
 <p></p>
 
 #### Polymorphism
-```
-
+{% highlight text %}
   +----------------+       +---------------+
   |  EmailMessage  +------->    IClient    |
   +----------------+       +---------------+
@@ -193,16 +177,14 @@ General Responsibility Assignment Software Patterns are 9 patterns (or principle
          +----------------+  +----------------+  +-----------------+
          | getSubject()   |  | getSubject()   |  | getSubject()    |
          +----------------+  +----------------+  +-----------------+
-
-```
+{% endhighlight %}
 * Answers how to make your application extensible when you need to support different entity behaviors without using conditionals.
 * The responsibility of handling the variation falls on the type that requires alternate implementations.  
 * This can be achieved thru interfaces or abstract classes.  If a new variation arises, the difference in implementation is done in the new type without affecting other types.  Since the behavior of the new class follows a contract, it can be easily plugged in.
 <p></p>
 
 #### Protected Variations
-```
-
+{% highlight text %}
                          +------------------+
                          |    TaxAbstract   |
                          +------------------+
@@ -217,8 +199,7 @@ General Responsibility Assignment Software Patterns are 9 patterns (or principle
   +------------------+   +------------------+   +------------------+
   | rate             |   | rate             |   | rate             |
   +------------------+   +------------------+   +------------------+
-
-```
+{% endhighlight %}
 * Answers how to assign responsibilities that minimizes breaking changes on future iterations or variations of an entity.
 * Simply put, it Protects existing elements from future Variations by allowing the system to support different forms of the same entity because changes are done in isolation.
 * Closely related to Open/Close Principle and often achieved together with Polymorphism
@@ -227,8 +208,7 @@ General Responsibility Assignment Software Patterns are 9 patterns (or principle
 <p></p>
 
 #### Pure Fabrication
-```
-
+{% highlight text %}
   +--------------------------+     +------------------+
   |     OrderRepository      |     |      Order       |
   +--------------------------+     +------------------+
@@ -236,8 +216,7 @@ General Responsibility Assignment Software Patterns are 9 patterns (or principle
   +--------------------------+     +------------------+
   | static delete(Order)     |     | Price            |
   +--------------------------+     +------------------+
-
-```
+{% endhighlight %}
 * Answers where to put functionalities that do not belong to any domain or expert but still promote high cohesion and low coupling
 * In situations where this problem arise, you can create a convenience class that contains all the functionality you need.  Most examples split CRUD methods from domain classes into its own Persistent class.
 * Service classes in DDD are related to this - classes that wrap business logic functionality and maybe manipulating database records into something that can be understood by your presentation layer.

@@ -9,81 +9,71 @@ tags: javascript
 
 #### Math Functions
 <p></p>
-<pre>
-
-  var arr = [7,2,3,4];
-  var total = arr.reduce(function(previous, current, idx){
-      return previous + current;
-  }, 4); 
-  //total = 20
-  
-</pre>
+{% highlight javascript linenos %}
+var arr = [7,2,3,4];
+var total = arr.reduce(function(previous, current, idx){
+    return previous + current;
+}, 4); 
+//total = 20  
+{% endhighlight %}
 <p></p>
 
 #### String Manipulation
 <p></p>
-<pre>
-
-  var words = ["hello", "world"];
-  var phrase = words.reduce(function(previous, current, idx){
-      return previous + ' ' + current;
-  }, "Hi"); 
-  //phrase = "Hi hello world"
-  
-</pre>
+{% highlight javascript linenos %}
+var words = ["hello", "world"];
+var phrase = words.reduce(function(previous, current, idx){
+    return previous + ' ' + current;
+}, "Hi"); 
+//phrase = "Hi hello world"
+{% endhighlight %}
 <p></p>
 
 #### Grouping Results
 <p></p>
-<pre>
-
-  var cities = [{name: 'NY'}, {name: 'NY'}, {name: 'LA'}]
-      .reduce(function(accumulator, current, idx){
-          if(!accumulator[current.name]){
-              accumulator[current.name] = 1;
-          }else{
-              accumulator[current.name]++; 
-          }
-          return accumulator;
-      }, {});
-  //cities = {"NY":2,"LA":1}
-  
-</pre>
+{% highlight javascript linenos %}
+var cities = [{name: 'NY'}, {name: 'NY'}, {name: 'LA'}]
+    .reduce(function(accumulator, current, idx){
+        if(!accumulator[current.name]){
+            accumulator[current.name] = 1;
+        }else{
+            accumulator[current.name]++; 
+        }
+        return accumulator;
+    }, {});
+//cities = {"NY":2,"LA":1}
+{% endhighlight %}
 <p></p>
 
 #### Get Unique Values From a Collection
 <p></p>
-<pre>
-
-  var uniques = [{name: 'NY'}, {name: 'NY'}, {name: 'LA'}]
-      .reduce(function(collection, current, idx){
-          if(collection.indexOf(current.name) < 0){
-              collection.push(current.name)
-          }
-          return collection;
-      }, []);
-  //uniques = ["NY","LA"]
-  
-</pre>
+{% highlight javascript linenos %}
+var uniques = [{name: 'NY'}, {name: 'NY'}, {name: 'LA'}]
+    .reduce(function(collection, current, idx){
+        if(collection.indexOf(current.name) < 0){
+            collection.push(current.name)
+        }
+        return collection;
+    }, []);
+//uniques = ["NY","LA"]
+{% endhighlight %}
 <p></p>
 
 #### Get Dupes with Closure
 <p></p>
-<pre>
-
-  var dupes = [];
-  var states = [{name: 'NY'}, {name: 'NY'}, {name: 'CA'}]
-      .reduce(function(accumulator, current, idx){
-          if(accumulator.indexOf(current.name) >= 0){
-             dupes.push(current.name); 
-          }else{
-              accumulator.push(current.name);
-          }
-          return accumulator;
-      }, []);
-  //dupes = ["NY"]
-  
-</pre>
+{% highlight javascript linenos %}
+var dupes = [];
+var states = [{name: 'NY'}, {name: 'NY'}, {name: 'CA'}]
+    .reduce(function(accumulator, current, idx){
+        if(accumulator.indexOf(current.name) >= 0){
+            dupes.push(current.name); 
+        }else{
+            accumulator.push(current.name);
+        }
+        return accumulator;
+    }, []);
+//dupes = ["NY"]
+{% endhighlight %}
   
 <aside>
   <h4>References:</h4>

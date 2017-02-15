@@ -9,20 +9,20 @@ tags: linux, ubuntu 14.04
 
 The recommended solution was to change the ttyl resolution but this is the quick and dirty fix.
 
-<pre>
+{% highlight shell linenos %}
+$ sudo grub-mkfont \
+    --output=/boot/grub/grubfont.pf2 \
+    --size=36 /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf
 
-    $ sudo grub-mkfont --output=/boot/grub/grubfont.pf2 --size=36 /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf
+$ sudo gedit /etc/default/grub
 
-    $ sudo gedit /etc/default/grub
+# Copy and paste this line:
+> GRUB_FONT=/boot/grub/grubfont.pf2
 
-    # Copy and paste this line:
-    > GRUB_FONT=/boot/grub/grubfont.pf2
+$ sudo update-grub
 
-    $ sudo update-grub
-
-    # restart
-
-</pre>
+$ sudo reboot
+{% endhighlight %}
 
 <aside>
     <h4>References:</h4>

@@ -9,35 +9,38 @@ tags: javascript
 
 The destructuring assignment syntax is a JavaScript expression that makes it possible to extract data from arrays or objects into distinct variables.It is part of the ES6 standard specification.
 
-<pre>
+{% highlight javascript linenos %}
+//Arrays:
+//assignment
+const arrayData = ['a', 'b'];
+const [x, y] = arrayData;
+console.log(x); //a
+console.log(y); //b
 
-  Arrays:
-  //assignment
-  const arrayData = ['a', 'b'];
-  const [x, y] = arrayData;
-  console.log(x); //a
-  console.log(y); //b
-  
-  //for loops
-  const arr1 = ['a', 'b'];
-  for (const [index, element] of arr1.entries()) {
-      console.log(index, element);  // 0, 'a'
+//for loops
+const arr1 = ['a', 'b'];
+for (const [index, element] of arr1.entries()) {
+    console.log(index, element);  // 0, 'a'
+}
+
+//Objects:
+//assignment
+var o = {p: 42, q: true};
+var {p, q} = o;
+console.log(p); // 42
+console.log(q); // true
+
+//for loops
+var people = [
+  { name: 'John Smith', family: { 
+    father: 'John Doe', mother: 'Jane Doe' } 
   }
-  
-  Objects:
-  //assignment
-  var o = {p: 42, q: true};
-  var {p, q} = o;
-  console.log(p); // 42
-  console.log(q); // true
-  
-  //for loops
-  var people = [{ name: 'John Smith', family: { father: 'John Doe', mother: 'Jane Doe' } }];
-  for (var {name: n, family: { father: f } } of people) {
-    console.log("Name: " + n + ", Father: " + f); // Name: John Smith, Father: John Doe
-  }
-  
-</pre>
+];
+for (var {name: n, family: { father: f } } of people) {
+  // Name: John Smith, Father: John Doe
+  console.log("Name: " + n + ", Father: " + f);
+}
+{% endhighlight %}
   
 <aside>
   <h4>References:</h4>

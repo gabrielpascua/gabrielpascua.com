@@ -9,23 +9,21 @@ tags: linux, ubuntu 14.04
 
 My laptop's graphics card is a dedicated 4GB AMD Radeon R7 M270.  The native resolution is 3840x2160 (16:9). On a 15-inch monitor, everything on the Ubuntu login is tiny.  I needed to adjust the settings to a supported legible resolution.
 
-<pre>
+{% highlight shell linenos %}
+# Mind the connected display from the console output
+$ xrandr -q
 
-    # Mind the connected display from the console output
-    $ xrandr -q
+$ sudo gedit /etc/lightdm/lightdm.conf
+# Set these configuration options:
+    > [SeatDefaults]
+    > display-setup-script=xrandr --output eDP1 --primary --mode 1920x1080
 
-    $ sudo gedit /etc/lightdm/lightdm.conf
-    # Set these configuration options:
-     > [SeatDefaults]
-     > display-setup-script=xrandr --output eDP1 --primary --mode 1920x1080
+# Where:
+# eDP1 is the connected display
+# 1920x1080 is the working resolution
 
-    # Where:
-    # eDP1 is the connected display
-    # 1920x1080 is the working resolution
-
-    # restart
-
-</pre>
+sudo reboot
+{% endhighlight %}
 
 <aside>
     <h4>References:</h4>

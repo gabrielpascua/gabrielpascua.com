@@ -9,18 +9,16 @@ tags: linux, ubuntu 14.04
 
 How to install Postgres 9.4 with pgAdmin.
 
-<pre>
+{% highlight shell linenos %}
+# Download the 9.4 Linux x86-x64 installer at
+# http://www.enterprisedb.com/products-services-training/pgdownload
 
-    # Download the 9.4 Linux x86-x64 installer at
-    # http://www.enterprisedb.com/products-services-training/pgdownload
+$ cd ~/Downloads
+$ chmod 740 [DOWNLOADED RUN FILE].run
+$ sudo ./[DOWNLOADED RUN FILE].run
 
-    $ cd ~/Downloads
-    $ chmod 740 [DOWNLOADED RUN FILE].run
-    $ sudo ./[DOWNLOADED RUN FILE].run
-
-    # Go through the installation
-
-</pre>
+# Go through the installation
+{% endhighlight %}
 
 <aside>
     <h4>References:</h4>

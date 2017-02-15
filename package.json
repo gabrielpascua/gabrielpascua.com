@@ -4,7 +4,8 @@
   "description": "Portfolio and Exploration Site",
   "main": "index.js",
   "scripts": {
-    "start": "bundle exec jekyll serve --watch"
+    "start": "bundle exec jekyll serve --watch",
+    "build": "bundle exec jekyll build"
   },
   "keywords": [
     "jekyll"

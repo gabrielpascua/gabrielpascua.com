@@ -11,13 +11,13 @@ tags: docker
 
 ### Chapter 1. The What and Why of Containers
 * “Containers are a lightweight and portable store (encapsulation) for an application and its dependencies.”
-* Advantages of Containers over VM’s:
-	- Incurs little or no overhead, efficient and faster because it runs directly on top of an OS (not on a hypervisor like in VM’s)
+* Advantages of Containers over VM's:
+	- Incurs little or no overhead, efficient and faster because it runs directly on top of an OS (not on a hypervisor like in VM's)
 	- Portable and OS interoperable
 	- multiple containers can be ran at the same time to mirror a production distributed system.
 	- Removes the need for configuration, installation and considerations for the difference between development and deploy environments.
-* Docker’s name is tied to the shipping industry with the same goal of bringing the benefits of putting shipping goods inside containers to IT.
-* Docker’s “Infrastructure Plumbing Manifesto” from docker.com:
+* Docker's name is tied to the shipping industry with the same goal of bringing the benefits of putting shipping goods inside containers to IT.
+* Docker's “Infrastructure Plumbing Manifesto” from docker.com:
 	- Whenever possible, re-use existing plumbing and contribute improvements back.
 	- When you need to create new plumbing, make it easy to re-use and contribute improvements back. This grows the common pool of available components, and everyone benefits.
 - Follow the unix principles: several simple components are better than a single, complicated one.
@@ -38,7 +38,7 @@ tags: docker
 * A `Dockerfile` is a text file that contains instructions on how an image should be built
 * You can execute a shell script file `.sh` within a `Dockerfile` via the `ENTRYPOINT` section, e.g. `ENTRYPOINT [“/myshellscript.sh”]`
 * Tag an image by using semicolon after the repository name `docker build -t REPOSITORY/IMAGE_NAME:TAG`
-* Images prefixed with the user’s handle belong to the user namespace. The ones without prefixes belong to the root namespace - these are images curated by Docker for software companies.  Images prefixed with IPs belong to either 3rd party or self hosted registries
+* Images prefixed with the user's handle belong to the user namespace. The ones without prefixes belong to the root namespace - these are images curated by Docker for software companies.  Images prefixed with IPs belong to either 3rd party or self hosted registries
 <p></p>
 
 ### Chapter 4. Docker Fundamentals
@@ -77,16 +77,15 @@ tags: docker
 * “bind mount” the source folder to the container to allow code changes without stopping and rebuilding the image `docker run -d -p 5000:5000 -v "$(pwd)"/app:/app identidock`
 * Use `docker ps -lq` with `stop` or `rm` to control the last ran container, e.g. `docker stop $(docker ps  -lq)`
 * Always declare your `USER`. Without it your container will run as `root` which poses security concerns.
-    <pre>
-
-    RUN groupadd -r expressapp && useradd -r -g expressapp expressapp
-    …
-    USER expressapp
-    </pre>
+{% highlight shell linenos %}
+RUN groupadd -r expressapp && useradd -r -g expressapp expressapp
+…
+USER expressapp
+{% endhighlight %}
 * `docker run -d -P --name NAME_OF_PORT CONTAINER_NAME` to let Docker map a random port number on the host.  `docker port NAME_OF_PORT` to list the mappings.  This is useful when you have multiple containers on a single host instead of tracking unused ports.
 * Use `-e` to set the environment, e.g. `docker run -e "ENV=DEV"` 
-* Use Docker Compose to avoid typing shell commands to run your containers.  It works by having a `docker-compose.yml` file where your shell commands are declared. To execute it all you need to do is run `docker-compose up`.  Hit `ctrl-c` to stop the container when you’re done.
-* `docker-compose up -d` to download an image during the build process if it hasn’t done so
+* Use Docker Compose to avoid typing shell commands to run your containers.  It works by having a `docker-compose.yml` file where your shell commands are declared. To execute it all you need to do is run `docker-compose up`.  Hit `ctrl-c` to stop the container when you're done.
+* `docker-compose up -d` to download an image during the build process if it hasn't done so
 <p></p>
 
 ### Chapter 6: Creating a Simple Web App
@@ -95,23 +94,22 @@ tags: docker
 * `docker rm $(docker ps -aq)` to remove all stopped containers
 * Use `--link` to connect 2 images, e.g. `docker run -d -p 5000:5000 -e "ENV=DEV" --link dnmonster:dnmonster identidock`
 * Example `docker-compose.yml` file of an Express App linked to a Redis Server 
-    <pre>
+{% highlight shell linenos %}
+express_app:                 # container name
+build: .                # build from the current directory
+ports:
+    - "3300:3000"         # port forward 3000 from container to 3300 on host    
+environment: 
+    ENV: development      # set to Development environment
+volumes: 
+    - ./app:/app          # bind mount the app folder from the host
+links: 
+    - redis_server        # link app to redis via redis_server:6379
 
-    express_app:                 # container name
-    build: .                # build from the current directory
-    ports:
-        - "3300:3000"         # port forward 3000 from container to 3300 on host    
-    environment: 
-        ENV: development      # set to Development environment
-    volumes: 
-        - ./app:/app          # bind mount the app folder from the host
-    links: 
-        - redis_server        # link app to redis via redis_server:6379
-
-    redis_server:
-    image: redis            # redis:3.2.4 to specify a version, else :latest
-    </pre>
-* If you need to run multiple processes in a single container, it’s best to use process managers such as supervisord or runit
+redis_server:
+image: redis            # redis:3.2.4 to specify a version, else :latest
+{% endhighlight %}
+* If you need to run multiple processes in a single container, it's best to use process managers such as supervisord or runit
 * You can extend a yml file in `docker-compose` using `extends`.  Say you have a `common.yml` file, your extending configuration will look like `extends: [\n] file: common.yml`.
 <p></p>
 
@@ -145,7 +143,7 @@ tags: docker
     - [Chef](https://www.chef.io/solutions/infrastructure-automation/)
     - [Ansible (Popular/Open Source)](https://www.ansible.com/configuration-management) 
     - [Salt](https://saltstack.com/)
-* The Docker Storage driver is responsible for stacking change (hashes) layers on an image. You can run `docker info` to see what driver you’re using.  You can change it by running `docker daemon -s overlay`. Other options are:
+* The Docker Storage driver is responsible for stacking change (hashes) layers on an image. You can run `docker info` to see what driver you're using.  You can change it by running `docker daemon -s overlay`. Other options are:
 	- AUFS - First storage, most tested, and commonly used. Seen on Ubuntu or Debian hosts. Recommended as first option.
 	- Overlay - A good alternative over AUFS
 	- BTFRS - copy-on-write file system focused on supporting fault-tolerance
@@ -157,7 +155,7 @@ tags: docker
     - [Google Container Service (GKE - K for Kubernetes orchestration system)](https://cloud.google.com/container-engine/) - allows you to have automatic replication and load balancing
     - [Amazon EC2 Container Service (ECS)](https://aws.amazon.com/ecs/) 
     - [Giant Swarm](https://giantswarm.io/) - an opinionated solution for microservice architectures
-* Never save passwords and API keys in the image.  It can’t be deleted because it will exist in previous layers.  Some good solutions are:
+* Never save passwords and API keys in the image.  It can't be deleted because it will exist in previous layers.  Some good solutions are:
 	- Pass it as part of Environment Variables `docker run -d -e API_TOKEN=my_secret_token myimage`. Author advises against it because it can be exposed to child processes
 	- Pass it as part of the volume mount `docker run -d -v $(pwd):/secret-file:/secret-file:ro myimage` with a drawback of having your keys in files
     - Use (possible future) a key-value store [KeyWhiz](https://square.github.io/keywhiz/), [Vault](https://www.hashicorp.com/blog/vault.html), [Crypt](https://xordataexchange.github.io/crypt/)
@@ -205,7 +203,7 @@ tags: docker
 * When shopping for a Service Discovery Solution, you will often run into CAP Theorem which states that a distributed system cannot be Consistent (C), Available (A), and Partition tolerant (P) simultaneously.  Take note of possible implementations such as AP or CP systems.
 * Docker Networking Modes `docker network ls` [https://docs.docker.com/engine/userguide/networking/](https://docs.docker.com/engine/userguide/networking/): 
     - Bridge - represents the `docker0` network. External connectivity is provided by IP forwarding and `iptables` rules
-	- Host - adds a container on the host’s stack and cuts the plumbing of the Bridge network and shares the IP Address of the host
+	- Host - adds a container on the host's stack and cuts the plumbing of the Bridge network and shares the IP Address of the host
 	- None - adds a container to a container-specific network stack
 <p></p>
 
@@ -226,7 +224,7 @@ tags: docker
     - Kernel exploits. Kernels are shared between container and hosts magnifying kernel existing exploits
     - DoS attacks - an overloaded container can starve other containers in a host
     - Container breakouts - access to a container can lead to access to other containers
-    - Poisoned Images - how do/can you trust an image source you’re using
+    - Poisoned Images - how do/can you trust an image source you're using
     - Compromising secrets - 
 * [Namespaced Resources in Docker](https://opensource.com/business/14/7/docker-security-selinux) 
     - Process
@@ -235,16 +233,16 @@ tags: docker
     - Hostname
     - Shared Memory
 * Non-Namespaced Resources:
-    - User ID’s
+    - User ID's
     - Kernel keyring
     - Kernel and its modules
     - Devices
     - System time
-* To create a secure a solution built around containers, one should assume vulnerability and build layered defenses.  Another important strategy is to provide least privilege access to processes to limit an attacker’s capabilities in case of a breach.  “The more checks and boundaries you have in place, the greater the chances of stopping an attack”
-* Segregate containers by host if you have a multitenancy setup to prevent users accessing another container’s data in case of a breakout.  Put containers that process sensitive information in its own host.
-* {%raw%}`docker inspect -f "{{.Image}}" $(docker ps -q)` get the ID’s for all running images, and `docker images --no-trunc | grep $(docker inspect -f "-e {{.Image}}" $(docker ps -q))` for more details.  To get images base `docker inspect -f "{{.Image}}" $(docker ps -q) | xargs -L 1 docker history -q`{%endraw%}.
+* To create a secure a solution built around containers, one should assume vulnerability and build layered defenses.  Another important strategy is to provide least privilege access to processes to limit an attacker's capabilities in case of a breach.  “The more checks and boundaries you have in place, the greater the chances of stopping an attack”
+* Segregate containers by host if you have a multitenancy setup to prevent users accessing another container's data in case of a breakout.  Put containers that process sensitive information in its own host.
+* {%raw%}`docker inspect -f "{{.Image}}" $(docker ps -q)` get the ID's for all running images, and `docker images --no-trunc | grep $(docker inspect -f "-e {{.Image}}" $(docker ps -q))` for more details.  To get images base `docker inspect -f "{{.Image}}" $(docker ps -q) | xargs -L 1 docker history -q`{%endraw%}.
 * Use the `LABEL`  keyword in your Dockerfile to add information about your images
-* Be specific in your Dockerfile’s `FROM` instructions by using the image digest.  It will prevent unintended results when images get updated.
+* Be specific in your Dockerfile's `FROM` instructions by using the image digest.  It will prevent unintended results when images get updated.
 * **Tips on securing container deployments**
     - Set a user - avoid running applications as `root`. In your Dockerfile:  
         `RUN groupadd -r user_grp && useradd -r -g user_grp user`  

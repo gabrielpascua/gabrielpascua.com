@@ -9,48 +9,46 @@ tags: linux, ubuntu 14.04
 
 A stable Node 4.0.0 was just released 3 days ago.  iojs and node are finally 1.
 
-<pre>
+{% highlight shell linenos %}
+$ sudo -i
 
-    $ sudo -i
+# Remove any node installation in your system:
+$ dpkg --get-selections | grep node
+$ apt-get remove --purge node
 
-    # Remove any node installation in your system:
-    $ dpkg --get-selections | grep node
-    $ apt-get remove --purge node
+$ apt-get install nodejs
+$ apt get install npm
 
-    $ apt-get install nodejs
-    $ apt get install npm
+# Install nvm globally to manage node versions:
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | NVM_DIR=/usr/local/nvm bash
 
-    # Install nvm globally to manage node versions:
-    $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.26.1/install.sh | NVM_DIR=/usr/local/nvm bash
+# Locate the node version you want to install:
+$ nvm ls-remote
 
-    # Locate the node version you want to install:
-    $ nvm ls-remote
+# Install it:
+$ nvm install [NODE VERSION]
 
-    # Install it:
-    $ nvm install [NODE VERSION]
+# Set a default node version:
+$ nvm alias default [NODE VERSION]
 
-    # Set a default node version:
-    $ nvm alias default [NODE VERSION]
+# Add this to your .bashrc file to pick up the system node then restart bash:
+> export NVM_DIR="/usr/local/nvm"
+> [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-    # Add this to your .bashrc file to pick up the system node then restart bash:
-    > export NVM_DIR="/usr/local/nvm"
-    > [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-    # Verify your node version:
-    $ node --version
+# Verify your node version:
+$ node --version
 
 
-    # Troubleshooting:
-    # Some dependencies refer to your /usr/bin/node version
-    $ rm -r /etc/alternatives/node
-    $ ln -s /usr/local/nvm/versions/node/[NODE VERSION]/bin/node /etc/alternatives/node
-    $ rm -r /usr/bin/npm
-    $ ln -s /usr/local/nvm/versions/node/[NODE VERSION]/bin/npm /usr/bin/npm
+# Troubleshooting:
+# Some dependencies refer to your /usr/bin/node version
+$ rm -r /etc/alternatives/node
+$ ln -s /usr/local/nvm/versions/node/[NODE VERSION]/bin/node /etc/alternatives/node
+$ rm -r /usr/bin/npm
+$ ln -s /usr/local/nvm/versions/node/[NODE VERSION]/bin/npm /usr/bin/npm
 
-    # Original node: /usr/bin/nodejs
-    # Original npm: /usr/lib/node_modules/npm/bin/npm-cli.js
-
-</pre>
+# Original node: /usr/bin/nodejs
+# Original npm: /usr/lib/node_modules/npm/bin/npm-cli.js
+{% endhighlight %}
 
 <aside>
     <h4>References:</h4>

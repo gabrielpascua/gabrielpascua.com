@@ -9,9 +9,7 @@ tags: dotnet
 
 ### project.json
 Have these entries under the `dependencies` section
-
-```
-
+{% highlight json linenos %}
   {
     "dependencies": {
       ...
@@ -20,15 +18,12 @@ Have these entries under the `dependencies` section
       ...
     },
   }
-
-```
+{% endhighlight %}
 <p></p>
 
 ### Startup.cs
 It is important that `app.UseSession()` under the `Configure()` method appears before `app.UseMvcWithDefaultRoute()` otherwise your application will throw a Session error.
-
-```
-
+{% highlight csharp linenos %}
   ...
   public void ConfigureServices(IServiceCollection services)
   {
@@ -50,21 +45,16 @@ It is important that `app.UseSession()` under the `Configure()` method appears b
       ...
   }
   ...
-
-```
+{% endhighlight %}
 <p></p>
 
 ### Usage
 These can be in any entity provided they have access to the Session object.
-
-```
-
+{% highlight csharp linenos %}
   // Setter
   HttpContext.Session.SetString("string_test", "Test string at " + 
                                   DateTime.Now.ToString());
 
   // Getter
   HttpContext.Session.GetString("string_test")
-
-
-```
+{% endhighlight %}

@@ -43,25 +43,24 @@ tags: .net
         `Presentation/App (P/A) ← → Read/Write DB`  
         `P/A → Write DB ; Read DB → P/A`
     - An example implementation having 2 `DBContext` in Entity Framework for Command and Query
-        <pre>
-        
-        public class CommandDatabase : DbContext
-        {
-            …
-            public DbSet&lt;Order&gt; Orders {get; private set}
-            public DbSet&lt;Customer&gt; Customers {get;private set}
-            …
-        }
+{% highlight csharp linenos %}
+public class CommandDatabase : DbContext
+{
+    …
+    public DbSet&lt;Order&gt; Orders {get; private set}
+    public DbSet&lt;Customer&gt; Customers {get;private set}
+    …
+}
 
-        public class ReadDatabase : DbContext
-        {
-            …
-            //IQueryable has no access to methods that save changes
-            public IQueryable&lt;Order&gt; Orders {return _orders;}
-            public IQueryable&lt;Customer&gt; Customers {return _customers;}
-            …
-        }
-        </pre>
+public class ReadDatabase : DbContext
+{
+    …
+    //IQueryable has no access to methods that save changes
+    public IQueryable&lt;Order&gt; Orders {return _orders;}
+    public IQueryable&lt;Customer&gt; Customers {return _customers;}
+    …
+}
+{% endhighlight %}
 * Message-based formulation as a form of CQRS relies on having a command processor (typically a bus) class to facilitate communication between your application and its supporting layers.  In this design inputs transformed into commands (as specific types of messages) are pushed to the command processor that diverts it to the correct domain layer.  In an MVC architecture the command processor is the same as your controller action.  
     - Events or notifications is a natural requirement of this design because they tell other handlers that a command has been executed.  The naming convention of event classes should include what just happened, e.g. `PaymentCompleted`, `OrderCreated`, etc..  
     - A typical command processor would have a collection of listeners and message handlers which can either be a saga (long running task) or a handler (one-off execution per message).
@@ -69,7 +68,7 @@ tags: .net
 <p></p>
 
 ### Chapter 3. UX-driven design
-* Clients that have specific UI in their minds perceive it as the whole system.  If we can present a UI that’s close to what they expect, chances of rework are reduced.
+* Clients that have specific UI in their minds perceive it as the whole system.  If we can present a UI that's close to what they expect, chances of rework are reduced.
 * UX refers to emotions, behaviors, and interactions the user goes through when using a product.
 * UXDD is a top down approach where your initial steps are focused on the presentation layer - building wireframes, mocks, storyboards, planning the UX. The last step is building the backend that is agnostic from your UI.
 * List of UX development tools
@@ -86,7 +85,7 @@ tags: .net
 ### Chapter 4. Architectural options for a web solution
 * ASP.NET Core does not depend on `system.web` or IIS.  It is a cross-platform environment.  You can run it on top of .NET 4.5.2 or .NET Core frameworks.
 * ASP.NET Core uses the new .NET Execution Environment (DNX) and only supports MVC (no WebForms)
-* ASP.NET Web forms shielded developers from HTML, CSS and Javascript.  ASP.NET MVC did the opposite by giving developers more control of the markup.  This paradigm better caters to today’s development needs with the proliferation of CSS and Javascript.
+* ASP.NET Web forms shielded developers from HTML, CSS and Javascript.  ASP.NET MVC did the opposite by giving developers more control of the markup.  This paradigm better caters to today's development needs with the proliferation of CSS and Javascript.
 * ASP.NET Web API is the replacement for WCF.  In ASP.NET Core, it is part of the ASP.NET MVC API.
 <p></p>
 
@@ -94,10 +93,10 @@ tags: .net
 ![DDD vs N-Tier](/img/3tier-vs-ddd.svg)  
 
 * The 3-tier architecture introduces a lot of uncertainty on how to structure business logic.  It assumes that an application is running on a single database.  A Layered Architecture on the other hand splits the Business layer into Application and Domain to clear out the gray areas.
-    - The Presentation layer funnels the data to the rest of the system. It defines the boundaries of acceptable data.  It consists of input models that group data when a command is posted, and a view model that represents the application’s response.
-    - The Application Layer is the entry point in the back end of the system.  It abstracts business processes from user inputs and performs the necessary data transformation the back end understands.  It has an almost 1:1 mapping of methods to the use-cases of the Presentation Layer.  The difference between Application and Domain logic when we cash checks in a banking system is the former represents the user’s transaction with the teller or an ATM machine and the latter the process of taking money from one account and transferring it to another.
+    - The Presentation layer funnels the data to the rest of the system. It defines the boundaries of acceptable data.  It consists of input models that group data when a command is posted, and a view model that represents the application's response.
+    - The Application Layer is the entry point in the back end of the system.  It abstracts business processes from user inputs and performs the necessary data transformation the back end understands.  It has an almost 1:1 mapping of methods to the use-cases of the Presentation Layer.  The difference between Application and Domain logic when we cash checks in a banking system is the former represents the user's transaction with the teller or an ATM machine and the latter the process of taking money from one account and transferring it to another.
     - The Domain Layer is where you implement business rules and processes.  It consists of domain models and domain services. Domain models are different from persistence models although both can match.  Domain models focus on logic and business rules.  Domain service is a class that can perform reusable tasks related to the business logic.  Domain services have free access to the infrastructure layer.
-    - The Infrastructure Layer is anything related to concrete technologies - ORM, API’s, Logging, etc.. It is made up of repository classes that know how to read and write data.
+    - The Infrastructure Layer is anything related to concrete technologies - ORM, API's, Logging, etc.. It is made up of repository classes that know how to read and write data.
 <p></p>
 
 ### Chapter 6. ASP.NET state of the art
@@ -123,20 +122,19 @@ tags: .net
 * **Routing**
     - Routes are loosely REST-oriented but it is up to you how to implement your resources and actions
     - Beware of trailing slash, `/orders/year` is different from `/orders/year/`
-    - Use constraints when you can.  It wouldn’t catch every invalid url parameter but it’ll save you a good deal of work
-    - By default URL’s pointing to a physical file is ignored.  You can change this inside your `global.asax.cs` file by setting `routes.RouteExistingFiles = true;`.
+    - Use constraints when you can.  It wouldn't catch every invalid url parameter but it'll save you a good deal of work
+    - By default URL's pointing to a physical file is ignored.  You can change this inside your `global.asax.cs` file by setting `routes.RouteExistingFiles = true;`.
     - `{*pathInfo}` in `routes.IgnoreRoute("{resource}.axd/{*pathInfo}");` means that anything `*` after `.axd` in a URL should be assigned to the `pathInfo` variable.
     - Use attribute-based routing in large applications when classic routing gets large
-        <pre>
-        
-        [Route("info/[controller]")]
-        public class NewsController : Controller {
-            [HttpGet("{id}")]  //will map to /info/news/{id}
-            Public ActionResult Get(int id){}
-        }
-        </pre>
+{% highlight csharp linenos %}
+[Route("info/[controller]")]
+public class NewsController : Controller {
+    [HttpGet("{id}")]  //will map to /info/news/{id}
+    Public ActionResult Get(int id){}
+}
+{% endhighlight %}
 * **Controllers**
-    - Delicate part of the design. Just because you’re application is ASP.NET MVC doesn't mean you’re getting a great layered architecture
+    - Delicate part of the design. Just because you're application is ASP.NET MVC doesn't mean you're getting a great layered architecture
     - In a cloud-based architecture, making a controller dependent on state reduces the scalability of an application
     - An ideal way to build controller classes is to put all the orchestration logic into distinct application layer classes keeping your controllers as thin as possible. By doing so you transfer testing to the application layer class, making testing for controllers optional.
     - Use `[NonAction]` attribute to hide a `public` controller action.  A possible use case for this is when your route must be case sensitive
@@ -144,15 +142,14 @@ tags: .net
     - `Request.Params["today"]` and `Request["today"]` are the same
     - Use `IList` as a route parameter when expecting a collection, e.g. `public ActionResult EmailsForPost(IList<string> emails)`.
     - `async` controller actions are beneficial for long-running requests.  It prevents locking ASP.NET threads and not to make the method run faster.
-        <pre>
-
-        public async Task&lt;ActionResult&gt; Rss()
-        {
-            …
-            var rss = await generateRss();
-            return rss;
-        }
-        </pre>
+{% highlight csharp linenos %}
+public async Task<ActionResult> Rss()
+{
+    …
+    var rss = await generateRss();
+    return rss;
+}
+{% endhighlight %}
 * **View**
     - Anything prefixed with `@` can process C# or VB expressions
 <p></p>
@@ -178,37 +175,36 @@ tags: .net
     - Persistence models - ORM classes (can coincide with Domain)
 * You can write your own view engine that inherits from `RazorViewEngine` e.g. `MyViewEngine:RazorViewEngine`  if you need to locate views from a different location than usual.
 * A better way to handle controller action errors is by overriding the `OnException` method from the `Controller` class.  You can also have a `HandleError` attribute to specify the view that should handle a specific error type.  Note that you need to have `<customErrors mode=”On” />` to use the `HandleError` attribute.
-* It’s a *good security practice* to set a `defaultRedirect` value on your `<customErrors />` to [prevent a hacker from distinguishing between the different types of errors that occur on a server](https://weblogs.asp.net/scottgu/important-asp-net-security-vulnerability). 
+* It's a *good security practice* to set a `defaultRedirect` value on your `<customErrors />` to [prevent a hacker from distinguishing between the different types of errors that occur on a server](https://weblogs.asp.net/scottgu/important-asp-net-security-vulnerability). 
 * An alternative to log4net is [ELMAH](http://docs.elmah.io/logging-to-elmah-io-from-elmah/) 
-* Microsoft’s ASP.NET Identity is the de-facto standard for authenticating users
+* Microsoft's ASP.NET Identity is the de-facto standard for authenticating users
 <p></p>
 
 ### Chapter 11. Presenting data
 * A View Model is a plain Data Transfer Object (DTO)
-* It is recommended to create a base class for your View Model for common elements required such as the page’s Title, Metadata, Menus, etc..  When working with multiple layouts, you’re better off creating a second layer of base view model classes e.g. `public class FrontEndModelBase : ViewModelBase{...}` and `public class AdminModelBase : ViewModelBase{...}`
+* It is recommended to create a base class for your View Model for common elements required such as the page's Title, Metadata, Menus, etc..  When working with multiple layouts, you're better off creating a second layer of base view model classes e.g. `public class FrontEndModelBase : ViewModelBase{...}` and `public class AdminModelBase : ViewModelBase{...}`
 * Explore NuGet for existing paging plugins instead of rolling out your own
 <p></p>
 
 ### Chapter 12. Editing data
-* To address loss of data on a POST-Redirect-GET pattern on a cloud architecture, the common approach is to [use cookies that expire as soon as they’re issued](http://stackoverflow.com/questions/28351198/implementing-itempdataprovider-vs-using-cookies) 
+* To address loss of data on a POST-Redirect-GET pattern on a cloud architecture, the common approach is to [use cookies that expire as soon as they're issued](http://stackoverflow.com/questions/28351198/implementing-itempdataprovider-vs-using-cookies) 
 * Cross property validation requires you to have a global attribute at the class level for a `CustomValidation` and resort to `ValidationSummary` to display the error.
-    <pre>
+{% highlight csharp linenos %}
+[CustomValidation(typeof(CountryInputModel), "Validate")]
+public class CountryInputModel : ViewModelBase { … }
 
-    [CustomValidation(typeof(CountryInputModel), "Validate")]
-    public class CountryInputModel : ViewModelBase { … }
-
-    public static ValidationResult Validate(CountryInputModel data,
-        ValidationContext context)
+public static ValidationResult Validate(CountryInputModel data,
+    ValidationContext context)
+{
+    if (data.Continent == Continent.Unknown && 
+        !data.Name.IsNullOrWhitespace())
     {
-        if (data.Continent == Continent.Unknown && 
-            !data.Name.IsNullOrWhitespace())
-        {
-            return new ValidationResult("Must indicate a continent.");
-        }
-
-        return ValidationResult.Success;
+        return new ValidationResult("Must indicate a continent.");
     }
-    </pre>
+
+    return ValidationResult.Success;
+}
+{% endhighlight %}
 * An idea to handle POST responses to the template is to create a DTO class that has a `Success` and `Message` properties that you aggregate in your `ViewModelBase` class.  On the templating side, you can create a partial that you can re-use throughout your pages.
 <p></p>
 
@@ -217,96 +213,92 @@ tags: .net
 * Input and View models are also recommended to be separated although classes can be recycled.
 * The persistence layer is traditionally built on Repository Pattern where each repository class provides methods for reading and writing to a data store using  one specific technology such as Entity Framework or ADO.NET.
 * Regardless of pattern the most important thing to do is isolate your data access logic so it can easily be swapped out with a different technology.
-* Data Access API’s go into the repository classes
+* Data Access API's go into the repository classes
 * Repository classes must have read and write methods
-* Sample Order Repository Class using Entity Framework’s `DbContext`
-    <pre>
-
-    public class OrderRepository : IOrderRepository
+* Sample Order Repository Class using Entity Framework's `DbContext`
+{% highlight csharp linenos %}
+public class OrderRepository : IOrderRepository
+{
+    protected ApplicationDbContext _database;
+    public OrderRepository()
     {
-        protected ApplicationDbContext _database;
-        public OrderRepository()
-        {
-            _database = new ApplicationDbContext();
-        }
-
-        public void Save(Order order)
-        {
-            _database.Orders.Add(order);
-        }
-
-        public void Commit()
-        {
-            _database.SaveChanges();
-        }
+        _database = new ApplicationDbContext();
     }
-    </pre>
+
+    public void Save(Order order)
+    {
+        _database.Orders.Add(order);
+    }
+
+    public void Commit()
+    {
+        _database.SaveChanges();
+    }
+}
+{% endhighlight %}
 * Today having a polyglot (multiple technology) persistence is a common scenario where you have a relational database and a NoSQL database in a single application.  The benefit of a heterogenous storage architecture is to maximize performance at every stack at the cost of having a diverse set of skill on your personnel.
 <p></p>
 
 ### Chapter 14. Creating more interactive views
 * Serialization using `JavascriptSerializer`
-    <pre>
-
-    var serializer = new JavaScriptSerializer {MaxJsonLength = Int32.MaxValue};
-    var result = new ContentResult
-    {
-        Content = serializer.Serialize(model),
-        ContentType = "application/json"
-    };
-    </pre>
+{% highlight csharp linenos %}
+var serializer = new JavaScriptSerializer {MaxJsonLength = Int32.MaxValue};
+var result = new ContentResult
+{
+    Content = serializer.Serialize(model),
+    ContentType = "application/json"
+};
+{% endhighlight %}
 * JSONP works by returning JSON data in your controller wrapped in a function, e.g. `functionName(JSONData)`.  Sample `JSONPResult` that inherits from `JsonResult`
-    <pre>
+{% highlight csharp linenos %}
+public class JsonpResult : JsonResult
+{
+    private const String JsonpCallbackName = "callback";
 
-    public class JsonpResult : JsonResult
+    public override void ExecuteResult(ControllerContext context)
     {
-        private const String JsonpCallbackName = "callback";
+        if (context == null)
+            throw new ArgumentNullException("context");
 
-        public override void ExecuteResult(ControllerContext context)
+
+        if ((JsonRequestBehavior == JsonRequestBehavior.DenyGet) &&
+            String.Equals(context.HttpContext.Request.HttpMethod, "GET"))
+            throw new InvalidOperationException();
+
+        var response = context.HttpContext.Response;
+        if (!String.IsNullOrEmpty(ContentType))
+            response.ContentType = ContentType;
+        else
+            response.ContentType = "application/json";
+
+        if (ContentEncoding != null)
         {
-            if (context == null)
-                throw new ArgumentNullException("context");
+            response.ContentEncoding = this.ContentEncoding;
+        }
 
-
-            if ((JsonRequestBehavior == JsonRequestBehavior.DenyGet) &&
-                String.Equals(context.HttpContext.Request.HttpMethod, "GET"))
-                throw new InvalidOperationException();
-
-            var response = context.HttpContext.Response;
-            if (!String.IsNullOrEmpty(ContentType))
-                response.ContentType = ContentType;
-            else
-                response.ContentType = "application/json";
-
-            if (ContentEncoding != null)
-            {
-                response.ContentEncoding = this.ContentEncoding;
-            }
-
-            if (Data != null)
-            {
-                var serializer = new JavaScriptSerializer();
-                var buffer = String.Format("{0}({1})", 
-                    JsonpCallbackName, 
-                    serializer.Serialize(Data));
-                response.Write(buffer);
-            }
+        if (Data != null)
+        {
+            var serializer = new JavaScriptSerializer();
+            var buffer = String.Format("{0}({1})", 
+                JsonpCallbackName, 
+                serializer.Serialize(Data));
+            response.Write(buffer);
         }
     }
-    </pre>
-* An alternative to JSONP is to check the request’s `Origin` header and return a response header `Access-Control-Allow-Origin` if it is a recognized host
-    <pre>
+}
+{% endhighlight %}
+* An alternative to JSONP is to check the request's `Origin` header and return a response header `Access-Control-Allow-Origin` if it is a recognized host
+{% highlight csharp linenos %}
+var origin = Request.Headers["Origin"];
+if (String.IsNullOrWhiteSpace(origin) return;
 
-        var origin = Request.Headers["Origin"];
-        if (String.IsNullOrWhiteSpace(origin) return;
-        
-        if (Request.IsLocal || IsKnownOrigin(origin))
-        {
-            Response.AddHeader("Access-Control-Allow-Origin", origin);
-        }
-    </pre>
-* The Web API is a dedicated and lightweight framework for dealing with HTTP services.  It’s not to say that WCF is dead because it is still useful for non-HTTP protocols.  Web API has a different runtime environment from ASP.NET MVC to allow non MVC appliations (WebForms) to use it.  It also can be hosted anywhere and not just IIS.
-*  If you’re planning to authenticate an API request using Basic Authentication, make sure it is over HTTPS
+if (Request.IsLocal || IsKnownOrigin(origin))
+{
+    Response.AddHeader("Access-Control-Allow-Origin", origin);
+}
+{% endhighlight %}
+* The Web API is a dedicated and lightweight framework for dealing with HTTP services.  It's not to say that WCF is dead because it is still useful for non-HTTP protocols.  Web API has a different runtime environment from ASP.NET MVC to allow non MVC appliations (WebForms) to use it.  It also can be hosted anywhere and not just IIS.
+*  If you're planning to authenticate an API request using Basic Authentication, make sure it is over HTTPS
 * In Web API you enable CORS in the global.asax file by calling `config.EnableCors()` in the `Register()` method and you disable it on a controller action by adding the `DisableCors` attribute.
 * Look at [mustache](https://mustache.github.io/) or [knockout](http://knockoutjs.com/) for additional front end templating instead of just concatenating HTML
 * Look at ASP.NET SignalR for push notifications from the server to the client together with its jquery library.  You can also have a progress bar implementation using it or a listener to update your DOM when a modal form submits a POST.
@@ -314,7 +306,7 @@ tags: .net
 
 ### Chapter 15. Pros and cons of responsive design
 * CSS Media Queries Level 4 Standard will have `pointer` and `hover` properties to help determine non-desktop devices
-* Responsive Web Design’s “serve any (device) and ignore all (browser characteristics)” principles face the paradox of potentially serving a lot of content that the user needs.
+* Responsive Web Design's “serve any (device) and ignore all (browser characteristics)” principles face the paradox of potentially serving a lot of content that the user needs.
 <p></p>
 
 ### Chapter 16. Making websites mobile-friendly
