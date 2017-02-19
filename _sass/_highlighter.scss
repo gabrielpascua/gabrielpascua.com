@@ -19,4 +19,6 @@ pre {
 code {
     color: rgba(0,0,0,.65);
     background-color: rgba(0,0,0,.05);
+    word-wrap: break-word;
+    word-break: break-all;
 }
