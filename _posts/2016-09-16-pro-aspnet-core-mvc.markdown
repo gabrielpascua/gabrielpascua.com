@@ -364,8 +364,11 @@ services.AddMvc().AddXmlDataContractSerializerFormatters();
 public object GetById(int id) => new object();
 
 // XML Negotiated GET Request using PowerShell
-Invoke-WebRequest http://localhost:7000/api/content/object -Headers @{Accept = "application/xml"} 
-    | select @{n='Content-Type';e={ $_.Headers."Content-Type" }}, Content
+Invoke-WebRequest `
+    http://localhost:7000/api/content/object `
+    -Headers @{Accept = "application/xml"} | `
+    select @{n='Content-Type';e={ $_.Headers."Content-Type" }}, `
+    Content
 {% endhighlight %}
 
 * Other useful Controller action attributes you can use to control your routing:
