@@ -18,6 +18,10 @@ body{
   
 }
 
+h1,h2,h3,h4,h5,h6{
+    line-height: 1.25;
+}
+
 .navbar-default{
   background-color: #f0f0f0;
 }
@@ -88,10 +92,6 @@ article{
   header{
     margin-bottom: 30px;
 
-    h1{
-      line-height: 1.25;
-    }
-
     p{
       color: rgba(0,0,0,.4);
     }
@@ -151,7 +151,7 @@ article{
 .post {
   h3 + ul{
     margin-top: 20px;
-    line-height: 1.5;
+    margin-left: 20px;
   }
 
   h4{
@@ -162,15 +162,22 @@ article{
     list-style: outside;
     padding-left: 10px;
     margin-left: 15px;
-    margin-bottom: 8px;
-    line-height: 1.75;
+    margin-bottom: 20px;
+    line-height: 1.5;
 
     ol, ul{
       margin-top: 10px;
     }
 
     li{
-      list-style: circle;
+      list-style: none;
+
+      &:before {
+        content: "-";
+        width: 10px;
+        position: absolute;
+        margin-left: -20px;
+      }
     }
   }
 
