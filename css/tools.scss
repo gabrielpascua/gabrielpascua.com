@@ -1,0 +1,34 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+#tools{
+
+    margin: 0 auto;
+    max-width: 960px;
+
+    .ratio{
+        max-width: 450px;
+        margin: 0 auto;
+
+        &__xypair{
+            margin-bottom: 10px;
+            margin-top: 10px;
+
+            input{
+                text-align: center;
+                
+                &:first-of-type{
+                    margin-right: 10px;
+                }
+
+                &:last-of-type{
+                    margin-left: 10px;
+                }
+            }
+
+        }
+
+    }
+
+}
