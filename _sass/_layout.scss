@@ -1,6 +1,6 @@
 body{
   line-height: 2;
-  font-size: 16px;
+  font-size: 18px;
   
   .column-one{
     max-width: 750px;
@@ -79,6 +79,10 @@ aside{
 ul{
   list-style: inside;
   margin-left: 30px;
+
+  table &{
+      margin-left: 0;
+  }
 }
 
 p{
