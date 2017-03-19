@@ -4,7 +4,9 @@ title:  "Available React Events"
 excerpt: "Available React Events"
 date:   2016-07-04 07:33
 categories: notes
-tags: javascript react
+tags:
+  - javascript
+  - react
 ---
 
 <p><b>Touch And Mouse Events</b></p>

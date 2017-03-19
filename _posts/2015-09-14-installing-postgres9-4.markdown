@@ -4,7 +4,9 @@ title:  "Installing Postgres 9.4"
 excerpt: "Installing Postgres 9.4"
 date:   2015-09-14 16:00
 categories: notes
-tags: linux, ubuntu 14.04
+tags: 
+  - linux
+  - ubuntu 14.04
 ---
 
 How to install Postgres 9.4 with pgAdmin.

@@ -4,7 +4,10 @@ title:  "Dockerizing Postgres the Hard Way"
 excerpt: "Looking into the details of running a specific Postgres version on Docker for local development"
 date:   2017-01-21 06:44
 categories: notes
-tags: ops
+tags:
+  - ops
+  - docker
+  - postgres
 ---
 
 ## Part 1 - Files

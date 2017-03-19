@@ -4,7 +4,9 @@ title:  "Installing PhpMyAdmin"
 excerpt: "Installing PhpMyAdmin"
 date:   2015-09-14 13:00
 categories: notes
-tags: linux, ubuntu 14.04
+tags: 
+  - linux
+  - ubuntu 14.04
 ---
 
 It's too bad Sequel Pro is not available to Ubuntu.  I didn't think SQuirreL SQL's GUI was usable but I've had ok experiences with PhpMyAdmin.

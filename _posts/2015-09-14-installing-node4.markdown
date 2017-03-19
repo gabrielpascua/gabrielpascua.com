@@ -4,7 +4,9 @@ title:  "Installing Node 4.0.0"
 excerpt: "Installing Node 4.0.0"
 date:   2015-09-14 14:00
 categories: notes
-tags: linux, ubuntu 14.04
+tags:
+  - linux
+  - ubuntu 14.04
 ---
 
 A stable Node 4.0.0 was just released 3 days ago.  iojs and node are finally 1.

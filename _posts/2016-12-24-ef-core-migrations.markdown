@@ -4,7 +4,7 @@ title:  "EF Migrations for .NET Core 1.1.0 Without Visual Studio"
 excerpt: "EF Migrations for .NET Core 1.1.0 Without Visual Studio"
 date:   2016-12-24 11:00
 categories: notes
-tags: concepts
+tags: .net
 ---
 
 ### Add the required dependencies in your project.json file

@@ -4,7 +4,9 @@ title:  "Inspiron 7548 Installation Notes"
 excerpt: "Helpful links and system configuration"
 date:   2016-12-26 18:40
 categories: notes
-tags: 
+tags:
+  - linux
+  - windows
 ---
 
 ### System

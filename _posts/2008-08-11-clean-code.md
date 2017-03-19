@@ -6,7 +6,8 @@ date:   2008-08-11
 categories: books
 book_url: https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_1
 book_image: /img/book-clean-code-360x465.jpg
-tags: patterns
+tags: 
+  - patterns
 ---
 
 ### Foreword

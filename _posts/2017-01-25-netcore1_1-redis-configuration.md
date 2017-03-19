@@ -4,7 +4,9 @@ title:  "Redis Configuration for Distributed Caching on .NET Core 1.1"
 excerpt: "Project dependency and configuration for an MVC application"
 date:   2017-01-25 05:31
 categories: notes
-tags: dotnet
+tags:
+  - .net
+  - redis
 ---
 
 ### project.json

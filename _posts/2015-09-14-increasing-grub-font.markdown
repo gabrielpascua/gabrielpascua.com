@@ -4,7 +4,9 @@ title:  "Increasing Grub's Font Size"
 excerpt: "Increasing Grub's Font Size"
 date:   2015-09-14 10:00
 categories: notes
-tags: linux, ubuntu 14.04
+tags: 
+  - linux
+  - ubuntu 14.04
 ---
 
 The recommended solution was to change the ttyl resolution but this is the quick and dirty fix.

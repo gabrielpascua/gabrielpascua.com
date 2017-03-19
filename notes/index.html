@@ -7,9 +7,8 @@ layout: page
     {% if post.categories contains 'notes' %}
     <div class="row">
         <div class="col-xs-12 col-sm-6 title">
-            <a href="{{ post.url }}">
-                {{ post.title }}
-            </a>
+            <a href="{{ post.url }}">{{ post.title }}</a><br />
+            <span class="tag-cloud">{{ post.tags | sort | join: ", " }}</span>
         </div>
         <div class="col-xs-12 col-sm-4 divider"></div>
         <div class="col-xs-12 col-sm-2 date">

@@ -4,7 +4,9 @@ title:  "React, Babel, and Grunt for .NET Core MVC"
 excerpt: "React build setup for a .NET Core MVC Project"
 date:   2017-02-18 08:06
 categories: notes
-tags: dotnet react
+tags:
+  - .net
+  - react
 ---
 
 #### Other viable solutions:

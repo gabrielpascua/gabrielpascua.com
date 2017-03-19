@@ -4,7 +4,9 @@ title:  "React's Component Lifecycle"
 excerpt: "React's Component Lifecycle"
 date:   2016-07-09 07:48
 categories: notes
-tags: react javascript
+tags:
+  - react
+  - javascript
 ---
 
 <p>

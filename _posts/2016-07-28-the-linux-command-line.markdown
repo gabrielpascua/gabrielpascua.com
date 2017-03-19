@@ -6,7 +6,9 @@ date:   2016-07-28
 categories: books
 book_url: https://www.nostarch.com/tlcl.htm
 book_image: /img/the-linux-command-line-360x476.jpg
-tags: ops shell
+tags:
+  - ops
+  - shell
 ---
 
 ### Useful Shell Commands

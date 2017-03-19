@@ -4,7 +4,9 @@ title:  "Sequence Diagram of a Flux Application"
 excerpt: "Sequence Diagram of a Flux Application"
 date:   2016-07-12 08:05
 categories: notes
-tags: react javascript
+tags:
+  - react
+  - javascript
 ---
 
 <p>
