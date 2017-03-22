@@ -56,9 +56,17 @@
     }
     .sick:after {
         content: '\1F637';
-    }    
+    }
+    .personal:after {
+        content: '\1F37A';
+    }
+    .vacation:after {
+        content: '\1F31E';
+    }
     .holiday span,
-    .sick span {
+    .sick span,
+    .personal span,
+    .vacation span {
         display: none;
     }
 
