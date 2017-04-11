@@ -38,7 +38,12 @@ function markDates(date){
       {date:'12/25/2017', label:'holiday'},
       {date:'1/24/2017', label:'sick'},
       {date:'3/15/2017', label:'personal'},
-      {date:'3/20/2017', label:'personal'}
+      {date:'3/20/2017', label:'personal'},    
+      {date:'5/5/2017', label:'vacation'},
+      {date:'5/8/2017', label:'vacation'},
+      {date:'5/9/2017', label:'vacation'},
+      {date:'5/10/2017', label:'vacation'},
+      {date:'5/11/2017', label:'vacation'}
   ];
   return Dated.mark.call(date, dates);
 }
