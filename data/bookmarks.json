@@ -596,6 +596,10 @@
         "url": "http://pinboard.in/popular"
       },
       {
+        "name": "Lobsters",
+        "url": "https://lobste.rs/"
+      },
+      {
         "name": "Google News",
         "url": "http://news.google.com/news"
       },
