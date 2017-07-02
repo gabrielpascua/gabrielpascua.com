@@ -2,39 +2,27 @@
     "bio":{
         "first_name": "Gabriel",
         "last_name" : "Pascua",
-        "email":"",
+        "email":"mailto:mail@gabrielpascua.com",
         "phone":""
     },
     "history":[
         {
             "company":{
-                "name":"Wenner Media",
+                "name":"Wenner Media - Digital",
                 "address":"1290 Avenue of the Americas",
                 "city":"New York",
                 "state":"NY",
                 "zip":"10104",
                 "country":"USA"
             },
-            "position":"Web Developer",
-            "description":"Wenner Media is the parent company of Rolling Stone, Men's Journal and Glixel.",
+            "position":"Web Developer (Node.js / PHP)",
+            "description":"Wenner Media is the owner of <a href='http://www.rollingstone.com' target='_blank'>Rolling Stone</a> and <a href='http://www.glixel.com/' target='_blank'>Glixel</a>, and formerly <a href='http://www.usmagazine.com/' target='_blank'>Us Weekly</a> and <a href='http://www.mensjournal.com/' target='_blank'>Men's Journal</a>",
             "start_date":{
-                "month":11,
-                "day":14,
-                "year":2011
+                "month":1,
+                "day":27,
+                "year":2014
             },
             "end_date": null,
-            "microsoft":[
-                "C# ASP.NET",
-                ".NET Core",
-                "MVC and Razor",
-                "Entity Framework",
-                "WCF REST Services",
-                "SOAP Services",
-                "Web Forms",
-                "ADO.NET",
-                "IIS",
-                "Visual Studio"
-            ],
             "javascript":[
                 "nodejs",
                 "koajs",
@@ -43,11 +31,8 @@
                 "grunt",
                 "gulp",
                 "CoffeeScript",
-                "Ember 0",
-                "Angular 1",
                 "React 15",
                 "twig",
-                "handlebars",
                 "nunjucks",
                 "Express"
             ],
@@ -60,21 +45,73 @@
             "databases":[
                 "Postgres",
                 "Redis",
-                "MongoDB",
-                "MySQL",
-                "MS SQL Server"
+                "MySQL"
             ],
             "client_side":[
                 "html / html5",
                 "javascript and jquery",
                 "css / css3, sass and LESS",
+                "Twitter Bootstrap",
+                "Mobile-first Responsive Design"
+            ],
+            "version_control":[
+                "Git on Github and BitBucket, Tower, SourceTree"
+            ]
+        },
+        {
+            "company":{
+                "name":"Wenner Media - IT",
+                "address":"1290 Avenue of the Americas",
+                "city":"New York",
+                "state":"NY",
+                "zip":"10104",
+                "country":"USA"
+            },
+            "position":"Web Developer (C# - ASP.NET)",
+            "description":"Wenner Media at the time I was hired was the owner of <a href='http://www.rollingstone.com' target='_blank'>Rolling Stone</a>, <a href='http://www.mensjouranl.com' target='_blank'>Men's Journal</a> and <a href='http://www.usmagazine.com' target='_blank'>Us Weekly</a>.",
+            "start_date":{
+                "month":11,
+                "day":14,
+                "year":2011
+            },
+            "end_date": {
+                "month":1,
+                "day":24,
+                "year":2014
+            },
+            "microsoft":[
+                "C# ASP.NET",
+                ".NET Core",
+                "MVC and Razor",
+                "Entity Framework",
+                "WCF REST Services",
+                "SOAP Services",
+                "Web Forms",
+                "ADO.NET",
+                "IIS",
+                "Visual Studio",
+                "Active Directory and LDAP",
+                "XML"
+            ],
+            "javascript":[
+                "Ember 0",
+                "Angular 1",
+                "handlebars"
+            ],
+            "databases":[
+                "MS SQL Server"
+            ],
+            "client_side":[
+                "html / html5",
+                "javascript and jquery",
+                "css / css3, sass",
                 "Zurb Foundation",
                 "HTML5 Boilerplate",
                 "Twitter Bootstrap",
                 "Mobile-first Responsive Design"
             ],
             "version_control":[
-                "Git on bash, Tower, SourceTree",
+                "Hosted Git on Windows",
                 "Team Foundation"
             ]
         },

@@ -12,6 +12,7 @@ layout: null
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="text/javascript" src="/js/resume/angular.min.js"></script>
 <script type="text/javascript" src="/js/resume/angular-resource.min.js"></script>
+<script type="text/javascript" src="/js/resume/angular-sanitize.min.js"></script>
 <script type="text/javascript" src="/js/resume/resume.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/resume.css" />
 </head>
@@ -28,6 +29,9 @@ layout: null
                 <span>//work.jobs.bio.first_name//</span>
                 <span>//work.jobs.bio.last_name//</span>
             </h1>
+            <h5 class="subhead">
+                <a href="//work.jobs.bio.email//">EMAIL</a>
+            </h5>
         </div>
     </div>
 
@@ -59,11 +63,9 @@ layout: null
 
         </div>
         <div class="two-thirds column">
-            <h3><b>// job.position //</b> at <span>// job.company.name //</span></h3>
+            <h3><b>// job.position //</b> <span class="company">// job.company.name //</span></h3>
             <p>
-                <span class="description">
-                    //job.description//
-                </span>
+                <span class="description" ng-bind-html="job.description"></span>                
                 <br />
                 <span ng-if="job.company.country == 'USA'" class="location">
                     // job.company.city // // job.company.state//, // job.company.zip //

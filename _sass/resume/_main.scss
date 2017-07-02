@@ -23,9 +23,22 @@
     content: ' to ';
 }
 
-.row.job{
-    border-top: 1px solid #000;
+// .row.job{
+.job{
+    // border-top: 1px solid #000;
     padding-top: 30px;
+
+    a{
+        text-decoration: none;
+    }
+
+    .company{
+        display: block;
+        
+        :before{
+            content: ' at ';
+        }
+    }
 }
 
 footer {

@@ -29,7 +29,7 @@
 
 
   //controllers
-  var ctl = angular.module('workControllers', []);
+  var ctl = angular.module('workControllers', ['ngSanitize']);
   ctl.controller('WorkListController', ['$http', 'Work', function ($http, Work) {
 
     this.jobs = Work.query();
