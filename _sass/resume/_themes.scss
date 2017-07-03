@@ -77,6 +77,26 @@ body.manhattan{
   font-family: Times, serif;
   color: #4c4c4c;
   background-color: #f7fbfb;
+
+  .subhead{
+    text-align: center;
+
+    a{
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      color: rgba(0,0,0,.3);
+    }
+  }
+
+  a{
+    color: rgba(0,0,0,.5);
+    text-decoration: none;
+
+    &:hover{
+      color: rgba(0,0,0,.9);
+    }
+  }
 }
 
 body.manhattan .row.job{
@@ -102,7 +122,9 @@ body.manhattan .heading span:first-child{
 
 body.manhattan h1{
   text-align: center;
-  line-height: 1.5;
+  line-height: 1.25;
+  font-size: 5.25rem;
+  text-transform: uppercase;
 }
 
 body.manhattan h1 span:first-child,
@@ -130,9 +152,17 @@ body.manhattan h6{
   letter-spacing: normal;
 }
 
-body.manhattan footer hr{
-  border-top-style: dotted;
-  border-top-color: #333;
+body.manhattan footer{
+  text-align: center;
+
+  hr{
+    border-top-style: dotted;
+    border-top-color: #333;
+  }
+
+  a{
+    padding: 0 1rem 1rem 0;
+  }
 }
 
 @media (min-width: 550px){
@@ -187,8 +217,20 @@ body.manhattan footer hr{
 }
 
 @media (min-width: 960px) {
-    body.manhattan .heading{
+    body.manhattan {
+      .heading{
         margin-left: 0;
+        position: relative;
+        top: 30px;
+        padding-bottom: 4rem;
+      }
+
+      .subhead{
+        position: relative;
+        top: -85px;
+        left: 15%;
+        font-size: 1rem;
+      }
     }
 }
 
@@ -196,6 +238,13 @@ body.manhattan footer hr{
 /* Highlighter */
 body.sharpie{
   font-family: 'Georgia', 'Arial', sans-serif;
+
+  .subhead{
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 60px;
+  }
 }
 
 body.sharpie .row.job{
@@ -237,6 +286,9 @@ body.sharpie .heading span:first-child{
 body.sharpie h1{
   text-align: center;
   line-height: 1.5;
+  font-size: 5rem;
+  text-transform: uppercase;
+  padding-top: 4rem;
 }
 
 body.sharpie h1 span:first-child,
@@ -247,6 +299,11 @@ body.sharpie h1 span:last-child{
 
 body.sharpie h1 span:first-child{
   color: #FF229C;
+}
+
+body.sharpie a{
+  text-decoration: underline solid orange;
+  color: #111;
 }
 
 body.sharpie .work-date.end{
@@ -276,6 +333,8 @@ body.sharpie h6{
 body.sharpie footer {
   a{
     color: #FF229C;
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
   }
   
   hr{
@@ -321,6 +380,13 @@ body.sharpie footer {
 }
 
 @media (min-width: 750px) {
+  body.sharpie{
+    .subhead{
+      margin-top: -15px;
+      margin-left: 187px;
+    }
+  }
+
   body.sharpie h1 span:first-child,
   body.sharpie h1 span:last-child{
     letter-spacing: 5px;
@@ -346,7 +412,9 @@ body.sharpie footer {
 }
 
 @media (min-width: 960px) {
-    body.sharpie .heading{
-        margin-left: 0;
+    body.sharpie {
+      .heading{
+          margin-left: 0;
+      }
     }
 }
