@@ -1,148 +1,213 @@
-.container{
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-}
-
-.heading{
-    text-transform: uppercase;
-    line-height: 1;
-    letter-spacing: normal;
-}
-
-    .heading span:first-child{
-        font-size: 5rem;
-        font-weight: bold;
-    }
-
-    .heading span:last-child{
-        font-size: 5rem;
-        letter-spacing: 2px;
-    }
-
-.work-date.end:before{
-    content: ' to ';
-}
-
-// .row.job{
-.job{
-    // border-top: 1px solid #000;
-    padding-top: 30px;
+body.default
+{
+    color: rgba(0,0,0,.65);
 
     a{
-        text-decoration: none;
+        text-decoration: underline solid rgba(0,0,0,.35);
+        color: rgba(0,0,0,.75);
     }
 
-    .company{
-        display: block;
-        
-        :before{
-            content: ' at ';
-        }
-    }
-}
-
-footer {
-    text-align: center;
-
-    hr{
-        border-top-color: #999;
-    }
-
-    a{
-        text-decoration: none;
-        display: inline-block;
-        max-width: 110px;
-        width: 30%;
-        text-align: center;
-        color: rgba(0,0,0,.5);
-
-        &:hover{
-            color: #111;
-        }
-    }
-}
-
-@media (min-width: 550px) {
-
-    .work-date{
-        display: block;
-        line-height:1.5;
-        text-align: right;
-    }
-    
-    .work-date:first-child{
+    .container{
         margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .heading{
+        text-transform: uppercase;
+        line-height: 1;
+        letter-spacing: .75rem;
+        font-size: 5rem;
+        color: rgba(0,0,0,.85);
+    }
+
+        .heading span:first-child{
+            font-weight: bold;
+        }
+    
+    .subhead{
+        font-size: 1.8rem;
+        line-height: 1.5;
+        text-transform: uppercase;
+        position: relative;
+        top: 2rem;
+        letter-spacing: .25rem;
+
+        a{
+            background: rgba(0,0,0,.7);
+            color: #fff;
+            padding: 0 .5rem;
+            text-decoration: none;
+        }
     }
 
     .work-date.end:before{
-        content: normal;
-    }
-}
-
-
-@media (min-width: 550px) {
-
-    .container{
-        margin-top: 5rem;
-        margin-bottom: 5rem;
+        content: ' to ';
     }
 
-    .row.job{
-        margin-bottom: 6rem;
-        border-top: none;
-        padding-top: 0;
+    .box{
+        margin-bottom: 1rem;
+
+        &:first-of-type{
+            margin-top: 2rem;
+        }
     }
 
-    .one-third.column {
-        width: 15.6666666667%;
-        max-width: 90px;
-    }
+    .job{
+        padding-top: 30px;
+        margin-bottom: 3rem;
 
-    .two-thirds.column {
-        width: 80.3333333333%;
-        max-width: 930px;
-    }
-
-}
-
-
-@media (min-width: 550px) {
-
-    .heading{
-        letter-spacing: normal;
-        margin-bottom: 20px;
-    }
-
-        .heading span:last-child{
-            font-size: 5rem;
+        h3{
+            font-size: 2.1rem;
+            color: rgba(0,0,0,.85);
         }
 
-}
+        h6{
+            color: rgba(0,0,0,.85);
+        }
 
+        p:only-of-type{
+            margin-bottom: 0;
+        }
 
-@media (min-width: 750px) {
-    .box{
-        float: left;
-        width: 45%;
+        .company{
+            display: block;
+        }
+
+        .work-date {
+            color: rgba(0,0,0,.9);
+        }
     }
 
-    .box:nth-child(2n+0) {
-        margin-left: 10%;
+    footer {
+        text-align: center;
+        margin-top: 60px;
+
+        hr{
+            border-top-color: rgba(0,0,0,.8);
+        }
+
+        a{
+            text-decoration: none;
+            display: inline-block;
+            max-width: 110px;
+            width: 30%;
+            text-align: center;
+            color: rgba(0,0,0,.75);
+
+            &:hover{
+                color: #111;
+            }
+        }
     }
 
-    .box:nth-child(2n+1) {
-        clear:both;
+    @media (min-width: 550px) {
+
+        .work-date{
+            display: block;
+            line-height:1.5;
+        }
+        
+        .work-date:first-child{
+            margin-top: 3rem;
+        }
+
+        .work-date.end:before{
+            content: normal;
+        }
     }
-}
 
-@media (min-width: 960px) {
-    .heading{
-        margin-left: 120px;
 
-        .default & span{
-            letter-spacing: 7px;
-            &:last-child{
-                margin-left: 25px;
+    @media (min-width: 550px) {
+
+        .container{
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+        }
+
+        .row.job{
+            margin-bottom: 6rem;
+            border-top: none;
+            padding-top: 0;
+        }
+
+        .one-third.column {
+            width: 15.6666666667%;
+            max-width: 90px;
+        }
+
+        .two-thirds.column {
+            width: 80.3333333333%;
+            max-width: 930px;
+        }
+
+    }
+
+
+    @media (min-width: 550px) {
+
+        .heading{
+            letter-spacing: .5rem;
+            margin-bottom: 20px;
+        }
+
+            .heading span:last-child{
+                font-size: 5rem;
+            }
+
+        .subhead{
+            top: -1.75rem;
+            font-size: 1.5rem;
+        }
+    }
+
+
+    @media (min-width: 750px) {
+        .box{
+            float: left;
+            width: 45%;
+
+            &:nth-child(2n+0) {
+                margin-left: 10%;
+            }
+
+            &:nth-child(2n+1) {
+                clear:both;
+            }
+
+            &:first-of-type{
+                margin-top: 0;
+            }
+
+            .job & p:only-of-type{
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        .job{
+            .company{
+                display: inline;
+
+                &:before{
+                    content: 'at';
+                    padding: 0px 5px;
+                }
+            }
+
+            p:only-of-type{
+                margin-bottom: 3rem;
+            }
+        }
+    }
+
+    @media (min-width: 960px) {
+        .heading{
+            margin-left: 120px;
+
+            .default & span{
+                letter-spacing: 7px;
+                &:last-child{
+                    margin-left: 25px;
+                }
             }
         }
     }
