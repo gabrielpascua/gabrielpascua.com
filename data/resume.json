@@ -36,6 +36,13 @@
                 "nunjucks",
                 "Express"
             ],
+            "client_side":[
+                "html / html5",
+                "javascript and jquery",
+                "css / css3, sass and LESS",
+                "Twitter Bootstrap",
+                "Mobile-first Responsive Design"
+            ],
             "php":[
                 "Symfony 1.* & 2.*",
                 "Apache",
@@ -46,13 +53,6 @@
                 "Postgres",
                 "Redis",
                 "MySQL"
-            ],
-            "client_side":[
-                "html / html5",
-                "javascript and jquery",
-                "css / css3, sass and LESS",
-                "Twitter Bootstrap",
-                "Mobile-first Responsive Design"
             ],
             "version_control":[
                 "Git on Github and BitBucket, Tower, SourceTree"
@@ -93,14 +93,6 @@
                 "Active Directory and LDAP",
                 "XML"
             ],
-            "javascript":[
-                "Ember 0",
-                "Angular 1",
-                "handlebars"
-            ],
-            "databases":[
-                "MS SQL Server"
-            ],
             "client_side":[
                 "html / html5",
                 "javascript and jquery",
@@ -109,6 +101,14 @@
                 "HTML5 Boilerplate",
                 "Twitter Bootstrap",
                 "Mobile-first Responsive Design"
+            ],
+            "javascript":[
+                "Ember 0",
+                "Angular 1",
+                "handlebars"
+            ],
+            "databases":[
+                "MS SQL Server"
             ],
             "version_control":[
                 "Hosted Git on Windows",

@@ -150,10 +150,6 @@ body.default
             margin-bottom: 20px;
         }
 
-            .heading span:last-child{
-                font-size: 5rem;
-            }
-
         .subhead{
             top: -1.75rem;
             font-size: 1.5rem;
@@ -162,6 +158,10 @@ body.default
 
 
     @media (min-width: 750px) {
+        .heading{
+            letter-spacing: 1rem;
+        }
+
         .box{
             float: left;
             width: 45%;
@@ -176,10 +176,6 @@ body.default
 
             &:first-of-type{
                 margin-top: 0;
-            }
-
-            .job & p:only-of-type{
-                margin-bottom: 1.5rem;
             }
         }
 
@@ -196,12 +192,17 @@ body.default
             p:only-of-type{
                 margin-bottom: 3rem;
             }
+
+            .box p:only-of-type{
+                margin-bottom: .75rem;
+            }
         }
     }
 
     @media (min-width: 960px) {
         .heading{
             margin-left: 120px;
+            letter-spacing: 1.5rem;
 
             .default & span{
                 letter-spacing: 7px;
@@ -209,6 +210,24 @@ body.default
                     margin-left: 25px;
                 }
             }
+        }
+
+        .subhead{
+            margin-left: 120px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .heading{
+            font-size: 6.5rem;
+            position: relative;
+            top: -20px;
+        }
+
+        .subhead{
+            margin-left: 125px;
+            position: relative;
+            top: -40px;
         }
     }
 }
