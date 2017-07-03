@@ -56,6 +56,10 @@
             ],
             "version_control":[
                 "Git on Github and BitBucket, Tower, SourceTree"
+            ],
+            "devops":[
+                "AWS",
+                "Docker"
             ]
         },
         {

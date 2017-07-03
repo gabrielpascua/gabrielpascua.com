@@ -84,7 +84,7 @@ body.manhattan{
     a{
       text-decoration: none;
       text-transform: uppercase;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       color: rgba(0,0,0,.3);
     }
   }
@@ -95,6 +95,13 @@ body.manhattan{
 
     &:hover{
       color: rgba(0,0,0,.9);
+    }
+  }
+
+  .job .company{
+    &:before{
+        content: 'at';
+        padding: 0px 5px;
     }
   }
 }
@@ -244,6 +251,14 @@ body.sharpie{
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 60px;
+  }
+
+  .job .company{
+    &:before{
+        content: ', ';
+        position: relative;
+        left: -3px;
+    }
   }
 }
 
@@ -416,5 +431,9 @@ body.sharpie footer {
       .heading{
           margin-left: 0;
       }
+    }
+
+    .two-thirds.column{
+      width: 800px;
     }
 }
