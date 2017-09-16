@@ -22,7 +22,11 @@
                 "day":27,
                 "year":2014
             },
-            "end_date": null,
+            "end_date": {
+                "month": 8,
+                "day": 16,
+                "year": 2017
+            },
             "javascript":[
                 "nodejs",
                 "koajs",
