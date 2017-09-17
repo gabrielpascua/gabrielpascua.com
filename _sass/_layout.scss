@@ -170,6 +170,10 @@ article{
     margin-bottom: 15px;
   }
 
+  .minimal li{
+      margin-bottom: 0;
+  }
+
   li{
     list-style: outside;
     padding-left: 10px;
@@ -316,4 +320,19 @@ article{
       margin-left: -230px;
     }
   } 
+}
+
+.qwik-layout {
+    h4{
+        margin-top: 60px;
+
+        a{
+            color: #000;
+        }
+    }
+
+    tr td:nth-of-type(1){
+        // color: rgba(221,17,68,.8);
+        color: darkcyan;
+    }
 }
