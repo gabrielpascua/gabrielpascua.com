@@ -10,7 +10,7 @@ title: Gabriel Pascua
 description: > # this means to ignore newlines until "baseurl:"
   Personal Site
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://gabrielpascua.com" # the base hostname & protocol for your site
+url: "https://gabrielpascua.com" # the base hostname & protocol for your site
 github_username:  gabrielpascua
 
 # Build settings
