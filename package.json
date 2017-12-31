@@ -4,7 +4,9 @@
   "description": "Portfolio and Exploration Site",
   "main": "index.js",
   "scripts": {
+    "prestart": "bundle install",
     "start": "bundle exec jekyll serve --watch",
+    "prebuild": "bundle install",
     "build": "bundle exec jekyll build",
     "update": "gem update --system && gem update jekyll && bundle update"
   },

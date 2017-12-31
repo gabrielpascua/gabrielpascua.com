@@ -31,7 +31,7 @@ kramdown:
    hard_wrap: false
    math_engine: mathjax
 highlighter: rouge
-gems:
+plugins:
    - jekyll-paginate
 
 paginate: 11
