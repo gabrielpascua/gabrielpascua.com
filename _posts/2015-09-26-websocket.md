@@ -1,7 +1,7 @@
 ---
 layout: book
-title:  "WebSocket"
-excerpt: "Lightweight Client-Server Communications"
+title:  "WebSocket: Lightweight Client-Server Communications"
+excerpt: "Lightweight Client-Server Communications 1st Edition"
 date:   2016-09-26
 categories: books
 book_url: http://shop.oreilly.com/product/0636920030485.do
