@@ -7,6 +7,59 @@
     },
     "history":[
         {
+            "company": {
+                "name": "Citibank",
+                "address": "388 Greenwich Street",
+                "city": "New York",
+                "state": "NY",
+                "zip": "10013",
+                "country": "USA"
+            },
+            "position": "Apps Dev Sr. Programmer Analyst",
+            "description": "As part of the Forex UI team, we build software that conforms to Citi's push architecture built around microservices",
+            "start_date": {
+                "month": 8,
+                "day": 28,
+                "year": 2017
+            },
+            "javascript": [
+                "Nodejs",
+                "Angular 4/5",
+                "TypeScript",
+                "Webpack",
+                "RxJs - ReactiveX",
+                "WebSocket",
+                "Express",
+                "Hapi",
+                "gulp"
+            ],
+            "client_side": [
+                "html / html5",
+                "javascript / TypeScript",
+                "css / css3, LESS",
+                "Twitter Bootstrap"
+            ],
+            "microsoft": [
+                "C# ASP.NET",
+                ".NET Core",
+                "MVC and Razor",
+                "WCF REST Services",
+                "SignalR",
+                "IIS",
+                "Rx.NET - ReactiveX",
+                "WPF",
+                "Windows Forms",
+                "NUnit",
+                "MSSpec"
+            ],
+            "version_control": [
+                "Git on Github and BitBucket, Tower, SourceTree"
+            ],
+            "devops": [
+                "TeamCity"
+            ]
+        },
+        {
             "company":{
                 "name":"Wenner Media - Digital",
                 "address":"1290 Avenue of the Americas",
@@ -63,7 +116,10 @@
             ],
             "devops":[
                 "AWS",
-                "Docker"
+                "Docker",
+                "Jenkins",
+                "Elastic Beanstalk",
+                "Codeship"
             ]
         },
         {
