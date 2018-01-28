@@ -10,7 +10,7 @@ Website: {{ res.basics.website }}
 Phone: {{ res.basics.phone }}
 
 
-{{ 'Software Development' | upcase }}
+{{ 'Software Engineering Strengths' | upcase }}
 {% for skill in res.skills %}
 - {{ skill.name }} ({{ skill.level }}): 
 {%- assign comma = ' ' -%}
