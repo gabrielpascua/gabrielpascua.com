@@ -1,0 +1,40 @@
+---
+layout: null
+---
+
+{%- assign res = site.data.jsonresume -%}
+
+{{ res.basics.name | upcase }}
+Email: {{ res.basics.email }}
+Website: {{ res.basics.website }}
+Phone: {{ res.basics.phone }}
+
+
+{{ 'Software Development' | upcase }}
+{% for skill in res.skills %}
+- {{ skill.name }} ({{ skill.level }}): 
+{%- assign comma = ' ' -%}
+    {%- for kw in skill.keywords -%}
+{{ comma }}{{ kw }}
+    {%- assign comma = ', ' -%}
+
+    {% endfor %}
+
+{%- endfor %}
+
+
+{{ 'Work History' | upcase }}
+{% for work in res.work %}
+{{ work.company }} as {{ work.position}}
+From {{ work.startDate }} to {% if work.endDate == "" %}Present{% else %}{{work.endDate}}{% endif %}
+{%- for highlight in work.highlights %}
+{{ highlight }}
+{% endfor -%}
+{% endfor %}
+
+{{ 'Education' | upcase }}
+{% for education in res.education %}
+{{ education.institution }}, {{ education.area }}
+Attended from {{ education.startDate }} to {{ education.endDate }}
+Graduated with a {{ education.studyType }}'s Degree
+{% endfor %}
