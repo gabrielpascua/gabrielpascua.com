@@ -7,7 +7,7 @@
     "email": "mail@gabrielpascua.com",
     "phone": "347-644-7272",
     "website": "https://gabrielpascua.com",
-    "summary": "Full stack developer, no language, platform, device, or OS bias, enjoys coding for the web, comfortable building UI’s, team player, stays active, loves basketball, sneakers and podcasts.",
+    "summary": "I have over 10 years of software engineering experience with the greater part focused on web development.  I have written web applications and API's, designed UI's, set up automated systems, and managed projects from planning to completion. The range of businesses I've been on include Financial Tech, Media Advertising, Medical, Startup and Outsorcing companies.",
     "location": {
       "address": "Greater New York area",
       "postalCode": "NY 10028",
@@ -45,11 +45,11 @@
   }, {
     "name": ".NET Web Development",
     "level": "Advanced",
-    "keywords": ["C#","MVC",".NET Core","ASP.NET","Entity Framework"]
+    "keywords": ["C#","MVC",".NET Core","ASP.NET","Entity Framework", "Rx.NET"]
   }, {
     "name": "Front End Web Development",
     "level": "Advanced",
-    "keywords": ["HTML","CSS","JavaScript","Sass","LESS","Bootstrap","XML"]
+    "keywords": ["HTML","CSS","JavaScript","Typescript","Sass","LESS","Bootstrap"]
   }, {
     "name": "Database Administration",
     "level": "Intermediate",
@@ -57,22 +57,22 @@
   }, {
     "name": "Single Page Applications",
     "level": "Intermediate",
-    "keywords": ["Angular","React","Vue.js","Webpack","Grunt","Gulp","Ember"]
+    "keywords": ["Angular","React","Vue.js","Webpack","Grunt","Gulp","Ember","RxJS"]
   }, {
     "name": "Design",
     "level": "Intermediate",
     "keywords": ["Photoshop","Illustrator","CSS Layout and Animations","Responsive Design"]
   }, {
     "name": "Progressive Web Apps",
-    "level": "Beginner",
+    "level": "Intermediate",
     "keywords": ["ServiceWorker","IndexedDb","Cache Storage","Notifications"]
   }, {
     "name": "Other Web Development",
-    "level": "Beginner",
+    "level": "Intermediate",
     "keywords": ["Serverless", "Php", "Symfony", "Wordpress", "Hugo", "Jekyll"]
   }, {
     "name": "DevOps",
-    "level": "Beginner",
+    "level": "Intermediate",
     "keywords": ["AWS", "Jenkins", "Codeship", "TeamCity"]
   }],
   "volunteer": [],

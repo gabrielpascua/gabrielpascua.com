@@ -9,10 +9,13 @@ Email: {{ res.basics.email }}
 Website: {{ res.basics.website }}
 Phone: {{ res.basics.phone }}
 
+{{ res.basics.summary }}
 
-{{ 'Software Engineering Strengths' | upcase }}
+
+
+{{ 'Software Engineering Experience' | upcase }}
 {% for skill in res.skills %}
-- {{ skill.name }} ({{ skill.level }}): 
+- {{ skill.name }}: 
 {%- assign comma = ' ' -%}
     {%- for kw in skill.keywords -%}
 {{ comma }}{{ kw }}
