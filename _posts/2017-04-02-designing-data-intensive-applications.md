@@ -5,7 +5,7 @@ excerpt: "The Big Ideas Behind Reliable, Scalable, and Maintainable Systems 1st 
 date:   2017-04-02
 categories: books
 book_url: http://shop.oreilly.com/product/0636920032175.do
-book_image: /img/book-designing-data-intensive-applications-350x459
+book_image: /img/book-designing-data-intensive-applications-350x459.jpg
 tags: ops
 ---
 
