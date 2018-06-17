@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-starter-hello-world",
-  "description": "Gatsby hello world starter",
+  "name": "i-am-gabriel-pascua",
+  "description": "Personal site of Gabriel Pascua",
   "license": "MIT",
   "scripts": {
     "develop": "eslint . && gatsby develop",

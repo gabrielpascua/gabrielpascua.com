@@ -1,4 +1,4 @@
-import React from 'react'; //eslint-disable-line
+import React from 'react';
 import graphql from 'graphql';
 
 export default ({data}) => {

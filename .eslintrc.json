@@ -10,6 +10,7 @@
       "jsx": true
     }
   },
+  "plugins": ["react"],
   "rules": {
     "eqeqeq": [
       "error",
@@ -43,6 +44,8 @@
     "semi": [
       "error",
       "always"
-    ]
+    ],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
   }
 }

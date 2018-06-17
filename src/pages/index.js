@@ -1,8 +1,12 @@
-import React from 'react'; //eslint-disable-line
+import React from 'react';
+import {Helmet} from 'react-helmet';
 import graphql from 'graphql';
 
 export default ({data}) => {
   return <div>
+    <Helmet>
+      <title>Test</title>
+    </Helmet>
     <h1>Gabriel Pascua</h1>
     <h3>Work History</h3>
     <ul>
