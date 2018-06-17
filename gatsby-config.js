@@ -5,25 +5,27 @@ module.exports = {
     title: 'Gabriel Pascua',
   },
   plugins: [
-    'gatsby-transformer-remark',
-    {
-      resolve: 'gatsby-plugin-typescript',
-      options: {
-        transpileOnly: true, // default
-        compilerOptions: {
-          target: 'esnext',
-          experimentalDecorators: true,
-          jsx: 'react',
-        }, // default
-      },
-    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'data',
         path: path.join(__dirname, 'data'),
-      },
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: path.join(__dirname, './src/posts'),
+      }
     },
     'gatsby-transformer-json',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: []
+      }
+    },
+    'gatsby-plugin-react-helmet'
   ],
 };

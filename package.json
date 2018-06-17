@@ -1,6 +1,6 @@
 {
-  "name": "grp-gatsby",
-  "description": "Gabriel Pascua's Portfolio Site",
+  "name": "gatsby-starter-hello-world",
+  "description": "Gatsby hello world starter",
   "license": "MIT",
   "scripts": {
     "develop": "eslint . && gatsby develop",
@@ -10,13 +10,14 @@
   "dependencies": {
     "gatsby": "^1.9.250",
     "gatsby-link": "^1.6.40",
-    "gatsby-plugin-typescript": "^1.4.20",
-    "gatsby-source-filesystem": "^1.5.38",
-    "gatsby-transformer-json": "^1.0.19",
-    "gatsby-transformer-remark": "^1.7.42",
-    "typescript": "^2.9.1"
+    "gatsby-plugin-react-helmet": "^2.0.11",
+    "gatsby-source-filesystem": "^1.5.39",
+    "gatsby-transformer-json": "^1.0.20",
+    "gatsby-transformer-remark": "^1.7.44",
+    "react-helmet": "^5.2.0"
   },
   "devDependencies": {
-    "eslint": "^4.19.1"
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.9.1"
   }
 }
