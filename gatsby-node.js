@@ -4,7 +4,13 @@ const { createFilePath } = require('gatsby-source-filesystem');
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators;
   if (node.internal.type === 'MarkdownRemark') {
-    const slug = createFilePath({ node, getNode, basePath: 'pages' });
+    const path = createFilePath({ node, getNode, basePath: 'pages' });
+    const pathRegEx = /^\/(.+)\/([\d]{4}-[\d]{2}-[\d]{2})-{1}(.+)\/$/;
+    const pathParts = path.match(pathRegEx);
+    const pathSegments = [pathParts[1]]
+      .concat(pathParts[2].split('-'))
+      .concat([pathParts[3]]);
+    const slug = pathSegments.join('/');
     createNodeField({
       node,
       name: 'slug',

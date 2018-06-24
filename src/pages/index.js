@@ -2,8 +2,8 @@ import React from 'react';
 import {Helmet} from 'react-helmet';
 import graphql from 'graphql';
 
-export default ({data}) => {
-  return <div>
+export default ({data}) => (
+  <div>
     <Helmet>
       <title>Test</title>
     </Helmet>
@@ -17,8 +17,8 @@ export default ({data}) => {
           })
       }
     </ul>
-  </div>;
-};
+  </div>
+);
 
 export const query = graphql`
   query ResumeQuery {

@@ -2,16 +2,16 @@ import React from 'react';
 import {Helmet} from 'react-helmet';
 import {TopNav} from '../shared/top-nav';
 
-const MetaData = function(){
-  return <Helmet>
+const MetaData = () => (
+  <Helmet>
     <title>About</title>
-  </Helmet>;
-};
+  </Helmet>
+);
 
-export default ({data}) => {
-  return <div>
+export default ({data}) => (
+  <div>
     <MetaData />
     <TopNav />
-    <h1>About</h1>
-  </div>;
-};
+    <h1>About the Site</h1>
+  </div>
+);

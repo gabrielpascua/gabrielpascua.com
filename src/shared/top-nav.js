@@ -1,7 +1,7 @@
 import React from 'react';
 
-const TopNav = function() {
-  return <nav className="top-nav pure-g">
+const TopNav = () => (
+  <nav className="top-nav pure-g">
     <div className="pure-u-1">
       <ul>
         <li><a href="/">Home</a></li>
@@ -10,7 +10,7 @@ const TopNav = function() {
         <li><a href="/about">About</a></li>
       </ul>
     </div>
-  </nav>;
-};
+  </nav>
+);
 
 export { TopNav };

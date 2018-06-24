@@ -1,10 +1,20 @@
 import React from 'react';
+import {Helmet} from 'react-helmet';
 import graphql from 'graphql';
+import { TopNav } from '../shared/top-nav';
+
+const MetaData = ({fm}) => (
+  <Helmet>
+    <title>{fm.title}</title>
+  </Helmet>
+);
 
 export default ({data}) => {
   const post = data.markdownRemark;
   return (
     <div>
+      <MetaData fm={post.frontmatter} />
+      <TopNav />
       <h1>{post.frontmatter.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </div>
