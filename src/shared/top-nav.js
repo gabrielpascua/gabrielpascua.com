@@ -1,0 +1,16 @@
+import React from 'react';
+
+const TopNav = function() {
+  return <nav className="top-nav pure-g">
+    <div className="pure-u-1">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/notes">Notes</a></li>
+        <li><a href="/books">Books</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </div>
+  </nav>;
+};
+
+export { TopNav };

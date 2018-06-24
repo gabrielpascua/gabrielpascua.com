@@ -1,0 +1,23 @@
+body {
+  color: #333;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  line-height: 1.725;
+}
+
+.container{
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.top-nav{
+  ul {
+    list-style: none;
+  }
+
+  li{
+    float: left;
+    margin: 0 15px;
+  }
+}
