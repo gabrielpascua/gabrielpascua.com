@@ -1,7 +1,10 @@
 import React from 'react';
+import 'purecss/build/pure-min.css';
 
 export default ({ children }) => (
-  <div style={{ margin: '0 auto', maxWidth: 650, padding: '0 1rem' }}>
-    {children()}
+  <div className="pure-g">
+    <div className="pure-u-1">
+      {children()}
+    </div>
   </div>
 );
