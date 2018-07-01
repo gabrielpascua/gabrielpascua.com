@@ -10,17 +10,26 @@ const NavLink = props => {
 };
 
 const IndexPage = ({ data, pathContext }) => {
-  const { group, index, first, last, pageCount } = pathContext;
-  const previousUrl = index - 1 === 1 ? '' : (index - 1).toString();
-  const nextUrl = (index + 1).toString();
+  const {
+    group,
+    index,
+    first,
+    last,
+    pageCount,
+    additionalContext,
+    pathPrefix
+  } = pathContext;
+
+  const previousUrl = index - 1 === 1 ? `/${additionalContext.category}` : (index - 1).toString();
+  const nextUrl = `/${pathPrefix}/${index+1}`;
 
   return (
     <div>
-      <h4>{pageCount} Posts</h4>
+      <h4>{index} of {pageCount} Pages</h4>
       <ol>
         {group.map(({ node }) => (
-          <li>
-            <Link to={node.fields.slug}>
+          <li key={node.fields.slug}>
+            <Link to={'/' + node.fields.slug}>
               {node.frontmatter.title}
             </Link>
           </li>
