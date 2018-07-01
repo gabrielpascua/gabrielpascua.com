@@ -20,7 +20,7 @@ export default ({data}) => {
         {
           notes.map((note) => {
             return (
-              <li>
+              <li key={note.node.fields.slug}>
                 <a href={note.node.fields.slug}>
                   {note.node.frontmatter.title}
                 </a>

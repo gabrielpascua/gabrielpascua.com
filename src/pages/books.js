@@ -21,7 +21,7 @@ export default ({data}) => {
         {
           books.map((book) => {
             return (
-              <li>
+              <li key={book.node.fields.slug}>
                 <a href={book.node.fields.slug}>
                   {book.node.frontmatter.title}
                 </a>
