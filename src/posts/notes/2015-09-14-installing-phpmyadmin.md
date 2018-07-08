@@ -11,7 +11,7 @@ tags:
 
 It's too bad Sequel Pro is not available to Ubuntu.  I didn't think SQuirreL SQL's GUI was usable but I've had ok experiences with PhpMyAdmin.
 
-{% highlight shell linenos %}
+```bash
 $ sudo -i
 
 $ apt-get phpmyadmin
@@ -29,7 +29,7 @@ $ gedit /opt/phpfarm/inst/php-[MAJOR-MINOR-PATCH]]/lib/php.ini
         > extension="/usr/lib/php5/20121212/mcrypt.so"
 
 $ service apache2 restart
-{% endhighlight %}
+```
 
 <aside>
     <h4>References:</h4>

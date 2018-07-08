@@ -11,7 +11,7 @@ tags:
 
 ### npm Packages
 <p></p>
-{% highlight shell linenos %}
+```bash
 npm install -g grunt-cli
 npm install --save-dev grunt
 npm install --save-dev bootstrap
@@ -19,14 +19,14 @@ npm install --save-dev jquery
 npm install grunt-contrib-concat --save-dev
 npm install grunt-contrib-uglify --save-dev
 npm install grunt-contrib-cssmin --save-dev
-{% endhighlight %}
+```
 
 <p>&nbsp;</p>
 
 
 ### Grunt Configuration (Gruntfile.js || Gruntfile.coffee)
 <p></p>
-{% highlight javascript linenos %}
+```javascript
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -79,4 +79,4 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['concat', 'uglify', 'cssmin']);
 
 };
-{% endhighlight %}
+```

@@ -1,12 +1,15 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
 import graphql from 'graphql';
+import {TopNav} from '../shared/top-nav';
 
 export default ({data}) => (
   <div>
     <Helmet>
       <title>Test</title>
     </Helmet>
+    {/* Remove The TopNav */}
+    <TopNav />
     <h1>Gabriel Pascua</h1>
     <h3>Work History</h3>
     <ul>

@@ -231,18 +231,18 @@ _“ReactiveX is a combination of the best ideas from the Observer pattern, the 
 * For promises, use should.js to make it easy to call completed assertions such as `should.be.fulfilled` and `should.eventually.have`...
 
 **A good practice to make your observables testable is to separate your producer, pipeline, and subscriber**
-{% highlight js linenos %}
+```javascript
 source$.take(10)        // producer
   .filter( fn )            // pipeline
   .map (fn)            // pipeline
   .subscribe( assertions );    // subscriber
-{% endhighlight %}
+```
 
 **Possibly useful RxJS APIs**
 * Rx.Scheduler to simulate latency or any time constraint
 * Rx.TestScheduler that uses ascii marbles to fake delays, where each “-” represents 10 frames of a period of time
 * `debounceTime()` with TestScheduler
-{% highlight js linenos %}
+```javascript
 it('Should square and add even numbers', function () {
   let scheduler = new Rx.TestScheduler(assertDeepEqual);
   // simulate setInterval observable
@@ -252,7 +252,7 @@ it('Should square and add even numbers', function () {
   scheduler.expectObservable(r).toBe(expected, { 's': 120 });
   scheduler.flush();
 });
-{% endhighlight %}
+```
 
 <p>&nbsp;</p>
 
@@ -293,7 +293,7 @@ Drag and Drop
 Double Click  
 
 **Creating an Observable from setTimeout**
-{% highlight js linenos %}
+```javascript
 // This is similar to RxJs’s timer(1000) operator
 const source$ = Rx.Observable.create(observer => {
   const timeoutId = setTimeout(() => {
@@ -304,10 +304,10 @@ const source$ = Rx.Observable.create(observer => {
   // Defines unsubscribe behavior
   return () => clearTimeout(timeoutId);
 });
-{% endhighlight %}
+```
 
 **Inactivity Detection**
-{% highlight js linenos %}
+```javascript
 const interval$ = Rx.Observable.interval(1000);
 const mousemove$ = Rx.Observable.fromEvent(document, 'mousemove');
 
@@ -318,10 +318,10 @@ interval$.takeUntil(mousemove$)
     err => console.log(`Error: ${err}`),
     () => console.log('OK, user is back!')
   );
-{% endhighlight %}
+```
 
 **Custom Operator**
-{% highlight js linenos %}
+```javascript
 function exclude(predicate) {
  // Creates a new observable context to return with the new result
  return Rx.Observable.create(subscriber => {
@@ -346,10 +346,10 @@ function exclude(predicate) {
 }
 
 Rx.Observable.prototype.exclude = exclude;
-{% endhighlight %}
+```
 
 **Unit testing a generator function with an Observable**
-{% highlight js linenos %}
+```javascript
 it('Should add numbers from a generator', function () {
   const adder = (total, delta) => total + delta;
   function* numbers() {
@@ -366,6 +366,6 @@ it('Should add numbers from a generator', function () {
       expect(total).to.equal(45);
     });
 });
-{% endhighlight %}
+```
 
 **Promise retries - page 236**

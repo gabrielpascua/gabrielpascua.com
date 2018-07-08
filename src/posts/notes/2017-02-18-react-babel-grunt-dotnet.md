@@ -16,30 +16,30 @@ tags:
 
 ### Quick Setup
 You can simply reference these javascript files for prototyping.  It isn’t recommended on production systems because the JSX transformation on every request will affect your site’s performance.  
-{% highlight html %}
+```markup
 <script type="text/javascript" src="/js/react.min.js"></script>
 <script type="text/javascript" src="/js/react-dom.min.js"></script>
 <script type="text/javascript" src="/js/babel.min.js"></script>
 <!-- Note that the type is text/babel -->
 <script type="text/babel" src="/js/main.js"></script>
-{% endhighlight %}
+```
 <p></p>
 
 
 ### Build Integration
 
 Install these npm packages  
-{% highlight shell linenos %}
+```bash
 yarn add babel-plugin-transform-react-jsx \
     babel-preset-es2015 \
     babel-preset-react \
     grunt-babel \
     grunt-browserify --dev
-{% endhighlight %} 
+``` 
 <p></p>
 
 You can have your own `.babelrc` file but I prefer to put the configuration in `package.json`  
-{% highlight json linenos %}
+```json
 {
   ...
   "babel": {
@@ -47,11 +47,11 @@ You can have your own `.babelrc` file but I prefer to put the configuration in `
     "presets": ["react", "es2015"]
   }
 }
-{% endhighlight %}
+```
 <p></p>
 
 Say you have this React component under the `Content/js/src` folder  
-{% highlight javascript linenos %}
+```javascript
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -70,11 +70,11 @@ ReactDOM.render(
     </div>,
     document.querySelector('header')
 );
-{% endhighlight %}
+```
 <p></p>
 
 Add your compile, bundle and minification build steps for Grunt.  Below will create compressed/minified and uncompressed files but set up your task with what you think is necessary for your needs.  
-{% highlight javascript linenos %}
+```javascript
 grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     babel: {
@@ -114,15 +114,15 @@ grunt.loadNpmTasks('grunt-browserify');
 grunt.loadNpmTasks('grunt-contrib-uglify');
 
 grunt.registerTask('default', ['babel', 'browserify', 'uglify'])
-{% endhighlight %}
+```
 <p></p>
 
 Use the `environment` tag helper Inside your .NET Core MVC base template to load the packaged javascript file  
-{% highlight html linenos %}
+```markup
 <environment names="development, staging">
     <script type="text/javascript" src="/js/main.js"></script>
 </environment>
 <environment names="production">
     <script type="text/javascript" src="/js/main.min.js"></script>
 </environment>
-{% endhighlight %}
+```

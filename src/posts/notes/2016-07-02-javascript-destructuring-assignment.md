@@ -10,7 +10,7 @@ tags:
 
 The destructuring assignment syntax is a JavaScript expression that makes it possible to extract data from arrays or objects into distinct variables.It is part of the ES6 standard specification.
 
-{% highlight javascript linenos %}
+```javascript
 //Arrays:
 //assignment
 const arrayData = ['a', 'b'];
@@ -41,7 +41,7 @@ for (var {name: n, family: { father: f } } of people) {
   // Name: John Smith, Father: John Doe
   console.log("Name: " + n + ", Father: " + f);
 }
-{% endhighlight %}
+```
   
 <aside>
   <h4>References:</h4>

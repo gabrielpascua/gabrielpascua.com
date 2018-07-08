@@ -11,7 +11,7 @@ tags:
 
 The recommended solution was to change the ttyl resolution but this is the quick and dirty fix.
 
-{% highlight shell linenos %}
+```bash
 $ sudo grub-mkfont \
     --output=/boot/grub/grubfont.pf2 \
     --size=36 /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf
@@ -24,7 +24,7 @@ $ sudo gedit /etc/default/grub
 $ sudo update-grub
 
 $ sudo reboot
-{% endhighlight %}
+```
 
 <aside>
     <h4>References:</h4>

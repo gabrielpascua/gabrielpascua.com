@@ -13,7 +13,7 @@ tags:
 
 ### Useful Shell Commands
 <p></p>
-{% highlight shell linenos %}
+```bash
 printenv | less # display all the environment variables
 set | less # same as above but includes shell variables sorted alphabetically
 > test.txt # create a new file
@@ -35,7 +35,7 @@ sort file1.txt file2.txt file3.txt > sorted.txt # creates 1 sorted file
 [[ -d DIRECTORY ]] || mkdir DIRECTORY # check a directory, create it if not found 
 basename FILEPATH # to extract the filename from a specified path
 export USER_DATE=$(date +%Y%m%d_%H%M%S) # easy date variable in .bashrc 
-{% endhighlight %}
+```
 <p></p>
 
 ### Introduction
@@ -153,10 +153,10 @@ export USER_DATE=$(date +%Y%m%d_%H%M%S) # easy date variable in .bashrc
 * Unmounting entails moving the buffer to the device so it can be safely removed mitigating chances of corruption
 * `genisoimage -o FILENAME.iso -R -J ~/DIRECTORY` creates a disc image from a directory
 * Mounting an imag
-{% highlight shell linenos %}
+```bash
 mkdir /mnt/iso_image    # creates a mount point
 mount -t iso9660 -o loop FILENAME.iso /mnt/iso_image
-{% endhighlight %}
+```
 
 <p></p>
 
@@ -233,7 +233,7 @@ downloads.tgz -T -` where the trailing slash means the output of the `find` comm
 * Wrap a variable in curly braces to avoid ambiguity. Assuming `USER` is "foo", `touch ${USER}1.txt` creates a file name `foo1.txt`.
 * A Here Document is a form of redirection to feed a body of text or a code block into an interactive command like `cat`, `ftp`, or `grep`.  The most common use in a shell script is to preserve multiple lines of text, preserving double quotes, single quotes and tabs (if specified).  It uses an arbitrary token to indicate the start and end of the input.  
 
-{% highlight shell linenos %}
+```bash
 #!/bin/bash
 TITLE="Hello World"
 
@@ -248,12 +248,12 @@ cat << HERETOKEN
         </BODY>
 </HTML> 
 HERETOKEN
-{% endhighlight %}
+```
 <p></p>
 
 #### 26 – Top-Down Design
 * Shell functions
-{% highlight shell linenos %}
+```bash
 function NAME_OF_FUNCTION { 
     commands #at least 1 command
     return #optional
@@ -268,16 +268,16 @@ NAME_OF_FUNCTION() {
 
 # execute
 NAME_OF_FUNCTION
-{% endhighlight %}
+```
 * Local function variables are preceded by `local` on declaration
 
-{% highlight shell linenos %}
+```bash
 funct_1 () {
     local foo # variable foo local to funct_1
     foo=1
     echo "funct_1: foo = $foo"
 }
-{% endhighlight %}
+```
 * Shell functions are great replacement for the limits of aliases
 <p></p>
 
@@ -285,7 +285,7 @@ funct_1 () {
 * IF Syntax, where `[ EXPRESSION ]` is a shorthand for `test EXPRESSION` command.  Note that the space after the brackets are required. 
     - Short form: `if [ EXPRESSION ]; then COMMANDS; else COMMANDS; fi`
     - Long form:
-{% highlight shell linenos %}
+```bash
 if [ EXPRESSION ]; then
     COMMANDS
 elif [ EXPRESSION ]; then
@@ -293,7 +293,7 @@ elif [ EXPRESSION ]; then
 else
     COMMANDS
 fi
-{% endhighlight %}
+```
 
 * A `test` expression can be:
     - File expression `if [ -e FILE ]; then ...` if file exists
@@ -307,30 +307,30 @@ fi
     - If you want to use math operators you can use the compound command `(( FOO > 0 ))`, where `FOO` is a variable but without the need to be prefixed with a `$` sign
 * Differences when combining expressions between `test` and compound commands
 
-{% highlight text %}
+```
 |  operator  | test | compound |
 |------------|------|----------|
 |     AND    |  -a  |    &&    |
 |     OR     |  -o  |    ||    |
 |     NOT    |   !  |    !     |
-{% endhighlight %}
+```
 
 * If a variable can have a null value, you can wrap it in double quotes within your expression to fallback to an empty string, e.g. `if [[ "$int1" == 1 ]];` 
 * Every command has its exit code. A value of `0` indicates that the command executed and a greater value meant an error occurred.  You can assign your own non-zero value to indicate an error in your function or when your `IF` conditions fail.  You can pick up the exit code value from `$?`.  Use this to your advantage in your shell script to check whether a command ran properly:
 
-{% highlight shell linenos %}    
+```bash    
 #!/bin/bash
 cd ~/Downlooads
 if [[ $? > 0 ]]; then
     echo "no such directory"
 fi
-{% endhighlight %}
+```
 <p></p>
 
 #### 28 – Reading Keyboard Input
 * You can use `read` in your shell file to listen for a keyboard input. If you did not explicitly assign a variable (`int1` in the example below) for the input, the value will be assigned to `$REPLY` by default.
 
-{% highlight shell linenos %}
+```bash
 #-n suppresses the trailing new line
     echo -n "Enter an integer "
 
@@ -342,7 +342,7 @@ read int1
 # read -e -p "Enter an integer " -i 1 int1
 
 echo $int1
-{% endhighlight %}
+```
 * `read` cannot be piped to
 <p></p>
 
@@ -357,7 +357,7 @@ echo $int1
 
 #### 31 – Flow Control: Branching With case
 * Case example
-{% highlight shell linenos %}
+```bash
 cd ~/Downloadss
 
 case $? in
@@ -368,7 +368,7 @@ case $? in
     exit 1
     ;;
 esac
-{% endhighlight %}
+```
 <p></p>
 
 #### 32 – Positional Parameters
@@ -383,20 +383,20 @@ esac
 
 ### 33 – Flow Control: Looping With for
 * Traditional `for` example
-{% highlight shell linenos %}
+```bash
 # for i in A B C D;
 # for i in ARRAY_VARIABLE
 for i in {A..D}; do 
     echo $i; 
 done
-{% endhighlight %}
+```
 
 * `for` in C Language form
-{% highlight shell linenos %}
+```bash
 for (( i=0; i<5; i=i+1 )); do
     echo $i
 done
-{% endhighlight %}
+```
 <p></p>
 
 #### 34 – Strings And Numbers
@@ -417,7 +417,7 @@ done
 
 #### 35 – Arrays
 * Declaring arrays
-{% highlight shell linenos %}
+```bash
 a[0] = 1
 
 declare -a b    #indexed arrays
@@ -429,10 +429,10 @@ c[key] = value
 d=(Su Mo Tu We Th Fr Sa)
 
 e=([0]=Jan [1]=Feb [2]=Mar)
-{% endhighlight %}
+```
 
 * Printing array contents
-{% highlight shell linenos %}
+```bash
 animals=("a dog" "a cat" "a fish")
 
 # Difference between array[*] and array[@]
@@ -446,18 +446,18 @@ for i in "${animals[*]}"; do echo $i; done
 
 # quoted, this prints 3 lines reflecting the number of items in an array
 for i in "${animals[@]}"; do echo $i; done
-{% endhighlight %}
+```
 * `echo ${#ARRAY[@]}` to get the length of the array
 * `echo ${#ARRAY[INDEX]}` to get the length of an array item
 * `foo+=(d e f)` appends an item to the array
 * `a_sorted=($(for i in "${a[@]}"; do echo $i; done | sort))` sorts an array into a new one
 * Use `unset ARRAY` to delete an array or `unset 'ARRAY[INDEX]'` to delete an item - quoted to prevent expansion
 * Newer bash versions support associated arrays
-{% highlight shell linenos %}
+```bash
 declare -A colors
 colors["red"]="#ff0000"
 echo ${colors["red"]}
-{% endhighlight %}
+```
 <p></p>
 
 #### 36 – Exotica

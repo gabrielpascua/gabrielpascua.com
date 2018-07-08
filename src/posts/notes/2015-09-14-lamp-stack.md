@@ -11,7 +11,7 @@ tags:
 
 MAMP Pro makes it easy to set up local development environments. XAMP is a no-go because it doesn't have a feature to support different PHP versions out of the box. The safe choice for me if I had to install different PHP versions was to use what is native to the OS.
 
-{% highlight shell linenos %}
+```bash
 $ sudo apt-get update
 
 $ sudo apt-get install lamp-server^
@@ -32,7 +32,7 @@ $ sudo gedit /etc/apache2/sites-available/local.conf
 $ sudo a2dissite 000-default && sudo a2ensite local
 
 $ service apache2 restart
-{% endhighlight %}
+```
 
 <aside>
     <h4>References:</h4>

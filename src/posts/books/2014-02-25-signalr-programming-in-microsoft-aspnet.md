@@ -59,7 +59,7 @@ It provides methods that are similar to WebSockets to help you manage users conn
 **Simple PersistentConnection example for the SignalR Server**  
 Note that the `Task` object is used indicating the asynchronous nature of the methods as well as `Interlocked.Increment` for thread-safety 
 
-{% highlight csharp %}
+```csharp
 public class VisitorsCountConnection: PersistentConnection
 {
     private static int connections = 0;
@@ -98,12 +98,12 @@ public class VisitorsCountConnection: PersistentConnection
     // protected override Task OnReconnected
     // protected override Task OnRejoiningGroups
 }
-{% endhighlight %}
+```
 
 **Mapping a PersistentConnection to a URL path for the client**  
 SignalR connection mapping is created inside the StartUp class.
 
-{% highlight csharp %}
+```csharp
 public class StartUp
 {
     public void Configuration(IAppBuilder app)
@@ -135,12 +135,12 @@ public class StartUp
         /*
     }
 }
-{% endhighlight %}
+```
 
 **Grouping clients and broadcasting to them**  
 When sending messages to a group of clients, your client application can send your SignalR server with a JSON string payload containing its grouping information.  Then you can parse that argument from your SignalR server to group your messages
 
-{% highlight csharp %}
+```csharp
 protected override Task OnReceived(IRequest request, string connectionId, string data)
 {
     // data argument structure will vary by implementation
@@ -150,7 +150,7 @@ protected override Task OnReceived(IRequest request, string connectionId, string
         return this.Groups.Add(connectionId, args[1]);
     }
 }
-{% endhighlight %}
+```
 
 **Minimum Javascript requirements for client side applications connecting to a SignalR server**  
 * jquery@1.6.4 and above
@@ -159,7 +159,7 @@ protected override Task OnReceived(IRequest request, string connectionId, string
 **Simple client example using the SignalR Server PersistentConnection**  
 Code breakdown of the client Javascript for communicating with the SignalR server.  Use the PersistentConnection example above for your server reference
 
-{% highlight javascript %}
+```javascript
 var connection = $.connection('/my/path');
 
 // Enable console logging
@@ -185,7 +185,7 @@ connection.received(function (msg) {
 
 // Other client events
 // https://docs.microsoft.com/en-us/aspnet/signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client#connectionlifetime
-{% endhighlight %}
+```
 
 <p>&nbsp;</p>
 
@@ -197,7 +197,7 @@ The Hub API gives you access to the Persistent Connection from the client or the
 **Simple Hub example for the SignalR Server**  
 Note that every client request will create an instance of a Hub and the instance eliminated as soon as the request is processed
 
-{% highlight csharp %}
+```csharp
 // Use this attribute to override the class name of the hub
 [HubName("HubNameOverride")]
 public class MyHub : Hub
@@ -240,10 +240,10 @@ public class MyHub : Hub
        throw new NotImplementedException();
    }
 }
-{% endhighlight %}
+```
 
 **Mapping a PersistentConnection to a URL path for the client**
-{% highlight csharp %}
+```csharp
 public class Startup
 {
     public void Configuration(IAppBuilder app)
@@ -264,7 +264,7 @@ public class Startup
         // });
     }
 }
-{% endhighlight %}
+```
 
 **Minimum Javascript requirements for client side applications connecting to a SignalR server**  
 * jquery@1.6.4 and above
@@ -274,7 +274,7 @@ public class Startup
 **Simple client example using the SignalR Server Hub from this chapter**  
 This example uses the auto-generated proxy file.
 
-{% highlight javascript %}
+```javascript
 // Note that the client uses camel-casing while the server uses Pascal
 
 // To enable console logging in the client
@@ -300,10 +300,10 @@ $.connection.hub.start()
 myHub.client.myArbitraryMethod = function (message) {
    console.log(message);
 }
-{% endhighlight %}
+```
 
 This example does NOT use the auto-generated proxy file.  
-{% highlight javascript %}
+```javascript
 var connection = $.hubConnection();
 
 connection.logging = true;
@@ -323,7 +323,7 @@ $.connection.start()
 myHub.on('myArbitraryMethod', function (message) {
    console.log(message);
 });
-{% endhighlight %}
+```
 
 **You are better off not using the auto-generated proxy files**  
 Working with the auto-generated proxy file is very convenient for small projects.  With larger applications, there are a couple of considerations to make:

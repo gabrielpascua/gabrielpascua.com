@@ -78,11 +78,11 @@ tags:
 * “bind mount” the source folder to the container to allow code changes without stopping and rebuilding the image `docker run -d -p 5000:5000 -v "$(pwd)"/app:/app identidock`
 * Use `docker ps -lq` with `stop` or `rm` to control the last ran container, e.g. `docker stop $(docker ps  -lq)`
 * Always declare your `USER`. Without it your container will run as `root` which poses security concerns.
-{% highlight shell linenos %}
+```bash
 RUN groupadd -r expressapp && useradd -r -g expressapp expressapp
 …
 USER expressapp
-{% endhighlight %}
+```
 * `docker run -d -P --name NAME_OF_PORT CONTAINER_NAME` to let Docker map a random port number on the host.  `docker port NAME_OF_PORT` to list the mappings.  This is useful when you have multiple containers on a single host instead of tracking unused ports.
 * Use `-e` to set the environment, e.g. `docker run -e "ENV=DEV"` 
 * Use Docker Compose to avoid typing shell commands to run your containers.  It works by having a `docker-compose.yml` file where your shell commands are declared. To execute it all you need to do is run `docker-compose up`.  Hit `ctrl-c` to stop the container when you're done.
@@ -95,7 +95,7 @@ USER expressapp
 * `docker rm $(docker ps -aq)` to remove all stopped containers
 * Use `--link` to connect 2 images, e.g. `docker run -d -p 5000:5000 -e "ENV=DEV" --link dnmonster:dnmonster identidock`
 * Example `docker-compose.yml` file of an Express App linked to a Redis Server 
-{% highlight shell linenos %}
+```bash
 express_app:                 # container name
 build: .                # build from the current directory
 ports:
@@ -109,7 +109,7 @@ links:
 
 redis_server:
 image: redis            # redis:3.2.4 to specify a version, else :latest
-{% endhighlight %}
+```
 * If you need to run multiple processes in a single container, it's best to use process managers such as supervisord or runit
 * You can extend a yml file in `docker-compose` using `extends`.  Say you have a `common.yml` file, your extending configuration will look like `extends: [\n] file: common.yml`.
 <p></p>

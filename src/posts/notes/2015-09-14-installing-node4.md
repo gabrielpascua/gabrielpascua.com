@@ -11,7 +11,7 @@ tags:
 
 A stable Node 4.0.0 was just released 3 days ago.  iojs and node are finally 1.
 
-{% highlight shell linenos %}
+```bash
 $ sudo -i
 
 # Remove any node installation in your system:
@@ -50,7 +50,7 @@ $ ln -s /usr/local/nvm/versions/node/[NODE VERSION]/bin/npm /usr/bin/npm
 
 # Original node: /usr/bin/nodejs
 # Original npm: /usr/lib/node_modules/npm/bin/npm-cli.js
-{% endhighlight %}
+```
 
 <aside>
     <h4>References:</h4>

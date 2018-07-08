@@ -55,7 +55,7 @@ tags:
 * To leverage caching and faster container builds, one strategy to load files from the host in a multi-application configuration is to split copying per application.  Having multiple `COPY` instructions will isolate changes to the application without the need to rebuild the rest.  But if you want to truly isolate containers and have independent caching, you can create multiple docker files per service and use docker-compose to combine them
 * For complex init process management in your containers, you can use [supervisord](http://supervisord.org/)
 * Saving the state of your container to an image can be useful if you are making incremental changes to a dockerized database
-{% highlight shell linenos %}
+```bash
 ## this will output an image id
 docker commit CONTAINER_NAME
 
@@ -64,7 +64,7 @@ docker commit CONTAINER_NAME
 docker tag IMAGE_ID IMAGE_NAME:TAG
 
 docker run IMAGE_NAME
-{% endhighlight %}
+```
 <p></p>
 
 #### Day-to-day Docker

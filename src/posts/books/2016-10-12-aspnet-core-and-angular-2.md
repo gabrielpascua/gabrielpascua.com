@@ -29,7 +29,7 @@ tags:
 
 ### Chapter 3. Angular 2 Components and Client-Side Routing
 * When using a client-side routing that implements `pushState()`, you can handle the server side routing when one refreshes the browser by [creating a rewrite rule](https://www.iis.net/learn/extensions/url-rewrite-module/creating-rewrite-rules-for-the-url-rewrite-module) inside your `web.config` file.
-{% highlight xml lineno %}
+```markup
 <configuration>
   <system.webServer>
     <handlers>
@@ -44,7 +44,7 @@ tags:
               <action type="Rewrite" url="/index.html" />
           </rule
             ...
-{% endhighlight %}
+```
 <p></p>
 
 ### Chapter 4. The Data Model
@@ -106,9 +106,9 @@ tags:
     - Have a flag to tell if an update was done, e.g. `hadChanges`
     - `DbContext.SaveChanges()` if `hadChanges = true`
 * Email pattern
-{% highlight text %}
+```
 "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-{% endhighlight %}
+```
 <p></p>
 
 ### Chapter 10. Finalization and Deployment

@@ -11,7 +11,7 @@ tags:
 
 How to run different PHP versions on one machine.
 
-{% highlight shell linenos %}
+```bash
 $ sudo -i
 
 # Disable the php5 module:
@@ -100,7 +100,7 @@ $ gedit /etc/apache2/apache.conf
 $ service apache2 restart
 
 # Repeat Steps 7 down to add additional php versions
-{% endhighlight %}
+```
 
 <aside>
     <h4>References:</h4>

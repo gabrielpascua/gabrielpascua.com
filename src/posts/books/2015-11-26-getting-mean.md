@@ -40,7 +40,7 @@ tags:
 ### Chapter 6:  Writing a REST API: Exposing the MongoDB database to the application
 * When adding an API to an Express project, it's good to keep the api in a separate folder because it will give you flexibility to reuse it on a separate application.
 * Express Project Folder Structure in the Book:  
-{% highlight text %}
+```
 app_api  
 |__controllers  
 |__models  
@@ -52,18 +52,18 @@ app_server
 |__controllers  
 |__routes  
 |__views
-{% endhighlight %}
+```
 <p></p>
 
 ### Chapter 8:  Adding Angular components to an Express application
 * It's better to use the setter syntax `angular.module('myApp', [])` than the getter syntax `var myApp = angular.module('myApp', [])` so you can use the latter for your controllers.  
 Example:   
-{% highlight javascript linenos %}
+```javascript
 var myController = function(){ … }  
 angular  
     .module('myApp', [])  
     .controller('myController', myController);
-{% endhighlight %}
+```
 <p></p>
 
 ### Chapter 11:  Authenticating Users, Managing Sessions, and Securing APIs

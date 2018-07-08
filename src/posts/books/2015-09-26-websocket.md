@@ -21,7 +21,7 @@ tags:
 
 **Developing with WebSockets can be easily applied using the [npm package](https://www.npmjs.com/package/ws) `ws`**
 
-{% highlight javascript linenos %}
+```javascript
 // Simple server creation
 var WebSocketServer = require('ws').Server,
     wss = new WebSocketServer({port: 8181});
@@ -30,7 +30,7 @@ wss.on('connection', function(ws) {
     console.log('client connected');
     ws.on('message', console.log);
 });
-{% endhighlight %}
+```
 
 <p>&nbsp;</p>
 
@@ -38,7 +38,7 @@ wss.on('connection', function(ws) {
 
 **Deconstructing a Client interacting with a WebSocket server**
 
-{% highlight javascript linenos %}
+```javascript
 // Check for WebSocket support
 if (window.WebSocket) { ... }
 
@@ -69,7 +69,7 @@ socket.onclose = function(e) { … }
 
 // Optional - close the connection from client
 socket.close(1000, 'WebSocket connection closed');
-{% endhighlight %}
+```
 
 **How to check the state of your socket connection**  
 A WebSocket instance can have 1 of these 4 states:
@@ -89,12 +89,12 @@ A complete list of close codes can be found on this [MDN link](https://developer
 ### Chapter 4. STOMP over WebSocket
 
 **Instantiating a WebSocket client with a specific protocol**  
-{% highlight javascript linenos %}
+```javascript
 // Full listing of WebSocket Subprotocol Name Registry
 // https://www.ietf.org/assignments/websocket/websocket.xml
 let subProtocolId = 'v10.stomp';
 WebSocket('ws://localhost:8181', subProtocolId);
-{% endhighlight %}
+```
 
 **What are these subprotocols useful for?**  
 These protocols define the rules on how messages are sent and received between client and server in a Message-Oriented Middleware (MOM) architecture.  MOMs are pub/sub asynchronous systems that use message-broker applications like ActiveMQ to provide a platform by which messages can be transformed, executed or routed.  Figure below shows how various server applications can use MOM to access disparate system API’s in a highly decoupled architecture.  The Web, API and Intranet servers can send messages at random while the MOM layer queues the traffic accordingly. 

@@ -11,7 +11,7 @@ tags:
 
 I have a couple of applications running on localhost:3000 that I have configured from the /etc/hosts file.  This preserves the host name when the node server fires up.
 
-{% highlight shell linenos %}
+```bash
 $ sudo -i
 
 # Enable Apache modules required to run your app:
@@ -53,7 +53,7 @@ $ echo fs.inotify.max_user_watches=524298 | sudo tee -a /etc/sysctl.conf && \
 
 # FATAL ERROR- JS Allocation failed - process out of memory:
 $ node --max-old-space-size=2048 [NODEJS FILE].js
-{% endhighlight %}
+```
 
 <aside>
     <h4>References:</h4>

@@ -44,7 +44,7 @@ Web Workers are simple scripts that you can run in the background for resource-i
 * Captures HTTP requests
 
 **Basic Service Worker registration**  
-{% highlight javascript %}
+```javascript
 /*
 Add this script tag in your HTML file
 <script src="/js/main.js"></script>
@@ -64,9 +64,9 @@ Add this script tag in your HTML file
    alert('No service worker support in this browser');
  }
 })();
-{% endhighlight %}
+```
 
-{% highlight javascript %}
+```javascript
 /* /js/service-worker.js */
 
 self.addEventListener('install', (event) => {
@@ -80,7 +80,7 @@ self.addEventListener('activate', (event) => {
  // event is an instance of ExtendableEvent
  console.log('service worker activated', event);
 });
-{% endhighlight %}
+```
 
 **Why is the placement of your service worker file important?**    
 The location where you put your service worker determines its scope.  In the example above, the service worker file is placed inside the `js` folder.  This means that your worker will have access to every HTTP request that has `/js/*` in its URL.  It’s scope then is everything in and below the `js` folder.
@@ -117,7 +117,7 @@ importScripts('sw-toolbox.js','pirate-manager.js');
 **<link preload /> and <link prefetch />**  
 Both allow you to download the HTML resource beforehand.  Preload is for the current page while Prefetch is for the next page and to let the browser decide when the download begins.  Large images, fonts, videos, and huge scripts are good candidates for these attributes.
 
-{% highlight html %}
+```markup
 <head>
  <meta charset="utf-8">
  <link rel="preload" href="style.css" as="style">
@@ -127,7 +127,7 @@ Both allow you to download the HTML resource beforehand.  Preload is for the cur
 <body>
  <script src="main.js"></script>
 </body>
-{% endhighlight %}
+```
 
 
 

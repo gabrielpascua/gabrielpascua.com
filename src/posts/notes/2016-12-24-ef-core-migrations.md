@@ -10,7 +10,7 @@ tags:
 
 ### Add the required dependencies in your project.json file
 <p></p>
-{% highlight json linenos %}
+```json
 {
   "dependencies": { 
       ...
@@ -28,19 +28,19 @@ tags:
       ...
   }
 }
-{% endhighlight %}
+```
 <p></p>
 
 ### If you haven’t done so, import the libraries
 <p></p>
-{% highlight shell linenos %}
+```bash
   dotnet restore
-{% endhighlight %}
+```
 <p></p>
 
 ### Run the migration script
 <p></p>
-{% highlight shell linenos %}
+```bash
   dotnet ef migrations add NAME_OF_MIGRATION_CLASS
   dotnet ef database update
-{% endhighlight %}
+```

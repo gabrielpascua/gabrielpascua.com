@@ -14,7 +14,7 @@ tags:
 * Functional Programming is a development style that promotes control flow abstractions by use of functions to avoid side effects and mutations.
 * Functional Programming falls under the broad category of declarative programming focusing on describing operations over control flow or state changes, e.g. what computations to perform instead of how to compute it. 
 * Difference Between Declarative and Procedural Programming in Code:
-{% highlight javascript linenos %}
+```javascript
 //Procedural - requires you to maintain a result variable in a for-loop
 var array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var result = [];
@@ -31,7 +31,7 @@ var result = array.map(function(num){
 //Declarative - using lambda expression makes it more concise
 var array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var result = array.map((num)=>Math.pow(num,2));
-{% endhighlight %}
+```
 * Functional Programming aims to build immutable programs using **Pure Functions** - functions that:
     1. Do not depend on any external input other than its function arguments
     2. Do not alter state outside of its function scope
@@ -41,7 +41,7 @@ var result = array.map((num)=>Math.pow(num,2));
 
 ### Chapter 2. Higher-order JavaScript
 * OOP and FP can be used together, each has its own merits.  Languages like Scala and F# implement both paradigms.  To make it work, you have to think of Objects as immutable pieces of data.  Given a simple example below, `fullname` is abstracted into a stand-alone function that can support any space-separated string concatenation.  It also removes access to the `this` variable which can cause side effects outside of the former function's scope.
-{% highlight javascript linenos %}
+```javascript
 //OOP
 class Person{
 ...
@@ -57,7 +57,7 @@ person.fullName();
 class Person{...}
 var person = new Person();
 var fullName = [person.firstName, person.lastName].join(' ');
-{% endhighlight %}
+```
 * What object inheritance does to OOP, composition does for FP by applying functions to objects to create new data.
 * Object state in javascript can get out of hand if not managed properly.  Some techniques to achieve immutability are:
     1.  **Treat objects as values** - Adopting the Value Object pattern for simple data types.  `Date` is an example that uses this pattern. It may have a number of properties like `year` and `month` but it will always have a unique value that you can test for equality.  Zip Codes, Emails and Url's qualify for this treatment.
@@ -73,7 +73,7 @@ var fullName = [person.firstName, person.lastName].join(' ');
 
 ### Chapter 4. Toward modular, reusable code
 * Currying is a technique that converts a multi-argument function into a set of unary functions if the number of arguments is not met when the function is called.  
-{% highlight javascript linenos %}
+```javascript
 //Formal definition of currying with 3 parameters
 curry(f) :: (a,b,c) -> f(a) -> f(b)-> f(c)
 
@@ -86,12 +86,12 @@ var currying = R.curry(function(arg1, arg2, arg3){ ... }),
 currying(arg1)(arg2)(arg3); 
 currying(arg1,arg2)(arg3); 
 currying(arg1, arg2, arg3);
-{% endhighlight %}
+```
 * Currying promotes:
     1.  Chaining or Pipelining - arranging functions in a sequence where the input of the next function is derived from the last.
     2.  Conversion of multi-argument functions allow you to build up your function arguments based on availability.  
 * Applying currying as a factory function
-{% highlight javascript linenos %}
+```javascript
 const frDb = R.curry((db, ssn) => find(db, ssn);
 const frCache = R.curry((arr, ssn) => arr[ssn]);
 
@@ -100,9 +100,9 @@ const findOne = useDb ? frDb(db) : frCache(cache);
 
 //The curried function here passes the ssn argument
 findOne('444-44-4444');
-{% endhighlight %}
+```
 * Implementing reusable function templates using currying
-{% highlight javascript linenos %}
+```javascript
 //Suppose you have a library that takes a lot of arguments to instantiate
 const form = function(db, data, type, options, title){...}
 
@@ -112,17 +112,17 @@ const formBuilder = R.curry(form)(db, data, type);
 //Then you can simplify subsequent executions
 var form1 = formBuilder(option, title);
 var form2 = formBuilder(option, title);
-{% endhighlight %}
+```
 * An alternative to currying is partial application and parameter binding.  If you have a function that takes 5 arguments and you passed 3, it will return a function that expects 2.  It's different from currying in that currying returns a unary function while partial function binding evaluates missing arguments as `undefined`.
-{% highlight javascript linenos %}
+```javascript
 function greet(greeting, name) { return greeting + ' ' + name; }
 
 //Using lodash: https://lodash.com/docs#partial    
 var sayHelloTo = _.partial(greet, 'hello');
 sayHelloTo('fred');
-{% endhighlight %}
+```
 * Functional Composition is the process of grouping together smaller functions to arrive at a desired result.  This technique promotes point-free or tacit programming by removing the need to pass function arguments (points of a function) granted the return values match the next function's signature (arity).  Be careful not to overdo it to avoid obfuscating your code.
-{% highlight javascript linenos %}
+```javascript
 //Using Ramda's compose (right to left evaluation)
 //http://ramdajs.com/0.22.1/docs/#compose
 const exploded = (string) => string.split(' ');
@@ -131,7 +131,7 @@ const countWords = R.compose(count, exploded);
 
 const str = 'two words';
 const wordCount = countWords(str)
-{% endhighlight %}
+```
 *  One way to structure program flow is by use of combinators.  Combinators are language constructs that allow you to combine functions and other combinators to establish control logic in your code.  Some examples of combinators in Ramda.js are:
     1.  Ramda's `identity` - returns the value of its argument, useful for wrapping a value into a function
     2.  Ramda's `tap` - runs a function against its input object and returns the result after the function is applied
@@ -149,7 +149,7 @@ const wordCount = countWords(str)
     5.  Forces the caller to have `catch` blocks
     6.  The possibility of having nested errors make them hard to use  
 * **Technique 1 - Wrapping unsafe values**.  A simple way of handling any value that can be onerous is by containing it in a wrapper class. The only way for you to extract its value is by applying a  function to it.  This forces the calling function to handle null checks and their own error handling logic.
-{% highlight javascript linenos %}
+```javascript
 class Wrapper{
     constructor(value){
         this.value = value;
@@ -165,9 +165,9 @@ const str = wrap1.map(()=>this.value);
 
 const wrap2 = (null) => new Wrapper(value);
 const str2 = wrap2.map(()=>{ return this.value === null ? 0 : 1 });    
-{% endhighlight %}
+```
 * **Technique 2 - Using functors**.  Functors are somewhat similar to Wrapper classes.  It's a data structure where you apply a function to extract its value but instead of returning it, it returns a new instance to enable chaining.  The downside to using this is it creates a nest of Wrapper classes that you need to traverse in order to extract a value.
-{% highlight javascript linenos %}
+```javascript
 class Wrapper{
     constructor(value){
         this.value = value;
@@ -178,9 +178,9 @@ Wrapper.prototype.flatmap = function(fn){
     // returns a new copy every invocation promoting immutability
     Return new Wrapper(fn(this.value));
 }
-{% endhighlight %}
+```
 * **Technique 3 - Using Monads**.  Described as the best approach to error handling, Monads make your code fault-tolerant by safely propagating errors.  Monadic types are data structures that provide abstraction over some resource.  For example, by representing a `null` value and a known value as monads, you need not worry about error handling or null checking because both follow a specific structure that can be chained or composed.
-{% highlight javascript linenos %}
+```javascript
 /* Basic Structure of a Monad */
 class Wrapper{
     // In its basic form, a monadic type must have the following:
@@ -204,11 +204,11 @@ class Wrapper{
         return this.value.join(); 
     }
 }
-{% endhighlight %}
+```
 * Error Handling Using Concrete Maybe and Either Monads  
     - [A Monad in Practicality: First-Class Failures](http://robotlolita.me/2013/12/08/a-monad-in-practicality-first-class-failures.html#you-either-succeed-or-you-fail)
     - [Folktale's Either Implementation](http://docs.folktalejs.org/en/latest/api/data/either/index.html) 
-{% highlight javascript linenos %}
+```javascript
 //Maybe consolidates null checking logic by returning a Just class for a
 //presence of value, and a Nothing class for an absence of value.  Best used
 //for dealing with uncertainty (“might not be there”) like getting database
@@ -270,7 +270,7 @@ function divide(a, b){
 
 //No error handling required
 var x = divide(25,0);
-{% endhighlight %}
+```
 <p></p>
 
 ### Chapter 6. Bulletproofing Your Code (Writing Tests)
@@ -280,7 +280,7 @@ var x = divide(25,0);
     - [Blanket.js](http://blanketjs.org/) for code coverage
 * Because FP code is naturally isolated it has a direct effect on unit tests and its chainability on integration tests.
 * Property based unit testing makes a statement about what the output of a function should be given a set of inputs.
-{% highlight javascript linenos %}
+```javascript
 //Unit Testing using QUNit
 QUnit.test('Compute Average Grade', function (assert) {
     assert.equal(computeAverageGrade([80, 90, 100]),'A');
@@ -302,7 +302,7 @@ JSC.test(
         'Testing for an ' + grade + ' on grades: ' + grades;
     }
 );
-{% endhighlight %}
+```
 <p></p>
 
 ### Chapter 7. Functional Optimizations
@@ -315,16 +315,16 @@ JSC.test(
 * You can get performance benefits by following a lazy function evaluation strategy - avoiding function calls when a subset is insufficient.  Techniques in the book
     - Using shortcut fusion - In Haskell short cut fusion is a method that combines a series of function executions into 1.  You can use lodash's `chain` or `compose` to accomplish this.
     - Using the alternation `||` functional combinator - 
-{% highlight javascript linenos %}
+```javascript
 const alt = R.curry((fn1, fn2, val)=>fn1(val) || fn2(val));
 const print = (msg)=>console.log(msg);
 //neither dbFn nor cacheFn is called until show is invoked
 const show = R.compose(print, alt(dbFn, cacheFn));
 show('xxxxx');
-{% endhighlight %}
+```
 
 * Use memoization if an expensive function execution is going to be applied on a large dataset.  By caching the result, you avoid rerunning the function. Remember that by using this caching technique, you are trading off memory space over performance.
-{% highlight javascript linenos %}
+```javascript
 //Basic construct example https://addyosmani.com/blog/faster-javascript-memoization/
 function.prototype.memoize = function(){
     var self = this, _cache = {};
@@ -337,9 +337,9 @@ function.prototype.memoize = function(){
 var foo = fooBar.memoize()
 foo(1); //stores the cache value
 foo(1); //same argument, use the cached value
-{% endhighlight %}
+```
 * An ES6 feature, Tail-Call Optimization (TCO) flattens the execution of a recursive function into a single frame but it can only be done when the last call (tail position) is to invoke another function (typically itself).  TCO allows you to make recursive function calls without growing the stack.
-{% highlight javascript linenos %}
+```javascript
 // http://www.2ality.com/2015/06/tail-call-optimization.html
 function findIndex(arr, predicate, start = 0) {
     if (0 <= start && start < arr.length) {
@@ -351,7 +351,7 @@ function findIndex(arr, predicate, start = 0) {
     }
 }
 findIndex(['a', 'b'], x => x === 'b'); // 1
-{% endhighlight %}
+```
 <p></p>
 
 ### Chapter 8. Managing Asynchronous Events and Data

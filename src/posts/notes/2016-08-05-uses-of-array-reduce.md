@@ -10,29 +10,29 @@ tags:
 
 #### Math Functions
 <p></p>
-{% highlight javascript linenos %}
+```javascript
 var arr = [7,2,3,4];
 var total = arr.reduce(function(previous, current, idx){
     return previous + current;
 }, 4); 
 //total = 20  
-{% endhighlight %}
+```
 <p></p>
 
 #### String Manipulation
 <p></p>
-{% highlight javascript linenos %}
+```javascript
 var words = ["hello", "world"];
 var phrase = words.reduce(function(previous, current, idx){
     return previous + ' ' + current;
 }, "Hi"); 
 //phrase = "Hi hello world"
-{% endhighlight %}
+```
 <p></p>
 
 #### Grouping Results
 <p></p>
-{% highlight javascript linenos %}
+```javascript
 var cities = [{name: 'NY'}, {name: 'NY'}, {name: 'LA'}]
     .reduce(function(accumulator, current, idx){
         if(!accumulator[current.name]){
@@ -43,12 +43,12 @@ var cities = [{name: 'NY'}, {name: 'NY'}, {name: 'LA'}]
         return accumulator;
     }, {});
 //cities = {"NY":2,"LA":1}
-{% endhighlight %}
+```
 <p></p>
 
 #### Get Unique Values From a Collection
 <p></p>
-{% highlight javascript linenos %}
+```javascript
 var uniques = [{name: 'NY'}, {name: 'NY'}, {name: 'LA'}]
     .reduce(function(collection, current, idx){
         if(collection.indexOf(current.name) < 0){
@@ -57,12 +57,12 @@ var uniques = [{name: 'NY'}, {name: 'NY'}, {name: 'LA'}]
         return collection;
     }, []);
 //uniques = ["NY","LA"]
-{% endhighlight %}
+```
 <p></p>
 
 #### Get Dupes with Closure
 <p></p>
-{% highlight javascript linenos %}
+```javascript
 var dupes = [];
 var states = [{name: 'NY'}, {name: 'NY'}, {name: 'CA'}]
     .reduce(function(accumulator, current, idx){
@@ -74,7 +74,7 @@ var states = [{name: 'NY'}, {name: 'NY'}, {name: 'CA'}]
         return accumulator;
     }, []);
 //dupes = ["NY"]
-{% endhighlight %}
+```
   
 <aside>
   <h4>References:</h4>

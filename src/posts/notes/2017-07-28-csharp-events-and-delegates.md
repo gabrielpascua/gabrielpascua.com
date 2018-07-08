@@ -24,7 +24,7 @@ tags:
 
 **In its simplest form**  
 
-{% highlight csharp %}
+```csharp
 using System;
 
 public static class Logger
@@ -52,7 +52,7 @@ class MainClass {
     Console.WriteLine(msg + " #2");
   }
 }
-{% endhighlight %}
+```
 
 <br />
 
@@ -97,7 +97,7 @@ class MainClass {
 
 **Subscribing to Events**  
 
-{% highlight csharp %}
+```csharp
 void HandleCustomEvent(object sender, CustomEventArgs args)  
 {  
    // Do something useful here.  
@@ -107,13 +107,13 @@ void HandleCustomEvent(object sender, CustomEventArgs args)
 publisher.RaiseCustomEvent += HandleCustomEvent;  // C# 2.0
 publisher.RaiseCustomEvent += new CustomEventHandler(HandleCustomEvent); // C# 1.0
 publisher.RaiseCustomEvent += (sender, args) => { //Method Body Here }
-{% endhighlight %}
+```
 
 <br />
 
 **Full Example of Publishing, Raising and Subscribing to Events**
 <br />
-{% highlight csharp %}
+```csharp
 namespace DotNetEvents
 {
     using System;
@@ -215,7 +215,7 @@ namespace DotNetEvents
         }
     }
 }
-{% endhighlight %}
+```
 
 <br />
 

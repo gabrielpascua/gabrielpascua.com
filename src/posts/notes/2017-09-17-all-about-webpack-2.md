@@ -300,7 +300,7 @@ https://laracasts.com/series/webpack-for-everyone/episodes/12?autoplay=true
 </td>
 <td width="" markdown="1">
 Do this in your webpack configuration file like so:
-{% highlight js %}
+```javascript
   const config = {
     entry: ...,
     output: {...},
@@ -315,7 +315,7 @@ Do this in your webpack configuration file like so:
       }
     ]
   };
-{% endhighlight %}
+```
 
 One useful technique when hooking your own plugin is to write a JSON file that can be read by your application
 </td>

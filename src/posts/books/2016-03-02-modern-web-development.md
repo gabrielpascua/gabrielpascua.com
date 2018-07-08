@@ -44,7 +44,7 @@ tags:
         `Presentation/App (P/A) ← → Read/Write DB`  
         `P/A → Write DB ; Read DB → P/A`
     - An example implementation having 2 `DBContext` in Entity Framework for Command and Query
-{% highlight csharp linenos %}
+```csharp
 public class CommandDatabase : DbContext
 {
     …
@@ -61,7 +61,7 @@ public class ReadDatabase : DbContext
     public IQueryable&lt;Customer&gt; Customers {return _customers;}
     …
 }
-{% endhighlight %}
+```
 * Message-based formulation as a form of CQRS relies on having a command processor (typically a bus) class to facilitate communication between your application and its supporting layers.  In this design inputs transformed into commands (as specific types of messages) are pushed to the command processor that diverts it to the correct domain layer.  In an MVC architecture the command processor is the same as your controller action.  
     - Events or notifications is a natural requirement of this design because they tell other handlers that a command has been executed.  The naming convention of event classes should include what just happened, e.g. `PaymentCompleted`, `OrderCreated`, etc..  
     - A typical command processor would have a collection of listeners and message handlers which can either be a saga (long running task) or a handler (one-off execution per message).
@@ -127,13 +127,13 @@ public class ReadDatabase : DbContext
     - By default URL's pointing to a physical file is ignored.  You can change this inside your `global.asax.cs` file by setting `routes.RouteExistingFiles = true;`.
     - `{*pathInfo}` in `routes.IgnoreRoute("{resource}.axd/{*pathInfo}");` means that anything `*` after `.axd` in a URL should be assigned to the `pathInfo` variable.
     - Use attribute-based routing in large applications when classic routing gets large
-{% highlight csharp linenos %}
+```csharp
 [Route("info/[controller]")]
 public class NewsController : Controller {
     [HttpGet("{id}")]  //will map to /info/news/{id}
     Public ActionResult Get(int id){}
 }
-{% endhighlight %}
+```
 * **Controllers**
     - Delicate part of the design. Just because you're application is ASP.NET MVC doesn't mean you're getting a great layered architecture
     - In a cloud-based architecture, making a controller dependent on state reduces the scalability of an application
@@ -143,14 +143,14 @@ public class NewsController : Controller {
     - `Request.Params["today"]` and `Request["today"]` are the same
     - Use `IList` as a route parameter when expecting a collection, e.g. `public ActionResult EmailsForPost(IList<string> emails)`.
     - `async` controller actions are beneficial for long-running requests.  It prevents locking ASP.NET threads and not to make the method run faster.
-{% highlight csharp linenos %}
+```csharp
 public async Task<ActionResult> Rss()
 {
     …
     var rss = await generateRss();
     return rss;
 }
-{% endhighlight %}
+```
 * **View**
     - Anything prefixed with `@` can process C# or VB expressions
 <p></p>
@@ -190,7 +190,7 @@ public async Task<ActionResult> Rss()
 ### Chapter 12. Editing data
 * To address loss of data on a POST-Redirect-GET pattern on a cloud architecture, the common approach is to [use cookies that expire as soon as they're issued](http://stackoverflow.com/questions/28351198/implementing-itempdataprovider-vs-using-cookies) 
 * Cross property validation requires you to have a global attribute at the class level for a `CustomValidation` and resort to `ValidationSummary` to display the error.
-{% highlight csharp linenos %}
+```csharp
 [CustomValidation(typeof(CountryInputModel), "Validate")]
 public class CountryInputModel : ViewModelBase { … }
 
@@ -205,7 +205,7 @@ public static ValidationResult Validate(CountryInputModel data,
 
     return ValidationResult.Success;
 }
-{% endhighlight %}
+```
 * An idea to handle POST responses to the template is to create a DTO class that has a `Success` and `Message` properties that you aggregate in your `ViewModelBase` class.  On the templating side, you can create a partial that you can re-use throughout your pages.
 <p></p>
 
@@ -217,7 +217,7 @@ public static ValidationResult Validate(CountryInputModel data,
 * Data Access API's go into the repository classes
 * Repository classes must have read and write methods
 * Sample Order Repository Class using Entity Framework's `DbContext`
-{% highlight csharp linenos %}
+```csharp
 public class OrderRepository : IOrderRepository
 {
     protected ApplicationDbContext _database;
@@ -236,22 +236,22 @@ public class OrderRepository : IOrderRepository
         _database.SaveChanges();
     }
 }
-{% endhighlight %}
+```
 * Today having a polyglot (multiple technology) persistence is a common scenario where you have a relational database and a NoSQL database in a single application.  The benefit of a heterogenous storage architecture is to maximize performance at every stack at the cost of having a diverse set of skill on your personnel.
 <p></p>
 
 ### Chapter 14. Creating more interactive views
 * Serialization using `JavascriptSerializer`
-{% highlight csharp linenos %}
+```csharp
 var serializer = new JavaScriptSerializer {MaxJsonLength = Int32.MaxValue};
 var result = new ContentResult
 {
     Content = serializer.Serialize(model),
     ContentType = "application/json"
 };
-{% endhighlight %}
+```
 * JSONP works by returning JSON data in your controller wrapped in a function, e.g. `functionName(JSONData)`.  Sample `JSONPResult` that inherits from `JsonResult`
-{% highlight csharp linenos %}
+```csharp
 public class JsonpResult : JsonResult
 {
     private const String JsonpCallbackName = "callback";
@@ -287,9 +287,9 @@ public class JsonpResult : JsonResult
         }
     }
 }
-{% endhighlight %}
+```
 * An alternative to JSONP is to check the request's `Origin` header and return a response header `Access-Control-Allow-Origin` if it is a recognized host
-{% highlight csharp linenos %}
+```csharp
 var origin = Request.Headers["Origin"];
 if (String.IsNullOrWhiteSpace(origin) return;
 
@@ -297,7 +297,7 @@ if (Request.IsLocal || IsKnownOrigin(origin))
 {
     Response.AddHeader("Access-Control-Allow-Origin", origin);
 }
-{% endhighlight %}
+```
 * The Web API is a dedicated and lightweight framework for dealing with HTTP services.  It's not to say that WCF is dead because it is still useful for non-HTTP protocols.  Web API has a different runtime environment from ASP.NET MVC to allow non MVC appliations (WebForms) to use it.  It also can be hosted anywhere and not just IIS.
 *  If you're planning to authenticate an API request using Basic Authentication, make sure it is over HTTPS
 * In Web API you enable CORS in the global.asax file by calling `config.EnableCors()` in the `Register()` method and you disable it on a controller action by adding the `DisableCors` attribute.

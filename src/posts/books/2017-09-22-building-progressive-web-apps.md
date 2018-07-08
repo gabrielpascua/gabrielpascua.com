@@ -37,7 +37,7 @@ A Service Worker act as a proxy between your browser and the web.  Having it on 
 * Scoping is valid from the current level going down but not from the current level going up, e.g. it’s ok to scope `/root/node/sw.js` to `/root/node/subnode` but not to `/root` or `/root/sibling`.  The reason is web applications establish context through url’s.  `/my-account/guest` should never have access to `/my-account/admin`.
 
 **Basic Offline Strategy using a ServiceWorker**  
-{% highlight javascript   %}
+```javascript
 self.addEventListener('fetch', function (event) {
  event.respondWith(
    fetch(event.request)
@@ -58,7 +58,7 @@ self.addEventListener('fetch', function (event) {
    })
  );
 });
-{% endhighlight %}
+```
 
 
 ###  Chapter 3. The CacheStorage API
@@ -69,7 +69,7 @@ The CacheStorage API has the ability to cache full `Request` and `Response` obje
 **Full offline caching strategy example**  
 Further improvement of the code involves limiting cache saves to files that change often.  Images or vendor assets seldom change.  You can ignore these files and use `cache.put` to save the ones that change to increase efficiency and speed of your installation.
 
-{% highlight javascript %}
+```javascript
 var CACHE_VERSION = 1;
 
 var CURRENT_CACHES = {
@@ -137,7 +137,7 @@ self.addEventListener('fetch', function (event) {
      })
  );
 });
-{% endhighlight %}
+```
 
 
 ### Chapter 4. Service Worker Lifecycle and Cache Management
@@ -183,7 +183,7 @@ This general recommendation [from Google](https://developers.google.com/web/fund
 * MongoDB is a document-based store 
 
 **CRUD IndexedDB Example**  
-{% highlight javascript %}
+```javascript
 if (!window.indexedDB) {
   throw new Error('No browser support for IndexedDb.');
 }
@@ -328,7 +328,7 @@ var idbUpdate = function(idKey){
     console.log('Error', event.target.error);
   });
 }
-{% endhighlight %}
+```
 
 **Generic Guidelines for using IndexedDB**  
 * Prefer feature detection over version checking
@@ -361,7 +361,7 @@ var idbUpdate = function(idKey){
 * Can be used between service worker and its clients, or between main window and iframe
 * The best use-case I’ve seen by far is for service worker to service worker communication or [iframe to window](https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging), else postMessage seems to accomplish what is needed
 
-{% highlight javascript %}
+```javascript
 // Example on how to log fetch API requests from the service worker to the window
 // Window code
 var msgChan = new MessageChannel();
@@ -380,7 +380,7 @@ self.addEventListener('message', function (messageEvent) {
    openPort.postMessage(fetchEvent.request.url);
  });
 });
-{% endhighlight %}
+```
 
 **Best practices**  
 * Check the origin and source to prevent other malicious messages from unknown users when using postMessage()
@@ -388,7 +388,7 @@ self.addEventListener('message', function (messageEvent) {
 * Label your data actions similar to how Redux identifies its state if you’re going to have multiple message submissions
 
 **Window to Service Worker**  
-{% highlight javascript %}
+```javascript
 // DOM Message
 if(‘serviceWorker’ in navigator && navigator.serviceWorker.controller){
   navigator.serviceWorker.controller.postMessage(
@@ -402,10 +402,10 @@ self.addEventListener('message', function (event) {
      console.log(‘Window Source:’, event.source);
   }
 });
-{% endhighlight %}
+```
 
 **Service Worker to Windows (or Window)**  
-{% highlight javascript %}
+```javascript
 // Service Worker, must be placed inside an event to ensure that clients are registered
 self.addEventListener('message', function (event) {
  // Use this to limit communication with the triggering window
@@ -426,7 +426,7 @@ if ('serviceWorker' in navigator) {
    }
  });
 }
-{% endhighlight %}
+```
 
 
 ### Chapter 9. Grabbing Homescreen Real Estate with Installable Web Apps
@@ -454,7 +454,7 @@ if ('serviceWorker' in navigator) {
 * Private browsing mode blocks this feature
 * Consider using the tag property if you’re going to have multiple notifications and you need to track where the interaction originated
 
-{% highlight javascript %}
+```javascript
 if ('serviceWorker' in navigator) {
  // Notifications will work even if you don't have a
  // service worker javascript file registered
@@ -479,7 +479,7 @@ if ('serviceWorker' in navigator) {
    }
  });
 }
-{% endhighlight %}
+```
 
 **The Push API**  
 * The messaging source/server users subscribe to
@@ -487,7 +487,7 @@ if ('serviceWorker' in navigator) {
 * Requires Public and Private Voluntary Application Server Identification for Webb Push (VAPID) keys
 * Possibly optional because only older Chrome, Opera and Samsung Browsers use it, but you may need to generate a Google Cloud Messaging key from Firebase http://pwabook.com/firebaseconsole
 
-{% highlight javascript %}
+```javascript
 // Simple Client Subscription
 if ("Notification" in window &&
 "PushManager" in window &&
@@ -513,9 +513,9 @@ Notification.requestPermission().then(function (permission) {
   }
 });
 }
-{% endhighlight  %}
+```
 
-{% highlight javascript %}
+```javascript
 // Simple Server example using web-push
 app.post("/add-subscription", function (req, res) {
  webpush.setGCMAPIKey("GCMAPIKey");
@@ -534,16 +534,16 @@ app.post("/add-subscription", function (req, res) {
      res.json({ sent: false });
    });
 });
-{% endhighlight %}
+```
 
-{% highlight javascript %}
+```javascript
 // Service Worker Listener
 self.addEventListener('push', function(event) {
  self.registration.showNotification('Push message received', {
    body: event.data
  });
 });
-{% endhighlight %}
+```
 
 **Putting all the pieces together**  
 ![Notifications API.svg HERE](/img/notifications-api.svg)

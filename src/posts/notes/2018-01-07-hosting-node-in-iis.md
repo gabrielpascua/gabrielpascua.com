@@ -69,7 +69,7 @@ folders that you don't want to serve on your site.
 
 **Restrict access to development files**  
 Rewrite rules to prevent web access to files that should not be publicly visible.  
-{% highlight xml %}
+```markup
 ...
 <rewrite>
     <rules>
@@ -95,7 +95,7 @@ Rewrite rules to prevent web access to files that should not be publicly visible
     </rules>
 </rewrite>
 ...
-{% endhighlight %}
+```
 
 <p>&nbsp;</p>
 
