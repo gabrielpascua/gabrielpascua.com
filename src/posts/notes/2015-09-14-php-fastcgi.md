@@ -85,17 +85,17 @@ $ gedit /etc/apache2/apache.conf
     > ScriptAlias /cgi-bin-php/ /var/www/cgi-bin/
 
     # Edit your VirtualHost entries to use fastcgi
-    > &lt;VirtualHost&gt;
+    > <VirtualHost>
     >  ...
-    >  &lt;Directory /&gt;
+    >  <Directory />
     >    ...
     >    Options FollowSymLinks
     >    AllowOverride All
     >    AddHandler php-cgi .php
     >    Action php-cgi /cgi-bin-php/php-cgi-[PHPMAJOR-MINOR-REVISION]
     >    Require all granted
-    >  &lt;/Directory&gt;
-    > &lt;/VirtualHost&gt;
+    >  </Directory>
+    > </VirtualHost>
 
 $ service apache2 restart
 

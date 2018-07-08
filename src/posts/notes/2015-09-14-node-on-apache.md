@@ -9,7 +9,7 @@ tags:
   - ubuntu 14.04
 ---
 
-I have a couple of applications running on localhost:3000 that I have configured from the /etc/hosts file.  This preserves the host name when the node server fires up.
+I have a couple of applications running on localhost:3000 that I have configured from the `/etc/hosts` file.  This preserves the host name when the node server fires up.
 
 ```bash
 $ sudo -i
@@ -21,26 +21,26 @@ $ service apache2 restart
 # Create an /etc/hosts entry
 
 # Create a vhost entry with this configuration:
-    > &lt;VirtualHost *:80&gt;
+    > <VirtualHost *:80>
     > ServerName [HOST NAME]
     > ServerAlias [HOST NAME]
     > DocumentRoot [LOCAL PATH]
     > ProxyRequests off
 
-    > &lt;Proxy *&gt;
+    > <Proxy *>
     > Order deny,allow
     > Allow from all
     > Require all granted
-    > &lt;/Proxy&gt;
+    > </Proxy>
 
-    > &lt;Location&gt;
+    > <Location>
     > ProxyPass http://localhost:3000/
     > ProxyPassReverse http://localhost:3000/
-    > &lt;/Location&gt;
+    > </Location>
 
     > RequestHeader set Host "[HOST NAME]"
     > ProxyPreserveHost On
-    > &lt;/VirtualHost&gt;
+    > </VirtualHost>
 
 # Enable (a2ensite) your site if you haven't done so
 $ service apache2 restart
