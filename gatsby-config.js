@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     {
+      // for serving json files
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'data',
@@ -13,6 +14,7 @@ module.exports = {
       }
     },
     {
+      // for markdown file transformations
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
@@ -23,7 +25,17 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: []
+        plugins: [
+          {
+            // for code highlighting
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              classPrefix: 'language-',
+              inlineCodeMarker: null,
+              aliases: {}
+            }
+          }
+        ]
       }
     },
     'gatsby-plugin-react-helmet',

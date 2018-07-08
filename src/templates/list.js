@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import { TopNav } from '../shared/top-nav';
 
 const NavLink = props => {
   if (!props.test) {
@@ -25,6 +26,7 @@ const IndexPage = ({ data, pathContext }) => {
 
   return (
     <div>
+      <TopNav />
       <h4>{index} of {pageCount} Pages</h4>
       <ol>
         {group.map(({ node }) => (
