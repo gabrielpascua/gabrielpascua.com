@@ -44,24 +44,24 @@ tags:
         `Presentation/App (P/A) ← → Read/Write DB`  
         `P/A → Write DB ; Read DB → P/A`
     - An example implementation having 2 `DBContext` in Entity Framework for Command and Query
-```csharp
-public class CommandDatabase : DbContext
-{
-    …
-    public DbSet&lt;Order&gt; Orders {get; private set}
-    public DbSet&lt;Customer&gt; Customers {get;private set}
-    …
-}
+      ```csharp
+      public class CommandDatabase : DbContext
+      {
+          …
+          public DbSet<Order> Orders {get; private set}
+          public DbSet<Customer> Customers {get;private set}
+          …
+      }
 
-public class ReadDatabase : DbContext
-{
-    …
-    //IQueryable has no access to methods that save changes
-    public IQueryable&lt;Order&gt; Orders {return _orders;}
-    public IQueryable&lt;Customer&gt; Customers {return _customers;}
-    …
-}
-```
+      public class ReadDatabase : DbContext
+      {
+          …
+          //IQueryable has no access to methods that save changes
+          public IQueryable<Order> Orders {return _orders;}
+          public IQueryable<Customer> Customers {return _customers;}
+          …
+      }
+      ```
 * Message-based formulation as a form of CQRS relies on having a command processor (typically a bus) class to facilitate communication between your application and its supporting layers.  In this design inputs transformed into commands (as specific types of messages) are pushed to the command processor that diverts it to the correct domain layer.  In an MVC architecture the command processor is the same as your controller action.  
     - Events or notifications is a natural requirement of this design because they tell other handlers that a command has been executed.  The naming convention of event classes should include what just happened, e.g. `PaymentCompleted`, `OrderCreated`, etc..  
     - A typical command processor would have a collection of listeners and message handlers which can either be a saga (long running task) or a handler (one-off execution per message).
@@ -190,22 +190,22 @@ public async Task<ActionResult> Rss()
 ### Chapter 12. Editing data
 * To address loss of data on a POST-Redirect-GET pattern on a cloud architecture, the common approach is to [use cookies that expire as soon as they're issued](http://stackoverflow.com/questions/28351198/implementing-itempdataprovider-vs-using-cookies) 
 * Cross property validation requires you to have a global attribute at the class level for a `CustomValidation` and resort to `ValidationSummary` to display the error.
-```csharp
-[CustomValidation(typeof(CountryInputModel), "Validate")]
-public class CountryInputModel : ViewModelBase { … }
+  ```csharp
+  [CustomValidation(typeof(CountryInputModel), "Validate")]
+  public class CountryInputModel : ViewModelBase { … }
 
-public static ValidationResult Validate(CountryInputModel data,
-    ValidationContext context)
-{
-    if (data.Continent == Continent.Unknown && 
-        !data.Name.IsNullOrWhitespace())
-    {
-        return new ValidationResult("Must indicate a continent.");
-    }
+  public static ValidationResult Validate(CountryInputModel data,
+      ValidationContext context)
+  {
+      if (data.Continent == Continent.Unknown && 
+          !data.Name.IsNullOrWhitespace())
+      {
+          return new ValidationResult("Must indicate a continent.");
+      }
 
-    return ValidationResult.Success;
-}
-```
+      return ValidationResult.Success;
+  }
+  ```
 * An idea to handle POST responses to the template is to create a DTO class that has a `Success` and `Message` properties that you aggregate in your `ViewModelBase` class.  On the templating side, you can create a partial that you can re-use throughout your pages.
 <p></p>
 
@@ -242,6 +242,7 @@ public class OrderRepository : IOrderRepository
 
 ### Chapter 14. Creating more interactive views
 * Serialization using `JavascriptSerializer`
+
 ```csharp
 var serializer = new JavaScriptSerializer {MaxJsonLength = Int32.MaxValue};
 var result = new ContentResult
@@ -250,7 +251,9 @@ var result = new ContentResult
     ContentType = "application/json"
 };
 ```
+
 * JSONP works by returning JSON data in your controller wrapped in a function, e.g. `functionName(JSONData)`.  Sample `JSONPResult` that inherits from `JsonResult`
+
 ```csharp
 public class JsonpResult : JsonResult
 {
@@ -288,7 +291,9 @@ public class JsonpResult : JsonResult
     }
 }
 ```
+
 * An alternative to JSONP is to check the request's `Origin` header and return a response header `Access-Control-Allow-Origin` if it is a recognized host
+
 ```csharp
 var origin = Request.Headers["Origin"];
 if (String.IsNullOrWhiteSpace(origin) return;
@@ -298,6 +303,7 @@ if (Request.IsLocal || IsKnownOrigin(origin))
     Response.AddHeader("Access-Control-Allow-Origin", origin);
 }
 ```
+
 * The Web API is a dedicated and lightweight framework for dealing with HTTP services.  It's not to say that WCF is dead because it is still useful for non-HTTP protocols.  Web API has a different runtime environment from ASP.NET MVC to allow non MVC appliations (WebForms) to use it.  It also can be hosted anywhere and not just IIS.
 *  If you're planning to authenticate an API request using Basic Authentication, make sure it is over HTTPS
 * In Web API you enable CORS in the global.asax file by calling `config.EnableCors()` in the `Register()` method and you disable it on a controller action by adding the `DisableCors` attribute.

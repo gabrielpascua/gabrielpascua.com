@@ -13,6 +13,7 @@ tags:
 
 ### Useful Shell Commands
 <p></p>
+
 ```bash
 printenv | less # display all the environment variables
 set | less # same as above but includes shell variables sorted alphabetically
@@ -36,6 +37,7 @@ sort file1.txt file2.txt file3.txt > sorted.txt # creates 1 sorted file
 basename FILEPATH # to extract the filename from a specified path
 export USER_DATE=$(date +%Y%m%d_%H%M%S) # easy date variable in .bashrc 
 ```
+
 <p></p>
 
 ### Introduction
@@ -152,7 +154,8 @@ export USER_DATE=$(date +%Y%m%d_%H%M%S) # easy date variable in .bashrc
 #### 15 – Storage Media
 * Unmounting entails moving the buffer to the device so it can be safely removed mitigating chances of corruption
 * `genisoimage -o FILENAME.iso -R -J ~/DIRECTORY` creates a disc image from a directory
-* Mounting an imag
+* Mounting an image
+
 ```bash
 mkdir /mnt/iso_image    # creates a mount point
 mount -t iso9660 -o loop FILENAME.iso /mnt/iso_image
@@ -253,6 +256,7 @@ HERETOKEN
 
 #### 26 – Top-Down Design
 * Shell functions
+
 ```bash
 function NAME_OF_FUNCTION { 
     commands #at least 1 command
@@ -357,6 +361,7 @@ echo $int1
 
 #### 31 – Flow Control: Branching With case
 * Case example
+
 ```bash
 cd ~/Downloadss
 
@@ -417,6 +422,7 @@ done
 
 #### 35 – Arrays
 * Declaring arrays
+
 ```bash
 a[0] = 1
 
@@ -432,6 +438,7 @@ e=([0]=Jan [1]=Feb [2]=Mar)
 ```
 
 * Printing array contents
+
 ```bash
 animals=("a dog" "a cat" "a fish")
 
@@ -453,6 +460,7 @@ for i in "${animals[@]}"; do echo $i; done
 * `a_sorted=($(for i in "${a[@]}"; do echo $i; done | sort))` sorts an array into a new one
 * Use `unset ARRAY` to delete an array or `unset 'ARRAY[INDEX]'` to delete an item - quoted to prevent expansion
 * Newer bash versions support associated arrays
+
 ```bash
 declare -A colors
 colors["red"]="#ff0000"

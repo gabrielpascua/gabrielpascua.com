@@ -9,7 +9,7 @@ tags:
 ---
 
 #### Math Functions
-<p></p>
+
 ```javascript
 var arr = [7,2,3,4];
 var total = arr.reduce(function(previous, current, idx){
@@ -17,10 +17,9 @@ var total = arr.reduce(function(previous, current, idx){
 }, 4); 
 //total = 20  
 ```
-<p></p>
 
 #### String Manipulation
-<p></p>
+
 ```javascript
 var words = ["hello", "world"];
 var phrase = words.reduce(function(previous, current, idx){
@@ -28,10 +27,9 @@ var phrase = words.reduce(function(previous, current, idx){
 }, "Hi"); 
 //phrase = "Hi hello world"
 ```
-<p></p>
 
 #### Grouping Results
-<p></p>
+
 ```javascript
 var cities = [{name: 'NY'}, {name: 'NY'}, {name: 'LA'}]
     .reduce(function(accumulator, current, idx){
@@ -44,10 +42,9 @@ var cities = [{name: 'NY'}, {name: 'NY'}, {name: 'LA'}]
     }, {});
 //cities = {"NY":2,"LA":1}
 ```
-<p></p>
 
 #### Get Unique Values From a Collection
-<p></p>
+
 ```javascript
 var uniques = [{name: 'NY'}, {name: 'NY'}, {name: 'LA'}]
     .reduce(function(collection, current, idx){
@@ -58,10 +55,10 @@ var uniques = [{name: 'NY'}, {name: 'NY'}, {name: 'LA'}]
     }, []);
 //uniques = ["NY","LA"]
 ```
-<p></p>
+
 
 #### Get Dupes with Closure
-<p></p>
+
 ```javascript
 var dupes = [];
 var states = [{name: 'NY'}, {name: 'NY'}, {name: 'CA'}]

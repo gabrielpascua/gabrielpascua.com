@@ -10,7 +10,7 @@ tags:
 
 
 ### npm Packages
-<p></p>
+
 ```bash
 npm install -g grunt-cli
 npm install --save-dev grunt
@@ -21,11 +21,8 @@ npm install grunt-contrib-uglify --save-dev
 npm install grunt-contrib-cssmin --save-dev
 ```
 
-<p>&nbsp;</p>
-
-
 ### Grunt Configuration (Gruntfile.js || Gruntfile.coffee)
-<p></p>
+
 ```javascript
 module.exports = function(grunt) {
 

@@ -11,7 +11,7 @@ tags:
 ---
 
 ### External Links
-<p></p>
+
 * Book:  [http://www.apress.com/us/book/9781484203989](http://www.apress.com/us/book/9781484203989)
 * Source:  [https://github.com/Apress/pro-asp.net-core-mvc](https://github.com/Apress/pro-asp.net-core-mvc)
 * ASP.NET on a Mac:  [https://docs.microsoft.com/en-us/aspnet/core/tutorials/your-first-mac-aspnet](https://docs.microsoft.com/en-us/aspnet/core/tutorials/your-first-mac-aspnet)
@@ -39,6 +39,7 @@ tags:
 * MVC on a Mac or Ubuntu 16.04
     - Install the [prerequisites](https://www.microsoft.com/net/core#macos)
     - [Use yo](https://docs.microsoft.com/en-us/aspnet/core/tutorials/your-first-mac-aspnet) to create your project files but install the npm libraries locally.  You must be using at least node 6.9.1 to run the application.
+
 ```bash
 npm install --save-dev yo generator-aspnet bower
 ./node_modules/.bin/yo aspnet
@@ -47,8 +48,10 @@ dotnet restore
 dotnet build #optional, build will also happen when it's run
 dotnet run
 ```
+
 * Inside `project.json`, under `dependencies`, use type `build` if you want your referenced library to be only available in development.  [Full reference for project.json here](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/project-json)
 * Basic configuration to create an MVC Application  
+
 ```csharp
 //Add the .NET libraries in package.json
 "Microsoft.AspNetCore.Mvc" : "1.1.0"
@@ -59,6 +62,7 @@ services.AddMvc();
 //Setup default configuration in Startup.cs > Configure
 app.UseMvcWithDefaultRoute();
 ```
+
 * Add `Microsoft.AspNetCore.Razor.Tools` as a build dependency in your project to have intellisense in views
 * There are [tag attribute helpers](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro) that can help you wire your markup to the MVC elements
 * Whenever possible, use the generated URL’s instead of hard-coding it to allow links to update automatically when switching to a different routing format
@@ -86,13 +90,16 @@ app.UseMvcWithDefaultRoute();
 #### 4. Essential C# Features
 * View files are case sensitive
 * Null conditional operator - the variable that you’re assigning this to must be nullable as in the `price` variable below
+
 ```csharp
 string name = p?.Name;
 decimal? price = p?.Price;
 string sibling = p?.Sibling?.Name; //where Sibling is an object
 string printedName = p?.Name ?? "Unknown"; //where ?? is the null coalescing operator
 ```
+
 * Automatically Implemented Property Initializers - allows values to be set without using the constructor
+
 ```csharp
 public class MyClass
 {
@@ -108,10 +115,12 @@ public class MyClass
   }
 }
 ```
+
 * String interpolation `string message = $"Hello {name}"`, note that the assignment starts with `$` and where `name` is a string variable
 * Object initializers `Person p = new Person { First="John", Last="Doe" };`
 * Collection initializers `string[] people = new string[] { "Alice", "Bob", "Charlie" }`
 * Index initializers in collections
+
 ```csharp
 Dictionary <string, Person> people = new Dictionary<string, Person>
 {
@@ -120,11 +129,13 @@ Dictionary <string, Person> people = new Dictionary<string, Person>
     … 
 }
 ```
+
 * When your return value is an `IEnumerable`, you can `yield return` items in a collection and still be a valid return value.  [Example](https://msdn.microsoft.com/en-us/library/9k7k7cf0.aspx)
 * In a lambda expresssion, `=>` is read as "goes to"
 * A method with a single statement can be written as a lambda expression as in `bool beforeNoon => Hour <= 12`
 * The `Task` class represents an asynchronous work in .NET
 * When using `async-await`, you treat the result of an asynchronous method as if it were a regular variable return value but still a `Task` instance.
+
 ```csharp
 public static async Task<long?> GetPageLengthAsync()
 {
@@ -133,7 +144,9 @@ public static async Task<long?> GetPageLengthAsync()
     return httpResponse.Content.Headers.ContentLength;
 }
 ```
+
 * Use `nameof`to get the string name of a variable, type, or method - [MSDN](https://msdn.microsoft.com/en-us/library/dn986596.aspx)  
+
 ```csharpWriteLine(nameof(person.Address.ZipCode)); // prints "ZipCode"```
 <p></p>
 
@@ -149,6 +162,7 @@ public static async Task<long?> GetPageLengthAsync()
 * Use the `Start Without Debugging` option from the `Debug` menu in Visual Studio to recompile your class files as soon as an HTTP request comes in.
 * Set `app.UseDeveloperExceptionPage();` in `StartUp.cs > Configure()` to enable developer exception pages.
 * Use BrowserLink to control how browser(s) refresh your application changes.  Set these lines to enable it
+
 ```csharp
 //Add the library in project.json
 "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0"
@@ -156,7 +170,9 @@ public static async Task<long?> GetPageLengthAsync()
 //Enable in StartUp.cs’s Configure method
 app.UseBrowserLink();
 ```
+
 * Enable static file (such as css and javascript) delivery under the `wwwroot` folder
+
 ```csharp
 //Add the library in project.json
 "Microsoft.AspNetCore.StaticFiles": "1.0.0"
@@ -164,7 +180,6 @@ app.UseBrowserLink();
 //Enable in StartUp.cs’s Configure method
 app.UseStaticFiles();
 ```
-<p></p>
 
 #### 7. Unit Testing MVC Applications
 * Unit Testing frameworks for MVC Core application  
@@ -177,6 +192,7 @@ app.UseStaticFiles();
     - [NSubstitue](http://nsubstitute.github.io/)  
     - [FakeItEasy](https://github.com/FakeItEasy/FakeItEasy)  
 * Common convention on folder structure for an application with a unit test project using Visual Studio Solution folders
+
 ```
   MySolution
     |__ src
@@ -184,6 +200,7 @@ app.UseStaticFiles();
     |__ test
           |__ MySolution.Tests
 ```
+
 * The name of the test method should describe what the test does, e.g. `CanUpdateRecord()`
 * The class name of the Unit Test follows the same name as the entity being tested, appended with `Tests`, e.g. `RecordTests`
 * The most commonly used assertions in xUnit are `Equal`, `NotEqual`, `True`, `False`, `IsType`, `IsNotType`, `IsNull`, `IsNotNull`, `InRange`, `NotInRange`, `Throws`
@@ -192,6 +209,7 @@ app.UseStaticFiles();
 
 #### 8. SportsStore: A Real Application
 * How to use a json configuration file in the `StartUp.cs` file
+
 ```csharp
 //public property 
 IConfiguration Configuration;  //Microsoft.Extensions.Configuration.IConfiguration
@@ -213,6 +231,7 @@ public void ConfigureServices()
     string helloWorld = Configuration["Root:Child"];
 }
 ```
+
 * A `/Models/Infrastructure` folder is used to house application plumbing code that do not belong to any domain like tag helper classes that can be used in the Razr templates
 * The arguments for loading classes when calling `@addTagHelper` from `_ViewImports.cshtml` follows the order of Fully Qualified Name, Assembly Name, e.g. `@addTagHelper SampleApp.ProjectFolderForTagHelpers.*, SampleApp`
 <p></p>
@@ -224,6 +243,7 @@ public void ConfigureServices()
 
 #### 10. Completing the Cart
 * The `ShoppingCart` class reads and writes into a in-memory session.  These services are added in the `ConfigureServices()` method of the `Startup` class.
+
 ```csharp
 // Every `Cart` request checks the session cart first
 services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
@@ -232,6 +252,7 @@ services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
 // This interface is a child property of the SessionCart class
 services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 ```
+
 * [Other distributed caching implementations](https://github.com/aspnet/Caching/tree/dev/src) at the moment are Redis and Sql Server.  [Distributed caching](https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed) provides coherent storage and is independent from web server restarts.
 * Redis is the popular option.  It’s different from NoSql databases like MongoDb in that Redis is a key-value store while the rest are document stores.
 <p></p>
@@ -279,6 +300,7 @@ watch run`
 #### 15. URL Routing
 * Convention-based routing is pattern matching using the Startup file.  Attribute-based routing is decorating controller classes with your preferred routes.  They can be mixed in your MVC application.
 * Advanced constraints:
+
 ```csharp
 // Regular Expressions
 app.UseMvc(routes => {
@@ -292,6 +314,7 @@ template: "{controller=Home}/{action=Index}/{id:range(10,20)?}");
 // Combined constraints
 template: "{controller=Home}/{action=Index}/{id:alpha:minlength(6)?}");
 ```
+
 * You can define your own route constraint by implementing `IRouteConstraint`
 * In attribute-based routing, a declaration of `[Route("[controller]/MyAction")]` means that the value of `[controller]` is the same name of the controller class where it was declared.
 <p></p>
@@ -310,8 +333,9 @@ template: "{controller=Home}/{action=Index}/{id:alpha:minlength(6)?}");
 <p></p>
 
 #### 18. Dependency Injection
-![Integrated DI Container](/img/integrated-mvc-di-container.svg)
-<p></p>
+
+![Integrated DI Container](/img/integrated-mvc-di-container.svg)  
+
 * [Dependency Injection in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection)
 * Dependency Injection is a strategy with strong backing from the Dependency Inversion principle to decouple class relationships typically through the use of interfaces.  The main DI elements are (1) a class that takes an interface as a constructor argument and (2) a DI container mapping the abstract to the concrete class.  In the MVC context it requires:
     - A controller with a constructor that accepts an Interface `IFoo` where the dependency is used.  Additional arguments must have default values otherwise compilation will fail
@@ -345,6 +369,7 @@ template: "{controller=Home}/{action=Index}/{id:alpha:minlength(6)?}");
 
 #### 20. API Controllers
 * You can structure your API controller routes by decorating your actions with `[HttpGet("id")]` attributes.
+
 ```csharp
 // Assuming the controller has a base route of /api
 
@@ -354,6 +379,7 @@ public string GetById(int id) => "Id = " + id;
 ```
 
 * JSON is the default return format for objects but you can use the `Microsoft.AspNetCore.Mvc.Formatters.Xml` to serve xml negotiated content.
+
 ```csharp
 // project.json -> dependencies section
 "Microsoft.AspNetCore.Mvc.Formatters.Xml" : "1.1.1"
@@ -377,6 +403,7 @@ Invoke-WebRequest `
     - `[Produces("applicatiion/json", "application/xml")]` to whitelist supported content
     - `[Consumes("application/json")]` to restrict submitted data.  Use this together with a non-HttpGet attribute and - `public string TestMyClass([FromBody] MyClass myClassInstance)` method argument.
 * The following options will allow you to return a 406 - Not Acceptable response to the client if the application does not support the requested content type
+
 ```csharp
 // Startup.cs -> ConfigureServices()
 services.AddMvc().AddMvcOptions(opts => {
@@ -385,6 +412,7 @@ services.AddMvc().AddMvcOptions(opts => {
 });
 
 ```
+
 * [Using filters to validate your model in an API](https://msdn.microsoft.com/en-us/magazine/mt767699.aspx)
 * [API versioning using filters](http://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx)
 <p></p>
@@ -460,6 +488,7 @@ Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/i
 * A claim is any property the user has that can be used to authorize his request.  .NET Core Identity has its own built in set of claims but you can set your own or derive it from an external authentication.
 * Role based authentication tends to get out of control over time - user roles pile up the longer they work on an application. Claims based on the other hand allows you to have fine-grained control over a multitude of Identity properties (including roles) you can use in combination to authorize a user.
 * Claims work in conjunction with Policies.  Once you have it setup in your Startup file, you can then use the `Authorize` attribute to decorate your controller (to cover all actions) or your controller action for specificity.
+
 ```csharp
 //Startup.cs
 public void ConfigureServices(IServiceCollection services) 
@@ -476,6 +505,7 @@ public void ConfigureServices(IServiceCollection services)
 [Authorize(Policy = "DCUsers")]
 public IActionResult Index() => { ... }
 ```
+
 * [Custom Policy Based Requirements](https://docs.microsoft.com/en-us/aspnet/core/security/authorization/policies)
 <p></p>
 

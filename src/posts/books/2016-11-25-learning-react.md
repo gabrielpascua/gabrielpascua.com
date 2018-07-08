@@ -24,6 +24,7 @@ tags:
 ### 3. Components in React
 * A relatable point here is that the author suggests that we've been sloppy about our markup.  We don't tolerate repetitive code on our scripts but we're ok if it's on the UI.  React components try to address this by promoting smaller, reusable components that can be combined with other components.
 * Creating a simple component that you can pass to a `ReactDOM.render()` method
+
 ```javascript
 let MyComponent = React.createClass({
   render: function(){
@@ -31,6 +32,7 @@ let MyComponent = React.createClass({
   }
 });
 ```
+
 * Function `arguments` are the equivalent of `properties|this.props` in a React component.  The value of these properties are then used as attributes. 
 * You can omit the quotes when using a component property as a JSX attribute e.g. `<a href={this.props.link}>{this.props.text}</a>`
 * Components have a built in `this.props.children` element that allows you to access items inside your component like the `<p>` tag in `<Component><p>Test</p></Component/>`
@@ -42,6 +44,7 @@ let MyComponent = React.createClass({
 
 ### 5. Creating Complex Components
 * Passing properties from parent to children requires setting it at the parent level and the children having the property with the same name
+
 ```javascript
 // Parent Component rendering
 ReactDOM.render(
@@ -62,10 +65,12 @@ let ChildComp = React.createClass({
   }
 });
 ```
+
 <p></p>
 
 ### 6. Transferring Properties (Props)
 * Another way to pass down properties when you're using Babel is to use the ES6 spread operator.  The spread operator standard is limited to arrays and iterators but React and Babel extended it to support objects.  Chapter 5's example can be improved as:
+
 ```javascript
 // Parent Component rendering
 ReactDOM.render(
@@ -86,11 +91,13 @@ let ChildComp = React.createClass({
   }
 });
 ```
+
 <p></p>
 
 ### 7. Meet JSX—Again!
 * Comments are written like `{/* */}`
 * You can assign a React component to a variable
+
 ```javascript
 var colorComponent = <Color hex="#2F004F"></Color>;
 ReactDOM.render(
@@ -98,6 +105,7 @@ ReactDOM.render(
   document.querySelector("#container")
 );
 ```
+
 <p></p>
 
 ### 8. Dealing with State
@@ -118,6 +126,7 @@ ReactDOM.render(
 * You deal with `SyntheticEvent` in react and not the usual DOM Event (`MouseEvent`, `KeyboardEvent`, etc..).  It is normalized for [cross-browser compatibility](https://facebook.github.io/react/docs/events.html) by wrapping the native DOM event.
 * You cannot `return false` for a component to ignore an event. Use `preventDefault()` to achieve this.
 * You can't call a parent component's event handler function directly from a child component because React components are only wrappers for DOM elements.  You can get around this by setting the event handler call as a child component property.
+
 ```javascript
 class Counter extends React.Component {
     render(){
@@ -158,7 +167,9 @@ ReactDOM.render(
     document.getElementById('root')
 );
 ```
+
 * Listening for custom events requires the use of `addEventListener` inside `componentDidMount`.  It is also important to remove the event listener at `componentWillUnmount` so that no trace of event handling is left when the component is destroyed. 
+
 ```javascript
 componentFunction = () => {
   //This block is the property initializer syntax.
@@ -172,6 +183,7 @@ componentWillUnmount(){
   window.removeEventListener('customEvent', this.componentFunction);
 }
 ```
+
 * The value of `this` is always the instance of the React component
 * You can use the [property initializer syntax](https://facebook.github.io/react/docs/handling-events.html) to avoid having to call `bind` on your component function calls.
 * React doesn't attach event handlers to a specific DOM element, rather it has one event handler attached at the root of the document resulting in an optimized event handler code???
@@ -192,6 +204,7 @@ componentWillUnmount(){
 ### 13. Creating a Single-Page App Using React Router
 * `import { Router, Route, Link, browserHistory } from 'react-router'` - useful classes to import from React Router
 * Typical react routing configuration
+
 ```javascript
 ReactDOM.render((
   <Router history={browserHistory}>
@@ -205,6 +218,7 @@ ReactDOM.render((
   </Router>
   ), document.querySelector('body'));
 ```
+
 * Useful links
     - [React Router from React Training](https://github.com/ReactTraining/react-router)
     - [Route Matching from React Training](https://github.com/ReactTraining/react-router/blob/master/docs/guides/RouteMatching.md)
@@ -218,6 +232,7 @@ ReactDOM.render((
     - [Babel](https://babeljs.io/) to transpile JSX and ES6 features
     - [Webpack](https://webpack.github.io/) to bundle your modules
 * Folder structure for the example project
+
 ```
 root
 |_dev
@@ -229,6 +244,7 @@ index.html
 package.json
 webpack.config.js
 ```
+
 * [Recommended Setup](https://facebook.github.io/react/docs/installation.html) from Facebook
 * [Babel, React and Grunt](https://php.quicoto.com/use-babel-to-compile-react-jsx-with-grunt/)
 * [ReactJS.NET](https://reactjs.net/)

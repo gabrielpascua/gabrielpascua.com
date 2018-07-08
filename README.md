@@ -10,16 +10,4 @@ gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world
 `gatsby develop`
 
 ## To Do's
-
-* Fix the code formatting for:  
-  * http://localhost:8000/books/2016/05/14/docker-in-practice
-  * http://localhost:8000/books/2016/03/02/modern-web-development
-  * http://localhost:8000/books/2016/01/07/using-docker
-  * http://localhost:8000/books/2016/06/18/functional-programming-in-javaScript
-  * http://localhost:8000/books/2016/07/28/the-linux-command-line
-  * http://localhost:8000/books/2016/09/16/pro-aspnet-core-mvc
-  * http://localhost:8000/books/2016/11/25/learning-react
-  * 
-
-
-* Fix the
+  * http://localhost:8000/notes/2017/03/11/smacss-or-bem

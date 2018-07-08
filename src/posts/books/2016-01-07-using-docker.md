@@ -95,21 +95,21 @@ USER expressapp
 * `docker rm $(docker ps -aq)` to remove all stopped containers
 * Use `--link` to connect 2 images, e.g. `docker run -d -p 5000:5000 -e "ENV=DEV" --link dnmonster:dnmonster identidock`
 * Example `docker-compose.yml` file of an Express App linked to a Redis Server 
-```bash
-express_app:                 # container name
-build: .                # build from the current directory
-ports:
-    - "3300:3000"         # port forward 3000 from container to 3300 on host    
-environment: 
-    ENV: development      # set to Development environment
-volumes: 
-    - ./app:/app          # bind mount the app folder from the host
-links: 
-    - redis_server        # link app to redis via redis_server:6379
+  ```bash
+  express_app:                 # container name
+  build: .                # build from the current directory
+  ports:
+      - "3300:3000"         # port forward 3000 from container to 3300 on host    
+  environment: 
+      ENV: development      # set to Development environment
+  volumes: 
+      - ./app:/app          # bind mount the app folder from the host
+  links: 
+      - redis_server        # link app to redis via redis_server:6379
 
-redis_server:
-image: redis            # redis:3.2.4 to specify a version, else :latest
-```
+  redis_server:
+  image: redis            # redis:3.2.4 to specify a version, else :latest
+  ```
 * If you need to run multiple processes in a single container, it's best to use process managers such as supervisord or runit
 * You can extend a yml file in `docker-compose` using `extends`.  Say you have a `common.yml` file, your extending configuration will look like `extends: [\n] file: common.yml`.
 <p></p>
@@ -176,10 +176,10 @@ image: redis            # redis:3.2.4 to specify a version, else :latest
 <p class="text-center"><br /><img src="/img/elk-on-docker.svg" alt="ELK Setup with Docker Containers" /></p>
 * The linux utility `logrotate` will allow you to manage log files using different generations of archiving logs. For example, logs are moved to the father log, the old father gets compressed and moved to the grandfather, the grandfather becomes the great grandfather and the old great grand father is deleted. 
 * Get the stats on all running containers  
-{%raw%}`docker stats  $(docker inspect -f {{.Name}} $(docker ps -q))`{%endraw%}
+  `docker stats  $(docker inspect -f {{.Name}} $(docker ps -q))`
 * Docker Monitoring Tools 
-    - [cAdvisor](https://hub.docker.com/r/google/cadvisor/) (per host) 
-    - [Heapster](https://github.com/kubernetes/heapster) (cluster) 
+    - [cAdvisor](https://hub.docker.com/r/google/cadvisor/) (per host)
+    - [Heapster](https://github.com/kubernetes/heapster) (cluster)
     - [Prometheus](https://prometheus.io/) (cluster)
 <p></p>
 
@@ -241,7 +241,7 @@ image: redis            # redis:3.2.4 to specify a version, else :latest
     - System time
 * To create a secure a solution built around containers, one should assume vulnerability and build layered defenses.  Another important strategy is to provide least privilege access to processes to limit an attacker's capabilities in case of a breach.  “The more checks and boundaries you have in place, the greater the chances of stopping an attack”
 * Segregate containers by host if you have a multitenancy setup to prevent users accessing another container's data in case of a breakout.  Put containers that process sensitive information in its own host.
-* {%raw%}`docker inspect -f "{{.Image}}" $(docker ps -q)` get the ID's for all running images, and `docker images --no-trunc | grep $(docker inspect -f "-e {{.Image}}" $(docker ps -q))` for more details.  To get images base `docker inspect -f "{{.Image}}" $(docker ps -q) | xargs -L 1 docker history -q`{%endraw%}.
+* `docker inspect -f "{{.Image}}" $(docker ps -q)` get the ID's for all running images, and `docker images --no-trunc | grep $(docker inspect -f "-e {{.Image}}" $(docker ps -q))` for more details.  To get images base `docker inspect -f "{{.Image}}" $(docker ps -q) | xargs -L 1 docker history -q`.
 * Use the `LABEL`  keyword in your Dockerfile to add information about your images
 * Be specific in your Dockerfile's `FROM` instructions by using the image digest.  It will prevent unintended results when images get updated.
 * **Tips on securing container deployments**

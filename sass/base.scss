@@ -11,8 +11,12 @@ body {
   margin-right: auto;
 }
 
-h1{line-height: 1.125; font-weight: 500;}
-h2{line-height: 1.125; font-weight: 500;}
+h1{line-height: 1.125;}
+h2{line-height: 1.125;}
+
+img{
+  max-width: 100%;
+}
 
 .top-nav{
   ul {
