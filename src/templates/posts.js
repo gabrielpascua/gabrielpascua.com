@@ -1,7 +1,7 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
 import graphql from 'graphql';
-import { TopNav } from '../shared/top-nav';
+import { TopNav } from '../components/top-nav';
 
 const MetaData = ({fm}) => (
   <Helmet>

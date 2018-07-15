@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TopNav = () => (
-  <nav className="top-nav pure-g">
+  <nav className="top-nav pure-g border-bottom">
     <div className="pure-u-1">
       <ul>
         <li><a href="/">Home</a></li>

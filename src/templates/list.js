@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import { TopNav } from '../shared/top-nav';
+import { TopNav } from '../components/top-nav';
 
 const NavLink = props => {
   if (!props.test) {

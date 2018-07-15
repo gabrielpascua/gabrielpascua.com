@@ -1,3 +1,7 @@
+@import "./sticky-footer";
+@import "./top-nav";
+@import "./utilities";
+
 body {
   color: #444;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -5,26 +9,13 @@ body {
   line-height: 1.725;
 }
 
-.container{
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-h1{line-height: 1.125;}
-h2{line-height: 1.125;}
+h1{line-height: 1.125; color: tomato;}
+h2{line-height: 1.125; color: tomato;}
 
 img{
   max-width: 100%;
 }
 
-.top-nav{
-  ul {
-    list-style: none;
-  }
-
-  li{
-    float: left;
-    margin: 0 15px;
-  }
+a {
+  color: olive;
 }

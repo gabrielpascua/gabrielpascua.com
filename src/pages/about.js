@@ -1,6 +1,6 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
-import {TopNav} from '../shared/top-nav';
+import {TopNav} from '../components/top-nav';
 
 const MetaData = () => (
   <Helmet>
