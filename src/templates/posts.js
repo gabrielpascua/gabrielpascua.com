@@ -1,7 +1,7 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
 import graphql from 'graphql';
-import { TopNav } from '../components/top-nav';
+// import { TopNav } from '../components/top-nav';
 
 const MetaData = ({fm}) => (
   <Helmet>
@@ -14,9 +14,11 @@ export default ({data}) => {
   return (
     <div>
       <MetaData fm={post.frontmatter} />
-      <TopNav />
-      <h1>{post.frontmatter.title}</h1>
-      <div className="markdown" dangerouslySetInnerHTML={{ __html: post.html }} />
+      {/* <TopNav /> */}
+      <div className="container content">
+        <h1 className="title">{post.frontmatter.title}</h1>
+        <div className="markdown" dangerouslySetInnerHTML={{ __html: post.html }} />
+      </div>
     </div>
   );
 };

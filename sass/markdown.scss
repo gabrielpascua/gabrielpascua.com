@@ -2,4 +2,15 @@
   h3{line-height: 1.2;}
   h4{line-height: 1.2;}
   h5{line-height: 1.2;}
+
+  table {
+    margin-bottom: 30px;
+  }
+
+  td,
+  th{
+    border: 1px solid #ddd;
+    padding: 5px;
+    vertical-align: top;
+  }
 }

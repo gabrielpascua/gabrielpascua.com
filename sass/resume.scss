@@ -1,0 +1,56 @@
+.resume {
+
+  padding-top: 30px;
+
+  h1 {
+    font-size: 3em;
+    letter-spacing: 3px;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .text-normal {
+    font-weight: normal;
+  }
+
+  h3,
+  h4,
+  h5,
+  p {
+    margin-top: 0;
+  }
+
+  h4,
+  h5{
+    line-height: 1.25;
+    margin-bottom: 5px;
+  }
+
+  h5 {
+    color: orange;
+  }
+
+  p{
+    line-height: 1.25;
+  }
+
+  .work-history{
+
+    &:first-of-type{
+      margin-top: 60px;
+    }
+
+    &:last-of-type{
+      margin-bottom: 90px;
+    }
+
+    padding-top: 45px;
+    padding-bottom: 45px;
+
+    p:last-of-type{
+      margin-bottom: 0;
+    }
+  }
+
+}

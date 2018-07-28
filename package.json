@@ -17,6 +17,7 @@
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-json": "^1.0.20",
     "gatsby-transformer-remark": "^1.7.44",
+    "moment": "^2.22.2",
     "node-sass": "^4.9.0",
     "prismjs": "^1.15.0",
     "purecss": "^1.0.0",

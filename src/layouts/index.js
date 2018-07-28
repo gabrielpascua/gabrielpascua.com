@@ -3,9 +3,10 @@ import 'purecss/build/pure-min.css';
 import '../../sass/base.scss';
 import '../../sass/markdown.scss';
 import 'prismjs/themes/prism-coy.css'; // syntax highlighting
+import '../../sass/resume.scss';
 
 export default ({ children }) => (
-  <div className="container">
+  <main role="main">
     {children()}
-  </div>
+  </main>
 );

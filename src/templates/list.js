@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import { TopNav } from '../components/top-nav';
+// import { TopNav } from '../components/top-nav';
 
 const NavLink = props => {
   if (!props.test) {
-    return <Link to={props.url}>{props.text}</Link>;
+    return <Link to={props.url} className={props.className}>{props.text}</Link>;
   } else {
-    return <span>{props.text}</span>;
+    return null;
   }
 };
 
@@ -26,22 +26,28 @@ const IndexPage = ({ data, pathContext }) => {
 
   return (
     <div>
-      <TopNav />
-      <h4>{index} of {pageCount} Pages</h4>
-      <ol>
-        {group.map(({ node }) => (
-          <li key={node.fields.slug}>
-            <Link to={'/' + node.fields.slug}>
-              {node.frontmatter.title}
-            </Link>
-          </li>
-        ))}
-      </ol>
-      <div className="previousLink">
-        <NavLink test={first} url={previousUrl} text="Go to Previous Page" />
-      </div>
-      <div className="nextLink">
-        <NavLink test={last} url={nextUrl} text="Go to Next Page" />
+      {/* <TopNav /> */}
+      <div className="container content">
+        <h1 className="title">
+          {additionalContext.category}
+        </h1>
+        <ul>
+          {group.map(({ node }) => (
+            <li key={node.fields.slug}>
+              <Link to={'/' + node.fields.slug}>
+                {node.frontmatter.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <br />
+        <br />
+        <p>
+          <NavLink className="mr-1 muted" test={first} url={previousUrl} text="Previous" />
+          <NavLink className="muted" test={last} url={nextUrl} text="Next" />
+          <br />
+          <small className="muted">Page {index} of {pageCount}</small>
+        </p>
       </div>
     </div>
   );

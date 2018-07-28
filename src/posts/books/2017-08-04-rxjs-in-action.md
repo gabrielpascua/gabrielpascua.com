@@ -12,7 +12,6 @@ tags:
 ---
 
 ### Part 1-1: Thinking Reactively
-<p></p>
 **Handling Asynchronous calls is hard...**  
 * Callback function - less ideal because of callback hell, creates temporal (time) dependency when handling multiple async resources
 * Event Emitters - good for DOM, lessens callback hell, still creates temporal dependency on multiple async resources
