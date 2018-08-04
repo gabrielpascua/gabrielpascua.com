@@ -3,11 +3,7 @@
   padding-top: 30px;
 
   h1 {
-    font-size: 3em;
-    letter-spacing: 3px;
-    line-height: 1;
-    text-align: center;
-    text-transform: uppercase;
+    margin-bottom: 90px;
   }
 
   .text-normal {
@@ -27,10 +23,6 @@
     margin-bottom: 5px;
   }
 
-  h5 {
-    color: orange;
-  }
-
   p{
     line-height: 1.25;
   }
@@ -42,7 +34,7 @@
     }
 
     &:last-of-type{
-      margin-bottom: 90px;
+      margin-bottom: 30px;
     }
 
     padding-top: 45px;

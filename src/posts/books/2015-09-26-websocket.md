@@ -12,7 +12,7 @@ tags:
 ---
 
 ### Chapter 8. WebSocket Protocol
-<p>&nbsp;</p>
+
 ![WebSocket Communication](/img/WebSockets.svg)
 
 <p>&nbsp;</p>

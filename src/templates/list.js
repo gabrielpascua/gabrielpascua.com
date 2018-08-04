@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
-// import { TopNav } from '../components/top-nav';
+import PageTitle from '../components/page-title';
 
 const NavLink = props => {
   if (!props.test) {
@@ -26,11 +26,8 @@ const IndexPage = ({ data, pathContext }) => {
 
   return (
     <div>
-      {/* <TopNav /> */}
       <div className="container content">
-        <h1 className="title">
-          {additionalContext.category}
-        </h1>
+        <PageTitle text={additionalContext.category} />
         <ul>
           {group.map(({ node }) => (
             <li key={node.fields.slug}>

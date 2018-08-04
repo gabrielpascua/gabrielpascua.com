@@ -10,14 +10,11 @@ body {
 }
 
 .footer {
-  background-color: tomato;
-  color: rgba(255,255,255,.5);
   font-size: 75%;
   grid-row-end: 3;
   grid-row-start: 2;
   padding-bottom: 15px;
   padding-top: 15px;
-  text-align: center;
   
   a{
     color: inherit;

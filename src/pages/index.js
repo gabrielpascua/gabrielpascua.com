@@ -2,7 +2,8 @@ import React from 'react';
 import {Helmet} from 'react-helmet';
 import graphql from 'graphql';
 import moment from 'moment';
-// import '../../sass/resume.scss';
+import '../../sass/resume.scss';
+import PageTitle from '../components/page-title';
 
 export default class HomePage extends React.Component {
 
@@ -14,7 +15,7 @@ export default class HomePage extends React.Component {
     const {bio, history} = this.props.data.allHistoryJson.edges.pop().node;
     const formatDate = (dateObj) => {
       if(!dateObj){
-        return 'Present';
+        return 'this day';
       }
 
       const {month, day, year} = dateObj;
@@ -42,40 +43,43 @@ export default class HomePage extends React.Component {
       let endMs = getMoment(endDate);
 
       let diff = moment.duration(endMs.diff(startMs)).humanize();
+
+      if(diff.startsWith('a')){
+        diff = diff.replace('a', 1);
+      }
+
       return diff;
     };
 
-    const getBorderClass = function(index, end, start) {
-      let className = 'work-history';
+    // const getBorderClass = function(index) {
+    //   let className = 'work-history';
 
-      if(index === 0){
-        className += ' border-top';
-      }
+    //   if(index === 0){
+    //     className += ' border-top';
+    //   }
 
-      if((index+1) < history.length) {
-        className += ' border-bottom';
-      }
+    //   if((index+1) < history.length) {
+    //     className += ' border-bottom';
+    //   }
 
-      let x = duration(end, start);
-      console.log(x); //eslint-disable-line
-
-      return className;
-    };
+    //   return className;
+    // };
 
     return (
       <div className="container resume">
         <MetaData title={bio.first_name + ' ' + bio.last_name} />
-        <h1>{bio.first_name} {bio.last_name}</h1>
-        {/* <h3>Work History</h3> */}
+        {/* <h1>{bio.first_name} {bio.last_name}</h1> */}
+        <PageTitle text={bio.first_name + ' ' + bio.last_name} />
         {
           history.map((w, index) => {
             return(
-              <div key={w.position} className={getBorderClass(index, w.end_date, w.start_date)}>
+              <div key={w.position} className="work-history">
                 <h4>
                   {w.position} <span className="text-normal">at {w.company.name}</span>
                 </h4>
                 <h5>
-                  <span>{w.company.city}, {w.company.state} </span>
+                  <span>{w.company.city}, {w.company.state} </span> &ndash;&nbsp;
+                  <span>{duration(w.end_date, w.start_date)} </span>
                   <span>From {formatDate(w.start_date)} </span>
                   <span>till {formatDate(w.end_date)}</span>
                 </h5>

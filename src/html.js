@@ -7,6 +7,7 @@
  */
 
 import React from 'react';
+import FooterNav from './components/footer';
 
 let stylesStr;
 if (process.env.NODE_ENV === 'production') {
@@ -48,20 +49,7 @@ module.exports = class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
-          <footer className="footer">
-            <div className="container pure-g">
-              <div className="pure-u-1-2 text-left">
-                2018
-              </div>
-              <div className="pure-u-1-2">
-                <ul>
-                  <li className="text-right"><a href="/notes">Notes</a></li>
-                  <li className="text-right"><a href="/books">Books</a></li>
-                  <li className="text-right"><a href="/about">About</a></li>
-                </ul>
-              </div>
-            </div>
-          </footer>
+          <FooterNav />
         </body>
       </html>
     );

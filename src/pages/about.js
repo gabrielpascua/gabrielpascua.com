@@ -1,6 +1,6 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
-// import {TopNav} from '../components/top-nav';
+import PageTitle from '../components/page-title';
 
 const MetaData = () => (
   <Helmet>
@@ -11,7 +11,6 @@ const MetaData = () => (
 export default ({data}) => (
   <div className="container">
     <MetaData />
-    {/* <TopNav /> */}
-    <h1 className="title">About the Site</h1>
+    <PageTitle text="About the Site" />
   </div>
 );
