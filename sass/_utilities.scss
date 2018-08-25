@@ -36,15 +36,23 @@
   }
 }
 
-ul.inline{
-  list-style: none;
-  margin: 0;
-  padding: 0;
+ul{
+  &.inline{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  
+    li {
+      float: left;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
 
-  li {
-    float: left;
-    margin-left: 5px;
-    margin-right: 5px;
+  &.inline-block{
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -90,4 +98,8 @@ ul.inline{
   &b-1{
     padding-bottom: 1em;
   }
+}
+
+.hide {
+  display: none;
 }

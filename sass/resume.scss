@@ -1,6 +1,11 @@
 .resume {
 
   padding-top: 30px;
+  margin-bottom: 120px;
+
+  .title-container {
+    margin-bottom: 0;
+  }
 
   h1 {
     margin-bottom: 90px;
@@ -28,20 +33,24 @@
   }
 
   .work-history{
+    margin-bottom: 45px;
 
-    &:first-of-type{
-      margin-top: 60px;
-    }
-
-    &:last-of-type{
-      margin-bottom: 30px;
-    }
-
-    padding-top: 45px;
-    padding-bottom: 45px;
-
-    p:last-of-type{
+    p {
       margin-bottom: 0;
+    }
+  }
+
+  .work-location{
+    font-weight: normal;
+    font-size: 1em;
+    margin-bottom: 30px;
+    margin-top: 120px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    color: #888;
+
+    &:not(:nth-of-type(1)) {
+      margin-top: 45px;
     }
   }
 

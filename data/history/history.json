@@ -16,11 +16,16 @@
         "country": "USA"
       },
       "position": "Apps Dev Sr. Programmer Analyst",
-      "description": "As part of the Forex UI team, we create software that conforms to Citi's push architecture built around microservices",
+      "description": "Foreign Exchange programmer working on the Velocity trading application and its plugins written in Node.js, Angular and C#.",
       "start_date": {
         "month": 8,
         "day": 28,
         "year": 2017
+      },
+      "end_date": {
+        "month": 9,
+        "day": 4,
+        "year": 2018
       },
       "javascript": [
         "Node.js",
@@ -71,7 +76,7 @@
         "country": "USA"
       },
       "position": "Web Developer (Node.js / PHP)",
-      "description": "Wenner Media is the owner of <a href='http://www.rollingstone.com' target='_blank'>Rolling Stone</a>, and formerly <a href='http://www.usmagazine.com/' target='_blank'>Us Weekly</a>, <a href='http://www.mensjournal.com/' target='_blank'>Men's Journal</a> and <a href='http://www.glixel.com/' target='_blank'>Glixel</a>",
+      "description": "Part of the Engineering team that built a multi tenant Node.js CMS that ran Us Weekly, Rolling Stone, and Men's Journal websites.",
       "start_date": {
         "month": 1,
         "day": 27,
@@ -137,7 +142,7 @@
         "country": "USA"
       },
       "position": "Web Developer (C# - ASP.NET)",
-      "description": "Wenner Media at the time I was hired was the owner of <a href='http://www.rollingstone.com' target='_blank'>Rolling Stone</a>, <a href='http://www.mensjouranl.com' target='_blank'>Men's Journal</a> and <a href='http://www.usmagazine.com' target='_blank'>Us Weekly</a>.",
+      "description": "IT Department developer in charge of updating internal .NET HR, CRM, Delivery Tracking, ETL and Content Sharing systems.",
       "start_date": {
         "month": 11,
         "day": 14,
@@ -196,7 +201,7 @@
         "country": "USA"
       },
       "position": "Sr. Programmer / Analyst 1",
-      "description": "The World Trade Center Monitoring Center is Mt. Sinai Hospital's treatment and monitoring program for the first responders of the 9/11 attacks.",
+      "description": "C# .NET developer responsible for extending an Electronic Medical System for monitoring the treatment of 9/11 responders",
       "start_date": {
         "month": 3,
         "day": 8,
@@ -242,7 +247,7 @@
         "country": "USA"
       },
       "position": "Web Developer",
-      "description": "International Quality & Productivity Center (IQPC) is a global conference organizer.",
+      "description": "Developed the corporate website with Ektron CMS in C# and introduced the credit card payment system for event registrations",
       "start_date": {
         "month": 10,
         "day": 1,

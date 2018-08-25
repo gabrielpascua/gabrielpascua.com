@@ -13,7 +13,8 @@ export default class FooterNav extends React.Component {
             <a href="/">Home</a> &nbsp;
             <a href="/notes">Notes</a> &nbsp;
             <a href="/books">Books</a> &nbsp;
-            <a href="/about">About</a>
+            <a href="/about">About</a> &nbsp;
+            <a href="mailto:mail@gabrielpascua.com">Email</a> &nbsp;
           </p>
         </div>
       </footer>

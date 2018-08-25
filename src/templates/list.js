@@ -28,7 +28,7 @@ const IndexPage = ({ data, pathContext }) => {
     <div>
       <div className="container content">
         <PageTitle text={additionalContext.category} />
-        <ul>
+        <ul className="inline-block">
           {group.map(({ node }) => (
             <li key={node.fields.slug}>
               <Link to={'/' + node.fields.slug}>
