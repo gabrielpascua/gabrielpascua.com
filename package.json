@@ -5,7 +5,7 @@
   "scripts": {
     "develop": "eslint . && gatsby develop",
     "build": "gatsby build",
-    "deploy": "gatsby build --prefix-links && gh-pages -d public",
+    "deploy": "gatsby build --prefix-links",
     "serve": "eslint . && gatsby serve"
   },
   "dependencies": {
