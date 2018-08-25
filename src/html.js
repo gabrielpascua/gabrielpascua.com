@@ -34,10 +34,9 @@ module.exports = class HTML extends React.Component {
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-          />
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-82046772-1"></script>
+          <script src="/js/gtag.js"></script>
           {this.props.headComponents}
           {css}
         </head>
