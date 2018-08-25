@@ -18,6 +18,11 @@ img{
 
 a {
   color: #555;
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    color: #222;
+  }
 }
 
 ul,ol{
