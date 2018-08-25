@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "develop": "eslint . && gatsby develop",
-    "build": "eslint . && gatsby build",
+    "build": "gatsby build",
+    "deploy": "gatsby build --prefix-links && gh-pages -d public",
     "serve": "eslint . && gatsby serve"
   },
   "dependencies": {
