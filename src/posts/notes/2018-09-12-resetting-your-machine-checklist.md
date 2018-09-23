@@ -31,7 +31,7 @@ tags:
 * Set the display to scale at 200% to match Windows
 * Update grub resolution `sudo gedit /etc/default/grub` to `GRUB_GFXMODE=800x600x32`
 * Download Chrome - Create Incognito Shortcut, Add UBlock Origin, Last Pass
-* Start Chrome in incognito `sudo gedit google-chrome.desktop` new window action to `Exec=/usr/bin/google-chrome-stable --incognito`
+* Start Chrome in incognito `sudo gedit /usr/share/applications/google-chrome.desktop` new window action to `Exec=/usr/bin/google-chrome-stable --incognito`
 * Firefox, start in Private mode, UBlock Origin, Last Pass, Epub Reader
 * Visual Studio Code - https://code.visualstudio.com/
 * `sudo apt-get install curl`
