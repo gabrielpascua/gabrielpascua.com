@@ -12,9 +12,10 @@ module.exports = {
         start_url: '/',
         background_color: '#ed143d',
         theme_color: '#ed143d',
-        icon: 'src/images/grp.png',
+        icon: 'static/img/grp.png',
       },
     },
     'gatsby-plugin-offline',
+    'gatsby-plugin-sass',
   ],
 };

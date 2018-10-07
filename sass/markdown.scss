@@ -1,0 +1,48 @@
+.markdown {
+  h2:not(:nth-of-type(1)) {
+    margin-top: 75px;
+  }
+
+  h3{
+    line-height: 1.2;
+    margin-top: 45px;
+  }
+
+  h4{line-height: 1.2;}
+  h5{line-height: 1.2;}
+
+  p {
+    line-height: 1.5;
+  }
+
+  table {
+    margin-bottom: 30px;
+  }
+
+  td,
+  th{
+    border: 1px solid #ddd;
+    padding: 5px;
+    vertical-align: top;
+  }
+
+  li {
+    line-height: 1.25;
+    margin-bottom: 10px
+  }
+
+  pre {
+    border-radius: 10px;
+  }
+
+  .gatsby-highlight {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .language-text {
+    background: #eaeaea;
+    color: #111;
+    font-family: monospace;
+  }
+}
