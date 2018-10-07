@@ -1,0 +1,152 @@
+{
+  "awards": [],
+  "basics": {
+    "name": "Gabriel Pascua",
+    "label": "Full Stack Web Developer",
+    "picture": "https://media-exp2.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAmPAAAAJGZjYjU2MWQ5LWZjYzUtNGE5ZS1iZWRiLTA4MzcxODYxZDljMw.jpg",
+    "email": "mail@gabrielpascua.com",
+    "phone": "347-644-7272",
+    "website": "https://gabrielpascua.com",
+    "summary": "I have over 10 years of software engineering experience with the greater part focused on web development.  I have written web applications and API's, designed UI's, set up automated systems, and managed projects from planning to completion. The range of businesses I've been on include Financial Tech, Media Advertising, Medical, Startup and Outsorcing companies.",
+    "location": {
+      "address": "Greater New York area",
+      "postalCode": "NY 10028",
+      "city": "New York City",
+      "countryCode": "US",
+      "region": "New York"
+    },
+    "profiles": [{
+      "network": "LinkedIn",
+      "username": "gabrielpascua",
+      "url": "https://www.linkedin.com/in/gabrielpascua/"
+    }, {
+      "network": "GitHub",
+      "username": "gabrielpascua",
+      "url": "https://github.com/gabrielpascua"
+    }]
+  },
+  "education": [{
+    "institution": "University of Santo Tomas",
+    "area": "Computer Technology",
+    "studyType": "Bachelor",
+    "startDate": "2009-06-01",
+    "endDate": "2013-03-01",
+    "gpa": "",
+    "courses": []
+  }],
+  "interests": [],
+  "languages": [],
+  "publications": [],
+  "references": [],
+  "skills": [{
+    "name": "Node.js Web Development",
+    "level": "Advanced",
+    "keywords": ["Node.js","Koa","Express","Hapi","Sequelize","Passport"]
+  }, {
+    "name": ".NET Web Development",
+    "level": "Advanced",
+    "keywords": ["C#","MVC",".NET Core","ASP.NET","Entity Framework", "Rx.NET"]
+  }, {
+    "name": "Front End Web Development",
+    "level": "Advanced",
+    "keywords": ["HTML","CSS","JavaScript","Typescript","Sass","LESS","Bootstrap"]
+  }, {
+    "name": "Database Administration",
+    "level": "Intermediate",
+    "keywords": ["Postgres", "SQL Server", "Oracle", "Redis", "MongoDb"]
+  }, {
+    "name": "Single Page Applications",
+    "level": "Intermediate",
+    "keywords": ["Angular","React","Vue.js","Webpack","Grunt","Gulp","Ember","RxJS"]
+  }, {
+    "name": "Design",
+    "level": "Intermediate",
+    "keywords": ["Photoshop","Illustrator","CSS Layout and Animations","Responsive Design"]
+  }, {
+    "name": "Progressive Web Apps",
+    "level": "Intermediate",
+    "keywords": ["ServiceWorker","IndexedDb","Cache Storage","Notifications"]
+  }, {
+    "name": "Other Web Development",
+    "level": "Intermediate",
+    "keywords": ["Serverless", "Php", "Symfony", "Wordpress", "Hugo", "Jekyll"]
+  }, {
+    "name": "DevOps",
+    "level": "Intermediate",
+    "keywords": ["AWS", "Jenkins", "Codeship", "TeamCity"]
+  }],
+  "volunteer": [],
+  "work": [{
+    "company": "Citibank",
+    "startDate": "2017-8-28",
+    "endDate": "",
+    "position": "Apps Dev Sr. Programmer Analyst",
+    "summary": "As part of the Forex UI team, we create software that conforms to Citi's push architecture built around microservices",
+    "highlights": ["Working on a Forex Trading platform in a push architecture with Javascript and .NET Reactive (Rx) framework subscribers for data sources such as SignalR/WebSocket and REST services.  My development tasks vary from Angular to .NET Core, WPF and legacy system maintenance.  The influence I have on the team by far is to show that Node.js app can be hosted through IIS."],
+    "website": ""
+  }, {
+    "company": "Wenner Media - Digital",
+    "startDate": "2014-1-27",
+    "endDate": "2017-8-16",
+    "position": "Web Developer (Node.js / PHP)",
+    "summary": "Wenner Media is the owner of <a href='http://www.rollingstone.com' target='_blank'>Rolling Stone</a>, and formerly <a href='http://www.usmagazine.com/' target='_blank'>Us Weekly</a>, <a href='http://www.mensjournal.com/' target='_blank'>Men's Journal</a> and <a href='http://www.glixel.com/' target='_blank'>Glixel</a>",
+    "highlights": ["One of the main contributors for an in-house Node.js CMS that allowed the company to consolidate disparate magazine systems into a single Node.js application running on AWS with a complete CI/CD pipeline.  My main duties in the team were to build the forms module, passport authentication and concurrency resolution.  From time to time, I would also write design-driven featured pages for the magazines that leverage modern CSS features like animation, transitions, digital media, and responsive design.  My development impact on the team was building an object-oriented javascript forms module before classes were added in Node and for using functional programming constructs."],
+    "website": ""
+  }, {
+    "company": "Wenner Media - IT",
+    "startDate": "2011-11-14",
+    "endDate": "2014-1-24",
+    "position": "Web Developer (C# - ASP.NET)",
+    "summary": "Wenner Media at the time I was hired was the owner of <a href='http://www.rollingstone.com' target='_blank'>Rolling Stone</a>, <a href='http://www.mensjouranl.com' target='_blank'>Men's Journal</a> and <a href='http://www.usmagazine.com' target='_blank'>Us Weekly</a>.",
+    "highlights": ["Redesigned the international website for Rolling Stone helping users share magazine articles and assets among licensees.  I maintained all of the internal websites for the company for more than 2 years before moving to a different department.  On the infrastructure side, I migrated all code repositories from Team Foundation to git which made onboarding easier for my successor."],
+    "website": ""
+  }, {
+    "company": "Mt. Sinai School of Medicine",
+    "startDate": "2010-3-8",
+    "endDate": "2011-11-4",
+    "position": "Sr. Programmer / Analyst 1",
+    "summary": "The World Trade Center Monitoring Center is Mt. Sinai Hospital's treatment and monitoring program for the first responders of the 9/11 attacks.",
+    "highlights": ["Senior member of a small IT team that collects and processes 911 First Responders patient demographic data.  I built several form-heavy sites using an Electronic Management Records system, and generated reports through complex Oracle queries.  Technically, I guided the team on how to architect MVC applications and REST web services."],
+    "website": ""
+  }, {
+    "company": "International Quality & Productivity Center",
+    "startDate": "2007-10-1",
+    "endDate": "2010-3-3",
+    "position": "Web Developer",
+    "summary": "International Quality & Productivity Center (IQPC) is a global conference organizer.",
+    "highlights": ["This was my first exposure to 3rd party content management systems.  I was part of the early team that gave the company an online presence - writing HTML using XML-XSLT transformations.  With that I was also able to build the company’s event registration credit card processing system through Chase’s payment gateway.  Several of the website improvements I rolled out introduced the team to jQuery before it became popular."],
+    "website": ""
+  }, {
+    "company": "Phone People",
+    "startDate": "2006-6-19",
+    "endDate": "2007-8-15",
+    "position": "Web Designer",
+    "summary": "Phone People is a start-up company selling 1-800 numbers to businesses in the U.S..",
+    "highlights": ["Partnered with another designer, I compose Photoshop designs, build proof-of-concept websites in HTML and javascript, demo user interactions in flash, and manage the implementation of designs with the remote development team in India."],
+    "website": ""
+  }, {
+    "company": "PPMC / Wiseguy Technologies",
+    "startDate": "2005-6-2",
+    "endDate": "2006-4-14",
+    "position": "Classic ASP Developer",
+    "summary": "PPMC manages medical claims from several primary providers with a dedicated IT department called Wiseguy Techonologies.",
+    "highlights": ["The senior members of the team gave me the task of maintaining several in-house e-commerce websites - from the storefront to credit card processing, shipping and tracking.  I also help our marketing director come up with Photoshop designs of websites that he can pitch to prospects."],
+    "website": ""
+  }, {
+    "company": "Information Technology and Customer Care Inc. (ITTCI)",
+    "startDate": "2004-11-1",
+    "endDate": "2005-4-1",
+    "position": "ASP Programmer",
+    "summary": "ITTCI is a Philippine outsourcing company with Customer Support and Web Development services for clients in Canada and Utah.",
+    "highlights": ["I migrated an MS Access database into SQL and complement it with a website that manages appointments for a Dental office in Canada.  In between project phases, I sharpen images in Photoshop for another client."],
+    "website": ""
+  }, {
+    "company": "DFNN Group of Companies",
+    "startDate": "2003-10-1",
+    "endDate": "2004-7-1",
+    "position": "Windows Programmer",
+    "summary": "DFNN is a Philippine company specializing in SMS technology.",
+    "highlights": ["Junior developer assisting the team maintain the website and write simple SQL reports."],
+    "website": ""
+  }]
+}
