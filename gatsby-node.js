@@ -42,7 +42,8 @@ const allPostQuery = `
         },
         frontmatter{
           title,
-          date
+          date,
+          read
         }
       }
     }
@@ -57,8 +58,13 @@ const createListPages = function(result, category, fnCreatePage) {
       .filter(edge => edge.node.fields.slug.indexOf(category) === 0)
       .sort((e1, e2) => {
         // sort descending
-        let d1 = Date.parse(e1.node.frontmatter.date);
-        let d2 = Date.parse(e2.node.frontmatter.date);
+        let d1 = Date.parse(
+          e1.node.frontmatter.read || e1.node.frontmatter.date
+        );
+        let d2 = Date.parse(
+          e2.node.frontmatter.read || e2.node.frontmatter.date
+        );
+
         if (d2 > d1) {
           return 1;
         }

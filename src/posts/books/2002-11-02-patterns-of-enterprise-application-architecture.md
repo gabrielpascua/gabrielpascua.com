@@ -3,6 +3,7 @@ layout: book
 title:  "Patterns of Enterprise Application Architecture"
 excerpt: "Patterns of Enterprise Application Architecture"
 date:   2002-11-02
+read: 2018-06-24
 categories: books
 book_url: http://www.informit.com/store/patterns-of-enterprise-application-architecture-9780321127426
 book_image: /img/books-patterns-of-enterprise-application-architecture-360x451.jpg
