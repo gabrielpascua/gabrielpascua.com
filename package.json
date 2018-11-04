@@ -29,7 +29,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "eslint . && gatsby develop",
-    "deploy": "gatsby build --prefix-links",
+    "deploy": "gatsby build --prefix-paths",
     "format": "prettier --write '**/*.js'",
     "serve": "eslint . && gatsby serve"
   },

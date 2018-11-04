@@ -76,7 +76,7 @@ const createListPages = function(result, category, fnCreatePage) {
         }
       }),
     createPage: fnCreatePage,
-    pageTemplate: 'src/templates/list.js',
+    pageTemplate: 'src/templates/list.jsx',
     pageLength: pageLength,
     pathPrefix: `${category}/page`,
     buildPath: (index, pathPrefix) =>
@@ -91,7 +91,7 @@ const createContentPages = function(result, fnCreatePage) {
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     fnCreatePage({
       path: node.fields.slug,
-      component: path.resolve('./src/templates/posts.js'),
+      component: path.resolve('./src/templates/posts.jsx'),
       context: {
         // Data passed to context is available in page queries as GraphQL variables.
         slug: node.fields.slug,
