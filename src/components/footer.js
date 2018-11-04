@@ -1,14 +1,11 @@
 import React from 'react';
 
 export default class FooterNav extends React.Component {
-
-  render(){
+  render() {
     return (
       <footer className="footer">
         <div className="container">
-          <p>
-            &copy; 2018
-          </p>
+          <p>&copy; 2018</p>
           <p>
             <a href="/">Home</a> &nbsp;
             <a href="/notes">Notes</a> &nbsp;
@@ -20,5 +17,4 @@ export default class FooterNav extends React.Component {
       </footer>
     );
   }
-
 }

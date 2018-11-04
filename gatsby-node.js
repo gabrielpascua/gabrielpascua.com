@@ -2,8 +2,8 @@ const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 const createPaginatedPages = require('gatsby-paginate');
 
-exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions;
   if (node.internal.type === 'MarkdownRemark') {
     const path = createFilePath({ node, getNode, basePath: 'pages' });
     const pathRegEx = /^\/(.+)\/([\d]{4}-[\d]{2}-[\d]{2})-{1}(.+)\/$/;
@@ -20,16 +20,15 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   }
 };
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
   return new Promise((resolve, reject) => {
-    graphql(allPostQuery)
-      .then(result => {
-        createListPages(result, 'books', createPage);
-        createListPages(result, 'notes', createPage);
-        createContentPages(result, createPage);
-        resolve();
-      });
+    graphql(allPostQuery).then(result => {
+      createListPages(result, 'books', createPage);
+      createListPages(result, 'notes', createPage);
+      createContentPages(result, createPage);
+      resolve();
+    });
   });
 };
 
@@ -43,7 +42,8 @@ const allPostQuery = `
         },
         frontmatter{
           title,
-          date
+          date,
+          read
         }
       }
     }
@@ -55,23 +55,35 @@ const createListPages = function(result, category, fnCreatePage) {
   const pageLength = 10;
   createPaginatedPages({
     edges: result.data.allMarkdownRemark.edges
-      .filter((edge) => edge.node.fields.slug.indexOf(category) === 0)
+      .filter(edge => edge.node.fields.slug.indexOf(category) === 0)
       .sort((e1, e2) => {
         // sort descending
-        let d1 = Date.parse(e1.node.frontmatter.date);
-        let d2 = Date.parse(e2.node.frontmatter.date);
-        if(d2 > d1) { return 1; }
-        if(d1 > d2) { return -1; }
-        if(d2 === d1) { return 0; }
+        let d1 = Date.parse(
+          e1.node.frontmatter.read || e1.node.frontmatter.date
+        );
+        let d2 = Date.parse(
+          e2.node.frontmatter.read || e2.node.frontmatter.date
+        );
+
+        if (d2 > d1) {
+          return 1;
+        }
+        if (d1 > d2) {
+          return -1;
+        }
+        if (d2 === d1) {
+          return 0;
+        }
       }),
     createPage: fnCreatePage,
     pageTemplate: 'src/templates/list.js',
     pageLength: pageLength,
     pathPrefix: `${category}/page`,
-    buildPath: (index, pathPrefix) => index > 1 ? `${pathPrefix}/${index}` : `/${category}`,
+    buildPath: (index, pathPrefix) =>
+      index > 1 ? `${pathPrefix}/${index}` : `/${category}`,
     context: {
-      category: category
-    }
+      category: category,
+    },
   });
 };
 

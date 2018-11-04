@@ -3,6 +3,7 @@ layout: book
 title:  "Working Effectively with Legacy Code"
 excerpt: "Working Effectively with Legacy Code 1st Edition"
 date:   2002-09-22
+read: 2018-08-25
 categories: books
 book_url: https://www.barnesandnoble.com/w/working-effectively-with-legacy-code-michael-feathers/1101414704
 book_image: 

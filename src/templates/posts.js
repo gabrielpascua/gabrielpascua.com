@@ -1,22 +1,25 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
-import graphql from 'graphql';
+import { Helmet } from 'react-helmet';
+import { graphql } from 'gatsby';
 import PageTitle from '../components/page-title';
 
-const MetaData = ({fm}) => (
+const MetaData = ({ fm }) => (
   <Helmet>
     <title>{fm.title}</title>
   </Helmet>
 );
 
-export default ({data}) => {
+export default ({ data }) => {
   const post = data.markdownRemark;
   return (
     <div>
       <MetaData fm={post.frontmatter} />
       <div className="container content">
         <PageTitle text={post.frontmatter.title} />
-        <div className="markdown" dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div
+          className="markdown"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
       </div>
     </div>
   );

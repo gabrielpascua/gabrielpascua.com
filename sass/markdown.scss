@@ -6,13 +6,23 @@
   h3{
     line-height: 1.2;
     margin-top: 45px;
+    margin-bottom: 10px;
   }
 
-  h4{line-height: 1.2;}
+  h4{
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
   h5{line-height: 1.2;}
 
   p {
     line-height: 1.5;
+
+    img:only-child{
+      display: block;
+      margin: 0 auto 45px auto;
+    }
   }
 
   table {

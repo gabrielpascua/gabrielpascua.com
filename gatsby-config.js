@@ -1,17 +1,30 @@
-var path = require('path');
+const path = require('path');
 
 module.exports = {
   siteMetadata: {
     title: 'Gabriel Pascua',
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'gabrielpascua.com',
+        short_name: 'gabrielp',
+        start_url: '/',
+        background_color: '#ed143d',
+        theme_color: '#ed143d',
+        icon: 'static/img/grp.png',
+      },
+    },
+    'gatsby-plugin-offline',
     {
       // for serving json files
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'data',
         path: path.join(__dirname, 'data'),
-      }
+      },
     },
     {
       // for markdown file transformations
@@ -19,7 +32,7 @@ module.exports = {
       options: {
         name: 'posts',
         path: path.join(__dirname, './src/posts'),
-      }
+      },
     },
     'gatsby-transformer-json',
     {
@@ -32,13 +45,12 @@ module.exports = {
             options: {
               classPrefix: 'language-',
               inlineCodeMarker: null,
-              aliases: {}
-            }
-          }
-        ]
-      }
+              aliases: {},
+            },
+          },
+        ],
+      },
     },
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass'
+    'gatsby-plugin-sass',
   ],
 };
