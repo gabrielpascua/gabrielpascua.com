@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import moment from 'moment';
 import '../../sass/resume.scss';
 import PageTitle from '../components/page-title';
-
+import Layout from '../components/layout';
 export default class HomePage extends React.Component {
   constructor(props) {
     super(props);
@@ -51,35 +51,37 @@ export default class HomePage extends React.Component {
     };
 
     return (
-      <div className="container resume">
-        <MetaData title={bio.first_name + ' ' + bio.last_name} />
-        <PageTitle text={bio.first_name + ' ' + bio.last_name} />
-        {history.map((w, idx) => {
-          let showLocation = [0, 5, 7].indexOf(idx) >= 0;
-          return (
-            <div key={w.position}>
-              <h3 className={showLocation ? 'work-location' : 'hide'}>
-                {w.company.country === 'USA' ? w.company.city + ', ' : ''}
-                {w.company.state}
-                {w.company.country !== 'USA' ? ', ' + w.company.country : ''}
-              </h3>
+      <Layout>
+        <div className="container resume">
+          <MetaData title={bio.first_name + ' ' + bio.last_name} />
+          <PageTitle text={bio.first_name + ' ' + bio.last_name} />
+          {history.map((w, idx) => {
+            let showLocation = [0, 5, 7].indexOf(idx) >= 0;
+            return (
+              <div key={w.position}>
+                <h3 className={showLocation ? 'work-location' : 'hide'}>
+                  {w.company.country === 'USA' ? w.company.city + ', ' : ''}
+                  {w.company.state}
+                  {w.company.country !== 'USA' ? ', ' + w.company.country : ''}
+                </h3>
 
-              <div className="work-history" key={w.company.name}>
-                <h4>
-                  {w.position}{' '}
-                  <span className="text-normal">at {w.company.name}</span>
-                </h4>
-                <h5>
-                  <span>{duration(w.end_date, w.start_date)} </span>
-                  <span>From {formatDate(w.start_date)} </span>
-                  <span>till {formatDate(w.end_date)}</span>
-                </h5>
-                <p dangerouslySetInnerHTML={{ __html: w.description }} />
+                <div className="work-history" key={w.company.name}>
+                  <h4>
+                    {w.position}{' '}
+                    <span className="text-normal">at {w.company.name}</span>
+                  </h4>
+                  <h5>
+                    <span>{duration(w.end_date, w.start_date)} </span>
+                    <span>From {formatDate(w.start_date)} </span>
+                    <span>till {formatDate(w.end_date)}</span>
+                  </h5>
+                  <p dangerouslySetInnerHTML={{ __html: w.description }} />
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      </Layout>
     );
   }
 }

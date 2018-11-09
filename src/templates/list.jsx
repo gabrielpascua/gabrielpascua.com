@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import PageTitle from '../components/page-title';
+import Layout from '../components/layout';
 
 const NavLink = props => {
   if (!props.test) {
@@ -30,7 +31,7 @@ const IndexPage = ({ data, pageContext }) => {
   const nextUrl = `/${pathPrefix}/${index + 1}`;
 
   return (
-    <div>
+    <Layout>
       <div className="container content">
         <PageTitle text={additionalContext.category} />
         <ul className="inline-block">
@@ -56,7 +57,7 @@ const IndexPage = ({ data, pageContext }) => {
           </small>
         </p>
       </div>
-    </div>
+    </Layout>
   );
 };
 export default IndexPage;

@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import PageTitle from '../components/page-title';
+import Layout from '../components/layout';
 
 const MetaData = ({ fm }) => (
   <Helmet>
@@ -12,7 +13,7 @@ const MetaData = ({ fm }) => (
 export default ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <div>
+    <Layout>
       <MetaData fm={post.frontmatter} />
       <div className="container content">
         <PageTitle text={post.frontmatter.title} />
@@ -21,7 +22,7 @@ export default ({ data }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </div>
-    </div>
+    </Layout>
   );
 };
 
