@@ -1,3 +1,8 @@
+@import 'purecss/build/pure-min';
+@import './markdown.scss';
+@import 'prismjs/themes/prism-tomorrow'; // syntax highlighting
+@import './resume.scss';
+
 @import "./sticky-footer";
 @import "./utilities";
 

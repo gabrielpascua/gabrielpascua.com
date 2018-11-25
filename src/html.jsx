@@ -25,6 +25,7 @@ export default class HTML extends React.Component {
             async
             src="https://www.googletagmanager.com/gtag/js?id=UA-82046772-1"
           />
+          <link rel="stylesheet" href="/css/main.min.css"/>
           <script src="/js/gtag.js" />
           {this.props.headComponents}
         </head>

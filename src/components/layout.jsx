@@ -3,12 +3,6 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-import 'purecss/build/pure-min.css';
-import '../../sass/base.scss';
-import '../../sass/markdown.scss';
-import 'prismjs/themes/prism-tomorrow.css'; // syntax highlighting
-import '../../sass/resume.scss';
-
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`

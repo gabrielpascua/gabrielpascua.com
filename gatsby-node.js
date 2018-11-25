@@ -1,6 +1,8 @@
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 const createPaginatedPages = require('gatsby-paginate');
+const sass = require('node-sass');
+const fs = require('fs');
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
@@ -30,6 +32,26 @@ exports.createPages = ({ graphql, actions }) => {
       resolve();
     });
   });
+};
+
+exports.onPreBuild = () => {
+  sass.render(
+    {
+      outputStyle: 'compressed',
+      file: './sass/base.scss',
+      includePaths: ['./node_modules'],
+    },
+    (err, result) => {
+      fs.writeFile('./static/css/main.min.css', result.css, err => {
+        if (err) {
+          console.error(
+            'Sass compilation error:',
+            err
+          ); /* eslint-disable-line */
+        }
+      });
+    }
+  );
 };
 
 const allPostQuery = `
