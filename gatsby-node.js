@@ -45,9 +45,10 @@ exports.onPreBuild = () => {
       fs.writeFile('./static/css/main.min.css', result.css, err => {
         if (err) {
           console.error(
+            /* eslint-disable-line */
             'Sass compilation error:',
             err
-          ); /* eslint-disable-line */
+          );
         }
       });
     }

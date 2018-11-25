@@ -27,7 +27,7 @@ const IndexPage = ({ data, pageContext }) => {
   } = pageContext;
 
   const previousUrl =
-    index - 1 === 1 ? `/${additionalContext.category}` : (index - 1).toString();
+    index - 1 === 1 ? `/${additionalContext.category}` : `/${pathPrefix}/${index-1}`;
   const nextUrl = `/${pathPrefix}/${index + 1}`;
 
   return (
