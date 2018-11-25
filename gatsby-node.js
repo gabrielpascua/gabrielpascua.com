@@ -42,15 +42,7 @@ exports.onPreBuild = () => {
       includePaths: ['./node_modules'],
     },
     (err, result) => {
-      fs.writeFile('./static/css/main.min.css', result.css, err => {
-        if (err) {
-          console.error(
-            /* eslint-disable-line */
-            'Sass compilation error:',
-            err
-          );
-        }
-      });
+      fs.writeFileSync('./static/css/main.min.css', result.css);
     }
   );
 };
