@@ -29,11 +29,16 @@
     margin-bottom: 30px;
   }
 
+  tr:hover {
+    background: rgba(0,0,0,.035);
+  }
+  
   td,
   th{
     border: 1px solid #ddd;
     padding: 5px;
     vertical-align: top;
+    line-height: 1.25;
   }
 
   li {

@@ -28,7 +28,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "eslint . && gatsby develop",
+    "develop": "eslint . && gatsby build && gatsby develop",
     "deploy": "gatsby build --prefix-paths",
     "format": "prettier --write '**/*.js'",
     "serve": "eslint . && gatsby serve"
