@@ -10,4 +10,6 @@ gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world
 `gatsby develop`
 
 ## To Do's
-  * http://localhost:8000/notes/2017/03/11/smacss-or-bem
+* Package updates
+* Profile Update
+* Sass removal
