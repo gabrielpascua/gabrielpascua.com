@@ -18,7 +18,7 @@ export default ({ data }) => (
         <strong>Site:</strong> <a href="https://www.gatsbyjs.org/">Gatsby v2</a>
       </p>
       <p>
-        <strong>Repository:</strong>{' '}
+        <strong>Codebase:</strong>{' '}
         <a href="https://github.com/gabrielpascua/gabrielpascua.github.io">
           GitHub
         </a>
