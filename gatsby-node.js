@@ -61,6 +61,7 @@ exports.onPreBuild = () => {
       includePaths: ['./node_modules'],
     },
     (err, result) => {
+      console.error({ err }); /* eslint-disable-line */
       fs.writeFileSync('./static/css/main.min.css', result.css);
     }
   );

@@ -17,7 +17,7 @@ module.exports = {
         icon: 'static/img/grp.png',
       },
     },
-    'gatsby-plugin-offline',
+    'gatsby-plugin-remove-serviceworker',
     {
       // for serving json files
       resolve: 'gatsby-source-filesystem',
