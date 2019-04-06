@@ -345,7 +345,7 @@ export class OtherComponent({
 
 * Built-in attribute directives:
 
-```javsacript
+```javascript
 NgClass for adding or deleting css classes
 <p [ngClass]=”component.propery” />
 NgStyle for inline styling
