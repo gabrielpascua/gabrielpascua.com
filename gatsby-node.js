@@ -4,6 +4,25 @@ const createPaginatedPages = require('gatsby-paginate');
 const sass = require('node-sass');
 const fs = require('fs');
 
+const allPostQuery = `
+{
+  allMarkdownRemark {
+    edges {
+      node {
+        fields {
+          slug
+        },
+        frontmatter{
+          title,
+          date,
+          read
+        }
+      }
+    }
+  }
+}
+`;
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === 'MarkdownRemark') {
@@ -46,25 +65,6 @@ exports.onPreBuild = () => {
     }
   );
 };
-
-const allPostQuery = `
-{
-  allMarkdownRemark {
-    edges {
-      node {
-        fields {
-          slug
-        },
-        frontmatter{
-          title,
-          date,
-          read
-        }
-      }
-    }
-  }
-}
-`;
 
 const createListPages = function(result, category, fnCreatePage) {
   const pageLength = 10;
