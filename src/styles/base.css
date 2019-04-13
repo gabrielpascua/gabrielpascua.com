@@ -1,11 +1,3 @@
-@import 'purecss/build/pure-min';
-@import './markdown.scss';
-@import 'prismjs/themes/prism-tomorrow'; // syntax highlighting
-@import './resume.scss';
-
-@import "./sticky-footer";
-@import "./utilities";
-
 body {
   background-color: rgba(0,0,0,.05);
   color: #444;
@@ -24,10 +16,10 @@ img{
 a {
   color: #555;
   transition: all 0.25s ease-in-out;
+}
 
-  &:hover {
-    color: #222;
-  }
+a:hover {
+  color: #222;
 }
 
 ul,ol{
@@ -61,15 +53,15 @@ table {
   font-size: 4em;
   line-height: 1.25;
   text-transform: capitalize;
+}
 
-  &-container {
-    margin-bottom: 90px;
-    margin-top: 30px;
-  }
-
-  small {
+  .title small {
     margin-right: 20px;
   }
+
+.title-container {
+  margin-bottom: 90px;
+  margin-top: 30px;
 }
 
 .muted {

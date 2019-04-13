@@ -2,9 +2,12 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import moment from 'moment';
-import '../../sass/resume.scss';
+
 import PageTitle from '../components/page-title';
 import Layout from '../components/layout';
+
+import '../styles/resume.css';
+
 export default class HomePage extends React.Component {
   constructor(props) {
     super(props);
