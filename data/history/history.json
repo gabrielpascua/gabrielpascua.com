@@ -8,6 +8,52 @@
   "history": [
     {
       "company": {
+        "name": "Barnes & Noble Education (BNED)",
+        "address": "750 3rd Ave",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10017",
+        "country": "USA"
+      },
+      "position": "Senior Developer",
+      "description": "Lead developer building a platform aroud microservices and guiding teams to push decisions towards secure, performant and stable architecture.",
+      "start_date": {
+        "month": 9,
+        "day": 24,
+        "year": 2018
+      },
+      "end_date": {},
+      "javascript": [
+        "Node.js",
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Webpack",
+        "Express",
+        "Hapi",
+        "gulp",
+        "OAuth 2.0"
+      ],
+      "client_side": [
+        "HTML",
+        "JavaScript",
+        "TypeScript",
+        "CSS"
+      ],
+      "databases": [
+        "MySQL"
+      ],
+      "version_control": [
+        "Git on Github and BitBucket, SourceTree"
+      ],
+      "devops": [
+        "AWS",
+        "Docker",
+        "Shippable"
+      ]
+    },
+    {
+      "company": {
         "name": "Citibank",
         "address": "388 Greenwich Street",
         "city": "New York",
