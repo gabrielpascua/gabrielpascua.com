@@ -41,7 +41,7 @@
   "skills": [{
     "name": "Node.js Web Development",
     "level": "Advanced",
-    "keywords": ["Node.js","Koa","Express","Hapi","Sequelize","Passport"]
+    "keywords": ["Node.js","Koa","Express","Hapi","Sequelize","Passport","OAuth 2.0"]
   }, {
     "name": ".NET Web Development",
     "level": "Advanced",
@@ -53,11 +53,11 @@
   }, {
     "name": "Database Administration",
     "level": "Intermediate",
-    "keywords": ["Postgres", "SQL Server", "Oracle", "Redis", "MongoDb"]
+    "keywords": ["Postgres", "MySQL", "SQL Server", "Oracle", "Redis", "MongoDb"]
   }, {
     "name": "Single Page Applications",
     "level": "Intermediate",
-    "keywords": ["Angular","React","Vue.js","Webpack","Grunt","Gulp","Ember","RxJS"]
+    "keywords": ["Angular","React","Next.js","Vue.js","Webpack","Grunt","Gulp","Ember","RxJS"]
   }, {
     "name": "Design",
     "level": "Intermediate",
@@ -73,13 +73,22 @@
   }, {
     "name": "DevOps",
     "level": "Intermediate",
-    "keywords": ["AWS", "Jenkins", "Codeship", "TeamCity"]
+    "keywords": ["AWS", "Jenkins", "Shippable", "Codeship", "TeamCity"]
   }],
   "volunteer": [],
   "work": [{
+    "company": "Barnes & Noble Education (BNED)",
+    "startDate": "2018-9-24",
+    "endDate": "",
+    "position": "Senior Developer",
+    "summary": "BNED caters to college students with services to help them learn better.",
+    "highlights": ["Lead developer building a platform aroud microservices and guiding teams to push decisions towards secure, performant and stable architecture."],
+    "website": "https://www.bned.com/"
+  },
+  {
     "company": "Citibank",
     "startDate": "2017-8-28",
-    "endDate": "",
+    "endDate": "2018-9-4",
     "position": "Apps Dev Sr. Programmer Analyst",
     "summary": "As part of the Forex UI team, we create software that conforms to Citi's push architecture built around microservices",
     "highlights": ["Working on a Forex Trading platform in a push architecture with Javascript and .NET Reactive (Rx) framework subscribers for data sources such as SignalR/WebSocket and REST services.  My development tasks vary from Angular to .NET Core, WPF and legacy system maintenance.  The influence I have on the team by far is to show that Node.js app can be hosted through IIS."],
@@ -89,7 +98,7 @@
     "startDate": "2014-1-27",
     "endDate": "2017-8-16",
     "position": "Web Developer (Node.js / PHP)",
-    "summary": "Wenner Media is the owner of <a href='http://www.rollingstone.com' target='_blank'>Rolling Stone</a>, and formerly <a href='http://www.usmagazine.com/' target='_blank'>Us Weekly</a>, <a href='http://www.mensjournal.com/' target='_blank'>Men's Journal</a> and <a href='http://www.glixel.com/' target='_blank'>Glixel</a>",
+    "summary": "Wenner Media owned <a href='http://www.rollingstone.com' target='_blank'>Rolling Stone</a>, and formerly <a href='http://www.usmagazine.com/' target='_blank'>Us Weekly</a>, <a href='http://www.mensjournal.com/' target='_blank'>Men's Journal</a> and <a href='http://www.glixel.com/' target='_blank'>Glixel</a>",
     "highlights": ["One of the main contributors for an in-house Node.js CMS that allowed the company to consolidate disparate magazine systems into a single Node.js application running on AWS with a complete CI/CD pipeline.  My main duties in the team were to build the forms module, passport authentication and concurrency resolution.  From time to time, I would also write design-driven featured pages for the magazines that leverage modern CSS features like animation, transitions, digital media, and responsive design.  My development impact on the team was building an object-oriented javascript forms module before classes were added in Node and for using functional programming constructs."],
     "website": ""
   }, {
