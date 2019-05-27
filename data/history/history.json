@@ -22,11 +22,6 @@
         "day": 24,
         "year": 2018
       },
-      "end_date": {
-        "month": null,
-        "day": null,
-        "year": null
-      },
       "javascript": [
         "Node.js",
         "Next.js",
