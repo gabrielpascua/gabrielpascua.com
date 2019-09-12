@@ -16,7 +16,7 @@ export default ({ data }) => {
     <Layout>
       <MetaData fm={post.frontmatter} />
       <div className="container content">
-        <PageTitle text={post.frontmatter.title} />
+        <PageTitle text={post.frontmatter.title} url={post.frontmatter.book_url} />
         <div
           className="markdown"
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -32,6 +32,9 @@ export const query = graphql`
       html
       frontmatter {
         title
+        layout
+        excerpt
+        book_url
       }
     }
   }

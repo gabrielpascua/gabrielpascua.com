@@ -50,6 +50,11 @@ ul.inline-block{
   padding: 0;
 }
 
+ul.two-column li{
+  display: flex;
+  justify-content: space-between;
+}
+
 .m1{
   margin: 1em;
 }
