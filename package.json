@@ -1,7 +1,7 @@
 {
   "name": "i-am-gabriel-pascua",
   "description": "Personal site of Gabriel Pascua",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "author": "Gabriel Pascua <mail@gabrielpascua.com>",
   "dependencies": {
     "gatsby": "^2.23.1",
