@@ -27,7 +27,7 @@
     "build": "gatsby build",
     "develop": "eslint . && gatsby build && gatsby develop",
     "deploy": "gatsby clean && gatsby build --prefix-paths --verbose",
-    "format": "prettier --write '**/*.js'",
+    "format": "prettier --write \"**/*.{js,jsx,md}\"",
     "serve": "eslint . && gatsby serve",
     "clean": "gatsby clean",
     "upgrade-interactive": "npm-check --update"
@@ -50,9 +50,9 @@
     }
   },
   "lint-staged": {
-    "*.js": [
+    "*.{js,jsx,md}": [
       "eslint --fix",
-      "prettier --write '**/*.js'"
+      "prettier --write \"**/*.{js,jsx,md}\""
     ]
   }
 }
