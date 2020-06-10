@@ -10,6 +10,6 @@ gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world
 `gatsby develop`
 
 ## To Do's
-* Package updates
 * Profile Update
 * Sass removal
+* JSON and Markdown plugins for eslint
