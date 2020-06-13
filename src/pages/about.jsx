@@ -11,29 +11,53 @@ const MetaData = () => (
 
 export default ({ data }) => (
   <Layout>
-    <div className="container">
-      <MetaData />
-      <PageTitle text="About the Site" />
-      <p>
-        <strong>Site:</strong> <a href="https://www.gatsbyjs.org/">Gatsby v2</a>
-      </p>
-      <p>
-        <strong>Codebase:</strong>{' '}
-        <a href="https://github.com/gabrielpascua/gabrielpascua.github.io">
-          GitHub
-        </a>
-      </p>
-      <p>
-        <strong>Hosting:</strong> <a href="https://www.netlify.com/">Netlify</a>
-      </p>
-      <p>
-        <strong>SSL Certificate:</strong>{' '}
-        <a href="https://letsencrypt.org/">Let's Encrypt</a>
-      </p>
-      <p>
-        <strong>Domain:</strong>{' '}
-        <a href="https://domains.google/#/">Google Domains</a>
-      </p>
+    <MetaData />
+    <div className="page-heading">
+      <div className="container">
+        <PageTitle text="About the Site" />
+      </div>
+    </div>
+    <div className="page-content">
+      <div className="container">
+        <ul className="inline-block two-column list-type-none mt-3">
+          <li>
+            <small className="muted">Site</small>
+            <a
+              href="https://github.com/gabrielpascua/gabrielpascua.github.io"
+              className="muted"
+            >
+              Gatsby
+            </a>
+          </li>
+          <li>
+            <small className="muted">Codebase</small>
+            <a
+              href="https://github.com/gabrielpascua/gabrielpascua.github.io"
+              className="muted"
+            >
+              GitHub
+            </a>
+          </li>
+          <li>
+            <small className="muted">Hosting</small>
+            <a href="https://www.netlify.com/" className="muted">
+              Netlify
+            </a>
+          </li>
+          <li>
+            <small className="muted">SSL</small>
+            <a href="https://letsencrypt.org/" className="muted">
+              Let's Encrypt
+            </a>
+          </li>
+          <li>
+            <small className="muted">Domain</small>
+            <a href="https://domains.google/#/" className="muted">
+              Google Domains
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </Layout>
 );

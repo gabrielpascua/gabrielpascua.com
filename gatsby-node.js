@@ -42,7 +42,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   return new Promise((resolve, reject) => {
-    graphql(allPostQuery).then(result => {
+    graphql(allPostQuery).then((result) => {
       createListPages(result, 'books', createPage);
       createListPages(result, 'notes', createPage);
       createContentPages(result, createPage);
@@ -51,11 +51,11 @@ exports.createPages = ({ graphql, actions }) => {
   });
 };
 
-const createListPages = function(result, category, fnCreatePage) {
+const createListPages = function (result, category, fnCreatePage) {
   const pageLength = 10;
   createPaginatedPages({
     edges: result.data.allMarkdownRemark.edges
-      .filter(edge => edge.node.fields.slug.indexOf(category) === 0)
+      .filter((edge) => edge.node.fields.slug.indexOf(category) === 0)
       .sort((e1, e2) => {
         // sort descending
         let d1 = Date.parse(
@@ -87,7 +87,7 @@ const createListPages = function(result, category, fnCreatePage) {
   });
 };
 
-const createContentPages = function(result, fnCreatePage) {
+const createContentPages = function (result, fnCreatePage) {
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     fnCreatePage({
       path: node.fields.slug,

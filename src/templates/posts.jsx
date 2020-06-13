@@ -15,12 +15,21 @@ export default ({ data }) => {
   return (
     <Layout>
       <MetaData fm={post.frontmatter} />
-      <div className="container content">
-        <PageTitle text={post.frontmatter.title} url={post.frontmatter.book_url} />
-        <div
-          className="markdown"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+      <div className="page-heading">
+        <div className="container">
+          <PageTitle
+            text={post.frontmatter.title}
+            url={post.frontmatter.book_url}
+          />
+        </div>
+      </div>
+      <div className="page-content">
+        <div className="container">
+          <div
+            className="markdown"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+        </div>
       </div>
     </Layout>
   );

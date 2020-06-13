@@ -5,14 +5,7 @@ export default class FooterNav extends React.Component {
     return (
       <footer className="footer">
         <div className="container">
-          <p>&copy; 2019</p>
-          <p>
-            <a href="/">Home</a> &nbsp;
-            <a href="/notes">Notes</a> &nbsp;
-            <a href="/books">Books</a> &nbsp;
-            <a href="/about">About</a> &nbsp;
-            <a href="mailto:mail@gabrielpascua.com">Email</a> &nbsp;
-          </p>
+          <p>&copy; 2020</p>
         </div>
       </footer>
     );
