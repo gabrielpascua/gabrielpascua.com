@@ -1,5 +1,4 @@
 .resume h1 {
-  margin-bottom: 90px;
   font-weight: normal;
   font-size: 2.75rem;
 }
@@ -43,7 +42,6 @@
   margin-bottom: 30px;
   margin-top: 60px;
   padding-bottom: 15px;
-  /* border-bottom: 1px solid #ccc; */
   color: #888;
 }
 

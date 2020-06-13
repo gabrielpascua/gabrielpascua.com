@@ -4,12 +4,14 @@
   --dusty-gray: #e0e0e0;
   --white: #ffffff;
   --gallery: #f0f0f0;
-  --international-orange: #FF5910;
+  --international-orange: #56b3e6;
   --dark-blue: #0000cd;
+  --mirage: #1e1e3c;
   --page-left-pad-small: 5%;
-  --border-color: var(--dusty-gray);
+  --border-color: #ededed;
   --link-color: var(--international-orange);
   --highlight-color: var(--dark-blue);
+  --muted-color: var(--mine-shaft);
 }
 
 /* universal box sizing */
@@ -28,11 +30,14 @@ body {
 
 .container {
   max-width: 840px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 main .container{
-  padding: 4rem var(--page-left-pad-small) 1rem var(--page-left-pad-small);
+  padding: 1rem var(--page-left-pad-small) 1rem var(--page-left-pad-small);
 }
+
 
 nav .container{
   padding-left: var(--page-left-pad-small);
@@ -43,12 +48,24 @@ footer .container {
   padding: 2rem var(--page-left-pad-small);
 }
 
+.page-heading {
+  border-bottom: 1px solid var(--border-color);
+  margin-top: 3.5rem;
+}
+
+.page-content{
+  background-color: var(--white);
+}
+
+.page-content .container{
+  padding-bottom: 4rem;
+}
+
 .content h1 {
   font-size: 2.5rem;
   font-weight: bold;
   margin: 1.25rem 0 1.25rem 0;
   line-height: 1.4;
-  color: var(--cod-gray);
   text-transform: capitalize;
 }
 
@@ -57,7 +74,6 @@ footer .container {
   font-weight: normal;
   margin: 5rem 0 3rem 0;
   line-height: 1.5;
-  color: var(--cod-gray);
 }
 
 .content h2:first-of-type {
@@ -69,7 +85,6 @@ footer .container {
   font-weight: normal;
   margin: 1.125rem 0;
   line-height: 1.4;
-  color: var(--cod-gray);
 }
 
 .content h4 {
@@ -77,7 +92,6 @@ footer .container {
   font-weight: normal;
   margin: 1.125rem 0;
   line-height: 1.4;
-  color: var(--cod-gray);
 }
 
 .content h5 {
@@ -85,7 +99,6 @@ footer .container {
   font-weight: normal;
   margin: 1rem 0;
   line-height: 1.4;
-  color: var(--cod-gray);
 }
 
 .content h6 {
@@ -93,7 +106,6 @@ footer .container {
   font-weight: normal;
   margin: 1rem 0;
   line-height: 1.4;
-  color: var(--cod-gray);
 }
 
 .content nav ol {
@@ -118,13 +130,13 @@ nav {
   border-bottom: 1px solid var(--border-color);
   background-color: var(--white);
   width: 100%;
-  -webkit-box-shadow: 0px 6px 20px -10px rgba(0,0,0,0.1);
-  -moz-box-shadow: 0px 6px 20px -10px rgba(0,0,0,0.1);
-  box-shadow: 0px 6px 20px -10px rgba(0,0,0,0.1);
 }
 
 nav.sticky {
   position: fixed;
+  top: 0;
+  height: 3.5rem;
+  overflow: hidden;
 }
 
 nav ul {
@@ -135,6 +147,8 @@ nav ul {
 
 nav li {
   display: inline-block;
+  height: 3.5rem;
+  overflow: hidden;
 }
 
 nav a {
@@ -146,17 +160,17 @@ nav a {
 }
 
 nav a.home {
-  background: var(--cod-gray);
-  color: var(--white);
-  padding: .25rem;
-  margin-right: .75rem;
-  border-radius: 25px;
-  width: 25px;
-  text-align: center;
+  font-size: 1.25rem;
+  padding-top: 1rem;
+  font-weight: bold;
+  padding-left: 0;
+  padding-right: 2rem;
+  margin-right: 1rem;
+  border-right: 1px solid var(--border-color);
 }
 
 footer {
-  margin-top: 4rem;
+  border-top: 1px solid var(--border-color);
 }
 
 a {

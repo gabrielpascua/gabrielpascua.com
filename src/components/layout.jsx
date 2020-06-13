@@ -20,7 +20,7 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
         <main role="main" className="content">
-          <div className="container">{children}</div>
+          {children}
         </main>
       </>
     )}

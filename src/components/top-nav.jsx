@@ -7,8 +7,8 @@ export default class TopNav extends React.Component {
         <div className="container">
           <ul>
             <li>
-              <a href="/" className="home" title="Home">
-                ~
+              <a href="/" className="home">
+                gp
               </a>
             </li>
             <li>

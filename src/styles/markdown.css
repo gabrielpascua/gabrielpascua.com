@@ -1,11 +1,16 @@
 .markdown {
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 .markdown p img:only-child{
-  display: block;
-  margin: 0 auto 2.5rem auto;
+  margin-bottom: 2.5rem;
+}
+
+.markdown img {
   max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .markdown pre {
@@ -22,16 +27,14 @@
   background: #eaeaea;
   color: #111;
   font-family: monospace;
-  font-size: 1.025rem;
+  /* won't work on ff */
+  /* font-size: 1.025rem; */
+  font-size: 14px;
   padding-left: .25rem;
   padding-right: .25rem;
 }
 
 .markdown pre code[class*="language-"] {
-  /* font-family: monospace;
-  font-size: 1.025rem;
-  padding-left: .25rem;
-  padding-right: .25rem; */
   background: inherit;
   color: inherit;
 }

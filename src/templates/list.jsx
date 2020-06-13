@@ -3,7 +3,9 @@ import Link from 'gatsby-link';
 import PageTitle from '../components/page-title';
 import Layout from '../components/layout';
 
-const formatDate = (date) => {
+const formatDate = (rawDate) => {
+  // replace for Safari
+  const date = new Date(rawDate.replace(' ', 'T'));
   const padLeft = (datePart) => {
     return datePart.toString().length === 1 ? `0${datePart}` : datePart;
   };
@@ -46,34 +48,42 @@ const IndexPage = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <PageTitle text={additionalContext.category} />
-      <ul className="inline-block two-column list-type-none mt-3">
-        {group.map(({ node }) => (
-          <li key={node.fields.slug}>
-            <Link to={'/' + node.fields.slug}>{node.frontmatter.title}</Link>
-            <small className="muted ml-1">
-              {formatDate(
-                new Date(node.frontmatter.read || node.frontmatter.date)
-              )}
+      <div className="page-heading">
+        <div className="container">
+          <PageTitle text={additionalContext.category} />
+        </div>
+      </div>
+      <div className="page-content">
+        <div className="container">
+          <ul className="inline-block two-column list-type-none mt-3">
+            {group.map(({ node }) => (
+              <li key={node.fields.slug}>
+                <small className="muted">
+                  {formatDate(node.frontmatter.read || node.frontmatter.date)}
+                </small>
+                <Link to={'/' + node.fields.slug} className="muted">
+                  {node.frontmatter.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <br />
+          <br />
+          <p>
+            <NavLink
+              className="mr-1"
+              test={first}
+              url={previousUrl}
+              text="Previous"
+            />
+            <NavLink test={last} url={nextUrl} text="Next" />
+            <br />
+            <small className="muted">
+              Page {index} of {pageCount}
             </small>
-          </li>
-        ))}
-      </ul>
-      <br />
-      <br />
-      <p>
-        <NavLink
-          className="mr-1 muted"
-          test={first}
-          url={previousUrl}
-          text="Previous"
-        />
-        <NavLink className="muted" test={last} url={nextUrl} text="Next" />
-        <br />
-        <small className="muted">
-          Page {index} of {pageCount}
-        </small>
-      </p>
+          </p>
+        </div>
+      </div>
     </Layout>
   );
 };

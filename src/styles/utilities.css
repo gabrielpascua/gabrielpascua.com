@@ -56,18 +56,24 @@
 }
 
 ul.two-column li {
-  clear: both;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 
 ul.two-column li *:first-child {
-  display: inline-block;
-  width: 70%;
+  font-weight: normal;
 }
 
 ul.two-column li *:nth-child(2) {
-  float: right;
+  flex-basis: calc(100% - 5.25rem);
 }
 
 ul.two-column li:hover *:nth-child(2) {
-  font-weight: normal;
+  color: var(--link-color);
+}
+
+.muted {
+  color: var(--muted-color);
 }
