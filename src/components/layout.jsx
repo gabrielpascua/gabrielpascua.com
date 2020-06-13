@@ -14,12 +14,14 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <>
         <Helmet>
           <html lang="en" />
         </Helmet>
-        <main role="main">{children}</main>
+        <main role="main" className="content">
+          <div className="container">{children}</div>
+        </main>
       </>
     )}
   />

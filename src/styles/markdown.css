@@ -1,31 +1,45 @@
-.markdown h2:not(:nth-of-type(1)) {
-  margin-top: 75px;
-}
-
-.markdown h3{
-  line-height: 1.2;
-  margin-top: 45px;
-  margin-bottom: 10px;
-}
-
-.markdown h4{
-  line-height: 1.2;
-  margin-bottom: 10px;
-}
-
-.markdown h5{line-height: 1.2;}
-
-.markdown p {
-  line-height: 1.5;
+.markdown {
+  margin-top: 5rem;
 }
 
 .markdown p img:only-child{
   display: block;
-  margin: 0 auto 45px auto;
+  margin: 0 auto 2.5rem auto;
+  max-width: 100%;
+}
+
+.markdown pre {
+  border-radius: 5px;
+  font-size: .8rem;
+}
+
+.markdown .gatsby-highlight {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.markdown code[class*="language-"] {
+  background: #eaeaea;
+  color: #111;
+  font-family: monospace;
+  font-size: 1.025rem;
+  padding-left: .25rem;
+  padding-right: .25rem;
+}
+
+.markdown pre code[class*="language-"] {
+  /* font-family: monospace;
+  font-size: 1.025rem;
+  padding-left: .25rem;
+  padding-right: .25rem; */
+  background: inherit;
+  color: inherit;
 }
 
 .markdown table {
   margin-bottom: 30px;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 .markdown tr:hover {
@@ -38,24 +52,4 @@
   padding: 5px;
   vertical-align: top;
   line-height: 1.25;
-}
-
-.markdown li {
-  line-height: 1.25;
-  margin-bottom: 10px
-}
-
-.markdown pre {
-  border-radius: 10px;
-}
-
-.markdown .gatsby-highlight {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.markdown .language-text {
-  background: #eaeaea;
-  color: #111;
-  font-family: monospace;
 }

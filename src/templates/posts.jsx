@@ -15,13 +15,14 @@ export default ({ data }) => {
   return (
     <Layout>
       <MetaData fm={post.frontmatter} />
-      <div className="container content">
-        <PageTitle text={post.frontmatter.title} url={post.frontmatter.book_url} />
-        <div
-          className="markdown"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-      </div>
+      <PageTitle
+        text={post.frontmatter.title}
+        url={post.frontmatter.book_url}
+      />
+      <div
+        className="markdown"
+        dangerouslySetInnerHTML={{ __html: post.html }}
+      />
     </Layout>
   );
 };

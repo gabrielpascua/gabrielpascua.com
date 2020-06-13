@@ -9,6 +9,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FooterNav from './components/footer';
+import TopNav from './components/top-nav';
 
 export default class HTML extends React.Component {
   render() {
@@ -21,6 +22,10 @@ export default class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400&display=swap"
+            rel="stylesheet"
+          />
           <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=UA-82046772-1"
@@ -30,6 +35,7 @@ export default class HTML extends React.Component {
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
+          <TopNav />
           <div
             key={'body'}
             id="___gatsby"

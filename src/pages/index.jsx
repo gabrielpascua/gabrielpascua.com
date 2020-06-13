@@ -15,7 +15,7 @@ export default class HomePage extends React.Component {
 
   render() {
     const { bio, history } = this.props.data.allHistoryJson.edges.pop().node;
-    const formatDate = dateObj => {
+    const formatDate = (dateObj) => {
       if (!dateObj) {
         return 'this day';
       }
@@ -25,7 +25,7 @@ export default class HomePage extends React.Component {
       return date.format('MMM D, YYYY');
     };
 
-    const getMoment = function(date) {
+    const getMoment = function (date) {
       if (!date) {
         const now = new Date();
         date = {
@@ -40,7 +40,7 @@ export default class HomePage extends React.Component {
       return momentDate;
     };
 
-    const duration = function(endDate, startDate) {
+    const duration = function (endDate, startDate) {
       let startMs = getMoment(startDate);
       let endMs = getMoment(endDate);
 
@@ -55,11 +55,11 @@ export default class HomePage extends React.Component {
 
     return (
       <Layout>
-        <div className="container resume">
+        <div className="resume">
           <MetaData title={bio.first_name + ' ' + bio.last_name} />
           <PageTitle text={bio.first_name + ' ' + bio.last_name} />
           {history.map((w, idx) => {
-            let showLocation = [0, 5, 7].indexOf(idx) >= 0;
+            let showLocation = [0, 6, 8].indexOf(idx) >= 0;
             return (
               <div key={w.position}>
                 <h3 className={showLocation ? 'work-location' : 'hide'}>
@@ -89,7 +89,7 @@ export default class HomePage extends React.Component {
   }
 }
 
-const MetaData = function(props) {
+const MetaData = function (props) {
   return (
     <Helmet>
       <title>{props.title}</title>

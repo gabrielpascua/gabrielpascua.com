@@ -5,8 +5,7 @@ import Layout from '../components/layout';
 
 const formatDate = (date) => {
   const padLeft = (datePart) => {
-    return datePart.toString().length === 1 ?
-      `0${datePart}` : datePart;
+    return datePart.toString().length === 1 ? `0${datePart}` : datePart;
   };
 
   const year = date.getFullYear();
@@ -16,7 +15,7 @@ const formatDate = (date) => {
   return `${year}-${month}-${day}`;
 };
 
-const NavLink = props => {
+const NavLink = (props) => {
   if (!props.test) {
     return (
       <Link to={props.url} className={props.className}>
@@ -40,39 +39,41 @@ const IndexPage = ({ data, pageContext }) => {
   } = pageContext;
 
   const previousUrl =
-    index - 1 === 1 ? `/${additionalContext.category}` : `/${pathPrefix}/${index-1}`;
+    index - 1 === 1
+      ? `/${additionalContext.category}`
+      : `/${pathPrefix}/${index - 1}`;
   const nextUrl = `/${pathPrefix}/${index + 1}`;
 
   return (
     <Layout>
-      <div className="container content">
-        <PageTitle text={additionalContext.category} />
-        <ul className="inline-block two-column">
-          {group.map(({ node }) => (
-            <li key={node.fields.slug}>
-              <Link to={'/' + node.fields.slug}>{node.frontmatter.title}</Link>
-              <small className="muted ml-1">
-                {formatDate(new Date(node.frontmatter.read || node.frontmatter.date))}
-              </small>
-            </li>
-          ))}
-        </ul>
+      <PageTitle text={additionalContext.category} />
+      <ul className="inline-block two-column list-type-none mt-3">
+        {group.map(({ node }) => (
+          <li key={node.fields.slug}>
+            <Link to={'/' + node.fields.slug}>{node.frontmatter.title}</Link>
+            <small className="muted ml-1">
+              {formatDate(
+                new Date(node.frontmatter.read || node.frontmatter.date)
+              )}
+            </small>
+          </li>
+        ))}
+      </ul>
+      <br />
+      <br />
+      <p>
+        <NavLink
+          className="mr-1 muted"
+          test={first}
+          url={previousUrl}
+          text="Previous"
+        />
+        <NavLink className="muted" test={last} url={nextUrl} text="Next" />
         <br />
-        <br />
-        <p>
-          <NavLink
-            className="mr-1 muted"
-            test={first}
-            url={previousUrl}
-            text="Previous"
-          />
-          <NavLink className="muted" test={last} url={nextUrl} text="Next" />
-          <br />
-          <small className="muted">
-            Page {index} of {pageCount}
-          </small>
-        </p>
-      </div>
+        <small className="muted">
+          Page {index} of {pageCount}
+        </small>
+      </p>
     </Layout>
   );
 };
