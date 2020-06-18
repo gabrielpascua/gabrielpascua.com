@@ -1,5 +1,7 @@
 .markdown {
   margin-top: 3rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .markdown p img:only-child{
@@ -27,6 +29,8 @@
   background: #eaeaea;
   color: #111;
   font-family: monospace;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
   /* won't work on ff */
   /* font-size: 1.025rem; */
   font-size: 14px;

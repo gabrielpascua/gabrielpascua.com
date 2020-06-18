@@ -11,5 +11,4 @@ gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world
 
 ## To Do's
 * Profile Update
-* Sass removal
 * JSON and Markdown plugins for eslint

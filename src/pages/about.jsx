@@ -22,11 +22,8 @@ export default ({ data }) => (
         <ul className="inline-block two-column list-type-none mt-3">
           <li>
             <small className="muted">Site</small>
-            <a
-              href="https://github.com/gabrielpascua/gabrielpascua.github.io"
-              className="muted"
-            >
-              Gatsby
+            <a href="https://www.gatsbyjs.org/" className="muted">
+              GatsbyJS
             </a>
           </li>
           <li>
