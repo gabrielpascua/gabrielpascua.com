@@ -83,6 +83,10 @@ footer .container {
   margin-top: 0;
 }
 
+.content ol + h2:first-of-type {
+  margin-top: 5rem;
+}
+
 .content h3 {
   font-size: 1.25rem;
   font-weight: normal;
