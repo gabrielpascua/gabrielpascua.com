@@ -8,7 +8,7 @@ categories: books
 book_url: https://www.amazon.com/Philosophy-Software-Design-John-Ousterhout/dp/1732102201
 book_image: 
 tags:
-  - javascript
+  - patterns
 ---
 
 ### 1 Introduction
