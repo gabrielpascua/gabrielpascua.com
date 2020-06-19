@@ -178,6 +178,7 @@ a:focus {
   color: var(--highlight-color);
 }
 
+ol + h3,
 ul + h3,
 p + h3 {
   margin-top: 3rem !important;
