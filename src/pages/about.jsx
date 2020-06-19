@@ -14,7 +14,7 @@ export default ({ data }) => (
     <MetaData />
     <div className="page-heading">
       <div className="container">
-        <PageTitle text="About the Site" />
+        <PageTitle text="Site Credits" />
       </div>
     </div>
     <div className="page-content">
@@ -31,26 +31,49 @@ export default ({ data }) => (
             <a
               href="https://github.com/gabrielpascua/gabrielpascua.github.io"
               className="muted"
+              target="_blank"
             >
               GitHub
             </a>
           </li>
           <li>
             <small className="muted">Hosting</small>
-            <a href="https://www.netlify.com/" className="muted">
+            <a
+              href="https://www.netlify.com/"
+              className="muted"
+              target="_blank"
+            >
               Netlify
             </a>
           </li>
           <li>
             <small className="muted">SSL</small>
-            <a href="https://letsencrypt.org/" className="muted">
+            <a
+              href="https://letsencrypt.org/"
+              className="muted"
+              target="_blank"
+            >
               Let's Encrypt
             </a>
           </li>
           <li>
             <small className="muted">Domain</small>
-            <a href="https://domains.google/#/" className="muted">
+            <a
+              href="https://domains.google/#/"
+              className="muted"
+              target="_blank"
+            >
               Google Domains
+            </a>
+          </li>
+          <li>
+            <small className="muted">Font</small>
+            <a
+              href="http://mozilla.github.io/Fira/"
+              className="muted"
+              target="_blank"
+            >
+              Fira Sans
             </a>
           </li>
         </ul>

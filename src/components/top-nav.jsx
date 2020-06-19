@@ -18,7 +18,7 @@ export default class TopNav extends React.Component {
               <a href="/books">Books</a>
             </li>
             <li>
-              <a href="/about">About</a>
+              <a href="/about">Credits</a>
             </li>
             <li>
               <a href="mailto:mail@gabrielpascua.com">Email</a>

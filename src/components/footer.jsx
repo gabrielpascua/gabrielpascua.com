@@ -5,7 +5,9 @@ export default class FooterNav extends React.Component {
     return (
       <footer className="footer">
         <div className="container">
-          <p>&copy; 2020</p>
+          <p>
+            <small>&copy; 2020 Gabriel Pascua</small>
+          </p>
         </div>
       </footer>
     );

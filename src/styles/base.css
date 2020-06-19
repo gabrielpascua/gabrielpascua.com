@@ -7,11 +7,14 @@
   --boston-blue: #4493bf;
   --dark-blue: #0000cd;
   --mirage: #1e1e3c;
+  --gray: #888888;
+
   --page-left-pad-small: 5%;
   --border-color: #ededed;
   --link-color: var(--boston-blue);
   --highlight-color: var(--dark-blue);
   --muted-color: var(--mine-shaft);
+  --faded: var(--gray);
 }
 
 /* universal box sizing */

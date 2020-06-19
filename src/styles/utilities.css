@@ -77,3 +77,7 @@ ul.two-column li:hover *:nth-child(2) {
 .muted {
   color: var(--muted-color);
 }
+
+.faded {
+  color: var(--faded);
+}
