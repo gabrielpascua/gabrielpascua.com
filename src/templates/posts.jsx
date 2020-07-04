@@ -12,6 +12,7 @@ const MetaData = ({ fm }) => (
 
 export default ({ data }) => {
   const post = data.markdownRemark;
+  const category = post.frontmatter.layout === 'book' ? 'Book' : 'Post';
   return (
     <Layout>
       <MetaData fm={post.frontmatter} />
@@ -20,6 +21,7 @@ export default ({ data }) => {
           <PageTitle
             text={post.frontmatter.title}
             url={post.frontmatter.book_url}
+            category={category}
           />
         </div>
       </div>

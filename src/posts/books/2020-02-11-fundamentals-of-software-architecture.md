@@ -86,9 +86,7 @@ Pipeline architecture is made up of Pipes and Filters.  Filters are modules that
 ### 12 Monolithic Microkernel Architecture
 Plugin architecture consists of a Core System and its Plugins that make its features extensible.  The Core System is the minimal or the most generic functionality provided.  The Plugins are standalone components with specialized capabilities. While several variants of the architecture can make it less of a monolith, it is still considered to be one because of the Core System's innate feature of funneling requests through method invocations defined in is plugin contracts.  This architecture can be domain or technically partitioned.   The popular examples of this are today's browsers and IDE's.  This architecture style provides better testability and modularity because Plugins can hide a lot of complexity the Core System does not provide.  But because the Core System is still a monolith, it can be hard to scale.
 
-![UI Variant](https://drive.google.com/uc?id=1tk_sKFmMtRR9rZv5duU9V52UIvSyx2Oe)
-
-![Microkernel Architecture](https://drive.google.com/uc?id=1ntm24idMmvznsVhXVTK6nlhuYtybM_v_)
+![Microkernel Architecture Variants](/img/book-microkernel.svg)
 
 ### 13 Distributed (Domain) Service-Based Architecture
 A Service-Based architecture is partitioned by domain and not by the technical requirements of its client or its underlying data structure.  This is a natural fit for a Domain-Driven design.  Each domain service is independent from other domain services without any inter-service communication. It is very typical for this architecture to have a single database.  Variations can include partitioning the UI and database by domain with replication required only when needed.  It is good practice to have a Gateway or Proxy layer between the UI and Persistence.
