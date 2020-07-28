@@ -95,7 +95,7 @@ The number of domain services in this architecture ranges between 4-12, with an 
 
 This architecture is the simplest distributed system type.  It is modular, pragmatic and flexible.  Because services are coarse-grained, machine resources can be wasteful compared to fine-grained microservices. It is scalable but is not very cost-effective.
 
-![Service Based Architecture](https://drive.google.com/uc?id=1VZ1Tm_rcB6uKfd0QCZe19nlD24_4ztG9)
+![Service Based Architecture](/img/book-service-based.svg)
 
 ### 14 Distributed Event-Driven Architecture
 Event Driven Architecture is technically partitioned where domain data exists in several system entities.  It is naturally asynchronous (event-based), but can support synchronous (request-reply based) communications.  The most common components are Event Channels or your topics to subscribe from and Event Processors that processes the message for other Event Processors to consume.  It is highly scalable because you can add more Event Processors when needed and its asynchronous quality makes it very responsive thru a fire-and-forget communication.  However, because the flow of message is not deterministic, it creates a complex system for tracing application state and also makes error handling very challenging.
@@ -105,16 +105,16 @@ Event Driven Architecture is technically partitioned where domain data exists in
 
 * **Broker** - The essential components of a Broker topology are Event Channels and Event Processors.  An initial request is sent to the Broker (RabbitMQ, ActiveMQ) that publishes a topic from the Event Channel.  Any Event Processor subscribed to the topic can react to the event, then publishing a new topic for other Event Processors in the whole system to consume.  Messages are dynamic, flowing in a chain-like manner.  Event Processors are partitioned based on their Domain, e.g. OrderEventProcessor, NotificationEventProcessor, etc, giving its distributed characteristics.  There is no single entity that controls how the messages flow, thus the current state of data being passed around cannot be accurately determined.  This very nature of a Broker makes error-handling and undoing changes difficult to implement.
 
-![Broker](https://drive.google.com/uc?id=1LldFVAJansODoWI8zH4bMB3lqHKZzyX7)
+![Broker](/img/book-event-broker.svg)
 
 * **Mediator** In this architecture, all the messages and events originate from the Mediator.  The Mediator is the only entity aware of the steps required to complete a request.  When an initial request is sent to the Mediator it recognizes which step in the process it should invoke.  It then publishes a new topic (command) for the appropriate Event Processor to consume. The Event Processor responds back to the Mediator as soon as it completes its task.  From there, the Mediator moves on to the next step and follows the same procedure until every step is completed.  Mediator addresses the error handling and message control Broker lacks.  However, because messages flow through the Mediator it creates tight coupling between Event Processors and becomes the single point of failure in the system.
 
-![Mediator](https://drive.google.com/uc?id=1MVr1A5BCFxO6nfIYdSLK2hjTpw6-jkQI)
+![Mediator](/img/book-event-mediator.svg)
 
 #### Synchronicity
 In situations where an Event Driven architecture requires synchronous data flow, a Request/Reply design can be put in place. This requirement is typical when the event initiator requires some kind of acknowledgement for a future completion - getting an order id, flight confirmation number, money transfer receipt, etc..  In this pattern, Request Queue and Reply Queue are placed between the Event Producer and Event Consumer.  The Event Producer sends the data thru the Request Queue and waits for the Event Consumer to reply back from the Response Queue.  Because the Event Producer can accept messages from other Event Consumers, matching the request data with the response data is done by correlating IDs.
 
-![Request Reply](https://drive.google.com/uc?id=1xPMF6VSWjKp23wwsbj9fRX3qwW239Rv3)
+![Request Reply](/img/book-request-reply-queue.svg)
 
 
 ### 15 Distributed Space-Based Architecture
