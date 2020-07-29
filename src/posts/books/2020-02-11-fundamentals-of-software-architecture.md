@@ -124,11 +124,7 @@ It is common for this architecture to use Replicated Caching between Processing 
 
 Because access to data is localized and communication to central database happens less, this architecture is a good fit for applications with high spikes and unpredictable traffic volume.  Some examples include Reservation, Auction, and Trading systems.  It is highly elastic, scalable and performant.  But because it relies heavily on cache replication and database call indirection, it becomes very complex and expensive to implement.
 
-Image Notes: Include HTTP Client in the architecture diagram and number the flow
-
-![Space Based Architecture](https://drive.google.com/uc?id=13eJvh7b32ZJYVobHaGBDNZ7gTsqWoFJT)
-
-![Space Based Client](https://drive.google.com/uc?id=12tqQ-mG2i8XT9ACc7JDqKs_B5RQ5mZ5U)
+![Space Based Architecture](/img/book-space-based.svg)
 
 
 ### 16 Distributed Orchestration-Driven Service-Oriented Architecture
