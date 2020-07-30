@@ -133,9 +133,7 @@ Because access to data is localized and communication to central database happen
 The main characteristic separating Microservices from SOA is each service can run independently - database and other required components included.  A microservice is its own process running on a physical server, virtual machine or a container using technologies suited best for its needs.  There's an API layer that sits between the UI (Add a UI Layer in the diagram) and all the microservices acting as a Gateway or Service Discovery for processing incoming requests.  Because this architecture prefers duplication over coupling, architects must take great care in creating boundaries between other services.  This boundary (Bounded Context) is typically based on a service's (1) Domain or Purpose, or (2) Transaction Type or Workflow.  The boundary and its granularity is hard to get right the first time so it should be adjusted over time as the business evolves.  In situations where inter-service communication is required, instead of directly calling the other service, one can create a mediator service that will take care of coordinating the requests.  This allows you to control the workflow and handle complex logic like rollbacks while minimizing coupling.  This architecture is very scaleable and elastic, but performance suffers because each request is tied to a network call and security verification.  It is also expensive and complex to implement.
 
 
-![Microservices](https://drive.google.com/uc?id=1KyQhxz9tV2zuvoJlkOcNjPLaGMzURF3c)
-
-![Inter Service Communication](https://drive.google.com/uc?id=1pFdSO-omdZRfVrwnzj9j8TkBsrntjcLr)
+![Microservices](/img/book-microservice.svg)
 
 
 ### 18. Choosing the Appropriate Architecture Style
