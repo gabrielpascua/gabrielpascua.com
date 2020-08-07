@@ -13,7 +13,7 @@
     "gatsby-transformer-json": "^2.4.4",
     "gatsby-transformer-remark": "^2.8.14",
     "moment": "^2.26.0",
-    "prismjs": "^1.20.0",
+    "prismjs": "^1.21.0",
     "purecss": "^2.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
