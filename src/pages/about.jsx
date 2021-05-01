@@ -9,7 +9,7 @@ const MetaData = () => (
   </Helmet>
 );
 
-export default ({ data }) => (
+const AboutPage = ({ data }) => (
   <Layout>
     <MetaData />
     <div className="page-heading">
@@ -81,3 +81,5 @@ export default ({ data }) => (
     </div>
   </Layout>
 );
+
+export default AboutPage;

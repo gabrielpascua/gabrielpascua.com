@@ -10,7 +10,7 @@ const MetaData = ({ fm }) => (
   </Helmet>
 );
 
-export default ({ data }) => {
+const PostsTemplate = ({ data }) => {
   const post = data.markdownRemark;
   return (
     <Layout>
@@ -48,3 +48,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default PostsTemplate;
