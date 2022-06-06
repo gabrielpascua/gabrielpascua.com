@@ -61,3 +61,13 @@
   vertical-align: top;
   line-height: 1.25;
 }
+
+.markdown blockquote {
+  position: relative;
+  margin: 0;
+  padding-left: 2rem;
+  border-left: 3px solid #ddd;
+  margin: 2rem 0;
+  font-size: 1.125rem;
+  font-style: italic;
+}
