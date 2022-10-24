@@ -167,6 +167,22 @@ nav a.home {
   border-right: 1px solid var(--border-color);
 }
 
+nav .text-flip-container {
+  position: relative;
+}
+
+.text-flip-container span {
+  position: relative;
+  display: inline-block;
+  animation: flip .75s 1;
+  animation-delay: calc(.1s * var(--i))
+}
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
+}
+
 footer {
   border-top: 1px solid var(--border-color);
 }
