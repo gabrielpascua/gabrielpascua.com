@@ -15,7 +15,7 @@ export default class TopNav extends React.Component {
               <a href="/notes">Notes</a>
             </li>
             <li>
-              <a href="/books">Books</a>
+              <a href="/clips">Clips</a>
             </li>
             <li>
               <a href="/about">Credits</a>

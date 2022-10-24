@@ -43,7 +43,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   return new Promise((resolve, reject) => {
     graphql(allPostQuery).then((result) => {
-      createListPages(result, 'books', createPage);
+      createListPages(result, 'clips', createPage);
       createListPages(result, 'notes', createPage);
       createContentPages(result, createPage);
       resolve();
