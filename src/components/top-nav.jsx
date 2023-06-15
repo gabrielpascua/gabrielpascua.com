@@ -8,7 +8,7 @@ export default class TopNav extends React.Component {
           <ul>
             <li>
               <a href="/" className="home">
-                <div className="text-flip-container">
+                <div className="x-text-flip-container">
                   <span style={{ '--i': 1}}>g</span>
                   <span style={{ '--i': 2}}>a</span>
                   <span style={{ '--i': 3}}>b</span>
@@ -24,7 +24,7 @@ export default class TopNav extends React.Component {
               <a href="/notes">Notes</a>
             </li>
             <li>
-              <a href="/clips">Clips</a>
+              <a href="/bookmarks">Bookmarks</a>
             </li>
             <li>
               <a href="/about">Credits</a>
