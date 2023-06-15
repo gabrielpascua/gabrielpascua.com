@@ -79,7 +79,7 @@
   "work": [{
     "company": "Barnes & Noble Education (BNED)",
     "startDate": "2018-9-24",
-    "endDate": "",
+    "endDate": "2023-5-31",
     "position": "Senior Developer",
     "summary": "BNED caters to college students with services to help them learn better.",
     "highlights": ["Lead developer building a platform aroud microservices and guiding teams to push decisions towards secure, performant and stable architecture."],
