@@ -1,20 +1,19 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import PageTitle from '../components/page-title';
 import Layout from '../components/layout';
 
-const MetaData = ({ fm }) => (
-  <Helmet>
+const Head = ({ fm }) => (
+  <>
     <title>{fm.title}</title>
-  </Helmet>
+  </>
 );
 
 const PostsTemplate = ({ data }) => {
   const post = data.markdownRemark;
   return (
     <Layout>
-      <MetaData fm={post.frontmatter} />
+      <Head fm={post.frontmatter} />
       <div className="page-heading">
         <div className="container">
           <PageTitle

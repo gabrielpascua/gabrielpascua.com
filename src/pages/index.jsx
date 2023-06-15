@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import moment from 'moment';
 
@@ -56,7 +55,7 @@ export default class HomePage extends React.Component {
     return (
       <Layout>
         <div className="resume">
-          <MetaData title={bio.first_name + ' ' + bio.last_name} />
+          <Head title={bio.first_name + ' ' + bio.last_name} />
           <div className="page-heading">
             <div className="container">
               <PageTitle text="Work History" />
@@ -99,11 +98,11 @@ export default class HomePage extends React.Component {
   }
 }
 
-const MetaData = function (props) {
+const Head = function (props) {
   return (
-    <Helmet>
+    <>
       <title>{props.title}</title>
-    </Helmet>
+    </>
   );
 };
 
