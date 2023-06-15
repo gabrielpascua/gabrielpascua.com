@@ -5,7 +5,6 @@ module.exports = {
     title: 'Gabriel Pascua',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

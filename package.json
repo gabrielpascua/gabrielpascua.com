@@ -1,23 +1,21 @@
 {
   "name": "i-am-gabriel-pascua",
   "description": "Personal site of Gabriel Pascua",
-  "version": "6.0.0",
+  "version": "6.1.0",
   "author": "Gabriel Pascua <mail@gabrielpascua.com>",
   "dependencies": {
-    "gatsby": "^3.4.0",
+    "gatsby": "^5.11.0",
     "gatsby-paginate": "^1.1.1",
-    "gatsby-plugin-manifest": "^3.4.0",
-    "gatsby-plugin-react-helmet": "^4.4.0",
-    "gatsby-remark-prismjs": "^5.1.0",
-    "gatsby-source-filesystem": "^3.4.0",
-    "gatsby-transformer-json": "^3.4.0",
-    "gatsby-transformer-remark": "^4.1.0",
+    "gatsby-plugin-manifest": "^5.11.0",
+    "gatsby-remark-prismjs": "^7.11.0",
+    "gatsby-source-filesystem": "^5.11.0",
+    "gatsby-transformer-json": "^5.11.0",
+    "gatsby-transformer-remark": "^6.11.0",
     "moment": "^2.29.1",
-    "prismjs": "^1.23.0",
+    "prismjs": "^1.29.0",
     "purecss": "^2.0.6",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "keywords": [
     "gatsby"
@@ -33,12 +31,12 @@
     "upgrade-interactive": "npm-check --update"
   },
   "devDependencies": {
-    "eslint": "^7.25.0",
-    "eslint-plugin-react": "^7.23.2",
-    "husky": "^6.0.0",
-    "lint-staged": "^10.5.4",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "npm-check": "^5.9.2",
-    "prettier": "^2.2.1"
+    "prettier": "^2.8.8"
   },
   "repository": {
     "type": "git",
