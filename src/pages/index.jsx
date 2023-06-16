@@ -58,11 +58,13 @@ export default class HomePage extends React.Component {
                 return (
                   <div key={w.position}>
                     <h3 className={showLocation ? 'work-location' : 'hide'}>
-                      {w.company.country === 'USA' ? w.company.city + ', ' : ''}
-                      {w.company.state}
-                      {w.company.country !== 'USA'
-                        ? ', ' + w.company.country
-                        : ''}
+                      <span className={ idx ? 'work-location-spacer' : '' }>
+                        {w.company.country === 'USA' ? w.company.city + ', ' : ''}
+                        {w.company.state}
+                        {w.company.country !== 'USA'
+                          ? ', ' + w.company.country
+                          : ''}
+                      </span>
                     </h3>
 
                     <div className="work-history" key={w.company.name}>
