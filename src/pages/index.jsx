@@ -1,10 +1,9 @@
-import React from 'react';
+import format from 'date-fns/format';
+import formatDistanceStrict from 'date-fns/formatDistanceStrict';
 import { graphql } from 'gatsby';
-import moment from 'moment';
-
-import PageTitle from '../components/page-title';
+import React from 'react';
 import Layout from '../components/layout';
-
+import PageTitle from '../components/page-title';
 import '../styles/resume.css';
 
 export default class HomePage extends React.Component {
@@ -19,12 +18,11 @@ export default class HomePage extends React.Component {
         return 'this day';
       }
 
-      const { month, day, year } = dateObj;
-      const date = moment([year, month, day].join('-'), 'YYYY-MM-DD');
-      return date.format('MMM D, YYYY');
+      const jobDate = getJobDate(dateObj);
+      return format(jobDate, 'MMM d, yyy');
     };
 
-    const getMoment = function (date) {
+    const getJobDate = function (date) {
       if (!date) {
         const now = new Date();
         date = {
@@ -35,21 +33,13 @@ export default class HomePage extends React.Component {
       }
 
       const { month, day, year } = date;
-      const momentDate = moment([year, month, day].join('-'), 'YYYY-MM-DD');
-      return momentDate;
+      return new Date(year, month-1, day);
     };
 
     const duration = function (endDate, startDate) {
-      let startMs = getMoment(startDate);
-      let endMs = getMoment(endDate);
-
-      let diff = moment.duration(endMs.diff(startMs)).humanize();
-
-      if (diff.startsWith('a')) {
-        diff = diff.replace('a', 1);
-      }
-
-      return diff;
+      let start = getJobDate(startDate);
+      let end = getJobDate(endDate);
+      return formatDistanceStrict(end, start);
     };
 
     return (

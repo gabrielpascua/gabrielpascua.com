@@ -4,6 +4,7 @@
   "version": "6.1.0",
   "author": "Gabriel Pascua <mail@gabrielpascua.com>",
   "dependencies": {
+    "date-fns": "^2.30.0",
     "gatsby": "^5.11.0",
     "gatsby-paginate": "^1.1.1",
     "gatsby-plugin-manifest": "^5.11.0",
@@ -11,7 +12,6 @@
     "gatsby-source-filesystem": "^5.11.0",
     "gatsby-transformer-json": "^5.11.0",
     "gatsby-transformer-remark": "^6.11.0",
-    "moment": "^2.29.1",
     "prismjs": "^1.29.0",
     "purecss": "^2.0.6",
     "react": "^18.2.0",
