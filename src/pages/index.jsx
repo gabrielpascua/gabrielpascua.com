@@ -1,11 +1,9 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import format from 'date-fns/format';
+import formatDistanceStrict from 'date-fns/formatDistanceStrict';
 import { graphql } from 'gatsby';
-import moment from 'moment';
-
-import PageTitle from '../components/page-title';
+import React from 'react';
 import Layout from '../components/layout';
-
+import PageTitle from '../components/page-title';
 import '../styles/resume.css';
 
 export default class HomePage extends React.Component {
@@ -20,12 +18,11 @@ export default class HomePage extends React.Component {
         return 'this day';
       }
 
-      const { month, day, year } = dateObj;
-      const date = moment([year, month, day].join('-'), 'YYYY-MM-DD');
-      return date.format('MMM D, YYYY');
+      const jobDate = getJobDate(dateObj);
+      return format(jobDate, 'MMM d, yyy');
     };
 
-    const getMoment = function (date) {
+    const getJobDate = function (date) {
       if (!date) {
         const now = new Date();
         date = {
@@ -36,27 +33,19 @@ export default class HomePage extends React.Component {
       }
 
       const { month, day, year } = date;
-      const momentDate = moment([year, month, day].join('-'), 'YYYY-MM-DD');
-      return momentDate;
+      return new Date(year, month-1, day);
     };
 
     const duration = function (endDate, startDate) {
-      let startMs = getMoment(startDate);
-      let endMs = getMoment(endDate);
-
-      let diff = moment.duration(endMs.diff(startMs)).humanize();
-
-      if (diff.startsWith('a')) {
-        diff = diff.replace('a', 1);
-      }
-
-      return diff;
+      let start = getJobDate(startDate);
+      let end = getJobDate(endDate);
+      return formatDistanceStrict(end, start);
     };
 
     return (
       <Layout>
         <div className="resume">
-          <MetaData title={bio.first_name + ' ' + bio.last_name} />
+          <Head title={bio.first_name + ' ' + bio.last_name} />
           <div className="page-heading">
             <div className="container">
               <PageTitle text="Work History" />
@@ -69,11 +58,13 @@ export default class HomePage extends React.Component {
                 return (
                   <div key={w.position}>
                     <h3 className={showLocation ? 'work-location' : 'hide'}>
-                      {w.company.country === 'USA' ? w.company.city + ', ' : ''}
-                      {w.company.state}
-                      {w.company.country !== 'USA'
-                        ? ', ' + w.company.country
-                        : ''}
+                      <span className={ idx ? 'work-location-spacer' : '' }>
+                        {w.company.country === 'USA' ? w.company.city + ', ' : ''}
+                        {w.company.state}
+                        {w.company.country !== 'USA'
+                          ? ', ' + w.company.country
+                          : ''}
+                      </span>
                     </h3>
 
                     <div className="work-history" key={w.company.name}>
@@ -99,11 +90,11 @@ export default class HomePage extends React.Component {
   }
 }
 
-const MetaData = function (props) {
+const Head = function (props) {
   return (
-    <Helmet>
+    <>
       <title>{props.title}</title>
-    </Helmet>
+    </>
   );
 };
 

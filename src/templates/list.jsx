@@ -1,8 +1,7 @@
+import { Link } from 'gatsby';
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import Link from 'gatsby-link';
-import PageTitle from '../components/page-title';
 import Layout from '../components/layout';
+import PageTitle from '../components/page-title';
 
 const formatDate = (rawDate) => {
   // replace for Safari
@@ -30,12 +29,12 @@ const NavLink = (props) => {
   }
 };
 
-const MetaData = ({ title }) => {
+const Head = ({ title }) => {
   const titleCased = title[0].toUpperCase() + title.substring(1);
   return (
-    <Helmet>
+    <>
       <title>{titleCased}</title>
-    </Helmet>
+    </>
   );
 };
 
@@ -58,7 +57,7 @@ const IndexPage = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <MetaData title={additionalContext.category} />
+      <Head title={additionalContext.category} />
       <div className="page-heading">
         <div className="container">
           <PageTitle text={additionalContext.category} />

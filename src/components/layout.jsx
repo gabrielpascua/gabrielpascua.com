@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
 const Layout = ({ children }) => (
@@ -16,9 +15,6 @@ const Layout = ({ children }) => (
     `}
     render={(data) => (
       <>
-        <Helmet>
-          <html lang="en" />
-        </Helmet>
         <main role="main" className="content">
           {children}
         </main>

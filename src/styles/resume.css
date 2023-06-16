@@ -40,11 +40,15 @@
   font-weight: normal;
   font-size: 1em;
   margin-bottom: 30px;
-  margin-top: 60px;
+  margin-top: 45px;
   padding-bottom: 15px;
-  color: #888;
 }
 
-.resume .work-location:not(:nth-of-type(1)) {
-  margin-top: 45px;
+.resume .work-location-spacer {
+  margin-top: 90px;
+  display: block;
 }
+/* 
+.resume > .work-location:nth-of-type(1) {
+  margin-top: 45px;
+} */

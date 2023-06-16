@@ -1,17 +1,16 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import PageTitle from '../components/page-title';
 import Layout from '../components/layout';
 
-const MetaData = () => (
-  <Helmet>
+const Head = () => (
+  <>
     <title>About</title>
-  </Helmet>
+  </>
 );
 
 const AboutPage = ({ data }) => (
   <Layout>
-    <MetaData />
+    <Head />
     <div className="page-heading">
       <div className="container">
         <PageTitle text="Site Credits" />
