@@ -16,17 +16,9 @@
         "country": "USA"
       },
       "position": "Senior Developer",
-      "description": "Lead developer building a service-oriented platform, and guiding teams towards secure, performant and stable architecture.",
-      "start_date": {
-        "month": 9,
-        "day": 24,
-        "year": 2018
-      },
-      "end_date": {
-        "month": 5,
-        "day": 31,
-        "year": 2023
-      },
+      "description": "Lead developer of an educational platform built on a service-oriented AWS architecture. I guide teams towards writing secure, performant and stable applications.",
+      "start_date": "2018-09-24T04:00:00.000Z",
+      "end_date": "2023-05-31T04:00:00.000Z",
       "javascript": [
         "Node.js",
         "Next.js",
@@ -68,16 +60,8 @@
       },
       "position": "Apps Dev Sr. Programmer Analyst",
       "description": "Foreign Exchange programmer working on the Velocity trading application and its plugins written in Node.js, Angular and C#.",
-      "start_date": {
-        "month": 8,
-        "day": 28,
-        "year": 2017
-      },
-      "end_date": {
-        "month": 9,
-        "day": 4,
-        "year": 2018
-      },
+      "start_date": "2017-08-28T04:00:00.000Z",
+      "end_date": "2018-09-04T04:00:00.000Z",
       "javascript": [
         "Node.js",
         "Angular",
@@ -127,17 +111,9 @@
         "country": "USA"
       },
       "position": "Web Developer (Node.js / PHP)",
-      "description": "Part of the Engineering team that built a multi tenant Node.js CMS that ran Us Weekly, Rolling Stone, and Men's Journal websites.",
-      "start_date": {
-        "month": 1,
-        "day": 27,
-        "year": 2014
-      },
-      "end_date": {
-        "month": 8,
-        "day": 16,
-        "year": 2017
-      },
+      "description": "Part of the Engineering team that built a multi-tenant Node.js CMS that ran Us Weekly, Rolling Stone, and Men's Journal magazines websites.",
+      "start_date": "2014-01-27T05:00:00.000Z",
+      "end_date": "2017-08-16T04:00:00.000Z",
       "javascript": [
         "Node.js",
         "koajs",
@@ -194,16 +170,8 @@
       },
       "position": "Web Developer (C# - ASP.NET)",
       "description": "IT Department developer in charge of updating internal .NET HR, CRM, Delivery Tracking, ETL and Content Sharing systems.",
-      "start_date": {
-        "month": 11,
-        "day": 14,
-        "year": 2011
-      },
-      "end_date": {
-        "month": 1,
-        "day": 24,
-        "year": 2014
-      },
+      "start_date": "2011-11-14T05:00:00.000Z",
+      "end_date": "2014-01-24T05:00:00.000Z",
       "microsoft": [
         "C# ASP.NET",
         ".NET Core",
@@ -253,16 +221,8 @@
       },
       "position": "Sr. Programmer / Analyst 1",
       "description": "C# .NET developer responsible for extending an Electronic Medical System for monitoring the treatment of 9/11 responders",
-      "start_date": {
-        "month": 3,
-        "day": 8,
-        "year": 2010
-      },
-      "end_date": {
-        "month": 11,
-        "day": 4,
-        "year": 2011
-      },
+      "start_date": "2010-03-08T05:00:00.000Z",
+      "end_date": "2011-11-04T04:00:00.000Z",
       "microsoft": [
         "C# ASP.NET",
         "VB.NET",
@@ -299,16 +259,8 @@
       },
       "position": "Web Developer",
       "description": "Developed the corporate website with Ektron CMS in C# and introduced the credit card payment system for event registrations",
-      "start_date": {
-        "month": 10,
-        "day": 1,
-        "year": 2007
-      },
-      "end_date": {
-        "month": 3,
-        "day": 3,
-        "year": 2010
-      },
+      "start_date": "2007-10-01T04:00:00.000Z",
+      "end_date": "2010-03-03T05:00:00.000Z",
       "microsoft": [
         "C# ASP.NET",
         "XML",
@@ -343,16 +295,8 @@
       },
       "position": "Web Designer",
       "description": "Phone People is a start-up company selling 1-800 numbers to businesses in the U.S..",
-      "start_date": {
-        "month": 6,
-        "day": 19,
-        "year": 2006
-      },
-      "end_date": {
-        "month": 8,
-        "day": 15,
-        "year": 2007
-      },
+      "start_date": "2006-06-19T07:00:00.000Z",
+      "end_date": "2007-08-15T07:00:00.000Z",
       "microsoft": [
         "Classic ASP",
         "IIS",
@@ -378,16 +322,8 @@
       },
       "position": "Classic ASP Developer",
       "description": "PPMC manages medical claims from several primary providers with a dedicated IT department called Wiseguy Techonologies.",
-      "start_date": {
-        "month": 6,
-        "day": 2,
-        "year": 2005
-      },
-      "end_date": {
-        "month": 4,
-        "day": 14,
-        "year": 2006
-      },
+      "start_date": "2005-06-02T07:00:00.000Z",
+      "end_date": "2006-04-14T07:00:00.000Z",
       "microsoft": [
         "Classic ASP",
         "VB.NET",
@@ -418,16 +354,8 @@
       },
       "position": "ASP Programmer",
       "description": "ITTCI is a Philippine outsourcing company with Customer Support and Web Development services for clients in Canada and Utah.",
-      "start_date": {
-        "month": 11,
-        "day": null,
-        "year": 2004
-      },
-      "end_date": {
-        "month": 4,
-        "day": null,
-        "year": 2005
-      },
+      "start_date": "2004-10-31T16:00:00.000Z",
+      "end_date": "2005-03-31T16:00:00.000Z",
       "microsoft": [
         "Classic ASP",
         "IIS",
@@ -461,16 +389,8 @@
       },
       "position": "Windows Programmer",
       "description": "DFNN is a Philippine company specializing in SMS technology.",
-      "start_date": {
-        "month": 10,
-        "day": null,
-        "year": 2003
-      },
-      "end_date": {
-        "month": 7,
-        "day": null,
-        "year": 2004
-      },
+      "start_date": "2003-09-30T16:00:00.000Z",
+      "end_date": "2004-06-30T16:00:00.000Z",
       "microsoft": [
         "VB 6.0",
         "Classic ASP",

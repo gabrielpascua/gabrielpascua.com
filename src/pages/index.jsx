@@ -13,33 +13,16 @@ export default class HomePage extends React.Component {
 
   render() {
     const { bio, history } = this.props.data.allHistoryJson.edges.pop().node;
-    const formatDate = (dateObj) => {
-      if (!dateObj) {
+    const formatDate = (jobDate) => {
+      if (!jobDate) {
         return 'this day';
       }
 
-      const jobDate = getJobDate(dateObj);
-      return format(jobDate, 'MMM d, yyy');
+      return format(new Date(jobDate), 'MMMM yyy');
     };
 
-    const getJobDate = function (date) {
-      if (!date) {
-        const now = new Date();
-        date = {
-          month: now.getMonth() + 1,
-          day: now.getDate(),
-          year: now.getFullYear(),
-        };
-      }
-
-      const { month, day, year } = date;
-      return new Date(year, month-1, day);
-    };
-
-    const duration = function (endDate, startDate) {
-      let start = getJobDate(startDate);
-      let end = getJobDate(endDate);
-      return formatDistanceStrict(end, start);
+    const duration = function (end, start) {
+      return formatDistanceStrict(new Date(end), new Date(start));
     };
 
     return (
@@ -73,8 +56,8 @@ export default class HomePage extends React.Component {
                         <span className="text-normal">at {w.company.name}</span>
                       </h4>
                       <h5>
-                        <span>{duration(w.end_date, w.start_date)} </span>
-                        <span>From {formatDate(w.start_date)} </span>
+                        <span>~ {duration(w.end_date, w.start_date)} </span>
+                        <span>from {formatDate(w.start_date)} </span>
                         <span>till {formatDate(w.end_date)}</span>
                       </h5>
                       <p dangerouslySetInnerHTML={{ __html: w.description }} />
@@ -120,21 +103,13 @@ export const workHistoryQuery = graphql`
             }
             position
             description
-            start_date {
-              month
-              day
-              year
-            }
+            start_date
+            end_date
             javascript
             client_side
             microsoft
             version_control
             devops
-            end_date {
-              month
-              day
-              year
-            }
             php
             databases
           }
