@@ -7,7 +7,7 @@ export default ({ text, url }) => {
       {url && (
         <p>
           <a href={url} target="_blank">
-            More About this Post
+            More About this Book
           </a>
         </p>
       )}
