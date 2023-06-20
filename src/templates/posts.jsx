@@ -24,7 +24,7 @@ const PostsTemplate = ({ data }) => {
       </div>
       <div className="page-content">
         <div className="container">
-          <div
+          <article
             className="markdown"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
