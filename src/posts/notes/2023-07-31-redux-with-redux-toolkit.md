@@ -109,3 +109,11 @@ export const fetchTasks = createAsyncThunk('task/fetchedTasks', async()=> {
 ### React Router and Redux
 
 The rule in a React + Redux app is your global state should go in the Redux store, and your local state should stay in React components. With that in mind, React Router top-level components access to the store should be determined on a per-need basis.  If only 1 route relies on a specific data, then there's no need to put that data in your global state. You can just fetch it at the time the route component loads.  [There are several optimization techniques](https://redux.js.org/tutorials/essentials/part-6-performance-normalization) you can apply to improve the performance of your page.
+
+
+
+### Complete Code Example
+
+<div class="video-container">
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);border-radius:2px;" width="800" height="450" src="https://codesandbox.io/p/sandbox/lucid-mendeleev-8xrzkp?welcome=true&embed=1" allowfullscreen></iframe>
+</div>
