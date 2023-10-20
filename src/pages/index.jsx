@@ -15,7 +15,7 @@ export default class HomePage extends React.Component {
     const { bio, history } = this.props.data.allHistoryJson.edges.pop().node;
     const formatDate = (jobDate) => {
       if (!jobDate) {
-        return 'this day';
+        return 'this day'; // till this day
       }
 
       return format(new Date(jobDate), 'MMMM yyy');
