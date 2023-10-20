@@ -26,11 +26,6 @@ export default class HTML extends React.Component {
             href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400&display=swap"
             rel="stylesheet"
           />
-          {/* <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=UA-82046772-1"
-          />
-          <script src="/js/gtag.js" /> */}
           {this.props.headComponents}
         </head>
         <body {...this.props.bodyAttributes}>
