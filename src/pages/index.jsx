@@ -1,115 +1,12 @@
-import format from 'date-fns/format';
-import formatDistanceStrict from 'date-fns/formatDistanceStrict';
-import { graphql } from 'gatsby';
 import React from 'react';
 import Layout from '../components/layout';
-import PageTitle from '../components/page-title';
 import '../styles/resume.css';
 
-export default function HomePage({ data }) {
-  const { bio, history } = data.allHistoryJson.edges.pop().node;
-
-  const formatDate = (jobDate) => {
-    if (!jobDate) {
-      return 'this day';
-    }
-
-    return format(new Date(jobDate), 'MMMM yyy');
-  };
-
-  const duration = function (end, start) {
-    return formatDistanceStrict(new Date(end), new Date(start));
-  };
+export default function HomePage() {
 
   return (
     <Layout>
-      <div className="resume">
-        <Head title={bio.first_name + ' ' + bio.last_name} />
-        <div className="page-heading">
-          <div className="container">
-            <PageTitle text="Work History" />
-          </div>
-        </div>
-        <div className="page-content">
-          <div className="container">
-            {history.map((w, idx) => {
-              let showLocation = [0, 6, 8].indexOf(idx) >= 0;
-              return (
-                <div key={w.position}>
-                  <h3 className={showLocation ? 'work-location' : 'hide'}>
-                    <span className={ idx ? 'work-location-spacer' : '' }>
-                      {w.company.country === 'USA' ? w.company.city + ', ' : ''}
-                      {w.company.state}
-                      {w.company.country !== 'USA'
-                        ? ', ' + w.company.country
-                        : ''}
-                    </span>
-                  </h3>
-
-                  <div className="work-history" key={w.company.name}>
-                    <h4>
-                      {w.position}{' '}
-                      <span className="text-normal">at {w.company.name}</span>
-                    </h4>
-                    <h5>
-                      <span>~ {duration(w.end_date, w.start_date)} </span>
-                      <span>from {formatDate(w.start_date)} </span>
-                      <span>till {formatDate(w.end_date)}</span>
-                    </h5>
-                    <p dangerouslySetInnerHTML={{ __html: w.description }} />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
+      <div class="resume"><title>Gabriel Pascua</title><div class="page-heading"><div class="container"><hgroup class="title-container"><h1 class="title">Work History</h1></hgroup></div></div><div class="page-content"><div class="container"><div><h3 class="work-location"><span class="">New York, NY</span></h3><div class="work-history"><h4>Senior Developer <span class="text-normal">at Barnes &amp; Noble Education (BNED)</span></h4><h5><span>~ 5 years </span><span>from September 2018 </span><span>till May 2023</span></h5><p>Lead developer of an educational platform built on a service-oriented AWS architecture. I guide teams towards writing secure, performant and stable Node.js applications.</p></div></div><div><h3 class="hide"><span class="work-location-spacer">New York, NY</span></h3><div class="work-history"><h4>Apps Dev Sr. Programmer Analyst <span class="text-normal">at Citibank</span></h4><h5><span>~ 1 year </span><span>from August 2017 </span><span>till September 2018</span></h5><p>Foreign Exchange programmer working on the Velocity trading application and its plugins written in Node.js, Angular and C#.</p></div></div><div><h3 class="hide"><span class="work-location-spacer">New York, NY</span></h3><div class="work-history"><h4>Web Developer (Node.js / PHP) <span class="text-normal">at Wenner Media - Digital</span></h4><h5><span>~ 4 years </span><span>from January 2014 </span><span>till August 2017</span></h5><p>Part of the Engineering team that built a multi-tenant Node.js CMS that ran Us Weekly, Rolling Stone, and Men's Journal magazines websites.</p></div></div><div><h3 class="hide"><span class="work-location-spacer">New York, NY</span></h3><div class="work-history"><h4>Web Developer (C# - ASP.NET) <span class="text-normal">at Wenner Media - IT</span></h4><h5><span>~ 2 years </span><span>from November 2011 </span><span>till January 2014</span></h5><p>IT Department developer in charge of updating internal .NET HR, CRM, Delivery Tracking, ETL and Content Sharing systems.</p></div></div><div><h3 class="hide"><span class="work-location-spacer">New York, NY</span></h3><div class="work-history"><h4>Sr. Programmer / Analyst 1 <span class="text-normal">at Mt. Sinai School of Medicine</span></h4><h5><span>~ 2 years </span><span>from March 2010 </span><span>till November 2011</span></h5><p>C# .NET developer responsible for extending an Electronic Medical System for monitoring the treatment of 9/11 responders</p></div></div><div><h3 class="hide"><span class="work-location-spacer">New York, NY</span></h3><div class="work-history"><h4>Web Developer <span class="text-normal">at International Quality &amp; Productivity Center</span></h4><h5><span>~ 2 years </span><span>from September 2007 </span><span>till March 2010</span></h5><p>Developed the corporate website with Ektron CMS in C# and introduced the credit card payment system for event registrations</p></div></div><div><h3 class="work-location"><span class="work-location-spacer">San Diego, CA</span></h3><div class="work-history"><h4>Web Designer <span class="text-normal">at Phone People</span></h4><h5><span>~ 1 year </span><span>from June 2006 </span><span>till August 2007</span></h5><p>Phone People is a start-up company selling 1-800 numbers to businesses in the U.S..</p></div></div><div><h3 class="hide"><span class="work-location-spacer">San Diego, CA</span></h3><div class="work-history"><h4>Classic ASP Developer <span class="text-normal">at PPMC / Wiseguy Technologies</span></h4><h5><span>~ 11 months </span><span>from June 2005 </span><span>till April 2006</span></h5><p>PPMC manages medical claims from several primary providers with a dedicated IT department called Wiseguy Techonologies.</p></div></div><div><h3 class="work-location"><span class="work-location-spacer">Metro Manila, Philippines</span></h3><div class="work-history"><h4>ASP Programmer <span class="text-normal">at Information Technology and Customer Care Inc. (ITTCI)</span></h4><h5><span>~ 5 months </span><span>from October 2004 </span><span>till March 2005</span></h5><p>ITTCI is a Philippine outsourcing company with Customer Support and Web Development services for clients in Canada and Utah.</p></div></div><div><h3 class="hide"><span class="work-location-spacer">Metro Manila, Philippines</span></h3><div class="work-history"><h4>Windows Programmer <span class="text-normal">at DFNN Group of Companies</span></h4><h5><span>~ 9 months </span><span>from September 2003 </span><span>till June 2004</span></h5><p>DFNN is a Philippine company specializing in SMS technology.</p></div></div></div></div></div>
     </Layout>
   );
 }
-
-const Head = function (props) {
-  return (
-    <>
-      <title>{props.title}</title>
-    </>
-  );
-};
-
-export const workHistoryQuery = graphql`
-  query ResumeQuery {
-    allHistoryJson {
-      edges {
-        node {
-          bio {
-            first_name
-            last_name
-            email
-            phone
-          }
-          history {
-            company {
-              name
-              address
-              city
-              state
-              zip
-              country
-            }
-            position
-            description
-            start_date
-            end_date
-            javascript
-            client_side
-            microsoft
-            version_control
-            devops
-            php
-            databases
-          }
-        }
-      }
-    }
-  }
-`;
